@@ -43,5 +43,13 @@ namespace Barber_Booking_System
             signupPage.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
+            this.Hide();
+            bsignupPage.ShowDialog();
+            this.Close();
+        }
     }
 }
