@@ -52,14 +52,14 @@
             this.button2.Text = "new booking";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // User_Home_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 493);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "User_Home_Page";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

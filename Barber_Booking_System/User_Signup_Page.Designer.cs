@@ -143,6 +143,7 @@
             this.userSignupBtn.TabIndex = 7;
             this.userSignupBtn.Text = "sign up";
             this.userSignupBtn.UseVisualStyleBackColor = true;
+            this.userSignupBtn.Click += new System.EventHandler(this.userSignupBtn_Click);
             // 
             // label2
             // 
@@ -163,6 +164,7 @@
             this.userLoginAccLnk.TabIndex = 6;
             this.userLoginAccLnk.TabStop = true;
             this.userLoginAccLnk.Text = "sign in";
+            this.userLoginAccLnk.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.userLoginAccLnk_LinkClicked);
             // 
             // label3
             // 

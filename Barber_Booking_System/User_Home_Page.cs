@@ -21,5 +21,7 @@ namespace Barber_Booking_System
         {
             Console.WriteLine("load hometyrtyrtyrtyrt page");
         }
+
+        
     }
 }
