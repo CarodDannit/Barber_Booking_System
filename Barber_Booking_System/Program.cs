@@ -16,7 +16,7 @@ namespace Barber_Booking_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loginPage());
+            Application.Run(new User_Login_Page());
         }
     }
 }
