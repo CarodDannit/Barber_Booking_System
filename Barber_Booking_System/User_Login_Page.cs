@@ -19,6 +19,7 @@ namespace Barber_Booking_System
 
         private void registerUserAccLnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            openSignupPage();
             Console.WriteLine("register new account");
         }
 
@@ -32,6 +33,14 @@ namespace Barber_Booking_System
             User_Home_Page homePage = new User_Home_Page();
             this.Hide();
             homePage.ShowDialog();
+            this.Close();
+        }
+
+        void openSignupPage()
+        {
+            User_Signup_Page signupPage = new User_Signup_Page();
+            this.Hide();
+            signupPage.ShowDialog();
             this.Close();
         }
     }
