@@ -66,6 +66,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BekasIceCream.xsd</DependentUpon>
     </Compile>
+    <Compile Include="User_Home_AddBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User_Home_AddBooking.Designer.cs">
+      <DependentUpon>User_Home_AddBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="User_Login_Page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="User_Signup_Page.Designer.cs">
       <DependentUpon>User_Signup_Page.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="User_Home_AddBooking.resx">
+      <DependentUpon>User_Home_AddBooking.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Login_Page.resx">
       <DependentUpon>User_Login_Page.cs</DependentUpon>
     </EmbeddedResource>

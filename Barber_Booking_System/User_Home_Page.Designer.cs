@@ -29,54 +29,57 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dgBooking = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgBooking)).BeginInit();
+            this.btnAddBooking = new System.Windows.Forms.Button();
+            this.dataBooking = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBooking)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 46);
+            this.label1.Size = new System.Drawing.Size(257, 64);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bookings";
             // 
-            // button2
+            // btnAddBooking
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(743, 440);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 41);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "new booking";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBooking.Location = new System.Drawing.Point(1022, 660);
+            this.btnAddBooking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddBooking.Name = "btnAddBooking";
+            this.btnAddBooking.Size = new System.Drawing.Size(257, 62);
+            this.btnAddBooking.TabIndex = 10;
+            this.btnAddBooking.Text = "new booking";
+            this.btnAddBooking.UseVisualStyleBackColor = true;
+            this.btnAddBooking.Click += new System.EventHandler(this.btnAddBooking_Click);
             // 
-            // dgBooking
+            // dataBooking
             // 
-            this.dgBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgBooking.Location = new System.Drawing.Point(49, 308);
-            this.dgBooking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgBooking.Name = "dgBooking";
-            this.dgBooking.RowHeadersWidth = 72;
-            this.dgBooking.RowTemplate.Height = 31;
-            this.dgBooking.Size = new System.Drawing.Size(676, 283);
-            this.dgBooking.TabIndex = 11;
+            this.dataBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataBooking.Location = new System.Drawing.Point(67, 462);
+            this.dataBooking.Name = "dataBooking";
+            this.dataBooking.RowHeadersWidth = 72;
+            this.dataBooking.RowTemplate.Height = 31;
+            this.dataBooking.Size = new System.Drawing.Size(930, 424);
+            this.dataBooking.TabIndex = 11;
             // 
             // User_Home_Page
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 686);
-            this.Controls.Add(this.dgBooking);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(1295, 1029);
+            this.Controls.Add(this.dataBooking);
+            this.Controls.Add(this.btnAddBooking);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "User_Home_Page";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgBooking)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataBooking)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,7 +88,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dgBooking;
+        private System.Windows.Forms.Button btnAddBooking;
+        private System.Windows.Forms.DataGridView dataBooking;
     }
 }

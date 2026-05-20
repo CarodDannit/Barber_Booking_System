@@ -22,6 +22,10 @@ namespace Barber_Booking_System
             Console.WriteLine("load hometyrtyrtyrtyrt page");
         }
 
-        
+        private void btnAddBooking_Click(object sender, EventArgs e)
+        {
+            User_Home_AddBooking addBooking = new User_Home_AddBooking();
+            addBooking.ShowDialog();
+        }
     }
 }
