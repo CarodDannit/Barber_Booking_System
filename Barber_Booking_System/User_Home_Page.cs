@@ -19,10 +19,6 @@ namespace Barber_Booking_System
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'bekasIceCream.BOOKING' table. You can move, or remove it, as needed.
-            this.bOOKINGTableAdapter.Fill(this.bekasIceCream.BOOKING);
-            // TODO: This line of code loads data into the 'bekasIceCream.BOOKING' table. You can move, or remove it, as needed.
-            //this.bOOKINGTableAdapter.Fill(this.bekasIceCream.BOOKING);
             Console.WriteLine("load hometyrtyrtyrtyrt page");
         }
 
@@ -35,17 +31,7 @@ namespace Barber_Booking_System
         private void bOOKINGBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.bOOKINGBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bekasIceCream);
 
         }
-
-        //private void bOOKINGBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        //{
-        //    this.Validate();
-        //    this.bOOKINGBindingSource.EndEdit();
-        //    this.tableAdapterManager.UpdateAll(this.bekasIceCream);
-
-        //}
     }
 }

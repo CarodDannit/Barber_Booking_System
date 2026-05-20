@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label dateLabel;
             System.Windows.Forms.Label descriptionLabel;
@@ -40,7 +39,6 @@
             System.Windows.Forms.Label statusLabel;
             System.Windows.Forms.Label ratingLabel;
             System.Windows.Forms.Label reviewLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Home_Page));
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddBooking = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,35 +52,6 @@
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reviewDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bekasIceCream = new Barber_Booking_System.BekasIceCream();
-            this.bOOKINGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bOOKINGTableAdapter = new Barber_Booking_System.BekasIceCreamTableAdapters.BOOKINGTableAdapter();
-            this.tableAdapterManager = new Barber_Booking_System.BekasIceCreamTableAdapters.TableAdapterManager();
-            this.bOOKINGBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bOOKINGBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.bOOKINGDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
@@ -105,11 +74,6 @@
             statusLabel = new System.Windows.Forms.Label();
             ratingLabel = new System.Windows.Forms.Label();
             reviewLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.bekasIceCream)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bOOKINGBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bOOKINGBindingNavigator)).BeginInit();
-            this.bOOKINGBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bOOKINGDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // idLabel
@@ -322,274 +286,8 @@
             this.reviewDataGridViewTextBoxColumn.Name = "reviewDataGridViewTextBoxColumn";
             this.reviewDataGridViewTextBoxColumn.Width = 175;
             // 
-            // bekasIceCream
-            // 
-            this.bekasIceCream.DataSetName = "BekasIceCream";
-            this.bekasIceCream.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bOOKINGBindingSource
-            // 
-            this.bOOKINGBindingSource.DataMember = "BOOKING";
-            this.bOOKINGBindingSource.DataSource = this.bekasIceCream;
-            // 
-            // bOOKINGTableAdapter
-            // 
-            this.bOOKINGTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BARBER_SERVICETableAdapter = null;
-            this.tableAdapterManager.BARBERTableAdapter = null;
-            this.tableAdapterManager.BOOKINGTableAdapter = this.bOOKINGTableAdapter;
-            this.tableAdapterManager.CUSTOMERTableAdapter = null;
-            this.tableAdapterManager.OUTLETTableAdapter = null;
-            this.tableAdapterManager.SCHEDULETableAdapter = null;
-            this.tableAdapterManager.SERVICETableAdapter = null;
-            this.tableAdapterManager.TIMESLOTTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Barber_Booking_System.BekasIceCreamTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // bOOKINGBindingNavigator
-            // 
-            this.bOOKINGBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bOOKINGBindingNavigator.BindingSource = this.bOOKINGBindingSource;
-            this.bOOKINGBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.bOOKINGBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bOOKINGBindingNavigator.ImageScalingSize = new System.Drawing.Size(28, 28);
-            this.bOOKINGBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.bOOKINGBindingNavigatorSaveItem});
-            this.bOOKINGBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.bOOKINGBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bOOKINGBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bOOKINGBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bOOKINGBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bOOKINGBindingNavigator.Name = "bOOKINGBindingNavigator";
-            this.bOOKINGBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bOOKINGBindingNavigator.Size = new System.Drawing.Size(1392, 38);
-            this.bOOKINGBindingNavigator.TabIndex = 12;
-            this.bOOKINGBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(40, 32);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(61, 32);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(40, 32);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(40, 32);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(40, 32);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 38);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 35);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 38);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(40, 32);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(40, 32);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 38);
-            // 
-            // bOOKINGBindingNavigatorSaveItem
-            // 
-            this.bOOKINGBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bOOKINGBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bOOKINGBindingNavigatorSaveItem.Image")));
-            this.bOOKINGBindingNavigatorSaveItem.Name = "bOOKINGBindingNavigatorSaveItem";
-            this.bOOKINGBindingNavigatorSaveItem.Size = new System.Drawing.Size(40, 32);
-            this.bOOKINGBindingNavigatorSaveItem.Text = "Save Data";
-            this.bOOKINGBindingNavigatorSaveItem.Click += new System.EventHandler(this.bOOKINGBindingNavigatorSaveItem_Click);
-            // 
-            // bOOKINGDataGridView
-            // 
-            this.bOOKINGDataGridView.AutoGenerateColumns = false;
-            this.bOOKINGDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bOOKINGDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.bOOKINGDataGridView.DataSource = this.bOOKINGBindingSource;
-            this.bOOKINGDataGridView.Location = new System.Drawing.Point(56, 161);
-            this.bOOKINGDataGridView.Name = "bOOKINGDataGridView";
-            this.bOOKINGDataGridView.RowHeadersWidth = 72;
-            this.bOOKINGDataGridView.RowTemplate.Height = 31;
-            this.bOOKINGDataGridView.Size = new System.Drawing.Size(817, 339);
-            this.bOOKINGDataGridView.TabIndex = 12;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Cust_Id";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Cust_Id";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Outlet_Id";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Outlet_Id";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Barber_Id";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Barber_Id";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Service_Id";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Service_Id";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Timeslot_Id";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Timeslot_Id";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Status";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Rating";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Rating";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Review";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Review";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 175;
-            // 
             // idTextBox
             // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKINGBindingSource, "Id", true));
             this.idTextBox.Location = new System.Drawing.Point(1099, 183);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(200, 29);
@@ -597,7 +295,6 @@
             // 
             // dateDateTimePicker
             // 
-            this.dateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bOOKINGBindingSource, "Date", true));
             this.dateDateTimePicker.Location = new System.Drawing.Point(1099, 218);
             this.dateDateTimePicker.Name = "dateDateTimePicker";
             this.dateDateTimePicker.Size = new System.Drawing.Size(200, 29);
@@ -605,7 +302,6 @@
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKINGBindingSource, "Description", true));
             this.descriptionTextBox.Location = new System.Drawing.Point(1099, 253);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(200, 29);
@@ -613,7 +309,6 @@
             // 
             // cust_IdTextBox
             // 
-            this.cust_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKINGBindingSource, "Cust_Id", true));
             this.cust_IdTextBox.Location = new System.Drawing.Point(1099, 288);
             this.cust_IdTextBox.Name = "cust_IdTextBox";
             this.cust_IdTextBox.Size = new System.Drawing.Size(200, 29);
@@ -621,7 +316,6 @@
             // 
             // outlet_IdTextBox
             // 
-            this.outlet_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKINGBindingSource, "Outlet_Id", true));
             this.outlet_IdTextBox.Location = new System.Drawing.Point(1099, 323);
             this.outlet_IdTextBox.Name = "outlet_IdTextBox";
             this.outlet_IdTextBox.Size = new System.Drawing.Size(200, 29);
@@ -629,7 +323,6 @@
             // 
             // barber_IdTextBox
             // 
-            this.barber_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKINGBindingSource, "Barber_Id", true));
             this.barber_IdTextBox.Location = new System.Drawing.Point(1099, 358);
             this.barber_IdTextBox.Name = "barber_IdTextBox";
             this.barber_IdTextBox.Size = new System.Drawing.Size(200, 29);
@@ -637,7 +330,6 @@
             // 
             // service_IdTextBox
             // 
-            this.service_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKINGBindingSource, "Service_Id", true));
             this.service_IdTextBox.Location = new System.Drawing.Point(1099, 393);
             this.service_IdTextBox.Name = "service_IdTextBox";
             this.service_IdTextBox.Size = new System.Drawing.Size(200, 29);
@@ -645,7 +337,6 @@
             // 
             // timeslot_IdTextBox
             // 
-            this.timeslot_IdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKINGBindingSource, "Timeslot_Id", true));
             this.timeslot_IdTextBox.Location = new System.Drawing.Point(1099, 428);
             this.timeslot_IdTextBox.Name = "timeslot_IdTextBox";
             this.timeslot_IdTextBox.Size = new System.Drawing.Size(200, 29);
@@ -653,7 +344,6 @@
             // 
             // statusTextBox
             // 
-            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKINGBindingSource, "Status", true));
             this.statusTextBox.Location = new System.Drawing.Point(1099, 463);
             this.statusTextBox.Name = "statusTextBox";
             this.statusTextBox.Size = new System.Drawing.Size(200, 29);
@@ -661,7 +351,6 @@
             // 
             // ratingTextBox
             // 
-            this.ratingTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKINGBindingSource, "Rating", true));
             this.ratingTextBox.Location = new System.Drawing.Point(1099, 498);
             this.ratingTextBox.Name = "ratingTextBox";
             this.ratingTextBox.Size = new System.Drawing.Size(200, 29);
@@ -669,7 +358,6 @@
             // 
             // reviewTextBox
             // 
-            this.reviewTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bOOKINGBindingSource, "Review", true));
             this.reviewTextBox.Location = new System.Drawing.Point(1099, 533);
             this.reviewTextBox.Name = "reviewTextBox";
             this.reviewTextBox.Size = new System.Drawing.Size(200, 29);
@@ -702,20 +390,12 @@
             this.Controls.Add(this.ratingTextBox);
             this.Controls.Add(reviewLabel);
             this.Controls.Add(this.reviewTextBox);
-            this.Controls.Add(this.bOOKINGDataGridView);
-            this.Controls.Add(this.bOOKINGBindingNavigator);
             this.Controls.Add(this.btnAddBooking);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "User_Home_Page";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bekasIceCream)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bOOKINGBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bOOKINGBindingNavigator)).EndInit();
-            this.bOOKINGBindingNavigator.ResumeLayout(false);
-            this.bOOKINGBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bOOKINGDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -736,35 +416,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn reviewDataGridViewTextBoxColumn;
-        private BekasIceCream bekasIceCream;
-        private System.Windows.Forms.BindingSource bOOKINGBindingSource;
-        private BekasIceCreamTableAdapters.BOOKINGTableAdapter bOOKINGTableAdapter;
-        private BekasIceCreamTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator bOOKINGBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton bOOKINGBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView bOOKINGDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.DateTimePicker dateDateTimePicker;
         private System.Windows.Forms.TextBox descriptionTextBox;

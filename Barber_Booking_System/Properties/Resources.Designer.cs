@@ -61,7 +61,7 @@ namespace Barber_Booking_System.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BekasIceCream.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False.
+        ///   Looks up a localized string similar to Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\BekasIceCream_X.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False.
         /// </summary>
         internal static string DBConnectionString {
             get {
