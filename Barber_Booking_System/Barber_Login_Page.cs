@@ -10,16 +10,19 @@ using System.Windows.Forms;
 
 namespace Barber_Booking_System
 {
-    public partial class User_Home_Page : Form
+    public partial class Barber_Login_Page : Form
     {
-        public User_Home_Page()
+        public Barber_Login_Page()
         {
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void btnUserLoginPage_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("load hometyrtyrtyrtyrt page");
+            User_Login_Page loginPage = new User_Login_Page();
+            this.Hide();
+            loginPage.ShowDialog();
+            this.Close();
         }
     }
 }

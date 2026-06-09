@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Barber_Login_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Barber_Login_Page.Designer.cs">
+      <DependentUpon>Barber_Login_Page.cs</DependentUpon>
+    </Compile>
     <Compile Include="Barber_Signup_Page.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <Compile Include="User_Signup_Page.Designer.cs">
       <DependentUpon>User_Signup_Page.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Barber_Login_Page.resx">
+      <DependentUpon>Barber_Login_Page.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Barber_Signup_Page.resx">
       <DependentUpon>Barber_Signup_Page.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +127,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="User_Signup_Page.resx">
       <DependentUpon>User_Signup_Page.cs</DependentUpon>
@@ -154,6 +164,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BekasIceCream.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\rukia04.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

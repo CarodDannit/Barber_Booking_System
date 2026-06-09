@@ -17,25 +17,15 @@ namespace Barber_Booking_System
             InitializeComponent();
         }
 
-        private void userSignupBtn_Click(object sender, EventArgs e)
+        private void btnBarberLoginPage_Click(object sender, EventArgs e)
         {
-           openHomePage();
-        }
-
-        private void userLoginAccLnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            openLoginPage();
-        }
-
-        void openHomePage()
-        {
-            User_Home_Page homePage = new User_Home_Page();
+            Barber_Login_Page bloginPage = new Barber_Login_Page();
             this.Hide();
-            homePage.ShowDialog();
+            bloginPage.ShowDialog();
             this.Close();
         }
 
-        void openLoginPage()
+        private void lnkUserLoginAcc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             User_Login_Page loginPage = new User_Login_Page();
             this.Hide();
@@ -43,6 +33,12 @@ namespace Barber_Booking_System
             this.Close();
         }
 
-
+        private void btnUserSignup_Click(object sender, EventArgs e)
+        {
+            User_Home_Page homePage = new User_Home_Page();
+            this.Hide();
+            homePage.ShowDialog();
+            this.Close();
+        }
     }
 }

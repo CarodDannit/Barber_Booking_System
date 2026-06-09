@@ -17,26 +17,15 @@ namespace Barber_Booking_System
             InitializeComponent();
         }
 
-        private void registerUserAccLnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            openSignupPage();
-            Console.WriteLine("register new account");
-        }
-
-        private void userLogInBtn_Click(object sender, EventArgs e)
-        {
-            openHomePage();
-        }
-
-        void openHomePage()
-        {
-            User_Home_Page homePage = new User_Home_Page();
+            Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
             this.Hide();
-            homePage.ShowDialog();
+            bsignupPage.ShowDialog();
             this.Close();
         }
 
-        void openSignupPage()
+        private void lnkUserRegisterAcc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             User_Signup_Page signupPage = new User_Signup_Page();
             this.Hide();
@@ -44,11 +33,19 @@ namespace Barber_Booking_System
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnUserLogin_Click(object sender, EventArgs e)
         {
-            Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
+            User_Home_Page homePage = new User_Home_Page();
             this.Hide();
-            bsignupPage.ShowDialog();
+            homePage.ShowDialog();
+            this.Close();
+        }
+
+        private void btnBarberLoginPage_Click(object sender, EventArgs e)
+        {
+            Barber_Login_Page bloginPage = new Barber_Login_Page();
+            this.Hide();
+            bloginPage.ShowDialog();
             this.Close();
         }
     }
