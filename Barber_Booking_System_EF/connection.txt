@@ -1,0 +1,1 @@
+Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\madly\Desktop\UTeMming\edp\Barber_Booking_System\Barber_Booking_System_EF\BekasIceCreamEF.mdf;Integrated Security=True;

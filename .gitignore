@@ -3,8 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-*.mdf
+#*.mdf
 *.ldf
+#connection.txt
 
 # User-specific files
 *.rsuser
