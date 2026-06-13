@@ -22,7 +22,6 @@ namespace Barber_Booking_System
             // openFileDialog W.I.P.
             openFileDialog1.Filter = "image sikit2 je WIP (*.jpg; *.jpeg)|*.jpg; *.jpeg";
             openFileDialog1.ShowDialog();
-            
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Barber_Booking_System
 {
     public partial class User_Signup_Page : Form
     {
+//asdefrdg
         public User_Signup_Page()
         {
             InitializeComponent();
