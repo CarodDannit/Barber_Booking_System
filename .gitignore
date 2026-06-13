@@ -366,3 +366,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Barber_Booking_System_EF/connection.txt
+/Barber_Booking_System_EF/BekasIceCreamEF.mdf
