@@ -17,11 +17,19 @@ namespace Barber_Booking_System
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnUpload_Click(object sender, EventArgs e)
         {
             // openFileDialog W.I.P.
             openFileDialog1.Filter = "image sikit2 je WIP (*.jpg; *.jpeg)|*.jpg; *.jpeg";
             openFileDialog1.ShowDialog();
+
+
+            var result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                pictureBoxBarber.ImageLocation = openFileDialog1.FileName;
+            }
         }
     }
 }
