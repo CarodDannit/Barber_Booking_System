@@ -29,5 +29,20 @@ namespace Barber_Booking_System_EF
             _db.Add(newBooking);
             _db.SaveChanges();
         }
+
+        private static void FindUpdateBooking()
+        {
+            var bookingFromDB = _db.Bookings.FirstOrDefault(b => b.Id == 1);
+            if (bookingFromDB == null)
+            {
+                // booking not found!
+                return;
+            }
+
+            // use bookingFromDB
+            // maybe edit bookingFromDB
+            bookingFromDB.Status = "Complete";
+            _db.SaveChanges();
+        }
     }
 }
