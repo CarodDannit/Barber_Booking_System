@@ -46,29 +46,29 @@
             Status = new DataGridViewTextBoxColumn();
             label1 = new Label();
             tabPage2 = new TabPage();
+            button1 = new Button();
+            groupBox1 = new GroupBox();
+            pictureBoxBarber = new PictureBox();
+            label9 = new Label();
+            checkedListTimeSlot = new CheckedListBox();
+            rbMale = new RadioButton();
+            rbFemale = new RadioButton();
             cbOutlet = new ComboBox();
-            textBox2 = new TextBox();
+            tbPassword = new TextBox();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
-            textBox1 = new TextBox();
+            tbId = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            btn = new Button();
-            button2 = new Button();
+            btnAddBarber = new Button();
             btnLogout = new Button();
+            btnSave = new Button();
             tbEmail = new TextBox();
             tbName = new TextBox();
             label2 = new Label();
             barbeR_serviceTableAdapter1 = new Barber_Booking_System_EF.DataSet1TableAdapters.BARBER_SERVICETableAdapter();
-            rdFemale = new RadioButton();
-            rdMale = new RadioButton();
-            checkedListBox1 = new CheckedListBox();
-            label9 = new Label();
-            groupBox1 = new GroupBox();
-            pictureBoxBarber = new PictureBox();
-            button1 = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -247,21 +247,21 @@
             tabPage2.Controls.Add(button1);
             tabPage2.Controls.Add(groupBox1);
             tabPage2.Controls.Add(label9);
-            tabPage2.Controls.Add(checkedListBox1);
-            tabPage2.Controls.Add(rdMale);
-            tabPage2.Controls.Add(rdFemale);
+            tabPage2.Controls.Add(checkedListTimeSlot);
+            tabPage2.Controls.Add(rbMale);
+            tabPage2.Controls.Add(rbFemale);
             tabPage2.Controls.Add(cbOutlet);
-            tabPage2.Controls.Add(textBox2);
+            tabPage2.Controls.Add(tbPassword);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(label7);
             tabPage2.Controls.Add(label6);
-            tabPage2.Controls.Add(textBox1);
+            tabPage2.Controls.Add(tbId);
             tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(label3);
-            tabPage2.Controls.Add(btn);
-            tabPage2.Controls.Add(button2);
+            tabPage2.Controls.Add(btnAddBarber);
             tabPage2.Controls.Add(btnLogout);
+            tabPage2.Controls.Add(btnSave);
             tabPage2.Controls.Add(tbEmail);
             tabPage2.Controls.Add(tbName);
             tabPage2.Controls.Add(label2);
@@ -274,6 +274,82 @@
             tabPage2.Text = "Profile";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            button1.Location = new Point(389, 224);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(154, 24);
+            button1.TabIndex = 83;
+            button1.Text = "Upload";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(pictureBoxBarber);
+            groupBox1.Location = new Point(389, 55);
+            groupBox1.Margin = new Padding(4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4);
+            groupBox1.Size = new Size(154, 163);
+            groupBox1.TabIndex = 82;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Barber Photo Profile";
+            // 
+            // pictureBoxBarber
+            // 
+            pictureBoxBarber.Image = Properties.Resources.rukia04;
+            pictureBoxBarber.Location = new Point(7, 22);
+            pictureBoxBarber.Margin = new Padding(4);
+            pictureBoxBarber.Name = "pictureBoxBarber";
+            pictureBoxBarber.Size = new Size(140, 134);
+            pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBarber.TabIndex = 25;
+            pictureBoxBarber.TabStop = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(563, 41);
+            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(89, 24);
+            label9.TabIndex = 75;
+            label9.Text = "Time Slot";
+            // 
+            // checkedListTimeSlot
+            // 
+            checkedListTimeSlot.FormattingEnabled = true;
+            checkedListTimeSlot.Location = new Point(563, 81);
+            checkedListTimeSlot.Name = "checkedListTimeSlot";
+            checkedListTimeSlot.Size = new Size(222, 202);
+            checkedListTimeSlot.TabIndex = 74;
+            // 
+            // rbMale
+            // 
+            rbMale.AutoSize = true;
+            rbMale.Checked = true;
+            rbMale.ForeColor = Color.FromArgb(128, 128, 255);
+            rbMale.Location = new Point(119, 224);
+            rbMale.Name = "rbMale";
+            rbMale.Size = new Size(51, 19);
+            rbMale.TabIndex = 0;
+            rbMale.TabStop = true;
+            rbMale.Text = "male";
+            rbMale.UseVisualStyleBackColor = true;
+            // 
+            // rbFemale
+            // 
+            rbFemale.AutoSize = true;
+            rbFemale.ForeColor = Color.FromArgb(255, 128, 128);
+            rbFemale.Location = new Point(185, 227);
+            rbFemale.Name = "rbFemale";
+            rbFemale.Size = new Size(61, 19);
+            rbFemale.TabIndex = 1;
+            rbFemale.Text = "female";
+            rbFemale.UseVisualStyleBackColor = true;
+            // 
             // cbOutlet
             // 
             cbOutlet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -284,13 +360,13 @@
             cbOutlet.Size = new Size(243, 28);
             cbOutlet.TabIndex = 73;
             // 
-            // textBox2
+            // tbPassword
             // 
-            textBox2.Location = new Point(119, 176);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(243, 23);
-            textBox2.TabIndex = 24;
+            tbPassword.Location = new Point(119, 176);
+            tbPassword.Margin = new Padding(2);
+            tbPassword.Name = "tbPassword";
+            tbPassword.Size = new Size(243, 23);
+            tbPassword.TabIndex = 24;
             // 
             // label8
             // 
@@ -325,15 +401,15 @@
             label6.TabIndex = 21;
             label6.Text = "Email";
             // 
-            // textBox1
+            // tbId
             // 
-            textBox1.Location = new Point(119, 55);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(243, 23);
-            textBox1.TabIndex = 20;
-            textBox1.TabStop = false;
+            tbId.Location = new Point(119, 55);
+            tbId.Margin = new Padding(2);
+            tbId.Name = "tbId";
+            tbId.ReadOnly = true;
+            tbId.Size = new Size(243, 23);
+            tbId.TabIndex = 20;
+            tbId.TabStop = false;
             // 
             // label5
             // 
@@ -368,39 +444,39 @@
             label3.TabIndex = 17;
             label3.Text = "Barber ID";
             // 
-            // btn
+            // btnAddBarber
             // 
-            btn.Location = new Point(651, 355);
-            btn.Margin = new Padding(2);
-            btn.Name = "btn";
-            btn.Size = new Size(133, 24);
-            btn.TabIndex = 16;
-            btn.Text = "Add Barber";
-            btn.UseVisualStyleBackColor = true;
-            btn.Click += btn_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(650, 383);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(134, 24);
-            button2.TabIndex = 15;
-            button2.Text = "Log out";
-            button2.UseVisualStyleBackColor = true;
-            button2.ChangeUICues += button2_ChangeUICues;
+            btnAddBarber.Location = new Point(651, 355);
+            btnAddBarber.Margin = new Padding(2);
+            btnAddBarber.Name = "btnAddBarber";
+            btnAddBarber.Size = new Size(133, 24);
+            btnAddBarber.TabIndex = 16;
+            btnAddBarber.Text = "Add Barber";
+            btnAddBarber.UseVisualStyleBackColor = true;
+            btnAddBarber.Click += btnAddBarber_Click;
             // 
             // btnLogout
             // 
-            btnLogout.BackColor = Color.FromArgb(192, 255, 192);
-            btnLogout.Location = new Point(13, 308);
+            btnLogout.Location = new Point(650, 383);
             btnLogout.Margin = new Padding(2);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(771, 24);
-            btnLogout.TabIndex = 12;
-            btnLogout.Text = "Save";
-            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Size = new Size(134, 24);
+            btnLogout.TabIndex = 15;
+            btnLogout.Text = "Log out";
+            btnLogout.UseVisualStyleBackColor = true;
             btnLogout.Click += btnLogout_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = Color.FromArgb(192, 255, 192);
+            btnSave.Location = new Point(13, 308);
+            btnSave.Margin = new Padding(2);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(771, 24);
+            btnSave.TabIndex = 12;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // tbEmail
             // 
@@ -432,82 +508,6 @@
             // barbeR_serviceTableAdapter1
             // 
             barbeR_serviceTableAdapter1.ClearBeforeFill = true;
-            // 
-            // rdFemale
-            // 
-            rdFemale.AutoSize = true;
-            rdFemale.ForeColor = Color.FromArgb(255, 128, 128);
-            rdFemale.Location = new Point(185, 227);
-            rdFemale.Name = "rdFemale";
-            rdFemale.Size = new Size(61, 19);
-            rdFemale.TabIndex = 1;
-            rdFemale.TabStop = true;
-            rdFemale.Text = "female";
-            rdFemale.UseVisualStyleBackColor = true;
-            // 
-            // rdMale
-            // 
-            rdMale.AutoSize = true;
-            rdMale.ForeColor = Color.FromArgb(128, 128, 255);
-            rdMale.Location = new Point(119, 224);
-            rdMale.Name = "rdMale";
-            rdMale.Size = new Size(51, 19);
-            rdMale.TabIndex = 0;
-            rdMale.TabStop = true;
-            rdMale.Text = "male";
-            rdMale.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(563, 81);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(222, 202);
-            checkedListBox1.TabIndex = 74;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(563, 41);
-            label9.Margin = new Padding(2, 0, 2, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(88, 24);
-            label9.TabIndex = 75;
-            label9.Text = "Barber ID";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(pictureBoxBarber);
-            groupBox1.Location = new Point(389, 55);
-            groupBox1.Margin = new Padding(4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(154, 163);
-            groupBox1.TabIndex = 82;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Barber Photo Profile";
-            // 
-            // pictureBoxBarber
-            // 
-            pictureBoxBarber.Image = Properties.Resources.rukia04;
-            pictureBoxBarber.Location = new Point(7, 22);
-            pictureBoxBarber.Margin = new Padding(4);
-            pictureBoxBarber.Name = "pictureBoxBarber";
-            pictureBoxBarber.Size = new Size(140, 134);
-            pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBarber.TabIndex = 25;
-            pictureBoxBarber.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(389, 224);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(154, 24);
-            button1.TabIndex = 83;
-            button1.Text = "Upload";
-            button1.UseVisualStyleBackColor = true;
             // 
             // Barber_Home_Page
             // 
@@ -549,26 +549,26 @@
         private DataGridViewTextBoxColumn Status;
         private Label label1;
         private TabPage tabPage2;
-        private Button btnLogout;
+        private Button btnSave;
         private TextBox tbEmail;
         private TextBox tbName;
         private Label label2;
-        private Button btn;
-        private Button button2;
+        private Button btnAddBarber;
+        private Button btnLogout;
         private Label label3;
         private Label label5;
         private Label label4;
         private Label label6;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbId;
+        private TextBox tbPassword;
         private Label label8;
         private Label label7;
         private DataSet1TableAdapters.BARBER_SERVICETableAdapter barbeR_serviceTableAdapter1;
         private ComboBox cbOutlet;
         private Label label9;
-        private CheckedListBox checkedListBox1;
-        private RadioButton rdMale;
-        private RadioButton rdFemale;
+        private CheckedListBox checkedListTimeSlot;
+        private RadioButton rbMale;
+        private RadioButton rbFemale;
         private GroupBox groupBox1;
         private PictureBox pictureBoxBarber;
         private Button button1;
