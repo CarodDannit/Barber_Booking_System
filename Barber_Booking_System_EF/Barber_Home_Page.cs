@@ -32,7 +32,7 @@ namespace Barber_Booking_System_EF
 
         }
 
-        private void loadBarber()
+        private void loadBooking()
         {
 
             dgvBookings.AutoGenerateColumns = false;
@@ -56,7 +56,7 @@ namespace Barber_Booking_System_EF
                 .ToList();
         }
 
-        private void loadBooking()
+        private void loadBarber()
         {
 
             dgvBarber.AutoGenerateColumns = false;
@@ -118,13 +118,36 @@ namespace Barber_Booking_System_EF
 
             //try
             //{
-            var ms = new MemoryStream(barber.Pfp);
+            
             //}
             //catch
             //{
             //}
-            pictureBoxBarber.Image = new Bitmap(ms);
-            ms.Dispose();
+
+        
+
+        // get barber's pfp
+        //   check if 0
+            bool isZero = true;
+            for (int x = 0; x<barber.Pfp.Length; x++)
+            {
+                if (barber.Pfp[x] != 0)
+                {
+                    isZero = false;
+                    break; // Stop immediately upon finding a non-zero byte
+                }
+            }
+            //   read pfp
+            if (!isZero)
+            {
+                var ms = new MemoryStream(barber.Pfp);
+                pictureBoxBarber.Image = new Bitmap(ms);
+                ms.Dispose();
+            }
+            else
+            {
+                pictureBoxBarber.Image = Properties.Resources.rukia04;
+            }
 
             loadBarber();
             loadBooking();
@@ -135,12 +158,11 @@ namespace Barber_Booking_System_EF
             var bbS = new Barber_Signup_Page();
             this.Hide();
             var resultSignUp = bbS.ShowDialog();
-            if (resultSignUp == DialogResult.Cancel)
-            {
-                this.Show();
-                bbS.Close();
-            }
-            else this.Close();
+            if (resultSignUp == DialogResult.OK)
+                loadBarber();
+
+            this.Show();
+            bbS.Close();
         }
 
         private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -277,7 +299,9 @@ namespace Barber_Booking_System_EF
 
             int barberId = int.Parse(tbBarberId.Text);
 
-            var barber = _db.Barbers.FirstOrDefault(b => b.Id == barberId);
+            var barber = _db.Barbers.Include(b=>b.Services).FirstOrDefault(b => b.Id == barberId);
+
+            
 
             if(barber == null)
             {
@@ -293,6 +317,7 @@ namespace Barber_Booking_System_EF
 
             if(result == DialogResult.Yes)
             {
+                barber.Services.Clear();
                 _db.Remove(barber);
                 _db.SaveChanges();
                 MessageBox.Show("Barber deleted successfully");
