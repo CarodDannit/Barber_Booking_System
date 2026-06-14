@@ -40,13 +40,11 @@ namespace Barber_Booking_System_EF
                 MessageBox.Show("Incorrect password!");
                 return;
             }
-                
-             MessageBox.Show("Barber Clear");
 
-            //Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
-            //this.Hide();
-            //bsignupPage.ShowDialog();
-            //this.Close();
+            var bhomepage = new Barber_Home_Page(barBerFromDB);
+            this.Hide();
+            bhomepage.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -65,5 +65,13 @@ namespace Barber_Booking_System_EF
             homePage.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var bhomepage = new Barber_Home_Page(_db.Barbers.Find(5));
+            this.Hide();
+            bhomepage.ShowDialog();
+            this.Close();
+        }
     }
 }
