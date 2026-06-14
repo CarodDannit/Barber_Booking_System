@@ -69,21 +69,47 @@
             tbName = new TextBox();
             label2 = new Label();
             button1 = new Button();
+            tabPage3 = new TabPage();
+            tbBarberEmail = new TextBox();
+            tbBarberGender = new TextBox();
+            tbBarberOutlet = new TextBox();
+            tbBarberName = new TextBox();
+            tbBarberId = new TextBox();
+            btnAddBarber = new Button();
+            btnUpdateBarber = new Button();
+            btnDeleteBarber = new Button();
+            label18 = new Label();
+            label21 = new Label();
+            label22 = new Label();
+            label23 = new Label();
+            label24 = new Label();
+            label10 = new Label();
+            dgvBarber = new DataGridView();
+            BarberId02 = new DataGridViewTextBoxColumn();
+            BarberName = new DataGridViewTextBoxColumn();
+            BarberEmail = new DataGridViewTextBoxColumn();
+            BarberGender = new DataGridViewTextBoxColumn();
+            BarberOutlet = new DataGridViewTextBoxColumn();
+            tabPage4 = new TabPage();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvBarber).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
             tabControl1.Location = new Point(11, 13);
             tabControl1.Margin = new Padding(2, 4, 2, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(918, 644);
+            tabControl1.Size = new Size(918, 672);
             tabControl1.TabIndex = 12;
             // 
             // tabPage1
@@ -110,7 +136,7 @@
             tabPage1.Margin = new Padding(2, 4, 2, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(2, 4, 2, 4);
-            tabPage1.Size = new Size(910, 611);
+            tabPage1.Size = new Size(910, 639);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Bookings";
             tabPage1.UseVisualStyleBackColor = true;
@@ -188,6 +214,7 @@
             btnCheckBooking.TabIndex = 35;
             btnCheckBooking.Text = "Check";
             btnCheckBooking.UseVisualStyleBackColor = true;
+            btnCheckBooking.Click += btnCheckBooking_Click;
             // 
             // label9
             // 
@@ -409,7 +436,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(8, 8);
+            label1.Location = new Point(7, 4);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(186, 46);
@@ -429,7 +456,7 @@
             tabPage2.Margin = new Padding(2, 4, 2, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(2, 4, 2, 4);
-            tabPage2.Size = new Size(910, 611);
+            tabPage2.Size = new Size(910, 639);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
             tabPage2.UseVisualStyleBackColor = true;
@@ -503,12 +530,241 @@
             button1.Text = "edit profile";
             button1.UseVisualStyleBackColor = true;
             // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(tbBarberEmail);
+            tabPage3.Controls.Add(tbBarberGender);
+            tabPage3.Controls.Add(tbBarberOutlet);
+            tabPage3.Controls.Add(tbBarberName);
+            tabPage3.Controls.Add(tbBarberId);
+            tabPage3.Controls.Add(btnAddBarber);
+            tabPage3.Controls.Add(btnUpdateBarber);
+            tabPage3.Controls.Add(btnDeleteBarber);
+            tabPage3.Controls.Add(label18);
+            tabPage3.Controls.Add(label21);
+            tabPage3.Controls.Add(label22);
+            tabPage3.Controls.Add(label23);
+            tabPage3.Controls.Add(label24);
+            tabPage3.Controls.Add(label10);
+            tabPage3.Controls.Add(dgvBarber);
+            tabPage3.Location = new Point(4, 29);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(910, 639);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Barber";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tbBarberEmail
+            // 
+            tbBarberEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbBarberEmail.Location = new Point(128, 401);
+            tbBarberEmail.Name = "tbBarberEmail";
+            tbBarberEmail.Size = new Size(252, 34);
+            tbBarberEmail.TabIndex = 64;
+            // 
+            // tbBarberGender
+            // 
+            tbBarberGender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbBarberGender.Location = new Point(128, 443);
+            tbBarberGender.Name = "tbBarberGender";
+            tbBarberGender.Size = new Size(252, 34);
+            tbBarberGender.TabIndex = 63;
+            // 
+            // tbBarberOutlet
+            // 
+            tbBarberOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbBarberOutlet.Location = new Point(128, 488);
+            tbBarberOutlet.Name = "tbBarberOutlet";
+            tbBarberOutlet.Size = new Size(252, 34);
+            tbBarberOutlet.TabIndex = 62;
+            // 
+            // tbBarberName
+            // 
+            tbBarberName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbBarberName.Location = new Point(128, 356);
+            tbBarberName.Name = "tbBarberName";
+            tbBarberName.Size = new Size(252, 34);
+            tbBarberName.TabIndex = 61;
+            // 
+            // tbBarberId
+            // 
+            tbBarberId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbBarberId.Location = new Point(128, 314);
+            tbBarberId.Name = "tbBarberId";
+            tbBarberId.Size = new Size(252, 34);
+            tbBarberId.TabIndex = 60;
+            // 
+            // btnAddBarber
+            // 
+            btnAddBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAddBarber.Location = new Point(278, 553);
+            btnAddBarber.Margin = new Padding(3, 4, 3, 4);
+            btnAddBarber.Name = "btnAddBarber";
+            btnAddBarber.Size = new Size(102, 68);
+            btnAddBarber.TabIndex = 59;
+            btnAddBarber.Text = "add barber";
+            btnAddBarber.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateBarber
+            // 
+            btnUpdateBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUpdateBarber.Location = new Point(151, 553);
+            btnUpdateBarber.Margin = new Padding(3, 4, 3, 4);
+            btnUpdateBarber.Name = "btnUpdateBarber";
+            btnUpdateBarber.Size = new Size(102, 68);
+            btnUpdateBarber.TabIndex = 58;
+            btnUpdateBarber.Text = "update barber";
+            btnUpdateBarber.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteBarber
+            // 
+            btnDeleteBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDeleteBarber.Location = new Point(30, 553);
+            btnDeleteBarber.Margin = new Padding(3, 4, 3, 4);
+            btnDeleteBarber.Name = "btnDeleteBarber";
+            btnDeleteBarber.Size = new Size(102, 68);
+            btnDeleteBarber.TabIndex = 57;
+            btnDeleteBarber.Text = "delete barber";
+            btnDeleteBarber.UseVisualStyleBackColor = true;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.Location = new Point(30, 446);
+            label18.Name = "label18";
+            label18.Size = new Size(76, 28);
+            label18.TabIndex = 49;
+            label18.Text = "Gender";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label21.Location = new Point(30, 491);
+            label21.Name = "label21";
+            label21.Size = new Size(67, 28);
+            label21.TabIndex = 46;
+            label21.Text = "Outlet";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.Location = new Point(30, 404);
+            label22.Name = "label22";
+            label22.Size = new Size(59, 28);
+            label22.TabIndex = 45;
+            label22.Text = "Email";
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label23.Location = new Point(30, 359);
+            label23.Name = "label23";
+            label23.Size = new Size(64, 28);
+            label23.TabIndex = 44;
+            label23.Text = "Name";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label24.Location = new Point(30, 317);
+            label24.Name = "label24";
+            label24.Size = new Size(29, 28);
+            label24.TabIndex = 43;
+            label24.Text = "Id";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(5, 3);
+            label10.Margin = new Padding(2, 0, 2, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(139, 46);
+            label10.TabIndex = 13;
+            label10.Text = "Barber";
+            // 
+            // dgvBarber
+            // 
+            dgvBarber.AllowUserToAddRows = false;
+            dgvBarber.AllowUserToDeleteRows = false;
+            dgvBarber.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvBarber.Columns.AddRange(new DataGridViewColumn[] { BarberId02, BarberName, BarberEmail, BarberGender, BarberOutlet });
+            dgvBarber.Location = new Point(30, 69);
+            dgvBarber.Margin = new Padding(2, 3, 2, 3);
+            dgvBarber.Name = "dgvBarber";
+            dgvBarber.ReadOnly = true;
+            dgvBarber.RowHeadersWidth = 72;
+            dgvBarber.Size = new Size(849, 219);
+            dgvBarber.TabIndex = 12;
+            dgvBarber.CellClick += dgvBarber_CellClick;
+            // 
+            // BarberId02
+            // 
+            BarberId02.DataPropertyName = "Id";
+            BarberId02.HeaderText = "Id";
+            BarberId02.MinimumWidth = 6;
+            BarberId02.Name = "BarberId02";
+            BarberId02.ReadOnly = true;
+            BarberId02.Width = 125;
+            // 
+            // BarberName
+            // 
+            BarberName.DataPropertyName = "Name";
+            BarberName.HeaderText = "Name";
+            BarberName.MinimumWidth = 6;
+            BarberName.Name = "BarberName";
+            BarberName.ReadOnly = true;
+            BarberName.Width = 125;
+            // 
+            // BarberEmail
+            // 
+            BarberEmail.DataPropertyName = "Email";
+            BarberEmail.HeaderText = "Email";
+            BarberEmail.MinimumWidth = 6;
+            BarberEmail.Name = "BarberEmail";
+            BarberEmail.ReadOnly = true;
+            BarberEmail.Width = 125;
+            // 
+            // BarberGender
+            // 
+            BarberGender.DataPropertyName = "Gender";
+            BarberGender.HeaderText = "Gender";
+            BarberGender.MinimumWidth = 6;
+            BarberGender.Name = "BarberGender";
+            BarberGender.ReadOnly = true;
+            BarberGender.Width = 125;
+            // 
+            // BarberOutlet
+            // 
+            BarberOutlet.DataPropertyName = "oLocation";
+            BarberOutlet.HeaderText = "Outlet";
+            BarberOutlet.MinimumWidth = 6;
+            BarberOutlet.Name = "BarberOutlet";
+            BarberOutlet.ReadOnly = true;
+            BarberOutlet.Width = 125;
+            // 
+            // tabPage4
+            // 
+            tabPage4.Location = new Point(4, 29);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(910, 639);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Analysis";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
             // Barber_Home_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lime;
-            ClientSize = new Size(942, 670);
+            ClientSize = new Size(942, 698);
             Controls.Add(tabControl1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Barber_Home_Page";
@@ -520,6 +776,9 @@
             ((System.ComponentModel.ISupportInitialize)dgvBookings).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvBarber).EndInit();
             ResumeLayout(false);
         }
 
@@ -566,5 +825,27 @@
         private Label label4;
         private Label label3;
         private Button btnNewBooking;
+        private TabPage tabPage3;
+        private TabPage tabPage4;
+        private Label label10;
+        private DataGridView dgvBarber;
+        private DataGridViewTextBoxColumn BarberId02;
+        private DataGridViewTextBoxColumn BarberName;
+        private DataGridViewTextBoxColumn BarberEmail;
+        private DataGridViewTextBoxColumn BarberGender;
+        private DataGridViewTextBoxColumn BarberOutlet;
+        private Label label18;
+        private Label label21;
+        private Label label22;
+        private Label label23;
+        private Label label24;
+        private Button btnDeleteBarber;
+        private Button btnUpdateBarber;
+        private TextBox tbBarberId;
+        private Button btnAddBarber;
+        private TextBox tbBarberEmail;
+        private TextBox tbBarberGender;
+        private TextBox tbBarberOutlet;
+        private TextBox tbBarberName;
     }
 }

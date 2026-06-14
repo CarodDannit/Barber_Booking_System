@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Barber_Booking_System_EF.models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Barber_Booking_System_EF.models;
 
 namespace Barber_Booking_System_EF
 {
@@ -40,6 +41,18 @@ namespace Barber_Booking_System_EF
                     bk.TimeslotId,
                     bk.Timeslot.Time,
                     bk.Status
+                })
+                .ToList();
+
+            dgvBarber.AutoGenerateColumns = false;
+            dgvBarber.DataSource = _db.Barbers
+                .Select(br => new
+                {
+                    br.Id,
+                    br.Name,
+                    br.Email,
+                    br.Gender,
+                    oLocation = br.Outlet.Location
                 })
                 .ToList();
         }
@@ -76,5 +89,35 @@ namespace Barber_Booking_System_EF
             lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
         }
+
+        private void btnCheckBooking_Click(object sender, EventArgs e)
+        {
+
+
+            var bookingId = _db.Bookings
+                            .Include(b => b.Service)
+                            .Include(b => b.Cust)
+                            .Include(b => b.Outlet)
+                            .Include(b => b.Timeslot)
+                            .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
+
+            Check_Barber_Booking_Page checkBooking = new Check_Barber_Booking_Page(bookingId);
+            checkBooking.Show();
+        }
+
+        private void dgvBarber_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgvBarber.Rows[e.RowIndex];
+
+            tbBarberId.Text = row.Cells["BarberId02"].Value?.ToString();
+            tbBarberName.Text = row.Cells["BarberName"].Value?.ToString();
+            tbBarberEmail.Text = row.Cells["BarberEmail"].Value?.ToString();
+            tbBarberGender.Text = row.Cells["BarberGender"].Value?.ToString();
+            tbBarberOutlet.Text = row.Cells["BarberOutlet"].Value?.ToString();
+        }
+
+       
     }
 }
