@@ -65,5 +65,34 @@ namespace Barber_Booking_System_EF
             editProf.Show();
             this.Hide();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            tbEmail.ReadOnly = false;
+            tbName.ReadOnly = false;
+            tbPhone.ReadOnly = false;
+
+            label6.Visible = true;
+            tbPassword.Visible = true;
+            tbPassword.ReadOnly = false;
+            btnSave.Visible = true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            tbEmail.ReadOnly = true;
+            tbName.ReadOnly = true;
+            tbPhone.ReadOnly = true;
+
+            label6.Visible = false;
+            tbPassword.Visible = false;
+            tbPassword.ReadOnly = true;
+            btnSave.Visible = false;
+        }
     }
 }
