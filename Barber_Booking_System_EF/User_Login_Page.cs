@@ -20,13 +20,13 @@ namespace Barber_Booking_System_EF
             InitializeComponent();
         }
 
-        private void btnBarbersignup_Click(object sender, EventArgs e)
-        {
-            Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
-            this.Hide();
-            bsignupPage.ShowDialog();
-            this.Close();
-        }
+        //private void btnBarbersignup_Click(object sender, EventArgs e)
+        //{
+        //    Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
+        //    this.Hide();
+        //    bsignupPage.ShowDialog();
+        //    this.Close();
+        //}
 
         private void lnkUserRegisterAcc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -48,6 +48,17 @@ namespace Barber_Booking_System_EF
         {
             // ! validate textboxes are not empty first !
 
+            if (String.IsNullOrWhiteSpace(tbEmail.Text))
+            {
+                MessageBox.Show("Email cannot be empty!");
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Password cannot be empty!");
+                return;
+            }
+
             var customerFromDB = _db.Customers.FirstOrDefault(c => c.Email == tbEmail.Text);
             if (customerFromDB == null)
             {
@@ -65,5 +76,13 @@ namespace Barber_Booking_System_EF
             homePage.ShowDialog();
             this.Close();
         }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    var bhomepage = new Barber_Home_Page(_db.Barbers.Find(5));
+        //    this.Hide();
+        //    bhomepage.ShowDialog();
+        //    this.Close();
+        //}
     }
 }

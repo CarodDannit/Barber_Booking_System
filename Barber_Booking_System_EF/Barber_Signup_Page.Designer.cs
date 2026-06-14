@@ -28,278 +28,293 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelRegister = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBoxBarber = new System.Windows.Forms.PictureBox();
-            this.gbGender = new System.Windows.Forms.GroupBox();
-            this.rdFemale = new System.Windows.Forms.RadioButton();
-            this.rdMale = new System.Windows.Forms.RadioButton();
-            this.btnUpload = new System.Windows.Forms.Button();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.tbPassword = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.checkListService = new System.Windows.Forms.CheckedListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbOutlet = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarber)).BeginInit();
-            this.gbGender.SuspendLayout();
-            this.SuspendLayout();
+            labelRegister = new Label();
+            openFileDialog1 = new OpenFileDialog();
+            panel1 = new Panel();
+            btnBack = new Button();
+            groupBox1 = new GroupBox();
+            pictureBoxBarber = new PictureBox();
+            gbGender = new GroupBox();
+            rdFemale = new RadioButton();
+            rdMale = new RadioButton();
+            btnUpload = new Button();
+            btnRegister = new Button();
+            tbPassword = new TextBox();
+            label7 = new Label();
+            label6 = new Label();
+            checkListService = new CheckedListBox();
+            label5 = new Label();
+            cbOutlet = new ComboBox();
+            label4 = new Label();
+            tbName = new TextBox();
+            label2 = new Label();
+            label3 = new Label();
+            tbEmail = new TextBox();
+            panel1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).BeginInit();
+            gbGender.SuspendLayout();
+            SuspendLayout();
             // 
             // labelRegister
             // 
-            this.labelRegister.AutoSize = true;
-            this.labelRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegister.Location = new System.Drawing.Point(325, 9);
-            this.labelRegister.Name = "labelRegister";
-            this.labelRegister.Size = new System.Drawing.Size(298, 46);
-            this.labelRegister.TabIndex = 1;
-            this.labelRegister.Text = "Register Barber";
+            labelRegister.AutoSize = true;
+            labelRegister.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelRegister.Location = new Point(284, 8);
+            labelRegister.Name = "labelRegister";
+            labelRegister.Size = new Size(239, 37);
+            labelRegister.TabIndex = 1;
+            labelRegister.Text = "Register Barber";
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.gbGender);
-            this.panel1.Controls.Add(this.btnUpload);
-            this.panel1.Controls.Add(this.btnRegister);
-            this.panel1.Controls.Add(this.tbPassword);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.checkListService);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.cbOutlet);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.tbName);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.tbEmail);
-            this.panel1.Location = new System.Drawing.Point(146, 71);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(647, 643);
-            this.panel1.TabIndex = 67;
+            panel1.BackColor = SystemColors.Control;
+            panel1.Controls.Add(btnBack);
+            panel1.Controls.Add(groupBox1);
+            panel1.Controls.Add(gbGender);
+            panel1.Controls.Add(btnUpload);
+            panel1.Controls.Add(btnRegister);
+            panel1.Controls.Add(tbPassword);
+            panel1.Controls.Add(label7);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(checkListService);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(cbOutlet);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(tbName);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(tbEmail);
+            panel1.Location = new Point(128, 67);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(566, 603);
+            panel1.TabIndex = 67;
+            // 
+            // btnBack
+            // 
+            btnBack.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBack.Location = new Point(396, 495);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(154, 38);
+            btnBack.TabIndex = 82;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBoxBarber);
-            this.groupBox1.Location = new System.Drawing.Point(453, 214);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(176, 174);
-            this.groupBox1.TabIndex = 81;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Barber Photo Profile";
+            groupBox1.Controls.Add(pictureBoxBarber);
+            groupBox1.Location = new Point(396, 201);
+            groupBox1.Margin = new Padding(4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4);
+            groupBox1.Size = new Size(154, 163);
+            groupBox1.TabIndex = 81;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Barber Photo Profile";
             // 
             // pictureBoxBarber
             // 
-            this.pictureBoxBarber.Image = global::Barber_Booking_System_EF.Properties.Resources.rukia04;
-            this.pictureBoxBarber.Location = new System.Drawing.Point(8, 23);
-            this.pictureBoxBarber.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxBarber.Name = "pictureBoxBarber";
-            this.pictureBoxBarber.Size = new System.Drawing.Size(160, 143);
-            this.pictureBoxBarber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBarber.TabIndex = 25;
-            this.pictureBoxBarber.TabStop = false;
+            pictureBoxBarber.Image = Properties.Resources.rukia04;
+            pictureBoxBarber.Location = new Point(7, 22);
+            pictureBoxBarber.Margin = new Padding(4);
+            pictureBoxBarber.Name = "pictureBoxBarber";
+            pictureBoxBarber.Size = new Size(140, 134);
+            pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBarber.TabIndex = 25;
+            pictureBoxBarber.TabStop = false;
             // 
             // gbGender
             // 
-            this.gbGender.Controls.Add(this.rdFemale);
-            this.gbGender.Controls.Add(this.rdMale);
-            this.gbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbGender.Location = new System.Drawing.Point(25, 256);
-            this.gbGender.Name = "gbGender";
-            this.gbGender.Size = new System.Drawing.Size(370, 67);
-            this.gbGender.TabIndex = 80;
-            this.gbGender.TabStop = false;
-            this.gbGender.Text = "Gender";
+            gbGender.Controls.Add(rdFemale);
+            gbGender.Controls.Add(rdMale);
+            gbGender.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            gbGender.Location = new Point(22, 240);
+            gbGender.Name = "gbGender";
+            gbGender.Size = new Size(324, 63);
+            gbGender.TabIndex = 80;
+            gbGender.TabStop = false;
+            gbGender.Text = "Gender";
             // 
             // rdFemale
             // 
-            this.rdFemale.AutoSize = true;
-            this.rdFemale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.rdFemale.Location = new System.Drawing.Point(199, 29);
-            this.rdFemale.Name = "rdFemale";
-            this.rdFemale.Size = new System.Drawing.Size(91, 29);
-            this.rdFemale.TabIndex = 1;
-            this.rdFemale.TabStop = true;
-            this.rdFemale.Text = "female";
-            this.rdFemale.UseVisualStyleBackColor = true;
+            rdFemale.AutoSize = true;
+            rdFemale.ForeColor = Color.FromArgb(255, 128, 128);
+            rdFemale.Location = new Point(174, 27);
+            rdFemale.Name = "rdFemale";
+            rdFemale.Size = new Size(75, 24);
+            rdFemale.TabIndex = 1;
+            rdFemale.TabStop = true;
+            rdFemale.Text = "female";
+            rdFemale.UseVisualStyleBackColor = true;
             // 
             // rdMale
             // 
-            this.rdMale.AutoSize = true;
-            this.rdMale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.rdMale.Location = new System.Drawing.Point(84, 29);
-            this.rdMale.Name = "rdMale";
-            this.rdMale.Size = new System.Drawing.Size(75, 29);
-            this.rdMale.TabIndex = 0;
-            this.rdMale.TabStop = true;
-            this.rdMale.Text = "male";
-            this.rdMale.UseVisualStyleBackColor = true;
+            rdMale.AutoSize = true;
+            rdMale.ForeColor = Color.FromArgb(128, 128, 255);
+            rdMale.Location = new Point(74, 27);
+            rdMale.Name = "rdMale";
+            rdMale.Size = new Size(61, 24);
+            rdMale.TabIndex = 0;
+            rdMale.TabStop = true;
+            rdMale.Text = "male";
+            rdMale.UseVisualStyleBackColor = true;
             // 
             // btnUpload
             // 
-            this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpload.Location = new System.Drawing.Point(484, 401);
-            this.btnUpload.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(106, 41);
-            this.btnUpload.TabIndex = 79;
-            this.btnUpload.Text = "Upload";
-            this.btnUpload.UseVisualStyleBackColor = true;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            btnUpload.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUpload.Location = new Point(424, 376);
+            btnUpload.Margin = new Padding(2);
+            btnUpload.Name = "btnUpload";
+            btnUpload.Size = new Size(93, 38);
+            btnUpload.TabIndex = 79;
+            btnUpload.Text = "Upload";
+            btnUpload.UseVisualStyleBackColor = true;
+            btnUpload.Click += btnUpload_Click;
             // 
             // btnRegister
             // 
-            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(453, 576);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(176, 41);
-            this.btnRegister.TabIndex = 78;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRegister.Location = new Point(396, 540);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(154, 38);
+            btnRegister.TabIndex = 78;
+            btnRegister.Text = "Register";
+            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.Click += btnRegister_Click;
             // 
             // tbPassword
             // 
-            this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPassword.Location = new System.Drawing.Point(22, 198);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(373, 30);
-            this.tbPassword.TabIndex = 77;
+            tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbPassword.Location = new Point(19, 186);
+            tbPassword.Name = "tbPassword";
+            tbPassword.PasswordChar = '*';
+            tbPassword.Size = new Size(327, 26);
+            tbPassword.TabIndex = 77;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 170);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 25);
-            this.label7.TabIndex = 76;
-            this.label7.Text = "Password";
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(18, 159);
+            label7.Name = "label7";
+            label7.Size = new Size(78, 20);
+            label7.TabIndex = 76;
+            label7.Text = "Password";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 435);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 25);
-            this.label6.TabIndex = 75;
-            this.label6.Text = "Service";
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(16, 408);
+            label6.Name = "label6";
+            label6.Size = new Size(61, 20);
+            label6.TabIndex = 75;
+            label6.Text = "Service";
             // 
             // checkListService
             // 
-            this.checkListService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkListService.FormattingEnabled = true;
-            this.checkListService.Location = new System.Drawing.Point(25, 463);
-            this.checkListService.Margin = new System.Windows.Forms.Padding(4);
-            this.checkListService.Name = "checkListService";
-            this.checkListService.Size = new System.Drawing.Size(357, 154);
-            this.checkListService.TabIndex = 74;
+            checkListService.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkListService.FormattingEnabled = true;
+            checkListService.Location = new Point(22, 434);
+            checkListService.Margin = new Padding(4);
+            checkListService.Name = "checkListService";
+            checkListService.Size = new Size(313, 130);
+            checkListService.TabIndex = 74;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 347);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 25);
-            this.label5.TabIndex = 73;
-            this.label5.Text = "Outlet";
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(17, 325);
+            label5.Name = "label5";
+            label5.Size = new Size(52, 20);
+            label5.TabIndex = 73;
+            label5.Text = "Outlet";
             // 
             // cbOutlet
             // 
-            this.cbOutlet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOutlet.FormattingEnabled = true;
-            this.cbOutlet.Location = new System.Drawing.Point(25, 375);
-            this.cbOutlet.Margin = new System.Windows.Forms.Padding(4);
-            this.cbOutlet.Name = "cbOutlet";
-            this.cbOutlet.Size = new System.Drawing.Size(370, 33);
-            this.cbOutlet.TabIndex = 72;
+            cbOutlet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbOutlet.FormattingEnabled = true;
+            cbOutlet.Location = new Point(22, 352);
+            cbOutlet.Margin = new Padding(4);
+            cbOutlet.Name = "cbOutlet";
+            cbOutlet.Size = new Size(324, 28);
+            cbOutlet.TabIndex = 72;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(448, 170);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 25);
-            this.label4.TabIndex = 71;
-            this.label4.Text = "Photo Profile";
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(392, 159);
+            label4.Name = "label4";
+            label4.Size = new Size(99, 20);
+            label4.TabIndex = 71;
+            label4.Text = "Photo Profile";
             // 
             // tbName
             // 
-            this.tbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbName.Location = new System.Drawing.Point(22, 123);
-            this.tbName.Name = "tbName";
-            this.tbName.PasswordChar = '*';
-            this.tbName.Size = new System.Drawing.Size(373, 30);
-            this.tbName.TabIndex = 70;
+            tbName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbName.Location = new Point(19, 115);
+            tbName.Name = "tbName";
+            tbName.PasswordChar = '*';
+            tbName.Size = new Size(327, 26);
+            tbName.TabIndex = 70;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 25);
-            this.label2.TabIndex = 67;
-            this.label2.Text = "Email";
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(15, 23);
+            label2.Name = "label2";
+            label2.Size = new Size(48, 20);
+            label2.TabIndex = 67;
+            label2.Text = "Email";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 25);
-            this.label3.TabIndex = 68;
-            this.label3.Text = "Name";
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(15, 89);
+            label3.Name = "label3";
+            label3.Size = new Size(51, 20);
+            label3.TabIndex = 68;
+            label3.Text = "Name";
             // 
             // tbEmail
             // 
-            this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmail.Location = new System.Drawing.Point(22, 53);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(373, 30);
-            this.tbEmail.TabIndex = 69;
+            tbEmail.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbEmail.Location = new Point(19, 50);
+            tbEmail.Name = "tbEmail";
+            tbEmail.Size = new Size(327, 26);
+            tbEmail.TabIndex = 69;
             // 
             // Barber_Signup_Page
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.BackColor = System.Drawing.Color.Lime;
-            this.ClientSize = new System.Drawing.Size(942, 493);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.labelRegister);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Barber_Signup_Page";
-            this.Text = "Barber Signup Page";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarber)).EndInit();
-            this.gbGender.ResumeLayout(false);
-            this.gbGender.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoValidate = AutoValidate.EnablePreventFocusChange;
+            BackColor = Color.Lime;
+            ClientSize = new Size(824, 462);
+            Controls.Add(panel1);
+            Controls.Add(labelRegister);
+            Margin = new Padding(4);
+            Name = "Barber_Signup_Page";
+            Text = "Barber Signup Page";
+            Load += Barber_Signup_Page_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).EndInit();
+            gbGender.ResumeLayout(false);
+            gbGender.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -326,5 +341,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbEmail;
+        private Button btnBack;
     }
 }
