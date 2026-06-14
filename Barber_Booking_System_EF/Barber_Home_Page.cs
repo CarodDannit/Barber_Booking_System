@@ -274,6 +274,11 @@ namespace Barber_Booking_System_EF
 
         }
 
+        private void label90_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnUpload_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog();
