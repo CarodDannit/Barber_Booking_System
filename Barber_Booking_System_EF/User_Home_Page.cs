@@ -64,6 +64,9 @@ namespace Barber_Booking_System_EF
             User_Edit_Profile editProf = new User_Edit_Profile();
             editProf.Show();
             this.Hide();
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void label3_Click(object sender, EventArgs e)

@@ -55,9 +55,9 @@
             label3 = new Label();
             btnLogout = new Button();
             tbEmail = new TextBox();
-            tbName = new TextBox();
+            btnLogout = new Button();
             label2 = new Label();
-            button1 = new Button();
+            btnEditProfile = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -243,10 +243,8 @@
             tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(label3);
             tabPage2.Controls.Add(btnLogout);
-            tabPage2.Controls.Add(tbEmail);
-            tabPage2.Controls.Add(tbName);
             tabPage2.Controls.Add(label2);
-            tabPage2.Controls.Add(button1);
+            tabPage2.Controls.Add(btnEditProfile);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
@@ -255,6 +253,52 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
             tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Click += tabPage2_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(365, 484);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(154, 51);
+            btnSave.TabIndex = 21;
+            btnSave.Text = "SAVE";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Visible = false;
+            btnSave.Click += btnSave_Click;
+            // 
+            // tbPassword
+            // 
+            tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbPassword.Location = new Point(289, 433);
+            tbPassword.Margin = new Padding(3, 4, 3, 4);
+            tbPassword.Name = "tbPassword";
+            tbPassword.PasswordChar = '*';
+            tbPassword.ReadOnly = true;
+            tbPassword.Size = new Size(340, 30);
+            tbPassword.TabIndex = 20;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(284, 398);
+            label6.Name = "label6";
+            label6.Size = new Size(96, 25);
+            label6.TabIndex = 19;
+            label6.Text = "password";
+            // 
+            // tbPhone
+            // 
+            tbPhone.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbPhone.Location = new Point(285, 330);
+            tbPhone.Margin = new Padding(3, 4, 3, 4);
+            tbPhone.Name = "tbPhone";
+            tbPhone.PasswordChar = '*';
+            tbPhone.ReadOnly = true;
+            tbPhone.Size = new Size(340, 30);
+            tbPhone.TabIndex = 18;
+            // 
+            // label5
             // 
             // btnSave
             // 
@@ -404,9 +448,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private TextBox tbEmail;
-        private TextBox tbName;
+        private System.Windows.Forms.Button btnEditProfile;
         private Button btnLogout;
         private DataGridView dgvBookings;
         private DataGridViewTextBoxColumn Id;
@@ -422,7 +464,10 @@
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Status;
         private Label label6;
+        private TextBox tbPhone;
         private Label label5;
+        private TextBox tbUsername;
+        private Label label3;
         private Label label4;
         private Label label3;
         private TextBox tbPassword;
