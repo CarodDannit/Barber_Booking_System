@@ -27,7 +27,7 @@ namespace Barber_Booking_System.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\BekasIceCream" +
-            ".mdf;Integrated Security=True")]
+            ".mdf;Integrated Security=True;Connect Timeout=30;Encrypt=True")]
         public string BekasIceCreamConnectionString {
             get {
                 return ((string)(this["BekasIceCreamConnectionString"]));
