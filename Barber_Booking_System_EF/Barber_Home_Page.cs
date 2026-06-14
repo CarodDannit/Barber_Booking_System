@@ -56,5 +56,10 @@ namespace Barber_Booking_System_EF
             }
             else this.Close();
         }
+
+        private void button2_ChangeUICues(object sender, UICuesEventArgs e)
+        {
+
+        }
     }
 }
