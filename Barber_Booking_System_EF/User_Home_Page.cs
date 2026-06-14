@@ -89,5 +89,12 @@ namespace Barber_Booking_System_EF
             Check_User_Booking_Page checkBooking = new Check_User_Booking_Page(bookingId);
             checkBooking.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            User_Edit_Profile editProf = new User_Edit_Profile();
+            editProf.Show();
+            this.Hide();
+        }
     }
 }
