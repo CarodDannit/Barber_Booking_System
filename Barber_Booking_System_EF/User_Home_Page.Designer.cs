@@ -47,6 +47,7 @@
             Status = new DataGridViewTextBoxColumn();
             tabPage2 = new TabPage();
             btnSave = new Button();
+            tbName = new TextBox();
             tbPassword = new TextBox();
             tbPhone = new TextBox();
             label6 = new Label();
@@ -400,15 +401,15 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(717, 494);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(187, 51);
-            button1.TabIndex = 12;
-            button1.Text = "edit profile";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            btnEditProfile.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditProfile.Location = new Point(717, 494);
+            btnEditProfile.Margin = new Padding(3, 4, 3, 4);
+            btnEditProfile.Name = "btnEditProfile";
+            btnEditProfile.Size = new Size(187, 51);
+            btnEditProfile.TabIndex = 12;
+            btnEditProfile.Text = "edit profile";
+            btnEditProfile.UseVisualStyleBackColor = true;
+            btnEditProfile.Click += button1_Click_1;
             // 
             // User_Home_Page
             // 
@@ -456,10 +457,10 @@
         private DataGridViewTextBoxColumn Status;
         private Label label6;
         private Label label5;
-        private TextBox tbUsername;
+        private TextBox tbName;
+        private TextBox tbEmail;
         private Label label3;
         private Label label4;
-        private Label label3;
         private TextBox tbPassword;
         private TextBox tbPhone;
         private Button btnSave;

@@ -25,13 +25,8 @@ namespace Barber_Booking_System_EF
         // load data when form loads
         private void User_Home_Page_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("load hometyrtyrtyrtyrt page");
             tbName.Text = customer.Name;
             tbEmail.Text = customer.Email;
-
-            //bookings = _db.Bookings
-            //    .Where(b => b.CustId == customer.Id)
-            //    .ToList();
 
             dgvBookings.AutoGenerateColumns = false;
             dgvBookings.DataSource = _db.Bookings
@@ -64,6 +59,7 @@ namespace Barber_Booking_System_EF
             User_Edit_Profile editProf = new User_Edit_Profile();
             editProf.Show();
             this.Hide();
+        }
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
