@@ -72,7 +72,7 @@
             tabPage2.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // tabPage2
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -93,7 +93,7 @@
             btnNewBooking.Text = "new booking";
             btnNewBooking.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // label2
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
@@ -402,7 +402,7 @@
             Status.ReadOnly = true;
             Status.Width = 175;
             // 
-            // tabPage2
+            // button2
             // 
             tabPage2.Controls.Add(btnLogout);
             tabPage2.Controls.Add(tbEmail);
@@ -444,7 +444,7 @@
             tbName.Size = new Size(118, 27);
             tbName.TabIndex = 13;
             // 
-            // label2
+            // label1
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -454,7 +454,7 @@
             label2.TabIndex = 11;
             label2.Text = "Profile";
             // 
-            // button1
+            // tabControl1
             // 
             button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.Location = new Point(717, 494);

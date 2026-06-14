@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WinForms" Version="2.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.28" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.28">
       <PrivateAssets>all</PrivateAssets>
@@ -19,6 +20,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.1" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.10.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +33,11 @@
     </Compile>
     <Compile Update="Book_Appointment_Page.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BarberDS.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BarberDS.xsd</DependentUpon>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -57,6 +65,10 @@
   <ItemGroup>
     <None Update="connection.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="BarberDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BarberDS.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
