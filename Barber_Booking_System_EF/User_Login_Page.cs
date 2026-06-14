@@ -48,6 +48,17 @@ namespace Barber_Booking_System_EF
         {
             // ! validate textboxes are not empty first !
 
+            if (String.IsNullOrWhiteSpace(tbEmail.Text))
+            {
+                MessageBox.Show("Email cannot be empty!");
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Password cannot be empty!");
+                return;
+            }
+
             var customerFromDB = _db.Customers.FirstOrDefault(c => c.Email == tbEmail.Text);
             if (customerFromDB == null)
             {
