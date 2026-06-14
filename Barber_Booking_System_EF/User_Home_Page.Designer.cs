@@ -322,15 +322,6 @@
             tbPassword.TabIndex = 20;
             tbPassword.Visible = false;
             // 
-            // tbPhone
-            // 
-            tbPhone.Location = new Point(352, 269);
-            tbPhone.Margin = new Padding(2);
-            tbPhone.Name = "tbPhone";
-            tbPhone.ReadOnly = true;
-            tbPhone.Size = new Size(118, 27);
-            tbPhone.TabIndex = 19;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -464,7 +455,6 @@
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Status;
         private Label label6;
-        private TextBox tbPhone;
         private Label label5;
         private TextBox tbUsername;
         private Label label3;
