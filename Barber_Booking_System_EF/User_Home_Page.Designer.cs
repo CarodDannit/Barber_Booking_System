@@ -56,6 +56,8 @@
             btnLogout = new Button();
             label2 = new Label();
             btnEditProfile = new Button();
+            label5 = new Label();
+            lblGender = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -233,6 +235,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(lblGender);
+            tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(btnSave);
             tabPage2.Controls.Add(tbName);
             tabPage2.Controls.Add(tbEmail);
@@ -286,7 +290,7 @@
             // tbPassword
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPassword.Location = new Point(352, 283);
+            tbPassword.Location = new Point(352, 328);
             tbPassword.Margin = new Padding(2);
             tbPassword.Name = "tbPassword";
             tbPassword.PasswordChar = '*';
@@ -299,7 +303,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(224, 286);
+            label6.Location = new Point(224, 331);
             label6.Name = "label6";
             label6.Size = new Size(98, 25);
             label6.TabIndex = 18;
@@ -360,6 +364,27 @@
             btnEditProfile.UseVisualStyleBackColor = true;
             btnEditProfile.Click += button1_Click_1;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(224, 266);
+            label5.Name = "label5";
+            label5.Size = new Size(77, 25);
+            label5.TabIndex = 23;
+            label5.Text = "Gender";
+            // 
+            // lblGender
+            // 
+            lblGender.AutoSize = true;
+            lblGender.BackColor = Color.DimGray;
+            lblGender.FlatStyle = FlatStyle.Popup;
+            lblGender.Location = new Point(352, 270);
+            lblGender.Name = "lblGender";
+            lblGender.Size = new Size(0, 20);
+            lblGender.TabIndex = 24;
+            lblGender.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // User_Home_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -411,5 +436,7 @@
         private Label label4;
         private TextBox tbPassword;
         private Button btnSave;
+        private Label lblGender;
+        private Label label5;
     }
 }

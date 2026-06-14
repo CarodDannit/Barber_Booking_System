@@ -27,7 +27,7 @@ namespace Barber_Booking_System_EF
         {
             tbName.Text = customer.Name;
             tbEmail.Text = customer.Email;
-            tbPhone.Text = customer.Phone;
+           
 
             dgvBookings.AutoGenerateColumns = false;
             dgvBookings.DataSource = _db.Bookings
@@ -75,7 +75,7 @@ namespace Barber_Booking_System_EF
         {
             tbEmail.ReadOnly = false;
             tbName.ReadOnly = false;
-            tbPhone.ReadOnly = false;
+            
 
             label6.Visible = true;
             tbPassword.Visible = true;
@@ -87,7 +87,7 @@ namespace Barber_Booking_System_EF
         {
             tbEmail.ReadOnly = true;
             tbName.ReadOnly = true;
-            tbPhone.ReadOnly = true;
+            
 
             label6.Visible = false;
             tbPassword.Visible = false;
