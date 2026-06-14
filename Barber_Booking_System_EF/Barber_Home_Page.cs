@@ -34,6 +34,46 @@ namespace Barber_Booking_System_EF
 
         }
 
+        private void loadBooking()
+        {
+
+            dgvBookings.AutoGenerateColumns = false;
+            dgvBookings.DataSource = _db.Bookings
+                .Where(bk => bk.BarberId == barber.Id)
+                .Select(bk => new
+                {
+                    bk.Id,
+                    bk.Date,
+                    bk.Description,
+                    bk.OutletId,
+                    oLocation = bk.Outlet.Location,
+                    bk.CustId,
+                    cName = bk.Cust.Name,
+                    bk.ServiceId,
+                    sName = bk.Service.Name,
+                    bk.TimeslotId,
+                    bk.Timeslot.Time,
+                    bk.Status
+                })
+                .ToList();
+        }
+
+        private void loadBarber()
+        {
+
+            dgvBarber.AutoGenerateColumns = false;
+            dgvBarber.DataSource = _db.Barbers
+                .Select(br => new
+                {
+                    br.Id,
+                    br.Name,
+                    br.Email,
+                    br.Gender,
+                    oLocation = br.Outlet.Location
+                })
+                .ToList();
+        }
+
         private async void Barber_Home_Page_Load(object sender, EventArgs e)
         {
             tbId.Text = barber.Id.ToString();
@@ -101,38 +141,8 @@ namespace Barber_Booking_System_EF
                 pictureBoxBarber.Image = Properties.Resources.rukia04;
             }
 
-
-            dgvBookings.AutoGenerateColumns = false;
-            dgvBookings.DataSource = _db.Bookings
-                .Where(bk => bk.BarberId == barber.Id)
-                .Select(bk => new
-                {
-                    bk.Id,
-                    bk.Date,
-                    bk.Description,
-                    bk.OutletId,
-                    oLocation = bk.Outlet.Location,
-                    bk.CustId,
-                    cName = bk.Cust.Name,
-                    bk.ServiceId,
-                    sName = bk.Service.Name,
-                    bk.TimeslotId,
-                    bk.Timeslot.Time,
-                    bk.Status
-                })
-                .ToList();
-
-            dgvBarber.AutoGenerateColumns = false;
-            dgvBarber.DataSource = _db.Barbers
-                .Select(br => new
-                {
-                    br.Id,
-                    br.Name,
-                    br.Email,
-                    br.Gender,
-                    oLocation = br.Outlet.Location
-                })
-                .ToList();
+            loadBarber();
+            loadBooking();
         }
 
         private void btnAddBarber_Click(object sender, EventArgs e)
@@ -140,12 +150,11 @@ namespace Barber_Booking_System_EF
             var bbS = new Barber_Signup_Page();
             this.Hide();
             var resultSignUp = bbS.ShowDialog();
-            if (resultSignUp == DialogResult.Cancel)
-            {
-                this.Show();
-                bbS.Close();
-            }
-            else this.Close();
+            if (resultSignUp == DialogResult.OK)
+                loadBarber();
+
+            this.Show();
+            bbS.Close();
         }
 
         private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -172,15 +181,15 @@ namespace Barber_Booking_System_EF
         {
 
 
-            var bookingId = _db.Bookings
-                            .Include(b => b.Service)
-                            .Include(b => b.Cust)
-                            .Include(b => b.Outlet)
-                            .Include(b => b.Timeslot)
-                            .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
+            //var bookingId = _db.Bookings
+            //                .Include(b => b.Service)
+            //                .Include(b => b.Cust)
+            //                .Include(b => b.Outlet)
+            //                .Include(b => b.Timeslot)
+            //                .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
 
-            Check_Barber_Booking_Page checkBooking = new Check_Barber_Booking_Page(bookingId);
-            checkBooking.Show();
+            //Check_Barber_Booking_Page checkBooking = new Check_Barber_Booking_Page(bookingId);
+            //checkBooking.Show();
         }
 
         private void dgvBarber_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -253,6 +262,11 @@ namespace Barber_Booking_System_EF
         }
 
         private void tbName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label90_Click(object sender, EventArgs e)
         {
 
         }
@@ -372,6 +386,51 @@ namespace Barber_Booking_System_EF
         }
 
         private void tbBarberEmail_TextChanged(object sender, EventArgs e)
+        private void btnDeleteBarber_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbBarberId.Text)) return;
+
+            int barberId = int.Parse(tbBarberId.Text);
+
+            var barber = _db.Barbers.Include(b => b.Services).FirstOrDefault(b => b.Id == barberId);
+
+
+
+            if (barber == null)
+            {
+                MessageBox.Show("Barber not found");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this barber?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                barber.Services.Clear();
+                _db.Remove(barber);
+                _db.SaveChanges();
+                MessageBox.Show("Barber deleted successfully");
+
+
+                loadBarber();
+                tbBarberId.Text = "";
+                tbBarberName.Text = "";
+                tbBarberEmail.Text = "";
+                tbBarberGender.Text = "";
+                tbBarberOutlet.Text = "";
+            }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListTimeSlot_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

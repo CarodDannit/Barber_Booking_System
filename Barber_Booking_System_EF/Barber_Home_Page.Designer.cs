@@ -100,7 +100,6 @@
             tbBarberOutlet = new TextBox();
             tbBarberName = new TextBox();
             tbBarberId = new TextBox();
-            btnUpdateBarber = new Button();
             btnDeleteBarber = new Button();
             label18 = new Label();
             label21 = new Label();
@@ -510,35 +509,34 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
             tabPage2.UseVisualStyleBackColor = true;
-            tabPage2.Click += tabPage2_Click_2;
             // 
             // checkedListServices
             // 
             checkedListServices.FormattingEnabled = true;
-            checkedListServices.Location = new Point(562, 224);
+            checkedListServices.Location = new Point(49, 416);
+            checkedListServices.Margin = new Padding(2, 2, 2, 2);
             checkedListServices.Name = "checkedListServices";
-            checkedListServices.Size = new Size(222, 136);
+            checkedListServices.Size = new Size(222, 114);
             checkedListServices.TabIndex = 87;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(557, 197);
-            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(49, 386);
+            label11.Margin = new Padding(1, 0, 1, 0);
             label11.Name = "label11";
-            label11.Size = new Size(94, 29);
+            label11.Size = new Size(78, 25);
             label11.TabIndex = 86;
             label11.Text = "Servies";
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(pictureBoxBarber);
-            groupBox1.Location = new Point(389, 55);
-            groupBox1.Margin = new Padding(4);
+            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(610, 54);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(154, 163);
+            groupBox1.Size = new Size(229, 221);
             groupBox1.TabIndex = 82;
             groupBox1.TabStop = false;
             groupBox1.Text = "Barber Photo Profile";
@@ -546,10 +544,9 @@
             // pictureBoxBarber
             // 
             pictureBoxBarber.Image = Properties.Resources.rukia04;
-            pictureBoxBarber.Location = new Point(7, 22);
-            pictureBoxBarber.Margin = new Padding(4);
+            pictureBoxBarber.Location = new Point(6, 26);
             pictureBoxBarber.Name = "pictureBoxBarber";
-            pictureBoxBarber.Size = new Size(140, 134);
+            pictureBoxBarber.Size = new Size(217, 183);
             pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxBarber.TabIndex = 25;
             pictureBoxBarber.TabStop = false;
@@ -557,10 +554,12 @@
             // checkedListTimeSlot
             // 
             checkedListTimeSlot.FormattingEnabled = true;
-            checkedListTimeSlot.Location = new Point(562, 55);
+            checkedListTimeSlot.Location = new Point(301, 416);
+            checkedListTimeSlot.Margin = new Padding(2, 2, 2, 2);
             checkedListTimeSlot.Name = "checkedListTimeSlot";
-            checkedListTimeSlot.Size = new Size(222, 92);
+            checkedListTimeSlot.Size = new Size(236, 114);
             checkedListTimeSlot.TabIndex = 74;
+            checkedListTimeSlot.SelectedIndexChanged += checkedListTimeSlot_SelectedIndexChanged;
             // 
             // rbMale
             // 
@@ -568,7 +567,8 @@
             rbMale.Checked = true;
             rbMale.Font = new Font("Segoe UI", 12F);
             rbMale.ForeColor = Color.FromArgb(128, 128, 255);
-            rbMale.Location = new Point(120, 209);
+            rbMale.Location = new Point(162, 262);
+            rbMale.Margin = new Padding(2, 2, 2, 2);
             rbMale.Name = "rbMale";
             rbMale.Size = new Size(75, 32);
             rbMale.TabIndex = 0;
@@ -581,7 +581,8 @@
             rbFemale.AutoSize = true;
             rbFemale.Font = new Font("Segoe UI", 12F);
             rbFemale.ForeColor = Color.FromArgb(255, 128, 128);
-            rbFemale.Location = new Point(201, 209);
+            rbFemale.Location = new Point(257, 262);
+            rbFemale.Margin = new Padding(2, 2, 2, 2);
             rbFemale.Name = "rbFemale";
             rbFemale.Size = new Size(91, 32);
             rbFemale.TabIndex = 1;
@@ -592,8 +593,7 @@
             // 
             cbOutlet.Font = new Font("Microsoft Sans Serif", 12F);
             cbOutlet.FormattingEnabled = true;
-            cbOutlet.Location = new Point(120, 253);
-            cbOutlet.Margin = new Padding(4);
+            cbOutlet.Location = new Point(162, 323);
             cbOutlet.Name = "cbOutlet";
             cbOutlet.Size = new Size(243, 33);
             cbOutlet.TabIndex = 73;
@@ -601,8 +601,8 @@
             // tbPassword
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F);
-            tbPassword.Location = new Point(120, 173);
-            tbPassword.Margin = new Padding(2);
+            tbPassword.Location = new Point(162, 209);
+            tbPassword.Margin = new Padding(1, 1, 1, 1);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(243, 30);
             tbPassword.TabIndex = 24;
@@ -611,8 +611,8 @@
             // tbId
             // 
             tbId.Font = new Font("Microsoft Sans Serif", 12F);
-            tbId.Location = new Point(120, 52);
-            tbId.Margin = new Padding(2);
+            tbId.Location = new Point(162, 64);
+            tbId.Margin = new Padding(1, 1, 1, 1);
             tbId.Name = "tbId";
             tbId.ReadOnly = true;
             tbId.Size = new Size(243, 30);
@@ -623,20 +623,21 @@
             // label90
             // 
             label90.AutoSize = true;
-            label90.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label90.Location = new Point(562, 28);
-            label90.Margin = new Padding(2, 0, 2, 0);
+            label90.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label90.Location = new Point(301, 386);
+            label90.Margin = new Padding(1, 0, 1, 0);
             label90.Name = "label90";
-            label90.Size = new Size(117, 29);
+            label90.Size = new Size(95, 25);
             label90.TabIndex = 75;
             label90.Text = "Time Slot";
+            label90.Click += this.label90_Click;
             // 
             // label80
             // 
             label80.AutoSize = true;
             label80.Font = new Font("Microsoft Sans Serif", 12F);
-            label80.Location = new Point(13, 255);
-            label80.Margin = new Padding(2, 0, 2, 0);
+            label80.Location = new Point(49, 326);
+            label80.Margin = new Padding(1, 0, 1, 0);
             label80.Name = "label80";
             label80.Size = new Size(64, 25);
             label80.TabIndex = 23;
@@ -646,8 +647,8 @@
             // 
             label70.AutoSize = true;
             label70.Font = new Font("Microsoft Sans Serif", 12F);
-            label70.Location = new Point(8, 213);
-            label70.Margin = new Padding(2, 0, 2, 0);
+            label70.Location = new Point(49, 267);
+            label70.Margin = new Padding(1, 0, 1, 0);
             label70.Name = "label70";
             label70.Size = new Size(77, 25);
             label70.TabIndex = 22;
@@ -657,8 +658,8 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F);
-            label6.Location = new Point(11, 134);
-            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Location = new Point(49, 161);
+            label6.Margin = new Padding(1, 0, 1, 0);
             label6.Name = "label6";
             label6.Size = new Size(60, 25);
             label6.TabIndex = 21;
@@ -668,8 +669,8 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 12F);
-            label5.Location = new Point(11, 172);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Location = new Point(49, 209);
+            label5.Margin = new Padding(1, 0, 1, 0);
             label5.Name = "label5";
             label5.Size = new Size(98, 25);
             label5.TabIndex = 19;
@@ -679,8 +680,8 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F);
-            label4.Location = new Point(11, 93);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(49, 112);
+            label4.Margin = new Padding(1, 0, 1, 0);
             label4.Name = "label4";
             label4.Size = new Size(64, 25);
             label4.TabIndex = 18;
@@ -690,8 +691,8 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(11, 55);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(49, 67);
+            label3.Margin = new Padding(1, 0, 1, 0);
             label3.Name = "label3";
             label3.Size = new Size(94, 25);
             label3.TabIndex = 17;
@@ -699,10 +700,11 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(353, 319);
-            btnLogout.Margin = new Padding(2);
+            btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogout.Location = new Point(761, 582);
+            btnLogout.Margin = new Padding(1, 1, 1, 1);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(133, 24);
+            btnLogout.Size = new Size(123, 42);
             btnLogout.TabIndex = 15;
             btnLogout.Text = "Log out";
             btnLogout.UseVisualStyleBackColor = true;
@@ -711,10 +713,11 @@
             // btnSave
             // 
             btnSave.BackColor = Color.FromArgb(192, 255, 192);
-            btnSave.Location = new Point(79, 319);
-            btnSave.Margin = new Padding(2);
+            btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSave.Location = new Point(616, 582);
+            btnSave.Margin = new Padding(1, 1, 1, 1);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(133, 24);
+            btnSave.Size = new Size(123, 42);
             btnSave.TabIndex = 12;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -722,10 +725,11 @@
             // 
             // btnUpload
             // 
-            btnUpload.Location = new Point(389, 223);
+            btnUpload.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUpload.Location = new Point(664, 279);
             btnUpload.Margin = new Padding(1);
             btnUpload.Name = "btnUpload";
-            btnUpload.Size = new Size(154, 24);
+            btnUpload.Size = new Size(123, 42);
             btnUpload.TabIndex = 83;
             btnUpload.Text = "Upload";
             btnUpload.UseVisualStyleBackColor = true;
@@ -734,8 +738,8 @@
             // tbEmail
             // 
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F);
-            tbEmail.Location = new Point(120, 132);
-            tbEmail.Margin = new Padding(2);
+            tbEmail.Location = new Point(162, 158);
+            tbEmail.Margin = new Padding(1, 1, 1, 1);
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(243, 30);
             tbEmail.TabIndex = 14;
@@ -744,8 +748,8 @@
             // tbName
             // 
             tbName.Font = new Font("Microsoft Sans Serif", 12F);
-            tbName.Location = new Point(120, 91);
-            tbName.Margin = new Padding(2);
+            tbName.Location = new Point(162, 110);
+            tbName.Margin = new Padding(1, 1, 1, 1);
             tbName.Name = "tbName";
             tbName.Size = new Size(243, 30);
             tbName.TabIndex = 13;
@@ -770,7 +774,6 @@
             tabPage3.Controls.Add(tbBarberOutlet);
             tabPage3.Controls.Add(tbBarberName);
             tabPage3.Controls.Add(tbBarberId);
-            tabPage3.Controls.Add(btnUpdateBarber);
             tabPage3.Controls.Add(btnDeleteBarber);
             tabPage3.Controls.Add(label18);
             tabPage3.Controls.Add(label21);
@@ -792,11 +795,10 @@
             // 
             btnAddBarber.BackColor = Color.DeepSkyBlue;
             btnAddBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddBarber.ForeColor = Color.White;
-            btnAddBarber.Location = new Point(277, 553);
+            btnAddBarber.Location = new Point(223, 577);
             btnAddBarber.Margin = new Padding(2, 3, 2, 3);
             btnAddBarber.Name = "btnAddBarber";
-            btnAddBarber.Size = new Size(102, 68);
+            btnAddBarber.Size = new Size(157, 44);
             btnAddBarber.TabIndex = 59;
             btnAddBarber.Text = "create barber";
             btnAddBarber.UseVisualStyleBackColor = false;
@@ -847,22 +849,10 @@
             tbBarberId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberId.Location = new Point(128, 314);
             tbBarberId.Name = "tbBarberId";
+            tbBarberId.ReadOnly = true;
             tbBarberId.Size = new Size(252, 34);
             tbBarberId.TabIndex = 60;
             tbBarberId.TextChanged += tbBarberId_TextChanged;
-            // 
-            // btnUpdateBarber
-            // 
-            btnUpdateBarber.BackColor = Color.DeepSkyBlue;
-            btnUpdateBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdateBarber.ForeColor = Color.White;
-            btnUpdateBarber.Location = new Point(151, 553);
-            btnUpdateBarber.Margin = new Padding(3, 4, 3, 4);
-            btnUpdateBarber.Name = "btnUpdateBarber";
-            btnUpdateBarber.Size = new Size(102, 68);
-            btnUpdateBarber.TabIndex = 58;
-            btnUpdateBarber.Text = "update barber";
-            btnUpdateBarber.UseVisualStyleBackColor = false;
             // 
             // btnDeleteBarber
             // 
@@ -872,10 +862,11 @@
             btnDeleteBarber.Location = new Point(30, 553);
             btnDeleteBarber.Margin = new Padding(3, 4, 3, 4);
             btnDeleteBarber.Name = "btnDeleteBarber";
-            btnDeleteBarber.Size = new Size(102, 68);
+            btnDeleteBarber.Size = new Size(157, 44);
             btnDeleteBarber.TabIndex = 57;
             btnDeleteBarber.Text = "delete barber";
             btnDeleteBarber.UseVisualStyleBackColor = false;
+            btnDeleteBarber.Click += btnDeleteBarber_Click;
             // 
             // label18
             // 
@@ -1199,7 +1190,6 @@
         private Label label23;
         private Label label24;
         private Button btnDeleteBarber;
-        private Button btnUpdateBarber;
         private TextBox tbBarberId;
         private TextBox tbBarberEmail;
         private TextBox tbBarberGender;

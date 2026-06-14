@@ -1,4 +1,5 @@
 ﻿using Barber_Booking_System_EF.models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,8 +23,7 @@ namespace Barber_Booking_System_EF
             customer = c;
         }
 
-        // load data when form loads
-        private void User_Home_Page_Load(object sender, EventArgs e)
+        private void LoadBooking()
         {
             tbName.Text = customer.Name;
             tbEmail.Text = customer.Email;
@@ -48,7 +48,15 @@ namespace Barber_Booking_System_EF
                     b.Status
                 })
                 .ToList();
+        }
 
+        // load data when form loads
+        private void User_Home_Page_Load(object sender, EventArgs e)
+        {
+            tbName.Text = customer.Name;
+            tbEmail.Text = customer.Email;
+
+            LoadBooking();
 
         }
 
@@ -57,6 +65,30 @@ namespace Barber_Booking_System_EF
             if (e.RowIndex < 0) return;
         }
 
+        private void dgvBookings_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgvBookings.Rows[e.RowIndex];
+
+            lblBookingId.Text = row.Cells["Id"].Value?.ToString();
+            lblService.Text = row.Cells["ServiceName"].Value?.ToString();
+            lblBarber.Text = row.Cells["BarberName"].Value?.ToString();
+            lblOutlet.Text = row.Cells["OutletLocation"].Value?.ToString();
+            lblDate.Text = row.Cells["Date"].Value.ToString();
+            lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
+            lblStatus.Text = row.Cells["Status"].Value?.ToString();
+        }
+
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            User_Edit_Profile editProf = new User_Edit_Profile();
+            editProf.Show();
+            this.Hide();
+        }
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -129,7 +161,74 @@ namespace Barber_Booking_System_EF
         private void btnNewBooking_Click(object sender, EventArgs e)
         {
             Book_Appointment_Page newbookingpage = new Book_Appointment_Page(customer);
-            newbookingpage.ShowDialog();
+            this.Hide();
+            var result = newbookingpage.ShowDialog();
+            if (result == DialogResult.OK)
+                LoadBooking();
+            newbookingpage.Close();
+            this.Show();
+        }
+
+        private void btnDeleteBooking_Click(object sender, EventArgs e)
+        {
+            if (lblBookingId.Text == null || lblBookingId.Text == "")
+            {
+                MessageBox.Show("Pls select a booking"); return;
+            }
+
+            int bookingId = int.Parse(lblBookingId.Text);
+
+
+            var booking = _db.Bookings.FirstOrDefault(b => b.Id == bookingId);
+            if (booking == null)
+            {
+                MessageBox.Show("Booking not found");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Are you confirm to delete this booking? " + lblBookingId.Text,
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                _db.Bookings.Remove(booking);
+                _db.SaveChanges();
+
+                MessageBox.Show("Booking deleted successfully");
+
+                LoadBooking();
+                lblBookingId.Text = "";
+                lblService.Text = "";
+                lblBarber.Text = "";
+                lblOutlet.Text = "";
+                lblDate.Text = "";
+                lblTimeSlot.Text = "";
+                lblStatus.Text = "";
+            }
+        }
+
+        private void btnViewDetails_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(lblBookingId.Text)) return;
+
+            int bookingId = int.Parse(lblBookingId.Text);
+            var booking = _db.Bookings
+                .Include(b => b.Barber)
+                .Include(b => b.Outlet)
+                .Include(b => b.Service)
+                .Include(b => b.Timeslot)
+                .Where(b => b.Id == bookingId)
+                .FirstOrDefault();
+
+            var viewdetailspage = new ViewBookingDetails_Page(booking);
+            var result = viewdetailspage.ShowDialog();
+            if(result == DialogResult.OK)
+                LoadBooking();
+
+            viewdetailspage.Dispose();
         }
 
         private void rbFemale_CheckedChanged(object sender, EventArgs e)
