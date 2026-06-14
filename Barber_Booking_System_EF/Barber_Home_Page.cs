@@ -56,5 +56,25 @@ namespace Barber_Booking_System_EF
             }
             else this.Close();
         }
+
+        private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+        }
+
+        private void dgvBookings_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgvBookings.Rows[e.RowIndex];
+
+            lblBookingId.Text = row.Cells["Id"].Value?.ToString();
+            lblService.Text = row.Cells["ServiceName"].Value?.ToString();
+            lblCustomer.Text = row.Cells["cName"].Value?.ToString();
+            lblOutlet.Text = row.Cells["OutletLocation"].Value?.ToString();
+            lblDate.Text = row.Cells["Date"].Value.ToString();
+            lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
+            lblStatus.Text = row.Cells["Status"].Value?.ToString();
+        }
     }
 }
