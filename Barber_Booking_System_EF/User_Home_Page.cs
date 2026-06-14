@@ -74,8 +74,6 @@ namespace Barber_Booking_System_EF
             lblDate.Text = row.Cells["Date"].Value.ToString();
             lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
-
-            //MessageBox.Show("label booking id = " + lblBookingId.Text);
         }
 
 

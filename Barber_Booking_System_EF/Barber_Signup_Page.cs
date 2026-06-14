@@ -97,11 +97,11 @@ namespace Barber_Booking_System_EF
                 OutletId = selectedOutlet.Id,
                 Services = selectedServices
             };
-            MessageBox.Show(newBarber.Id.ToString());
             Helper._db.Add(newBarber);
             Helper._db.SaveChanges();
 
-            
+            MessageBox.Show("Barber Registered Successfully!");
+            this.DialogResult = DialogResult.OK;
         }
 
         private async void Barber_Signup_Page_Load(object sender, EventArgs e)
