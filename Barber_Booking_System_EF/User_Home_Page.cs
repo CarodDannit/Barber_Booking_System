@@ -23,17 +23,8 @@ namespace Barber_Booking_System_EF
             customer = c;
         }
 
-        // load data when form loads
-        private void User_Home_Page_Load(object sender, EventArgs e)
+        private void LoadBooking()
         {
-            Console.WriteLine("load hometyrtyrtyrtyrt page");
-            tbName.Text = customer.Name;
-            tbEmail.Text = customer.Email;
-
-            //bookings = _db.Bookings
-            //    .Where(b => b.CustId == customer.Id)
-            //    .ToList();
-
             dgvBookings.AutoGenerateColumns = false;
             dgvBookings.DataSource = _db.Bookings
                 .Where(b => b.CustId == customer.Id)
@@ -53,7 +44,15 @@ namespace Barber_Booking_System_EF
                     b.Status
                 })
                 .ToList();
+        }
 
+        // load data when form loads
+        private void User_Home_Page_Load(object sender, EventArgs e)
+        {
+            tbName.Text = customer.Name;
+            tbEmail.Text = customer.Email;
+
+            LoadBooking();
 
         }
 
@@ -75,20 +74,12 @@ namespace Barber_Booking_System_EF
             lblDate.Text = row.Cells["Date"].Value.ToString();
             lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
+
+            MessageBox.Show("label booking id = " + lblBookingId.Text);
         }
 
-        private void btnCheckBooking_Click(object sender, EventArgs e)
-        {
-            var bookingId = _db.Bookings
-                            .Include(b => b.Service)
-                            .Include(b => b.Barber)
-                            .Include(b => b.Outlet)
-                            .Include(b => b.Timeslot)
-                            .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
 
-            Check_User_Booking_Page checkBooking = new Check_User_Booking_Page(bookingId);
-            checkBooking.Show();
-        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -96,11 +87,100 @@ namespace Barber_Booking_System_EF
             editProf.Show();
             this.Hide();
         }
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            tbEmail.ReadOnly = false;
+            tbName.ReadOnly = false;
+
+
+            label6.Visible = true;
+            tbPassword.Visible = true;
+            tbPassword.ReadOnly = false;
+            btnSave.Visible = true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            tbEmail.ReadOnly = true;
+            tbName.ReadOnly = true;
+
+
+            label6.Visible = false;
+            tbPassword.Visible = false;
+            tbPassword.ReadOnly = true;
+            btnSave.Visible = false;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide();
+            User_Login_Page loginPage = new User_Login_Page();
+            loginPage.ShowDialog();
+        }
 
         private void btnNewBooking_Click(object sender, EventArgs e)
         {
             Book_Appointment_Page newbookingpage = new Book_Appointment_Page(customer);
-            newbookingpage.ShowDialog();
+            this.Hide();
+            var result = newbookingpage.ShowDialog();
+            if (result == DialogResult.OK)
+                LoadBooking();
+            newbookingpage.Close();
+            this.Show();
         }
+
+        private void btnDeleteBooking_Click(object sender, EventArgs e)
+        {
+            if (lblBookingId.Text == null || lblBookingId.Text == "")
+            {
+                MessageBox.Show("Pls select a booking"); return;
+            }
+
+            int bookingId = int.Parse(lblBookingId.Text);
+
+
+            var booking = _db.Bookings.FirstOrDefault(b => b.Id == bookingId);
+            if (booking == null)
+            {
+                MessageBox.Show("Booking not found");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Are you confirm to delete this booking? " + lblBookingId.Text,
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                _db.Bookings.Remove(booking);
+                _db.SaveChanges();
+
+                MessageBox.Show("Booking deleted successfully");
+
+                LoadBooking();
+                lblBookingId.Text = "";
+                lblService.Text = "";
+                lblBarber.Text = "";
+                lblOutlet.Text = "";
+                lblDate.Text = "";
+                lblTimeSlot.Text = "";
+                lblStatus.Text = "";
+            }
+        }
+
+       
     }
 }
