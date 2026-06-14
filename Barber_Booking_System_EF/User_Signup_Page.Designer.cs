@@ -32,8 +32,6 @@
             panel1 = new Panel();
             tbPassword = new TextBox();
             label6 = new Label();
-            tbPhone = new TextBox();
-            label5 = new Label();
             tbUsername = new TextBox();
             btnUserSignup = new Button();
             label2 = new Label();
@@ -62,8 +60,6 @@
             panel1.BackColor = SystemColors.Control;
             panel1.Controls.Add(tbPassword);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(tbPhone);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(tbUsername);
             panel1.Controls.Add(btnUserSignup);
             panel1.Controls.Add(label2);
@@ -80,7 +76,7 @@
             // tbPassword
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPassword.Location = new Point(54, 389);
+            tbPassword.Location = new Point(46, 297);
             tbPassword.Margin = new Padding(3, 4, 3, 4);
             tbPassword.Name = "tbPassword";
             tbPassword.PasswordChar = '*';
@@ -91,31 +87,11 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(49, 354);
+            label6.Location = new Point(46, 258);
             label6.Name = "label6";
             label6.Size = new Size(96, 25);
             label6.TabIndex = 11;
             label6.Text = "password";
-            // 
-            // tbPhone
-            // 
-            tbPhone.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPhone.Location = new Point(50, 286);
-            tbPhone.Margin = new Padding(3, 4, 3, 4);
-            tbPhone.Name = "tbPhone";
-            tbPhone.PasswordChar = '*';
-            tbPhone.Size = new Size(340, 30);
-            tbPhone.TabIndex = 10;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(46, 251);
-            label5.Name = "label5";
-            label5.Size = new Size(94, 25);
-            label5.TabIndex = 9;
-            label5.Text = "phone no";
             // 
             // tbUsername
             // 
@@ -224,8 +200,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbPhone;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.Button btnUserSignup;
         private System.Windows.Forms.Label label2;

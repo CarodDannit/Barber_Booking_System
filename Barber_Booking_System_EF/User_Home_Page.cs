@@ -1,5 +1,4 @@
 ﻿using Barber_Booking_System_EF.models;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,13 +25,9 @@ namespace Barber_Booking_System_EF
         // load data when form loads
         private void User_Home_Page_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("load hometyrtyrtyrtyrt page");
             tbName.Text = customer.Name;
             tbEmail.Text = customer.Email;
-
-            //bookings = _db.Bookings
-            //    .Where(b => b.CustId == customer.Id)
-            //    .ToList();
+           
 
             dgvBookings.AutoGenerateColumns = false;
             dgvBookings.DataSource = _db.Bookings
@@ -62,39 +57,52 @@ namespace Barber_Booking_System_EF
             if (e.RowIndex < 0) return;
         }
 
-        private void dgvBookings_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-
-            DataGridViewRow row = dgvBookings.Rows[e.RowIndex];
-
-            lblBookingId.Text = row.Cells["Id"].Value?.ToString();
-            lblService.Text = row.Cells["ServiceName"].Value?.ToString();
-            lblBarber.Text = row.Cells["BarberName"].Value?.ToString();
-            lblOutlet.Text = row.Cells["OutletLocation"].Value?.ToString();
-            lblDate.Text = row.Cells["Date"].Value.ToString();
-            lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
-            lblStatus.Text = row.Cells["Status"].Value?.ToString();
-        }
-
-        private void btnCheckBooking_Click(object sender, EventArgs e)
-        {
-            var bookingId = _db.Bookings
-                            .Include(b => b.Service)
-                            .Include(b => b.Barber)
-                            .Include(b => b.Outlet)
-                            .Include(b => b.Timeslot)
-                            .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
-
-            Check_User_Booking_Page checkBooking = new Check_User_Booking_Page(bookingId);
-            checkBooking.Show();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             User_Edit_Profile editProf = new User_Edit_Profile();
             editProf.Show();
             this.Hide();
+        }
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            tbEmail.ReadOnly = false;
+            tbName.ReadOnly = false;
+            
+
+            label6.Visible = true;
+            tbPassword.Visible = true;
+            tbPassword.ReadOnly = false;
+            btnSave.Visible = true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            tbEmail.ReadOnly = true;
+            tbName.ReadOnly = true;
+            
+
+            label6.Visible = false;
+            tbPassword.Visible = false;
+            tbPassword.ReadOnly = true;
+            btnSave.Visible = false;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide();
+            User_Login_Page loginPage = new User_Login_Page();
+            loginPage.ShowDialog();
         }
 
         private void btnNewBooking_Click(object sender, EventArgs e)
