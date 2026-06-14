@@ -215,6 +215,7 @@ namespace Barber_Booking_System_EF
             _db.SaveChanges();
 
             MessageBox.Show("Booked successfully! Maybe close this form.");
+            this.DialogResult = DialogResult.OK;
         }
     }
 }
