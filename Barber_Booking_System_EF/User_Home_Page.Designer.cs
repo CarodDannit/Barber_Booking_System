@@ -72,36 +72,38 @@
             tabPage2.SuspendLayout();
             SuspendLayout();
             // 
-            // tabPage2
+            // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(6, 4);
+            label1.Location = new Point(9, 6);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(186, 46);
+            label1.Size = new Size(257, 64);
             label1.TabIndex = 0;
             label1.Text = "Bookings";
             // 
             // btnNewBooking
             // 
             btnNewBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNewBooking.Location = new Point(717, 543);
-            btnNewBooking.Margin = new Padding(3, 4, 3, 4);
+            btnNewBooking.Location = new Point(1076, 814);
+            btnNewBooking.Margin = new Padding(4, 6, 4, 6);
             btnNewBooking.Name = "btnNewBooking";
-            btnNewBooking.Size = new Size(187, 51);
+            btnNewBooking.Size = new Size(280, 76);
             btnNewBooking.TabIndex = 10;
             btnNewBooking.Text = "new booking";
             btnNewBooking.UseVisualStyleBackColor = true;
+            btnNewBooking.Click += btnNewBooking_Click;
             // 
-            // label2
+            // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(12, 15);
-            tabControl1.Margin = new Padding(3, 4, 3, 4);
+            tabControl1.Location = new Point(18, 22);
+            tabControl1.Margin = new Padding(4, 6, 4, 6);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(918, 640);
+            tabControl1.Size = new Size(1377, 960);
             tabControl1.TabIndex = 11;
             // 
             // tabPage1
@@ -124,11 +126,11 @@
             tabPage1.Controls.Add(dgvBookings);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(btnNewBooking);
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Margin = new Padding(3, 4, 3, 4);
+            tabPage1.Location = new Point(4, 39);
+            tabPage1.Margin = new Padding(4, 6, 4, 6);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3, 4, 3, 4);
-            tabPage1.Size = new Size(910, 607);
+            tabPage1.Padding = new Padding(4, 6, 4, 6);
+            tabPage1.Size = new Size(1369, 917);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Bookings";
             tabPage1.UseVisualStyleBackColor = true;
@@ -137,72 +139,79 @@
             // 
             lblService.AutoSize = true;
             lblService.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblService.Location = new Point(154, 345);
+            lblService.Location = new Point(231, 518);
+            lblService.Margin = new Padding(4, 0, 4, 0);
             lblService.Name = "lblService";
-            lblService.Size = new Size(0, 28);
+            lblService.Size = new Size(0, 38);
             lblService.TabIndex = 26;
             // 
             // lblBarber
             // 
             lblBarber.AutoSize = true;
             lblBarber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBarber.Location = new Point(154, 373);
+            lblBarber.Location = new Point(231, 560);
+            lblBarber.Margin = new Padding(4, 0, 4, 0);
             lblBarber.Name = "lblBarber";
-            lblBarber.Size = new Size(0, 28);
+            lblBarber.Size = new Size(0, 38);
             lblBarber.TabIndex = 25;
             // 
             // lblOutlet
             // 
             lblOutlet.AutoSize = true;
             lblOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOutlet.Location = new Point(154, 401);
+            lblOutlet.Location = new Point(231, 602);
+            lblOutlet.Margin = new Padding(4, 0, 4, 0);
             lblOutlet.Name = "lblOutlet";
-            lblOutlet.Size = new Size(0, 28);
+            lblOutlet.Size = new Size(0, 38);
             lblOutlet.TabIndex = 24;
             // 
             // lblDate
             // 
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDate.Location = new Point(154, 429);
+            lblDate.Location = new Point(231, 644);
+            lblDate.Margin = new Padding(4, 0, 4, 0);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(0, 28);
+            lblDate.Size = new Size(0, 38);
             lblDate.TabIndex = 23;
             // 
             // lblTimeSlot
             // 
             lblTimeSlot.AutoSize = true;
             lblTimeSlot.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTimeSlot.Location = new Point(154, 457);
+            lblTimeSlot.Location = new Point(231, 686);
+            lblTimeSlot.Margin = new Padding(4, 0, 4, 0);
             lblTimeSlot.Name = "lblTimeSlot";
-            lblTimeSlot.Size = new Size(0, 28);
+            lblTimeSlot.Size = new Size(0, 38);
             lblTimeSlot.TabIndex = 22;
             // 
             // lblStatus
             // 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(154, 485);
+            lblStatus.Location = new Point(231, 728);
+            lblStatus.Margin = new Padding(4, 0, 4, 0);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(0, 28);
+            lblStatus.Size = new Size(0, 38);
             lblStatus.TabIndex = 21;
             // 
             // lblBookingId
             // 
             lblBookingId.AutoSize = true;
             lblBookingId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBookingId.Location = new Point(154, 317);
+            lblBookingId.Location = new Point(231, 476);
+            lblBookingId.Margin = new Padding(4, 0, 4, 0);
             lblBookingId.Name = "lblBookingId";
-            lblBookingId.Size = new Size(0, 28);
+            lblBookingId.Size = new Size(0, 38);
             lblBookingId.TabIndex = 20;
             // 
             // btnCheckBooking
             // 
             btnCheckBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCheckBooking.Location = new Point(33, 543);
-            btnCheckBooking.Margin = new Padding(3, 4, 3, 4);
+            btnCheckBooking.Location = new Point(50, 814);
+            btnCheckBooking.Margin = new Padding(4, 6, 4, 6);
             btnCheckBooking.Name = "btnCheckBooking";
-            btnCheckBooking.Size = new Size(159, 51);
+            btnCheckBooking.Size = new Size(238, 76);
             btnCheckBooking.TabIndex = 19;
             btnCheckBooking.Text = "Check";
             btnCheckBooking.UseVisualStyleBackColor = true;
@@ -212,9 +221,10 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(33, 401);
+            label9.Location = new Point(50, 602);
+            label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new Size(67, 28);
+            label9.Size = new Size(94, 38);
             label9.TabIndex = 18;
             label9.Text = "Outlet";
             // 
@@ -222,9 +232,10 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(33, 457);
+            label8.Location = new Point(50, 686);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(89, 28);
+            label8.Size = new Size(125, 38);
             label8.TabIndex = 17;
             label8.Text = "TimeSlot";
             // 
@@ -232,9 +243,10 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(33, 485);
+            label7.Location = new Point(50, 728);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(65, 28);
+            label7.Size = new Size(91, 38);
             label7.TabIndex = 16;
             label7.Text = "Status";
             // 
@@ -242,9 +254,10 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(33, 429);
+            label6.Location = new Point(50, 644);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(53, 28);
+            label6.Size = new Size(75, 38);
             label6.TabIndex = 15;
             label6.Text = "Date";
             // 
@@ -252,9 +265,10 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(33, 373);
+            label5.Location = new Point(50, 560);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(69, 28);
+            label5.Size = new Size(98, 38);
             label5.TabIndex = 14;
             label5.Text = "Barber";
             // 
@@ -262,9 +276,10 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(33, 345);
+            label4.Location = new Point(50, 518);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(74, 28);
+            label4.Size = new Size(105, 38);
             label4.TabIndex = 13;
             label4.Text = "Service";
             // 
@@ -272,9 +287,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(33, 317);
+            label3.Location = new Point(50, 476);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(29, 28);
+            label3.Size = new Size(40, 38);
             label3.TabIndex = 12;
             label3.Text = "Id";
             // 
@@ -284,12 +300,11 @@
             dgvBookings.AllowUserToDeleteRows = false;
             dgvBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBookings.Columns.AddRange(new DataGridViewColumn[] { Id, Date, Description, OutletId, OutletLocation, BarberId, BarberName, ServiceId, ServiceName, TimeslotId, Time, Status });
-            dgvBookings.Location = new Point(33, 72);
-            dgvBookings.Margin = new Padding(2);
+            dgvBookings.Location = new Point(50, 108);
             dgvBookings.Name = "dgvBookings";
             dgvBookings.ReadOnly = true;
             dgvBookings.RowHeadersWidth = 72;
-            dgvBookings.Size = new Size(849, 219);
+            dgvBookings.Size = new Size(1274, 328);
             dgvBookings.TabIndex = 11;
             dgvBookings.CellClick += dgvBookings_CellClick;
             dgvBookings.CellContentClick += dgvBookings_CellContentClick;
@@ -402,77 +417,75 @@
             Status.ReadOnly = true;
             Status.Width = 175;
             // 
-            // button2
+            // tabPage2
             // 
             tabPage2.Controls.Add(btnLogout);
             tabPage2.Controls.Add(tbEmail);
             tabPage2.Controls.Add(tbName);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(button1);
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Margin = new Padding(3, 4, 3, 4);
+            tabPage2.Location = new Point(4, 39);
+            tabPage2.Margin = new Padding(4, 6, 4, 6);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(910, 607);
+            tabPage2.Padding = new Padding(4, 6, 4, 6);
+            tabPage2.Size = new Size(1369, 917);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(345, 445);
-            btnLogout.Margin = new Padding(2);
+            btnLogout.Location = new Point(518, 668);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(87, 27);
+            btnLogout.Size = new Size(130, 40);
             btnLogout.TabIndex = 12;
             btnLogout.Text = "Log out";
             btnLogout.UseVisualStyleBackColor = true;
             // 
             // tbEmail
             // 
-            tbEmail.Location = new Point(352, 210);
-            tbEmail.Margin = new Padding(2);
+            tbEmail.Location = new Point(528, 315);
             tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(118, 27);
+            tbEmail.Size = new Size(175, 35);
             tbEmail.TabIndex = 14;
             // 
             // tbName
             // 
-            tbName.Location = new Point(273, 126);
-            tbName.Margin = new Padding(2);
+            tbName.Location = new Point(410, 189);
             tbName.Name = "tbName";
-            tbName.Size = new Size(118, 27);
+            tbName.Size = new Size(175, 35);
             tbName.TabIndex = 13;
             // 
-            // label1
+            // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(6, 6);
+            label2.Location = new Point(9, 9);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(134, 46);
+            label2.Size = new Size(187, 64);
             label2.TabIndex = 11;
             label2.Text = "Profile";
             // 
-            // tabControl1
+            // button1
             // 
             button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(717, 494);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(1076, 741);
+            button1.Margin = new Padding(4, 6, 4, 6);
             button1.Name = "button1";
-            button1.Size = new Size(187, 51);
+            button1.Size = new Size(280, 76);
             button1.TabIndex = 12;
             button1.Text = "edit profile";
             button1.UseVisualStyleBackColor = true;
             // 
             // User_Home_Page
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lime;
-            ClientSize = new Size(942, 672);
+            ClientSize = new Size(1413, 1008);
             Controls.Add(tabControl1);
-            Margin = new Padding(3, 4, 3, 4);
+            Margin = new Padding(4, 6, 4, 6);
             Name = "User_Home_Page";
             Text = "User Home Page";
             Load += User_Home_Page_Load;
