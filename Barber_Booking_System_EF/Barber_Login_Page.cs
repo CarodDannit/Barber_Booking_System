@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//cghndjkvhejhbwwwwwww
+using Barber_Booking_System_EF.models;
 namespace Barber_Booking_System_EF
 {
     public partial class Barber_Login_Page : Form
     {
+        BekasIceCreamDbContext _db = Helper._db;
+
         public Barber_Login_Page()
         {
             InitializeComponent();
@@ -27,10 +29,24 @@ namespace Barber_Booking_System_EF
 
         private void btnBarberLogin_Click(object sender, EventArgs e)
         {
-            Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
-            this.Hide();
-            bsignupPage.ShowDialog();
-            this.Close();
+            var barBerFromDB = _db.Barbers.FirstOrDefault(c => c.Email == tbEmail.Text);
+            if (barBerFromDB == null)
+            {
+                MessageBox.Show("Email not found!");
+                return;
+            }
+            if (barBerFromDB.Password != tbPassword.Text)
+            {
+                MessageBox.Show("Incorrect password!");
+                return;
+            }
+                
+             MessageBox.Show("Barber Clear");
+
+            //Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
+            //this.Hide();
+            //bsignupPage.ShowDialog();
+            //this.Close();
         }
     }
 }
