@@ -386,6 +386,9 @@ namespace Barber_Booking_System_EF
         }
 
         private void tbBarberEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void btnDeleteBarber_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbBarberId.Text)) return;
@@ -423,11 +426,6 @@ namespace Barber_Booking_System_EF
                 tbBarberGender.Text = "";
                 tbBarberOutlet.Text = "";
             }
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void checkedListTimeSlot_SelectedIndexChanged(object sender, EventArgs e)

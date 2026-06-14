@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend skDefaultLegend12 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend();
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend skDefaultLegend2 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Barber_Home_Page));
-            LiveChartsCore.Drawing.Padding padding23 = new LiveChartsCore.Drawing.Padding();
-            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip skDefaultTooltip12 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip();
-            LiveChartsCore.Drawing.Padding padding24 = new LiveChartsCore.Drawing.Padding();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            LiveChartsCore.Drawing.Padding padding3 = new LiveChartsCore.Drawing.Padding();
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip skDefaultTooltip2 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip();
+            LiveChartsCore.Drawing.Padding padding4 = new LiveChartsCore.Drawing.Padding();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             lIdTab1 = new Label();
@@ -114,13 +114,13 @@
             BarberGender = new DataGridViewTextBoxColumn();
             BarberOutlet = new DataGridViewTextBoxColumn();
             tabPage4 = new TabPage();
+            label7 = new Label();
             pieChart1 = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
             btnGenerate = new Button();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label50 = new Label();
             label40 = new Label();
             label30 = new Label();
-            label7 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -514,7 +514,7 @@
             // 
             checkedListServices.FormattingEnabled = true;
             checkedListServices.Location = new Point(49, 416);
-            checkedListServices.Margin = new Padding(2, 2, 2, 2);
+            checkedListServices.Margin = new Padding(2);
             checkedListServices.Name = "checkedListServices";
             checkedListServices.Size = new Size(222, 114);
             checkedListServices.TabIndex = 87;
@@ -555,7 +555,7 @@
             // 
             checkedListTimeSlot.FormattingEnabled = true;
             checkedListTimeSlot.Location = new Point(301, 416);
-            checkedListTimeSlot.Margin = new Padding(2, 2, 2, 2);
+            checkedListTimeSlot.Margin = new Padding(2);
             checkedListTimeSlot.Name = "checkedListTimeSlot";
             checkedListTimeSlot.Size = new Size(236, 114);
             checkedListTimeSlot.TabIndex = 74;
@@ -568,7 +568,7 @@
             rbMale.Font = new Font("Segoe UI", 12F);
             rbMale.ForeColor = Color.FromArgb(128, 128, 255);
             rbMale.Location = new Point(162, 262);
-            rbMale.Margin = new Padding(2, 2, 2, 2);
+            rbMale.Margin = new Padding(2);
             rbMale.Name = "rbMale";
             rbMale.Size = new Size(75, 32);
             rbMale.TabIndex = 0;
@@ -582,7 +582,7 @@
             rbFemale.Font = new Font("Segoe UI", 12F);
             rbFemale.ForeColor = Color.FromArgb(255, 128, 128);
             rbFemale.Location = new Point(257, 262);
-            rbFemale.Margin = new Padding(2, 2, 2, 2);
+            rbFemale.Margin = new Padding(2);
             rbFemale.Name = "rbFemale";
             rbFemale.Size = new Size(91, 32);
             rbFemale.TabIndex = 1;
@@ -602,7 +602,7 @@
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F);
             tbPassword.Location = new Point(162, 209);
-            tbPassword.Margin = new Padding(1, 1, 1, 1);
+            tbPassword.Margin = new Padding(1);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(243, 30);
             tbPassword.TabIndex = 24;
@@ -612,7 +612,7 @@
             // 
             tbId.Font = new Font("Microsoft Sans Serif", 12F);
             tbId.Location = new Point(162, 64);
-            tbId.Margin = new Padding(1, 1, 1, 1);
+            tbId.Margin = new Padding(1);
             tbId.Name = "tbId";
             tbId.ReadOnly = true;
             tbId.Size = new Size(243, 30);
@@ -630,7 +630,7 @@
             label90.Size = new Size(95, 25);
             label90.TabIndex = 75;
             label90.Text = "Time Slot";
-            label90.Click += this.label90_Click;
+            label90.Click += label90_Click;
             // 
             // label80
             // 
@@ -702,7 +702,7 @@
             // 
             btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogout.Location = new Point(761, 582);
-            btnLogout.Margin = new Padding(1, 1, 1, 1);
+            btnLogout.Margin = new Padding(1);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(123, 42);
             btnLogout.TabIndex = 15;
@@ -715,7 +715,7 @@
             btnSave.BackColor = Color.FromArgb(192, 255, 192);
             btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSave.Location = new Point(616, 582);
-            btnSave.Margin = new Padding(1, 1, 1, 1);
+            btnSave.Margin = new Padding(1);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(123, 42);
             btnSave.TabIndex = 12;
@@ -739,7 +739,7 @@
             // 
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F);
             tbEmail.Location = new Point(162, 158);
-            tbEmail.Margin = new Padding(1, 1, 1, 1);
+            tbEmail.Margin = new Padding(1);
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(243, 30);
             tbEmail.TabIndex = 14;
@@ -749,7 +749,7 @@
             // 
             tbName.Font = new Font("Microsoft Sans Serif", 12F);
             tbName.Location = new Point(162, 110);
-            tbName.Margin = new Padding(1, 1, 1, 1);
+            tbName.Margin = new Padding(1);
             tbName.Name = "tbName";
             tbName.Size = new Size(243, 30);
             tbName.TabIndex = 13;
@@ -789,13 +789,12 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Barber";
             tabPage3.UseVisualStyleBackColor = true;
-            //tabPage3.Click += this.tabPage3_Click;
             // 
             // btnAddBarber
             // 
-            btnAddBarber.BackColor = Color.DeepSkyBlue;
+            btnAddBarber.BackColor = SystemColors.Control;
             btnAddBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddBarber.Location = new Point(223, 577);
+            btnAddBarber.Location = new Point(223, 553);
             btnAddBarber.Margin = new Padding(2, 3, 2, 3);
             btnAddBarber.Name = "btnAddBarber";
             btnAddBarber.Size = new Size(157, 44);
@@ -806,7 +805,7 @@
             // 
             // tbBarberEmail
             // 
-            tbBarberEmail.BackColor = Color.PaleTurquoise;
+            tbBarberEmail.BackColor = SystemColors.Control;
             tbBarberEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberEmail.Location = new Point(128, 401);
             tbBarberEmail.Name = "tbBarberEmail";
@@ -816,17 +815,16 @@
             // 
             // tbBarberGender
             // 
-            tbBarberGender.BackColor = Color.PaleTurquoise;
+            tbBarberGender.BackColor = SystemColors.Control;
             tbBarberGender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberGender.Location = new Point(128, 443);
             tbBarberGender.Name = "tbBarberGender";
             tbBarberGender.Size = new Size(252, 34);
             tbBarberGender.TabIndex = 63;
-            //tbBarberGender.TextChanged += this.tbBarberGender_TextChanged;
             // 
             // tbBarberOutlet
             // 
-            tbBarberOutlet.BackColor = Color.PaleTurquoise;
+            tbBarberOutlet.BackColor = SystemColors.Control;
             tbBarberOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberOutlet.Location = new Point(128, 488);
             tbBarberOutlet.Name = "tbBarberOutlet";
@@ -835,17 +833,16 @@
             // 
             // tbBarberName
             // 
-            tbBarberName.BackColor = Color.PaleTurquoise;
+            tbBarberName.BackColor = SystemColors.Control;
             tbBarberName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberName.Location = new Point(128, 356);
             tbBarberName.Name = "tbBarberName";
             tbBarberName.Size = new Size(252, 34);
             tbBarberName.TabIndex = 61;
-            //tbBarberName.TextChanged += this.tbBarberName_TextChanged;
             // 
             // tbBarberId
             // 
-            tbBarberId.BackColor = Color.PaleTurquoise;
+            tbBarberId.BackColor = SystemColors.Control;
             tbBarberId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberId.Location = new Point(128, 314);
             tbBarberId.Name = "tbBarberId";
@@ -856,9 +853,9 @@
             // 
             // btnDeleteBarber
             // 
-            btnDeleteBarber.BackColor = Color.DeepSkyBlue;
+            btnDeleteBarber.BackColor = SystemColors.Control;
             btnDeleteBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDeleteBarber.ForeColor = Color.White;
+            btnDeleteBarber.ForeColor = SystemColors.ControlText;
             btnDeleteBarber.Location = new Point(30, 553);
             btnDeleteBarber.Margin = new Padding(3, 4, 3, 4);
             btnDeleteBarber.Name = "btnDeleteBarber";
@@ -1003,43 +1000,53 @@
             tabPage4.Text = "Analysis";
             tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(592, 71);
+            label7.Name = "label7";
+            label7.Size = new Size(260, 25);
+            label7.TabIndex = 4;
+            label7.Text = "Total Booking By Customers";
+            // 
             // pieChart1
             // 
             pieChart1.AutoUpdateEnabled = true;
             pieChart1.ChartTheme = null;
-            skDefaultLegend12.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
-            skDefaultLegend12.Content = null;
-            skDefaultLegend12.IsValid = false;
-            skDefaultLegend12.Opacity = 1F;
-            padding23.Bottom = 0F;
-            padding23.Left = 0F;
-            padding23.Right = 0F;
-            padding23.Top = 0F;
-            skDefaultLegend12.Padding = padding23;
-            skDefaultLegend12.RemoveOnCompleted = false;
-            skDefaultLegend12.RotateTransform = 0F;
-            skDefaultLegend12.X = 0F;
-            skDefaultLegend12.Y = 0F;
-            pieChart1.Legend = skDefaultLegend12;
+            skDefaultLegend2.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultLegend2.Content = null;
+            skDefaultLegend2.IsValid = false;
+            skDefaultLegend2.Opacity = 1F;
+            padding3.Bottom = 0F;
+            padding3.Left = 0F;
+            padding3.Right = 0F;
+            padding3.Top = 0F;
+            skDefaultLegend2.Padding = padding3;
+            skDefaultLegend2.RemoveOnCompleted = false;
+            skDefaultLegend2.RotateTransform = 0F;
+            skDefaultLegend2.X = 0F;
+            skDefaultLegend2.Y = 0F;
+            pieChart1.Legend = skDefaultLegend2;
             pieChart1.Location = new Point(566, 116);
             pieChart1.Name = "pieChart1";
             pieChart1.Size = new Size(300, 300);
             pieChart1.TabIndex = 3;
-            skDefaultTooltip12.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
-            skDefaultTooltip12.Content = null;
-            skDefaultTooltip12.IsValid = false;
-            skDefaultTooltip12.Opacity = 1F;
-            padding24.Bottom = 0F;
-            padding24.Left = 0F;
-            padding24.Right = 0F;
-            padding24.Top = 0F;
-            skDefaultTooltip12.Padding = padding24;
-            skDefaultTooltip12.RemoveOnCompleted = false;
-            skDefaultTooltip12.RotateTransform = 0F;
-            skDefaultTooltip12.Wedge = 10;
-            skDefaultTooltip12.X = 0F;
-            skDefaultTooltip12.Y = 0F;
-            pieChart1.Tooltip = skDefaultTooltip12;
+            skDefaultTooltip2.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultTooltip2.Content = null;
+            skDefaultTooltip2.IsValid = false;
+            skDefaultTooltip2.Opacity = 1F;
+            padding4.Bottom = 0F;
+            padding4.Left = 0F;
+            padding4.Right = 0F;
+            padding4.Top = 0F;
+            skDefaultTooltip2.Padding = padding4;
+            skDefaultTooltip2.RemoveOnCompleted = false;
+            skDefaultTooltip2.RotateTransform = 0F;
+            skDefaultTooltip2.Wedge = 10;
+            skDefaultTooltip2.X = 0F;
+            skDefaultTooltip2.Y = 0F;
+            pieChart1.Tooltip = skDefaultTooltip2;
             pieChart1.UpdaterThrottler = TimeSpan.Parse("00:00:00.0500000");
             pieChart1.Load += pieChart1_Load_2;
             // 
@@ -1058,16 +1065,16 @@
             // 
             // chart1
             // 
-            chartArea12.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            chart1.Legends.Add(legend12);
+            chartArea2.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chart1.Legends.Add(legend2);
             chart1.Location = new Point(26, 41);
             chart1.Name = "chart1";
-            series12.ChartArea = "ChartArea1";
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            chart1.Series.Add(series12);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chart1.Series.Add(series2);
             chart1.Size = new Size(500, 375);
             chart1.TabIndex = 1;
             chart1.Text = "chart1";
@@ -1093,16 +1100,6 @@
             label30.Name = "label30";
             label30.Size = new Size(100, 23);
             label30.TabIndex = 0;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(592, 71);
-            label7.Name = "label7";
-            label7.Size = new Size(260, 25);
-            label7.TabIndex = 4;
-            label7.Text = "Total Booking By Customers";
             // 
             // Barber_Home_Page
             // 
