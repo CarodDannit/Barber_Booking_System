@@ -28,119 +28,198 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bookings";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(717, 393);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 41);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "new booking";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(918, 469);
-            this.tabControl1.TabIndex = 11;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(910, 440);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Bookings";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            tabPage2 = new TabPage();
+            button1 = new Button();
+            label2 = new Label();
+            tabPage1 = new TabPage();
+            button2 = new Button();
+            label1 = new Label();
+            tabControl1 = new TabControl();
+            label5 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            lbEmail = new ListBox();
+            lbUsername = new ListBox();
+            lbPhoneNo = new ListBox();
+            tabPage2.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabControl1.SuspendLayout();
+            SuspendLayout();
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(910, 440);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Profile";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 46);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Profile";
+            tabPage2.Controls.Add(lbPhoneNo);
+            tabPage2.Controls.Add(lbUsername);
+            tabPage2.Controls.Add(lbEmail);
+            tabPage2.Controls.Add(label5);
+            tabPage2.Controls.Add(label3);
+            tabPage2.Controls.Add(label4);
+            tabPage2.Controls.Add(label2);
+            tabPage2.Controls.Add(button1);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(3, 4, 3, 4);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3, 4, 3, 4);
+            tabPage2.Size = new Size(910, 553);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Profile";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(717, 395);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 41);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "edit profile";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(717, 494);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(187, 51);
+            button1.TabIndex = 12;
+            button1.Text = "edit profile";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(6, 6);
+            label2.Name = "label2";
+            label2.Size = new Size(134, 46);
+            label2.TabIndex = 11;
+            label2.Text = "Profile";
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(label1);
+            tabPage1.Controls.Add(button2);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Margin = new Padding(3, 4, 3, 4);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3, 4, 3, 4);
+            tabPage1.Size = new Size(910, 553);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Bookings";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Location = new Point(717, 491);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(187, 51);
+            button2.TabIndex = 10;
+            button2.Text = "new booking";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(6, 4);
+            label1.Name = "label1";
+            label1.Size = new Size(186, 46);
+            label1.TabIndex = 0;
+            label1.Text = "Bookings";
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new Point(12, 15);
+            tabControl1.Margin = new Padding(3, 4, 3, 4);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(918, 586);
+            tabControl1.TabIndex = 11;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(281, 295);
+            label5.Name = "label5";
+            label5.Size = new Size(94, 25);
+            label5.TabIndex = 17;
+            label5.Text = "phone no";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(281, 90);
+            label3.Name = "label3";
+            label3.Size = new Size(58, 25);
+            label3.TabIndex = 13;
+            label3.Text = "email";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(281, 193);
+            label4.Name = "label4";
+            label4.Size = new Size(99, 25);
+            label4.TabIndex = 14;
+            label4.Text = "username";
+            // 
+            // lbEmail
+            // 
+            lbEmail.FormattingEnabled = true;
+            lbEmail.Location = new Point(281, 140);
+            lbEmail.Name = "lbEmail";
+            lbEmail.Size = new Size(314, 24);
+            lbEmail.TabIndex = 18;
+            // 
+            // lbUsername
+            // 
+            lbUsername.FormattingEnabled = true;
+            lbUsername.Location = new Point(281, 237);
+            lbUsername.Name = "lbUsername";
+            lbUsername.Size = new Size(314, 24);
+            lbUsername.TabIndex = 19;
+            // 
+            // lbPhoneNo
+            // 
+            lbPhoneNo.FormattingEnabled = true;
+            lbPhoneNo.Location = new Point(281, 343);
+            lbPhoneNo.Name = "lbPhoneNo";
+            lbPhoneNo.Size = new Size(314, 24);
+            lbPhoneNo.TabIndex = 20;
             // 
             // User_Home_Page
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lime;
-            this.ClientSize = new System.Drawing.Size(942, 493);
-            this.Controls.Add(this.tabControl1);
-            this.Name = "User_Home_Page";
-            this.Text = "User Home Page";
-            this.Load += new System.EventHandler(this.Form2_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Lime;
+            ClientSize = new Size(942, 616);
+            Controls.Add(tabControl1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "User_Home_Page";
+            Text = "User Home Page";
+            Load += Form2_Load;
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            tabControl1.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private TabPage tabPage2;
+        private Label label2;
+        private Button button1;
+        private TabPage tabPage1;
+        private Label label1;
+        private Button button2;
+        private TabControl tabControl1;
+        private Label label5;
+        private Label label3;
+        private Label label4;
+        private ListBox lbPhoneNo;
+        private ListBox lbUsername;
+        private ListBox lbEmail;
     }
 }
