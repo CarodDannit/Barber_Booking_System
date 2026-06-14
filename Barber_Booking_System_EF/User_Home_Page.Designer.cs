@@ -48,14 +48,11 @@
             tabPage2 = new TabPage();
             btnSave = new Button();
             tbName = new TextBox();
+            tbEmail = new TextBox();
             tbPassword = new TextBox();
-            tbPhone = new TextBox();
             label6 = new Label();
-            label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            btnLogout = new Button();
-            tbEmail = new TextBox();
             btnLogout = new Button();
             label2 = new Label();
             btnEditProfile = new Button();
@@ -237,10 +234,10 @@
             // tabPage2
             // 
             tabPage2.Controls.Add(btnSave);
+            tabPage2.Controls.Add(tbName);
+            tabPage2.Controls.Add(tbEmail);
             tabPage2.Controls.Add(tbPassword);
-            tabPage2.Controls.Add(tbPhone);
             tabPage2.Controls.Add(label6);
-            tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(label3);
             tabPage2.Controls.Add(btnLogout);
@@ -258,51 +255,6 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(365, 484);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(154, 51);
-            btnSave.TabIndex = 21;
-            btnSave.Text = "SAVE";
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Visible = false;
-            btnSave.Click += btnSave_Click;
-            // 
-            // tbPassword
-            // 
-            tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPassword.Location = new Point(289, 433);
-            tbPassword.Margin = new Padding(3, 4, 3, 4);
-            tbPassword.Name = "tbPassword";
-            tbPassword.PasswordChar = '*';
-            tbPassword.ReadOnly = true;
-            tbPassword.Size = new Size(340, 30);
-            tbPassword.TabIndex = 20;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(284, 398);
-            label6.Name = "label6";
-            label6.Size = new Size(96, 25);
-            label6.TabIndex = 19;
-            label6.Text = "password";
-            // 
-            // tbPhone
-            // 
-            tbPhone.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPhone.Location = new Point(285, 330);
-            tbPhone.Margin = new Padding(3, 4, 3, 4);
-            tbPhone.Name = "tbPhone";
-            tbPhone.PasswordChar = '*';
-            tbPhone.ReadOnly = true;
-            tbPhone.Size = new Size(340, 30);
-            tbPhone.TabIndex = 18;
-            // 
-            // label5
-            // 
-            // btnSave
-            // 
             btnSave.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.Location = new Point(717, 398);
             btnSave.Name = "btnSave";
@@ -313,50 +265,64 @@
             btnSave.Visible = false;
             btnSave.Click += btnSave_Click;
             // 
+            // tbName
+            // 
+            tbName.Location = new Point(352, 139);
+            tbName.Margin = new Padding(2);
+            tbName.Name = "tbName";
+            tbName.ReadOnly = true;
+            tbName.Size = new Size(139, 27);
+            tbName.TabIndex = 13;
+            // 
+            // tbEmail
+            // 
+            tbEmail.Location = new Point(352, 201);
+            tbEmail.Margin = new Padding(2);
+            tbEmail.Name = "tbEmail";
+            tbEmail.ReadOnly = true;
+            tbEmail.Size = new Size(139, 27);
+            tbEmail.TabIndex = 14;
+            // 
             // tbPassword
             // 
-            tbPassword.Location = new Point(352, 333);
+            tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbPassword.Location = new Point(352, 283);
             tbPassword.Margin = new Padding(2);
             tbPassword.Name = "tbPassword";
+            tbPassword.PasswordChar = '*';
             tbPassword.ReadOnly = true;
-            tbPassword.Size = new Size(118, 27);
+            tbPassword.Size = new Size(139, 30);
             tbPassword.TabIndex = 20;
             tbPassword.Visible = false;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(224, 333);
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(224, 286);
             label6.Name = "label6";
-            label6.Size = new Size(70, 20);
+            label6.Size = new Size(98, 25);
             label6.TabIndex = 18;
             label6.Text = "Password";
             label6.Visible = false;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(224, 276);
-            label5.Name = "label5";
-            label5.Size = new Size(74, 20);
-            label5.TabIndex = 17;
-            label5.Text = "Phone No";
-            // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(224, 208);
             label4.Name = "label4";
-            label4.Size = new Size(46, 20);
+            label4.Size = new Size(60, 25);
             label4.TabIndex = 16;
             label4.Text = "Email";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(224, 142);
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(224, 141);
             label3.Name = "label3";
-            label3.Size = new Size(75, 20);
+            label3.Size = new Size(102, 25);
             label3.TabIndex = 15;
             label3.Text = "Username";
             label3.Click += label3_Click;
@@ -370,24 +336,7 @@
             btnLogout.TabIndex = 12;
             btnLogout.Text = "Log out";
             btnLogout.UseVisualStyleBackColor = true;
-            // 
-            // tbEmail
-            // 
-            tbEmail.Location = new Point(352, 201);
-            tbEmail.Margin = new Padding(2);
-            tbEmail.Name = "tbEmail";
-            tbEmail.ReadOnly = true;
-            tbEmail.Size = new Size(118, 27);
-            tbEmail.TabIndex = 14;
-            // 
-            // tbName
-            // 
-            tbName.Location = new Point(352, 139);
-            tbName.Margin = new Padding(2);
-            tbName.Name = "tbName";
-            tbName.ReadOnly = true;
-            tbName.Size = new Size(118, 27);
-            tbName.TabIndex = 13;
+            btnLogout.Click += btnLogout_Click;
             // 
             // label2
             // 
@@ -399,7 +348,7 @@
             label2.TabIndex = 11;
             label2.Text = "Profile";
             // 
-            // button1
+            // btnEditProfile
             // 
             btnEditProfile.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEditProfile.Location = new Point(717, 494);
@@ -456,13 +405,11 @@
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Status;
         private Label label6;
-        private Label label5;
         private TextBox tbName;
         private TextBox tbEmail;
         private Label label3;
         private Label label4;
         private TextBox tbPassword;
-        private TextBox tbPhone;
         private Button btnSave;
     }
 }

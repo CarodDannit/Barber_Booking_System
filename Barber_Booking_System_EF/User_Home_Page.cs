@@ -27,6 +27,7 @@ namespace Barber_Booking_System_EF
         {
             tbName.Text = customer.Name;
             tbEmail.Text = customer.Email;
+            tbPhone.Text = customer.Phone;
 
             dgvBookings.AutoGenerateColumns = false;
             dgvBookings.DataSource = _db.Bookings
@@ -67,7 +68,7 @@ namespace Barber_Booking_System_EF
 
         private void label3_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -92,6 +93,14 @@ namespace Barber_Booking_System_EF
             tbPassword.Visible = false;
             tbPassword.ReadOnly = true;
             btnSave.Visible = false;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Hide();
+            User_Login_Page loginPage = new User_Login_Page();
+            loginPage.ShowDialog();
         }
     }
 }
