@@ -30,19 +30,11 @@
         {
             labelRegister = new Label();
             panel1 = new Panel();
+            cbTimeslot = new ComboBox();
             groupBox1 = new GroupBox();
             pictureBoxBarber = new PictureBox();
             btnBook = new Button();
             label4 = new Label();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            button8 = new Button();
-            button7 = new Button();
-            button6 = new Button();
-            button5 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button4 = new Button();
-            button1 = new Button();
             calendar = new MonthCalendar();
             label3 = new Label();
             cbService = new ComboBox();
@@ -55,7 +47,6 @@
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // labelRegister
@@ -72,10 +63,10 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.Control;
+            panel1.Controls.Add(cbTimeslot);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(btnBook);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(tableLayoutPanel1);
             panel1.Controls.Add(calendar);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(cbService);
@@ -87,13 +78,25 @@
             panel1.Location = new Point(216, 120);
             panel1.Margin = new Padding(4, 6, 4, 6);
             panel1.Name = "panel1";
-            panel1.Size = new Size(960, 1432);
+            panel1.Size = new Size(960, 1153);
             panel1.TabIndex = 42;
+            // 
+            // cbTimeslot
+            // 
+            cbTimeslot.Enabled = false;
+            cbTimeslot.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbTimeslot.FormattingEnabled = true;
+            cbTimeslot.Location = new Point(36, 990);
+            cbTimeslot.Margin = new Padding(6, 8, 6, 8);
+            cbTimeslot.Name = "cbTimeslot";
+            cbTimeslot.Size = new Size(534, 40);
+            cbTimeslot.TabIndex = 66;
+            cbTimeslot.SelectedIndexChanged += cbTimeslot_SelectedIndexChanged;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(pictureBoxBarber);
-            groupBox1.Location = new Point(656, 598);
+            groupBox1.Location = new Point(656, 562);
             groupBox1.Margin = new Padding(6, 8, 6, 8);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(6, 8, 6, 8);
@@ -116,133 +119,31 @@
             // btnBook
             // 
             btnBook.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBook.Location = new Point(656, 1312);
+            btnBook.Location = new Point(668, 1026);
             btnBook.Margin = new Padding(4);
             btnBook.Name = "btnBook";
             btnBook.Size = new Size(264, 77);
             btnBook.TabIndex = 64;
             btnBook.Text = "Book";
             btnBook.UseVisualStyleBackColor = true;
+            btnBook.Click += btnBook_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(32, 968);
+            label4.Location = new Point(32, 932);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(134, 32);
             label4.TabIndex = 63;
             label4.Text = "Time Slot";
             // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.61111F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.38889F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 153F));
-            tableLayoutPanel1.Controls.Add(button8, 3, 1);
-            tableLayoutPanel1.Controls.Add(button7, 2, 1);
-            tableLayoutPanel1.Controls.Add(button6, 0, 1);
-            tableLayoutPanel1.Controls.Add(button5, 3, 0);
-            tableLayoutPanel1.Controls.Add(button3, 2, 0);
-            tableLayoutPanel1.Controls.Add(button2, 1, 0);
-            tableLayoutPanel1.Controls.Add(button4, 1, 1);
-            tableLayoutPanel1.Controls.Add(button1, 0, 0);
-            tableLayoutPanel1.Location = new Point(33, 1022);
-            tableLayoutPanel1.Margin = new Padding(6, 8, 6, 8);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 48.3871F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 51.6129F));
-            tableLayoutPanel1.Size = new Size(586, 210);
-            tableLayoutPanel1.TabIndex = 62;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(438, 109);
-            button8.Margin = new Padding(6, 8, 6, 8);
-            button8.Name = "button8";
-            button8.Size = new Size(130, 93);
-            button8.TabIndex = 10;
-            button8.Text = "1:30 PM";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.Location = new Point(288, 109);
-            button7.Margin = new Padding(6, 8, 6, 8);
-            button7.Name = "button7";
-            button7.Size = new Size(130, 93);
-            button7.TabIndex = 9;
-            button7.Text = "1:00 PM";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(6, 109);
-            button6.Margin = new Padding(6, 8, 6, 8);
-            button6.Name = "button6";
-            button6.Size = new Size(125, 93);
-            button6.TabIndex = 8;
-            button6.Text = "12:00 PM";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(438, 8);
-            button5.Margin = new Padding(6, 8, 6, 8);
-            button5.Name = "button5";
-            button5.Size = new Size(136, 85);
-            button5.TabIndex = 7;
-            button5.Text = "11:30 AM";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(288, 8);
-            button3.Margin = new Padding(6, 8, 6, 8);
-            button3.Name = "button3";
-            button3.Size = new Size(130, 85);
-            button3.TabIndex = 6;
-            button3.Text = "11 AM";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(143, 8);
-            button2.Margin = new Padding(6, 8, 6, 8);
-            button2.Name = "button2";
-            button2.Size = new Size(130, 85);
-            button2.TabIndex = 5;
-            button2.Text = "10:30 AM";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(143, 109);
-            button4.Margin = new Padding(6, 8, 6, 8);
-            button4.Name = "button4";
-            button4.Size = new Size(130, 93);
-            button4.TabIndex = 3;
-            button4.Text = "12:30 PM";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(6, 8);
-            button1.Margin = new Padding(6, 8, 6, 8);
-            button1.Name = "button1";
-            button1.Size = new Size(125, 85);
-            button1.TabIndex = 4;
-            button1.Text = "10:00 AM";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // calendar
             // 
             calendar.Location = new Point(36, 103);
             calendar.Margin = new Padding(18, 21, 18, 21);
+            calendar.MaxSelectionCount = 1;
             calendar.Name = "calendar";
             calendar.TabIndex = 61;
             // 
@@ -250,7 +151,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(32, 808);
+            label3.Location = new Point(32, 772);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(109, 32);
@@ -262,17 +163,18 @@
             cbService.Enabled = false;
             cbService.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbService.FormattingEnabled = true;
-            cbService.Location = new Point(36, 862);
+            cbService.Location = new Point(36, 826);
             cbService.Margin = new Padding(6, 8, 6, 8);
             cbService.Name = "cbService";
             cbService.Size = new Size(534, 40);
             cbService.TabIndex = 59;
+            cbService.SelectedIndexChanged += cbService_SelectedIndexChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(32, 669);
+            label1.Location = new Point(32, 633);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(99, 32);
@@ -284,7 +186,7 @@
             cbBarber.Enabled = false;
             cbBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbBarber.FormattingEnabled = true;
-            cbBarber.Location = new Point(36, 724);
+            cbBarber.Location = new Point(36, 688);
             cbBarber.Margin = new Padding(6, 8, 6, 8);
             cbBarber.Name = "cbBarber";
             cbBarber.Size = new Size(534, 40);
@@ -295,7 +197,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(28, 540);
+            label5.Location = new Point(28, 504);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(91, 32);
@@ -306,7 +208,7 @@
             // 
             cbOutlet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbOutlet.FormattingEnabled = true;
-            cbOutlet.Location = new Point(36, 594);
+            cbOutlet.Location = new Point(36, 558);
             cbOutlet.Margin = new Padding(6, 8, 6, 8);
             cbOutlet.Name = "cbOutlet";
             cbOutlet.Size = new Size(534, 40);
@@ -342,7 +244,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.Lime;
-            ClientSize = new Size(1413, 1564);
+            ClientSize = new Size(1413, 1036);
             Controls.Add(btnBack);
             Controls.Add(panel1);
             Controls.Add(labelRegister);
@@ -354,7 +256,6 @@
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
 
@@ -367,15 +268,6 @@
         private System.Windows.Forms.PictureBox pictureBoxBarber;
         private System.Windows.Forms.Button btnBook;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbService;
@@ -385,5 +277,6 @@
         private System.Windows.Forms.ComboBox cbOutlet;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBack;
+        private ComboBox cbTimeslot;
     }
 }

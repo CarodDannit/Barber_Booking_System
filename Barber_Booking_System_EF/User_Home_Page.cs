@@ -53,13 +53,13 @@ namespace Barber_Booking_System_EF
                     b.Status
                 })
                 .ToList();
+
+
         }
 
         private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-
-
         }
 
         private void dgvBookings_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -95,6 +95,12 @@ namespace Barber_Booking_System_EF
             User_Edit_Profile editProf = new User_Edit_Profile();
             editProf.Show();
             this.Hide();
+        }
+
+        private void btnNewBooking_Click(object sender, EventArgs e)
+        {
+            Book_Appointment_Page newbookingpage = new Book_Appointment_Page(customer);
+            newbookingpage.ShowDialog();
         }
     }
 }
