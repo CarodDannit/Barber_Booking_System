@@ -833,6 +833,7 @@
             btnDeleteBarber.TabIndex = 57;
             btnDeleteBarber.Text = "delete barber";
             btnDeleteBarber.UseVisualStyleBackColor = true;
+            btnDeleteBarber.Click += btnDeleteBarber_Click;
             // 
             // label18
             // 

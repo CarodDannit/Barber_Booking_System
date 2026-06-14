@@ -32,6 +32,46 @@ namespace Barber_Booking_System_EF
 
         }
 
+        private void loadBarber()
+        {
+
+            dgvBookings.AutoGenerateColumns = false;
+            dgvBookings.DataSource = _db.Bookings
+                .Where(bk => bk.BarberId == barber.Id)
+                .Select(bk => new
+                {
+                    bk.Id,
+                    bk.Date,
+                    bk.Description,
+                    bk.OutletId,
+                    oLocation = bk.Outlet.Location,
+                    bk.CustId,
+                    cName = bk.Cust.Name,
+                    bk.ServiceId,
+                    sName = bk.Service.Name,
+                    bk.TimeslotId,
+                    bk.Timeslot.Time,
+                    bk.Status
+                })
+                .ToList();
+        }
+
+        private void loadBooking()
+        {
+
+            dgvBarber.AutoGenerateColumns = false;
+            dgvBarber.DataSource = _db.Barbers
+                .Select(br => new
+                {
+                    br.Id,
+                    br.Name,
+                    br.Email,
+                    br.Gender,
+                    oLocation = br.Outlet.Location
+                })
+                .ToList();
+        }
+
         private async void Barber_Home_Page_Load(object sender, EventArgs e)
         {
             tbId.Text = barber.Id.ToString();
@@ -86,38 +126,8 @@ namespace Barber_Booking_System_EF
             pictureBoxBarber.Image = new Bitmap(ms);
             ms.Dispose();
 
-
-            dgvBookings.AutoGenerateColumns = false;
-            dgvBookings.DataSource = _db.Bookings
-                .Where(bk => bk.BarberId == barber.Id)
-                .Select(bk => new
-                {
-                    bk.Id,
-                    bk.Date,
-                    bk.Description,
-                    bk.OutletId,
-                    oLocation = bk.Outlet.Location,
-                    bk.CustId,
-                    cName = bk.Cust.Name,
-                    bk.ServiceId,
-                    sName = bk.Service.Name,
-                    bk.TimeslotId,
-                    bk.Timeslot.Time,
-                    bk.Status
-                })
-                .ToList();
-
-            dgvBarber.AutoGenerateColumns = false;
-            dgvBarber.DataSource = _db.Barbers
-                .Select(br => new
-                {
-                    br.Id,
-                    br.Name,
-                    br.Email,
-                    br.Gender,
-                    oLocation = br.Outlet.Location
-                })
-                .ToList();
+            loadBarber();
+            loadBooking();
         }
 
         private void btnAddBarber_Click(object sender, EventArgs e)
@@ -259,6 +269,42 @@ namespace Barber_Booking_System_EF
             }
 
             openFileDialog.Dispose();
+        }
+
+        private void btnDeleteBarber_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(tbBarberId.Text)) return;
+
+            int barberId = int.Parse(tbBarberId.Text);
+
+            var barber = _db.Barbers.FirstOrDefault(b => b.Id == barberId);
+
+            if(barber == null)
+            {
+                MessageBox.Show("Barber not found");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this barber?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if(result == DialogResult.Yes)
+            {
+                _db.Remove(barber);
+                _db.SaveChanges();
+                MessageBox.Show("Barber deleted successfully");
+
+
+                loadBarber();
+                tbBarberId.Text = "";
+                tbBarberName.Text = "";
+                tbBarberEmail.Text = "";
+                tbBarberGender.Text = "";
+                tbBarberOutlet.Text = "";
+            }
         }
     }
 }
