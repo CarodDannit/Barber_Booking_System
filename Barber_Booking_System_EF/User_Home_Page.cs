@@ -48,6 +48,8 @@ namespace Barber_Booking_System_EF
                     b.Status
                 })
                 .ToList();
+
+
         }
 
         private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,6 +103,12 @@ namespace Barber_Booking_System_EF
             this.Hide();
             User_Login_Page loginPage = new User_Login_Page();
             loginPage.ShowDialog();
+        }
+
+        private void btnNewBooking_Click(object sender, EventArgs e)
+        {
+            Book_Appointment_Page newbookingpage = new Book_Appointment_Page(customer);
+            newbookingpage.ShowDialog();
         }
     }
 }
