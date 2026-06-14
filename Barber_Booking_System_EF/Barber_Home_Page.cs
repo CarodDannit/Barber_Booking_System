@@ -336,5 +336,10 @@ namespace Barber_Booking_System_EF
         {
 
         }
+
+        private void checkedListTimeSlot_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
