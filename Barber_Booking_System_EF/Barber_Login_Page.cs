@@ -29,6 +29,18 @@ namespace Barber_Booking_System_EF
 
         private void btnBarberLogin_Click(object sender, EventArgs e)
         {
+
+            if (String.IsNullOrWhiteSpace(tbEmail.Text))
+            {
+                MessageBox.Show("Email cannot be empty!");
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Password cannot be empty!");
+                return;
+            }
+
             var barBerFromDB = _db.Barbers.FirstOrDefault(c => c.Email == tbEmail.Text);
             if (barBerFromDB == null)
             {

@@ -20,13 +20,13 @@ namespace Barber_Booking_System_EF
             InitializeComponent();
         }
 
-        private void btnBarbersignup_Click(object sender, EventArgs e)
-        {
-            Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
-            this.Hide();
-            bsignupPage.ShowDialog();
-            this.Close();
-        }
+        //private void btnBarbersignup_Click(object sender, EventArgs e)
+        //{
+        //    Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
+        //    this.Hide();
+        //    bsignupPage.ShowDialog();
+        //    this.Close();
+        //}
 
         private void lnkUserRegisterAcc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -66,12 +66,12 @@ namespace Barber_Booking_System_EF
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var bhomepage = new Barber_Home_Page(_db.Barbers.Find(5));
-            this.Hide();
-            bhomepage.ShowDialog();
-            this.Close();
-        }
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    var bhomepage = new Barber_Home_Page(_db.Barbers.Find(5));
+        //    this.Hide();
+        //    bhomepage.ShowDialog();
+        //    this.Close();
+        //}
     }
 }

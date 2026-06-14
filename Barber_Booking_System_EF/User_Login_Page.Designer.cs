@@ -38,9 +38,7 @@
             tbPassword = new TextBox();
             tbEmail = new TextBox();
             btnBarberLoginPage = new Button();
-            btnBarbersignup = new Button();
             label5 = new Label();
-            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -158,17 +156,6 @@
             btnBarberLoginPage.UseVisualStyleBackColor = true;
             btnBarberLoginPage.Click += btnBarberLoginPage_Click;
             // 
-            // btnBarbersignup
-            // 
-            btnBarbersignup.Location = new Point(40, 129);
-            btnBarbersignup.Margin = new Padding(2, 2, 2, 2);
-            btnBarbersignup.Name = "btnBarbersignup";
-            btnBarbersignup.Size = new Size(158, 43);
-            btnBarbersignup.TabIndex = 11;
-            btnBarbersignup.Text = "BARBER SIGN UUUP";
-            btnBarbersignup.UseVisualStyleBackColor = true;
-            btnBarbersignup.Click += btnBarbersignup_Click;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -179,27 +166,13 @@
             label5.TabIndex = 12;
             label5.Text = "EF version";
             // 
-            // button1
-            // 
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(35, 374);
-            button1.Margin = new Padding(2, 3, 2, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(163, 38);
-            button1.TabIndex = 13;
-            button1.Text = "barber mode";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // User_Login_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lime;
             ClientSize = new Size(824, 462);
-            Controls.Add(button1);
             Controls.Add(label5);
-            Controls.Add(btnBarbersignup);
             Controls.Add(btnBarberLoginPage);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -225,9 +198,7 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Button btnBarberLoginPage;
-        private System.Windows.Forms.Button btnBarbersignup;
         private Label label5;
-        private Button button1;
     }
 }
 
