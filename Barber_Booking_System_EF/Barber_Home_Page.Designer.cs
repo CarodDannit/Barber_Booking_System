@@ -92,7 +92,6 @@
             tbBarberOutlet = new TextBox();
             tbBarberName = new TextBox();
             tbBarberId = new TextBox();
-            btnUpdateBarber = new Button();
             btnDeleteBarber = new Button();
             label18 = new Label();
             label21 = new Label();
@@ -520,9 +519,9 @@
             // 
             groupBox1.Controls.Add(pictureBoxBarber);
             groupBox1.Location = new Point(389, 55);
-            groupBox1.Margin = new Padding(4, 4, 4, 4);
+            groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 4, 4, 4);
+            groupBox1.Padding = new Padding(4);
             groupBox1.Size = new Size(154, 163);
             groupBox1.TabIndex = 82;
             groupBox1.TabStop = false;
@@ -532,7 +531,7 @@
             // 
             pictureBoxBarber.Image = Properties.Resources.rukia04;
             pictureBoxBarber.Location = new Point(7, 22);
-            pictureBoxBarber.Margin = new Padding(4, 4, 4, 4);
+            pictureBoxBarber.Margin = new Padding(4);
             pictureBoxBarber.Name = "pictureBoxBarber";
             pictureBoxBarber.Size = new Size(140, 134);
             pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -578,7 +577,7 @@
             cbOutlet.Font = new Font("Microsoft Sans Serif", 12F);
             cbOutlet.FormattingEnabled = true;
             cbOutlet.Location = new Point(120, 253);
-            cbOutlet.Margin = new Padding(4, 4, 4, 4);
+            cbOutlet.Margin = new Padding(4);
             cbOutlet.Name = "cbOutlet";
             cbOutlet.Size = new Size(243, 33);
             cbOutlet.TabIndex = 73;
@@ -587,7 +586,7 @@
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F);
             tbPassword.Location = new Point(120, 173);
-            tbPassword.Margin = new Padding(2, 2, 2, 2);
+            tbPassword.Margin = new Padding(2);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(243, 30);
             tbPassword.TabIndex = 24;
@@ -597,7 +596,7 @@
             // 
             tbId.Font = new Font("Microsoft Sans Serif", 12F);
             tbId.Location = new Point(120, 52);
-            tbId.Margin = new Padding(2, 2, 2, 2);
+            tbId.Margin = new Padding(2);
             tbId.Name = "tbId";
             tbId.ReadOnly = true;
             tbId.Size = new Size(243, 30);
@@ -685,7 +684,7 @@
             // btnLogout
             // 
             btnLogout.Location = new Point(353, 319);
-            btnLogout.Margin = new Padding(2, 2, 2, 2);
+            btnLogout.Margin = new Padding(2);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(133, 24);
             btnLogout.TabIndex = 15;
@@ -697,7 +696,7 @@
             // 
             btnSave.BackColor = Color.FromArgb(192, 255, 192);
             btnSave.Location = new Point(79, 319);
-            btnSave.Margin = new Padding(2, 2, 2, 2);
+            btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(133, 24);
             btnSave.TabIndex = 12;
@@ -708,7 +707,7 @@
             // btnUpload
             // 
             btnUpload.Location = new Point(389, 223);
-            btnUpload.Margin = new Padding(1, 1, 1, 1);
+            btnUpload.Margin = new Padding(1);
             btnUpload.Name = "btnUpload";
             btnUpload.Size = new Size(154, 24);
             btnUpload.TabIndex = 83;
@@ -720,7 +719,7 @@
             // 
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F);
             tbEmail.Location = new Point(120, 132);
-            tbEmail.Margin = new Padding(2, 2, 2, 2);
+            tbEmail.Margin = new Padding(2);
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(243, 30);
             tbEmail.TabIndex = 14;
@@ -730,7 +729,7 @@
             // 
             tbName.Font = new Font("Microsoft Sans Serif", 12F);
             tbName.Location = new Point(120, 91);
-            tbName.Margin = new Padding(2, 2, 2, 2);
+            tbName.Margin = new Padding(2);
             tbName.Name = "tbName";
             tbName.Size = new Size(243, 30);
             tbName.TabIndex = 13;
@@ -755,7 +754,6 @@
             tabPage3.Controls.Add(tbBarberOutlet);
             tabPage3.Controls.Add(tbBarberName);
             tabPage3.Controls.Add(tbBarberId);
-            tabPage3.Controls.Add(btnUpdateBarber);
             tabPage3.Controls.Add(btnDeleteBarber);
             tabPage3.Controls.Add(label18);
             tabPage3.Controls.Add(label21);
@@ -766,7 +764,7 @@
             tabPage3.Controls.Add(dgvBarber);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3, 3, 3, 3);
+            tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(910, 639);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Barber";
@@ -775,10 +773,10 @@
             // btnAddBarber
             // 
             btnAddBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddBarber.Location = new Point(277, 553);
+            btnAddBarber.Location = new Point(223, 577);
             btnAddBarber.Margin = new Padding(2, 3, 2, 3);
             btnAddBarber.Name = "btnAddBarber";
-            btnAddBarber.Size = new Size(102, 68);
+            btnAddBarber.Size = new Size(157, 44);
             btnAddBarber.TabIndex = 59;
             btnAddBarber.Text = "create barber";
             btnAddBarber.UseVisualStyleBackColor = true;
@@ -821,27 +819,17 @@
             tbBarberId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberId.Location = new Point(128, 314);
             tbBarberId.Name = "tbBarberId";
+            tbBarberId.ReadOnly = true;
             tbBarberId.Size = new Size(252, 34);
             tbBarberId.TabIndex = 60;
-            // 
-            // btnUpdateBarber
-            // 
-            btnUpdateBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdateBarber.Location = new Point(151, 553);
-            btnUpdateBarber.Margin = new Padding(3, 4, 3, 4);
-            btnUpdateBarber.Name = "btnUpdateBarber";
-            btnUpdateBarber.Size = new Size(102, 68);
-            btnUpdateBarber.TabIndex = 58;
-            btnUpdateBarber.Text = "update barber";
-            btnUpdateBarber.UseVisualStyleBackColor = true;
             // 
             // btnDeleteBarber
             // 
             btnDeleteBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDeleteBarber.Location = new Point(30, 553);
+            btnDeleteBarber.Location = new Point(30, 577);
             btnDeleteBarber.Margin = new Padding(3, 4, 3, 4);
             btnDeleteBarber.Name = "btnDeleteBarber";
-            btnDeleteBarber.Size = new Size(102, 68);
+            btnDeleteBarber.Size = new Size(157, 44);
             btnDeleteBarber.TabIndex = 57;
             btnDeleteBarber.Text = "delete barber";
             btnDeleteBarber.UseVisualStyleBackColor = true;
@@ -971,7 +959,7 @@
             // 
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3, 3, 3, 3);
+            tabPage4.Padding = new Padding(3);
             tabPage4.Size = new Size(910, 639);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Analysis";
@@ -1081,7 +1069,6 @@
         private Label label23;
         private Label label24;
         private Button btnDeleteBarber;
-        private Button btnUpdateBarber;
         private TextBox tbBarberId;
         private TextBox tbBarberEmail;
         private TextBox tbBarberGender;
