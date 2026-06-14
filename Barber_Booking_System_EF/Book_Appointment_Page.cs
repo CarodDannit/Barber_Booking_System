@@ -75,6 +75,8 @@ namespace Barber_Booking_System_EF
             cbTimeslot.Items.Clear();
             cbTimeslot.Text = null;
             cbTimeslot.Enabled = false;
+
+            pictureBoxBarber.Image = null;
         }
 
         private async void cbBarber_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,6 +84,29 @@ namespace Barber_Booking_System_EF
             if (cbBarber.SelectedIndex < 0 || barbers == null) return;
 
             selectedBarber = barbers[cbBarber.SelectedIndex];
+
+            // get barber's pfp
+            //   check if 0
+            bool isZero = true;
+            for (int i = 0; i < selectedBarber.Pfp.Length; i++)
+            {
+                if (selectedBarber.Pfp[i] != 0)
+                {
+                    isZero = false;
+                    break; // Stop immediately upon finding a non-zero byte
+                }
+            }
+            //   read pfp
+            if (!isZero)
+            {
+                var ms = new MemoryStream(selectedBarber.Pfp);
+                pictureBoxBarber.Image = new Bitmap(ms);
+                ms.Dispose();
+            }
+            else
+            {
+                pictureBoxBarber.Image = Properties.Resources.rukia04;
+            }
 
             // get barber's services
             services = _db.Barbers

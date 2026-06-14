@@ -1,4 +1,6 @@
 ﻿using Barber_Booking_System_EF.models;
+using Barber_Booking_System_EF.models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,8 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Barber_Booking_System_EF.models;
-using Microsoft.EntityFrameworkCore;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Barber_Booking_System_EF
 {
@@ -74,6 +75,16 @@ namespace Barber_Booking_System_EF
                 var index = services.FindIndex(ts => ts.Id == sA.Id);
                 if (index != -1) checkedListServices.SetItemChecked(index, true);
             }
+
+            //try
+            //{
+            var ms = new MemoryStream(barber.Pfp);
+            //}
+            //catch
+            //{
+            //}
+            pictureBoxBarber.Image = new Bitmap(ms);
+            ms.Dispose();
 
 
             dgvBookings.AutoGenerateColumns = false;
@@ -170,7 +181,7 @@ namespace Barber_Booking_System_EF
             tbBarberOutlet.Text = row.Cells["BarberOutlet"].Value?.ToString();
         }
 
-       
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbName.Text))
@@ -178,17 +189,17 @@ namespace Barber_Booking_System_EF
                 MessageBox.Show("Name cannot be empty!");
                 return;
             }
-            if(string.IsNullOrWhiteSpace(tbEmail.Text))
+            if (string.IsNullOrWhiteSpace(tbEmail.Text))
             {
                 MessageBox.Show("Email cannot be empty!");
                 return;
             }
-            if(string.IsNullOrWhiteSpace(tbPassword.Text))
+            if (string.IsNullOrWhiteSpace(tbPassword.Text))
             {
                 MessageBox.Show("Password cannot be empty!");
                 return;
             }
-        
+
 
             barber.Name = tbName.Text;
             barber.Email = tbEmail.Text;
@@ -202,13 +213,52 @@ namespace Barber_Booking_System_EF
 
             MessageBox.Show("Profile Updated!");
         }
-        
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             var loginpage = new User_Login_Page();
             this.Hide();
             loginpage.ShowDialog();
             this.Close();
+        }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "image sikit2 je WIP (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
+
+            var result = openFileDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                pictureBoxBarber.ImageLocation = openFileDialog.FileName;
+
+                // Read file bytes and convert to Base64 string
+                var imageBytes = File.ReadAllBytes(openFileDialog.FileName);
+
+                barber.Pfp = imageBytes;
+            }
+
+            openFileDialog.Dispose();
         }
     }
 }

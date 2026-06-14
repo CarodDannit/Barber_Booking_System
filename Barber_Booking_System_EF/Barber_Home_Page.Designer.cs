@@ -30,6 +30,10 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            lIdTab1 = new Label();
+            lServiceTab1 = new Label();
+            lCustomerTab1 = new Label();
+            lDateTab1 = new Label();
             lblService = new Label();
             lblCustomer = new Label();
             lblOutlet = new Label();
@@ -38,13 +42,9 @@
             lblStatus = new Label();
             lblBookingId = new Label();
             btnCheckBooking = new Button();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
+            lOutletTab1 = new Label();
+            lTimeslotTab1 = new Label();
+            lStatusTab1 = new Label();
             btnNewBooking = new Button();
             dgvBookings = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
@@ -75,12 +75,13 @@
             label90 = new Label();
             label80 = new Label();
             label70 = new Label();
-            label60 = new Label();
-            label50 = new Label();
-            label40 = new Label();
-            label30 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
             btnLogout = new Button();
             btnSave = new Button();
+            btnUpload = new Button();
             tbEmail = new TextBox();
             tbName = new TextBox();
             label2 = new Label();
@@ -106,7 +107,9 @@
             BarberGender = new DataGridViewTextBoxColumn();
             BarberOutlet = new DataGridViewTextBoxColumn();
             tabPage4 = new TabPage();
-            barbeR_serviceTableAdapter1 = new Barber_Booking_System_EF.DataSet1TableAdapters.BARBER_SERVICETableAdapter();
+            label50 = new Label();
+            label40 = new Label();
+            label30 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -132,6 +135,10 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(lIdTab1);
+            tabPage1.Controls.Add(lServiceTab1);
+            tabPage1.Controls.Add(lCustomerTab1);
+            tabPage1.Controls.Add(lDateTab1);
             tabPage1.Controls.Add(lblService);
             tabPage1.Controls.Add(lblCustomer);
             tabPage1.Controls.Add(lblOutlet);
@@ -140,13 +147,9 @@
             tabPage1.Controls.Add(lblStatus);
             tabPage1.Controls.Add(lblBookingId);
             tabPage1.Controls.Add(btnCheckBooking);
-            tabPage1.Controls.Add(label9);
-            tabPage1.Controls.Add(label8);
-            tabPage1.Controls.Add(label7);
-            tabPage1.Controls.Add(label6);
-            tabPage1.Controls.Add(label5);
-            tabPage1.Controls.Add(label4);
-            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(lOutletTab1);
+            tabPage1.Controls.Add(lTimeslotTab1);
+            tabPage1.Controls.Add(lStatusTab1);
             tabPage1.Controls.Add(btnNewBooking);
             tabPage1.Controls.Add(dgvBookings);
             tabPage1.Controls.Add(label1);
@@ -158,6 +161,50 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Bookings";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lIdTab1
+            // 
+            lIdTab1.AutoSize = true;
+            lIdTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lIdTab1.Location = new Point(51, 477);
+            lIdTab1.Margin = new Padding(4, 0, 4, 0);
+            lIdTab1.Name = "lIdTab1";
+            lIdTab1.Size = new Size(44, 38);
+            lIdTab1.TabIndex = 46;
+            lIdTab1.Text = "ID";
+            // 
+            // lServiceTab1
+            // 
+            lServiceTab1.AutoSize = true;
+            lServiceTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lServiceTab1.Location = new Point(51, 519);
+            lServiceTab1.Margin = new Padding(4, 0, 4, 0);
+            lServiceTab1.Name = "lServiceTab1";
+            lServiceTab1.Size = new Size(105, 38);
+            lServiceTab1.TabIndex = 45;
+            lServiceTab1.Text = "Service";
+            // 
+            // lCustomerTab1
+            // 
+            lCustomerTab1.AutoSize = true;
+            lCustomerTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lCustomerTab1.Location = new Point(51, 561);
+            lCustomerTab1.Margin = new Padding(4, 0, 4, 0);
+            lCustomerTab1.Name = "lCustomerTab1";
+            lCustomerTab1.Size = new Size(136, 38);
+            lCustomerTab1.TabIndex = 44;
+            lCustomerTab1.Text = "Customer";
+            // 
+            // lDateTab1
+            // 
+            lDateTab1.AutoSize = true;
+            lDateTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lDateTab1.Location = new Point(51, 645);
+            lDateTab1.Margin = new Padding(4, 0, 4, 0);
+            lDateTab1.Name = "lDateTab1";
+            lDateTab1.Size = new Size(75, 38);
+            lDateTab1.TabIndex = 43;
+            lDateTab1.Text = "Date";
             // 
             // lblService
             // 
@@ -241,78 +288,38 @@
             btnCheckBooking.UseVisualStyleBackColor = true;
             btnCheckBooking.Click += btnCheckBooking_Click;
             // 
-            // label9
+            // lOutletTab1
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(51, 603);
-            label9.Margin = new Padding(4, 0, 4, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(94, 38);
-            label9.TabIndex = 34;
-            label9.Text = "Outlet";
+            lOutletTab1.AutoSize = true;
+            lOutletTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lOutletTab1.Location = new Point(51, 603);
+            lOutletTab1.Margin = new Padding(4, 0, 4, 0);
+            lOutletTab1.Name = "lOutletTab1";
+            lOutletTab1.Size = new Size(94, 38);
+            lOutletTab1.TabIndex = 34;
+            lOutletTab1.Text = "Outlet";
             // 
-            // label8
+            // lTimeslotTab1
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(51, 687);
-            label8.Margin = new Padding(4, 0, 4, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(125, 38);
-            label8.TabIndex = 33;
-            label8.Text = "TimeSlot";
+            lTimeslotTab1.AutoSize = true;
+            lTimeslotTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lTimeslotTab1.Location = new Point(51, 687);
+            lTimeslotTab1.Margin = new Padding(4, 0, 4, 0);
+            lTimeslotTab1.Name = "lTimeslotTab1";
+            lTimeslotTab1.Size = new Size(125, 38);
+            lTimeslotTab1.TabIndex = 33;
+            lTimeslotTab1.Text = "TimeSlot";
             // 
-            // label7
+            // lStatusTab1
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(51, 729);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(91, 38);
-            label7.TabIndex = 32;
-            label7.Text = "Status";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(16, 201);
-            label6.Name = "label6";
-            label6.Size = new Size(103, 39);
-            label6.TabIndex = 21;
-            label6.Text = "Email";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(16, 258);
-            label5.Name = "label5";
-            label5.Size = new Size(167, 39);
-            label5.TabIndex = 19;
-            label5.Text = "Password";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(16, 140);
-            label4.Name = "label4";
-            label4.Size = new Size(108, 39);
-            label4.TabIndex = 18;
-            label4.Text = "Name";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(16, 82);
-            label3.Name = "label3";
-            label3.Size = new Size(163, 39);
-            label3.TabIndex = 17;
-            label3.Text = "Barber ID";
+            lStatusTab1.AutoSize = true;
+            lStatusTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lStatusTab1.Location = new Point(51, 729);
+            lStatusTab1.Margin = new Padding(4, 0, 4, 0);
+            lStatusTab1.Name = "lStatusTab1";
+            lStatusTab1.Size = new Size(91, 38);
+            lStatusTab1.TabIndex = 32;
+            lStatusTab1.Text = "Status";
             // 
             // btnNewBooking
             // 
@@ -344,7 +351,7 @@
             // Id
             // 
             Id.DataPropertyName = "Id";
-            Id.HeaderText = "Id";
+            Id.HeaderText = "Iiiiid";
             Id.MinimumWidth = 9;
             Id.Name = "Id";
             Id.ReadOnly = true;
@@ -484,9 +491,13 @@
             tabPage2.Controls.Add(label90);
             tabPage2.Controls.Add(label80);
             tabPage2.Controls.Add(label70);
-            tabPage2.Controls.Add(label60);
+            tabPage2.Controls.Add(label6);
+            tabPage2.Controls.Add(label5);
+            tabPage2.Controls.Add(label4);
+            tabPage2.Controls.Add(label3);
             tabPage2.Controls.Add(btnLogout);
             tabPage2.Controls.Add(btnSave);
+            tabPage2.Controls.Add(btnUpload);
             tabPage2.Controls.Add(tbEmail);
             tabPage2.Controls.Add(tbName);
             tabPage2.Controls.Add(label2);
@@ -554,11 +565,12 @@
             // 
             rbMale.AutoSize = true;
             rbMale.Checked = true;
+            rbMale.Font = new Font("Segoe UI", 12F);
             rbMale.ForeColor = Color.FromArgb(128, 128, 255);
-            rbMale.Location = new Point(178, 336);
+            rbMale.Location = new Point(180, 313);
             rbMale.Margin = new Padding(4);
             rbMale.Name = "rbMale";
-            rbMale.Size = new Size(83, 34);
+            rbMale.Size = new Size(102, 42);
             rbMale.TabIndex = 0;
             rbMale.TabStop = true;
             rbMale.Text = "male";
@@ -567,20 +579,21 @@
             // rbFemale
             // 
             rbFemale.AutoSize = true;
+            rbFemale.Font = new Font("Segoe UI", 12F);
             rbFemale.ForeColor = Color.FromArgb(255, 128, 128);
-            rbFemale.Location = new Point(278, 340);
+            rbFemale.Location = new Point(290, 313);
             rbFemale.Margin = new Padding(4);
             rbFemale.Name = "rbFemale";
-            rbFemale.Size = new Size(101, 34);
+            rbFemale.Size = new Size(126, 42);
             rbFemale.TabIndex = 1;
             rbFemale.Text = "female";
             rbFemale.UseVisualStyleBackColor = true;
             // 
             // cbOutlet
             // 
-            cbOutlet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbOutlet.Font = new Font("Microsoft Sans Serif", 12F);
             cbOutlet.FormattingEnabled = true;
-            cbOutlet.Location = new Point(178, 382);
+            cbOutlet.Location = new Point(180, 379);
             cbOutlet.Margin = new Padding(6);
             cbOutlet.Name = "cbOutlet";
             cbOutlet.Size = new Size(362, 40);
@@ -588,19 +601,23 @@
             // 
             // tbPassword
             // 
-            tbPassword.Location = new Point(178, 264);
+            tbPassword.Font = new Font("Microsoft Sans Serif", 12F);
+            tbPassword.Location = new Point(180, 260);
             tbPassword.Name = "tbPassword";
-            tbPassword.Size = new Size(362, 35);
+            tbPassword.Size = new Size(362, 39);
             tbPassword.TabIndex = 24;
+            tbPassword.TextChanged += tbPassword_TextChanged;
             // 
             // tbId
             // 
-            tbId.Location = new Point(178, 82);
+            tbId.Font = new Font("Microsoft Sans Serif", 12F);
+            tbId.Location = new Point(180, 78);
             tbId.Name = "tbId";
             tbId.ReadOnly = true;
-            tbId.Size = new Size(362, 35);
+            tbId.Size = new Size(362, 39);
             tbId.TabIndex = 20;
             tbId.TabStop = false;
+            tbId.TextChanged += tbId_TextChanged;
             // 
             // label90
             // 
@@ -615,39 +632,68 @@
             // label80
             // 
             label80.AutoSize = true;
-            label80.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label80.Font = new Font("Microsoft Sans Serif", 12F);
             label80.Location = new Point(20, 382);
             label80.Name = "label80";
-            label80.Size = new Size(107, 39);
+            label80.Size = new Size(91, 32);
             label80.TabIndex = 23;
             label80.Text = "Outlet";
             // 
             // label70
             // 
             label70.AutoSize = true;
-            label70.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label70.Font = new Font("Microsoft Sans Serif", 12F);
             label70.Location = new Point(12, 320);
             label70.Name = "label70";
-            label70.Size = new Size(130, 39);
+            label70.Size = new Size(109, 32);
             label70.TabIndex = 22;
             label70.Text = "Gender";
             // 
-            // label60
+            // label6
             // 
-            label60.AutoSize = true;
-            label60.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label60.Location = new Point(11, 134);
-            label60.Margin = new Padding(2, 0, 2, 0);
-            label60.Name = "label6";
-            label60.Size = new Size(57, 24);
-            label60.TabIndex = 21;
-            label60.Text = "Email";
+            label6.AutoSize = true;
+            label6.Font = new Font("Microsoft Sans Serif", 12F);
+            label6.Location = new Point(16, 201);
+            label6.Name = "label6";
+            label6.Size = new Size(86, 32);
+            label6.TabIndex = 21;
+            label6.Text = "Email";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 12F);
+            label5.Location = new Point(16, 258);
+            label5.Name = "label5";
+            label5.Size = new Size(138, 32);
+            label5.TabIndex = 19;
+            label5.Text = "Password";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 12F);
+            label4.Location = new Point(16, 140);
+            label4.Name = "label4";
+            label4.Size = new Size(89, 32);
+            label4.TabIndex = 18;
+            label4.Text = "Name";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(16, 82);
+            label3.Name = "label3";
+            label3.Size = new Size(133, 32);
+            label3.TabIndex = 17;
+            label3.Text = "Barber ID";
             // 
             // btnLogout
             // 
             btnLogout.Location = new Point(530, 478);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(201, 36);
+            btnLogout.Size = new Size(200, 36);
             btnLogout.TabIndex = 15;
             btnLogout.Text = "Log out";
             btnLogout.UseVisualStyleBackColor = true;
@@ -664,19 +710,34 @@
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
+            // btnUpload
+            // 
+            btnUpload.Location = new Point(584, 334);
+            btnUpload.Margin = new Padding(2);
+            btnUpload.Name = "btnUpload";
+            btnUpload.Size = new Size(231, 36);
+            btnUpload.TabIndex = 83;
+            btnUpload.Text = "Upload";
+            btnUpload.UseVisualStyleBackColor = true;
+            btnUpload.Click += btnUpload_Click;
+            // 
             // tbEmail
             // 
-            tbEmail.Location = new Point(178, 202);
+            tbEmail.Font = new Font("Microsoft Sans Serif", 12F);
+            tbEmail.Location = new Point(180, 198);
             tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(362, 35);
+            tbEmail.Size = new Size(362, 39);
             tbEmail.TabIndex = 14;
+            tbEmail.TextChanged += tbEmail_TextChanged;
             // 
             // tbName
             // 
-            tbName.Location = new Point(178, 140);
+            tbName.Font = new Font("Microsoft Sans Serif", 12F);
+            tbName.Location = new Point(180, 136);
             tbName.Name = "tbName";
-            tbName.Size = new Size(362, 35);
+            tbName.Size = new Size(362, 39);
             tbName.TabIndex = 13;
+            tbName.TextChanged += tbName_TextChanged;
             // 
             // label2
             // 
@@ -724,6 +785,7 @@
             btnAddBarber.TabIndex = 59;
             btnAddBarber.Text = "create barber";
             btnAddBarber.UseVisualStyleBackColor = true;
+            btnAddBarber.Click += btnAddBarber_Click;
             // 
             // tbBarberEmail
             // 
@@ -928,9 +990,26 @@
             tabPage4.Text = "Analysis";
             tabPage4.UseVisualStyleBackColor = true;
             // 
-            // barbeR_serviceTableAdapter1
+            // label50
             // 
-            barbeR_serviceTableAdapter1.ClearBeforeFill = true;
+            label50.Location = new Point(0, 0);
+            label50.Name = "label50";
+            label50.Size = new Size(100, 23);
+            label50.TabIndex = 0;
+            // 
+            // label40
+            // 
+            label40.Location = new Point(0, 0);
+            label40.Name = "label40";
+            label40.Size = new Size(100, 23);
+            label40.TabIndex = 0;
+            // 
+            // label30
+            // 
+            label30.Location = new Point(0, 0);
+            label30.Name = "label30";
+            label30.Size = new Size(100, 23);
+            label30.TabIndex = 0;
             // 
             // Barber_Home_Page
             // 
@@ -962,22 +1041,10 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private DataGridView dgvBookings;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn Description;
-        private DataGridViewTextBoxColumn OutletId;
-        private DataGridViewTextBoxColumn OutletLocation;
-        private DataGridViewTextBoxColumn BarberId;
-        private DataGridViewTextBoxColumn CustId;
-        private DataGridViewTextBoxColumn cName;
-        private DataGridViewTextBoxColumn ServiceId;
-        private DataGridViewTextBoxColumn ServiceName;
-        private DataGridViewTextBoxColumn TimeslotId;
-        private DataGridViewTextBoxColumn Time;
-        private DataGridViewTextBoxColumn Status;
         private Label label1;
         private TabPage tabPage2;
         private Button btnSave;
+        private Button btnUpload;
         private TextBox tbEmail;
         private TextBox tbName;
         private Label label2;
@@ -988,11 +1055,10 @@
         private Label label6;
         private TextBox tbId;
         private TextBox tbPassword;
-        private Label label8;
-        private Label label7;
-        private DataSet1TableAdapters.BARBER_SERVICETableAdapter barbeR_serviceTableAdapter1;
+        private Label lTimeslotTab1;
+        private Label lStatusTab1;
         private ComboBox cbOutlet;
-        private Label label9;
+        private Label lOutletTab1;
         private CheckedListBox checkedListTimeSlot;
         private RadioButton rbMale;
         private RadioButton rbFemale;
@@ -1009,7 +1075,6 @@
         private Label label90;
         private Label label80;
         private Label label70;
-        private Label label60;
         private Label label50;
         private Label label40;
         private Label label30;
@@ -1038,5 +1103,22 @@
         private CheckedListBox checkedListServices;
         private Label label11;
         private Button btnAddBarber;
+        private Label lDateTab1;
+        private Label lServiceTab1;
+        private Label lCustomerTab1;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn OutletId;
+        private DataGridViewTextBoxColumn OutletLocation;
+        private DataGridViewTextBoxColumn BarberId;
+        private DataGridViewTextBoxColumn CustId;
+        private DataGridViewTextBoxColumn cName;
+        private DataGridViewTextBoxColumn ServiceId;
+        private DataGridViewTextBoxColumn ServiceName;
+        private DataGridViewTextBoxColumn TimeslotId;
+        private DataGridViewTextBoxColumn Time;
+        private DataGridViewTextBoxColumn Status;
+        private Label lIdTab1;
     }
 }
