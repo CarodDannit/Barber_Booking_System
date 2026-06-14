@@ -118,18 +118,18 @@ namespace Barber_Booking_System_EF
 
             //try
             //{
-            
+
             //}
             //catch
             //{
             //}
 
-        
 
-        // get barber's pfp
-        //   check if 0
+
+            // get barber's pfp
+            //   check if 0
             bool isZero = true;
-            for (int x = 0; x<barber.Pfp.Length; x++)
+            for (int x = 0; x < barber.Pfp.Length; x++)
             {
                 if (barber.Pfp[x] != 0)
                 {
@@ -299,11 +299,11 @@ namespace Barber_Booking_System_EF
 
             int barberId = int.Parse(tbBarberId.Text);
 
-            var barber = _db.Barbers.Include(b=>b.Services).FirstOrDefault(b => b.Id == barberId);
+            var barber = _db.Barbers.Include(b => b.Services).FirstOrDefault(b => b.Id == barberId);
 
-            
 
-            if(barber == null)
+
+            if (barber == null)
             {
                 MessageBox.Show("Barber not found");
                 return;
@@ -315,7 +315,7 @@ namespace Barber_Booking_System_EF
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
 
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 barber.Services.Clear();
                 _db.Remove(barber);
@@ -330,6 +330,11 @@ namespace Barber_Booking_System_EF
                 tbBarberGender.Text = "";
                 tbBarberOutlet.Text = "";
             }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
