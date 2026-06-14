@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend skDefaultLegend12 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Barber_Home_Page));
+            LiveChartsCore.Drawing.Padding padding23 = new LiveChartsCore.Drawing.Padding();
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip skDefaultTooltip12 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip();
+            LiveChartsCore.Drawing.Padding padding24 = new LiveChartsCore.Drawing.Padding();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             lIdTab1 = new Label();
@@ -106,9 +114,13 @@
             BarberGender = new DataGridViewTextBoxColumn();
             BarberOutlet = new DataGridViewTextBoxColumn();
             tabPage4 = new TabPage();
+            pieChart1 = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
+            btnGenerate = new Button();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label50 = new Label();
             label40 = new Label();
             label30 = new Label();
+            label7 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -117,6 +129,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBarber).BeginInit();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -495,7 +509,6 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
             tabPage2.UseVisualStyleBackColor = true;
-            tabPage2.Click += tabPage2_Click;
             // 
             // checkedListServices
             // 
@@ -771,14 +784,16 @@
             tabPage3.Controls.Add(dgvBarber);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3, 3, 3, 3);
+            tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(910, 639);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Barber";
             tabPage3.UseVisualStyleBackColor = true;
+            //tabPage3.Click += this.tabPage3_Click;
             // 
             // btnAddBarber
             // 
+            btnAddBarber.BackColor = Color.DeepSkyBlue;
             btnAddBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAddBarber.Location = new Point(223, 577);
             btnAddBarber.Margin = new Padding(2, 3, 2, 3);
@@ -786,27 +801,32 @@
             btnAddBarber.Size = new Size(157, 44);
             btnAddBarber.TabIndex = 59;
             btnAddBarber.Text = "create barber";
-            btnAddBarber.UseVisualStyleBackColor = true;
+            btnAddBarber.UseVisualStyleBackColor = false;
             btnAddBarber.Click += btnAddBarber_Click;
             // 
             // tbBarberEmail
             // 
+            tbBarberEmail.BackColor = Color.PaleTurquoise;
             tbBarberEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberEmail.Location = new Point(128, 401);
             tbBarberEmail.Name = "tbBarberEmail";
             tbBarberEmail.Size = new Size(252, 34);
             tbBarberEmail.TabIndex = 64;
+            tbBarberEmail.TextChanged += tbBarberEmail_TextChanged;
             // 
             // tbBarberGender
             // 
+            tbBarberGender.BackColor = Color.PaleTurquoise;
             tbBarberGender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberGender.Location = new Point(128, 443);
             tbBarberGender.Name = "tbBarberGender";
             tbBarberGender.Size = new Size(252, 34);
             tbBarberGender.TabIndex = 63;
+            //tbBarberGender.TextChanged += this.tbBarberGender_TextChanged;
             // 
             // tbBarberOutlet
             // 
+            tbBarberOutlet.BackColor = Color.PaleTurquoise;
             tbBarberOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberOutlet.Location = new Point(128, 488);
             tbBarberOutlet.Name = "tbBarberOutlet";
@@ -815,31 +835,37 @@
             // 
             // tbBarberName
             // 
+            tbBarberName.BackColor = Color.PaleTurquoise;
             tbBarberName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberName.Location = new Point(128, 356);
             tbBarberName.Name = "tbBarberName";
             tbBarberName.Size = new Size(252, 34);
             tbBarberName.TabIndex = 61;
+            //tbBarberName.TextChanged += this.tbBarberName_TextChanged;
             // 
             // tbBarberId
             // 
+            tbBarberId.BackColor = Color.PaleTurquoise;
             tbBarberId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberId.Location = new Point(128, 314);
             tbBarberId.Name = "tbBarberId";
             tbBarberId.ReadOnly = true;
             tbBarberId.Size = new Size(252, 34);
             tbBarberId.TabIndex = 60;
+            tbBarberId.TextChanged += tbBarberId_TextChanged;
             // 
             // btnDeleteBarber
             // 
+            btnDeleteBarber.BackColor = Color.DeepSkyBlue;
             btnDeleteBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDeleteBarber.Location = new Point(30, 577);
+            btnDeleteBarber.ForeColor = Color.White;
+            btnDeleteBarber.Location = new Point(30, 553);
             btnDeleteBarber.Margin = new Padding(3, 4, 3, 4);
             btnDeleteBarber.Name = "btnDeleteBarber";
             btnDeleteBarber.Size = new Size(157, 44);
             btnDeleteBarber.TabIndex = 57;
             btnDeleteBarber.Text = "delete barber";
-            btnDeleteBarber.UseVisualStyleBackColor = true;
+            btnDeleteBarber.UseVisualStyleBackColor = false;
             btnDeleteBarber.Click += btnDeleteBarber_Click;
             // 
             // label18
@@ -965,13 +991,87 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(label7);
+            tabPage4.Controls.Add(pieChart1);
+            tabPage4.Controls.Add(btnGenerate);
+            tabPage4.Controls.Add(chart1);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3, 3, 3, 3);
+            tabPage4.Padding = new Padding(3);
             tabPage4.Size = new Size(910, 639);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Analysis";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pieChart1
+            // 
+            pieChart1.AutoUpdateEnabled = true;
+            pieChart1.ChartTheme = null;
+            skDefaultLegend12.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultLegend12.Content = null;
+            skDefaultLegend12.IsValid = false;
+            skDefaultLegend12.Opacity = 1F;
+            padding23.Bottom = 0F;
+            padding23.Left = 0F;
+            padding23.Right = 0F;
+            padding23.Top = 0F;
+            skDefaultLegend12.Padding = padding23;
+            skDefaultLegend12.RemoveOnCompleted = false;
+            skDefaultLegend12.RotateTransform = 0F;
+            skDefaultLegend12.X = 0F;
+            skDefaultLegend12.Y = 0F;
+            pieChart1.Legend = skDefaultLegend12;
+            pieChart1.Location = new Point(566, 116);
+            pieChart1.Name = "pieChart1";
+            pieChart1.Size = new Size(300, 300);
+            pieChart1.TabIndex = 3;
+            skDefaultTooltip12.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultTooltip12.Content = null;
+            skDefaultTooltip12.IsValid = false;
+            skDefaultTooltip12.Opacity = 1F;
+            padding24.Bottom = 0F;
+            padding24.Left = 0F;
+            padding24.Right = 0F;
+            padding24.Top = 0F;
+            skDefaultTooltip12.Padding = padding24;
+            skDefaultTooltip12.RemoveOnCompleted = false;
+            skDefaultTooltip12.RotateTransform = 0F;
+            skDefaultTooltip12.Wedge = 10;
+            skDefaultTooltip12.X = 0F;
+            skDefaultTooltip12.Y = 0F;
+            pieChart1.Tooltip = skDefaultTooltip12;
+            pieChart1.UpdaterThrottler = TimeSpan.Parse("00:00:00.0500000");
+            pieChart1.Load += pieChart1_Load_2;
+            // 
+            // btnGenerate
+            // 
+            btnGenerate.BackColor = Color.DeepSkyBlue;
+            btnGenerate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGenerate.ForeColor = Color.White;
+            btnGenerate.Location = new Point(325, 500);
+            btnGenerate.Name = "btnGenerate";
+            btnGenerate.Size = new Size(264, 91);
+            btnGenerate.TabIndex = 2;
+            btnGenerate.Text = "GENERATE";
+            btnGenerate.UseVisualStyleBackColor = false;
+            btnGenerate.Click += btnGenerate_Click;
+            // 
+            // chart1
+            // 
+            chartArea12.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea12);
+            legend12.Name = "Legend1";
+            chart1.Legends.Add(legend12);
+            chart1.Location = new Point(26, 41);
+            chart1.Name = "chart1";
+            series12.ChartArea = "ChartArea1";
+            series12.Legend = "Legend1";
+            series12.Name = "Series1";
+            chart1.Series.Add(series12);
+            chart1.Size = new Size(500, 375);
+            chart1.TabIndex = 1;
+            chart1.Text = "chart1";
+            chart1.Click += chart1_Click;
             // 
             // label50
             // 
@@ -993,6 +1093,16 @@
             label30.Name = "label30";
             label30.Size = new Size(100, 23);
             label30.TabIndex = 0;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(592, 71);
+            label7.Name = "label7";
+            label7.Size = new Size(260, 25);
+            label7.TabIndex = 4;
+            label7.Text = "Total Booking By Customers";
             // 
             // Barber_Home_Page
             // 
@@ -1016,6 +1126,9 @@
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBarber).EndInit();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1102,5 +1215,9 @@
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Status;
         private Label lIdTab1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Button btnGenerate;
+        private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChart1;
+        private Label label7;
     }
 }
