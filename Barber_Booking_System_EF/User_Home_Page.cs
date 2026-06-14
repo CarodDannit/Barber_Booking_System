@@ -27,7 +27,7 @@ namespace Barber_Booking_System_EF
         {
             tbName.Text = customer.Name;
             tbEmail.Text = customer.Email;
-           
+
 
             dgvBookings.AutoGenerateColumns = false;
             dgvBookings.DataSource = _db.Bookings
@@ -57,12 +57,6 @@ namespace Barber_Booking_System_EF
             if (e.RowIndex < 0) return;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            User_Edit_Profile editProf = new User_Edit_Profile();
-            editProf.Show();
-            this.Hide();
-        }
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -73,11 +67,15 @@ namespace Barber_Booking_System_EF
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnEditProfile_Click(object sender, EventArgs e)
         {
             tbEmail.ReadOnly = false;
             tbName.ReadOnly = false;
-            
+
+            // ahmad bolz EF core style
+            tbName.Text = customer.Name;
+            tbEmail.Text = customer.Email;
+            tbPassword.Text = customer.Password;
 
             label6.Visible = true;
             tbPassword.Visible = true;
@@ -87,15 +85,38 @@ namespace Barber_Booking_System_EF
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // validate input
+            if (string.IsNullOrWhiteSpace(tbName.Text))
+            {
+                MessageBox.Show("Name cannot be empty.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbEmail.Text))
+            {
+                MessageBox.Show("Email cannot be empty.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Password cannot be empty.");
+                return;
+            }
+
             tbEmail.ReadOnly = true;
             tbName.ReadOnly = true;
-            
+
+            customer.Name = tbName.Text;
+            customer.Email = tbEmail.Text;
+            customer.Password = tbPassword.Text;
 
             label6.Visible = false;
             tbPassword.Visible = false;
             tbPassword.ReadOnly = true;
             btnSave.Visible = false;
+
+            _db.SaveChanges();
         }
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -109,6 +130,11 @@ namespace Barber_Booking_System_EF
         {
             Book_Appointment_Page newbookingpage = new Book_Appointment_Page(customer);
             newbookingpage.ShowDialog();
+        }
+
+        private void rbFemale_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

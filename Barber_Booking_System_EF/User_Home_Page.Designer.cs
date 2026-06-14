@@ -47,8 +47,6 @@
             Status = new DataGridViewTextBoxColumn();
             btnNewBooking = new Button();
             tabPage2 = new TabPage();
-            lblGender = new Label();
-            label5 = new Label();
             btnSave = new Button();
             tbName = new TextBox();
             tbEmail = new TextBox();
@@ -114,7 +112,7 @@
             dgvBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBookings.Columns.AddRange(new DataGridViewColumn[] { Id, Date, Description, OutletId, OutletLocation, BarberId, BarberName, ServiceId, ServiceName, TimeslotId, Time, Status });
             dgvBookings.Location = new Point(33, 72);
-            dgvBookings.Margin = new Padding(2, 2, 2, 2);
+            dgvBookings.Margin = new Padding(2);
             dgvBookings.Name = "dgvBookings";
             dgvBookings.ReadOnly = true;
             dgvBookings.RowHeadersWidth = 72;
@@ -244,8 +242,6 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(lblGender);
-            tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(btnSave);
             tabPage2.Controls.Add(tbName);
             tabPage2.Controls.Add(tbEmail);
@@ -266,33 +262,11 @@
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
             // 
-            // lblGender
-            // 
-            lblGender.AutoSize = true;
-            lblGender.BackColor = Color.DimGray;
-            lblGender.FlatStyle = FlatStyle.Popup;
-            lblGender.Location = new Point(235, 180);
-            lblGender.Margin = new Padding(2, 0, 2, 0);
-            lblGender.Name = "lblGender";
-            lblGender.Size = new Size(0, 20);
-            lblGender.TabIndex = 24;
-            lblGender.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(149, 177);
-            label5.Name = "label5";
-            label5.Size = new Size(77, 25);
-            label5.TabIndex = 23;
-            label5.Text = "Gender";
-            // 
             // btnSave
             // 
             btnSave.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.Location = new Point(478, 265);
-            btnSave.Margin = new Padding(2, 2, 2, 2);
+            btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(125, 43);
             btnSave.TabIndex = 21;
@@ -303,31 +277,31 @@
             // 
             // tbName
             // 
-            tbName.Location = new Point(235, 93);
-            tbName.Margin = new Padding(1, 1, 1, 1);
+            tbName.Location = new Point(300, 92);
+            tbName.Margin = new Padding(1);
             tbName.Name = "tbName";
             tbName.ReadOnly = true;
-            tbName.Size = new Size(94, 27);
+            tbName.Size = new Size(208, 27);
             tbName.TabIndex = 13;
             // 
             // tbEmail
             // 
-            tbEmail.Location = new Point(235, 134);
-            tbEmail.Margin = new Padding(1, 1, 1, 1);
+            tbEmail.Location = new Point(300, 137);
+            tbEmail.Margin = new Padding(1);
             tbEmail.Name = "tbEmail";
             tbEmail.ReadOnly = true;
-            tbEmail.Size = new Size(94, 27);
+            tbEmail.Size = new Size(208, 27);
             tbEmail.TabIndex = 14;
             // 
             // tbPassword
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPassword.Location = new Point(235, 219);
-            tbPassword.Margin = new Padding(1, 1, 1, 1);
+            tbPassword.Location = new Point(300, 216);
+            tbPassword.Margin = new Padding(1);
             tbPassword.Name = "tbPassword";
             tbPassword.PasswordChar = '*';
             tbPassword.ReadOnly = true;
-            tbPassword.Size = new Size(94, 30);
+            tbPassword.Size = new Size(208, 30);
             tbPassword.TabIndex = 20;
             tbPassword.Visible = false;
             // 
@@ -366,7 +340,7 @@
             // btnLogout
             // 
             btnLogout.Location = new Point(575, 40);
-            btnLogout.Margin = new Padding(1, 1, 1, 1);
+            btnLogout.Margin = new Padding(1);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(91, 34);
             btnLogout.TabIndex = 12;
@@ -394,7 +368,7 @@
             btnEditProfile.TabIndex = 12;
             btnEditProfile.Text = "edit profile";
             btnEditProfile.UseVisualStyleBackColor = true;
-            btnEditProfile.Click += button1_Click_1;
+            btnEditProfile.Click += btnEditProfile_Click;
             // 
             // User_Home_Page
             // 
@@ -425,7 +399,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnEditProfile;
         private Button btnNewBooking;
         private Button btnLogout;
         private DataGridView dgvBookings;
@@ -448,7 +421,6 @@
         private Label label4;
         private TextBox tbPassword;
         private Button btnSave;
-        private Label lblGender;
-        private Label label5;
+        private Button btnEditProfile;
     }
 }

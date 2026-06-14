@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend skDefaultLegend2 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Barber_Home_Page));
+            LiveChartsCore.Drawing.Padding padding3 = new LiveChartsCore.Drawing.Padding();
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip skDefaultTooltip2 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip();
+            LiveChartsCore.Drawing.Padding padding4 = new LiveChartsCore.Drawing.Padding();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             lIdTab1 = new Label();
@@ -107,6 +115,9 @@
             BarberGender = new DataGridViewTextBoxColumn();
             BarberOutlet = new DataGridViewTextBoxColumn();
             tabPage4 = new TabPage();
+            pieChart1 = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
+            btnGenerate = new Button();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label50 = new Label();
             label40 = new Label();
             label30 = new Label();
@@ -118,6 +129,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBarber).BeginInit();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -520,9 +533,9 @@
             // 
             groupBox1.Controls.Add(pictureBoxBarber);
             groupBox1.Location = new Point(389, 55);
-            groupBox1.Margin = new Padding(4, 4, 4, 4);
+            groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4, 4, 4, 4);
+            groupBox1.Padding = new Padding(4);
             groupBox1.Size = new Size(154, 163);
             groupBox1.TabIndex = 82;
             groupBox1.TabStop = false;
@@ -532,7 +545,7 @@
             // 
             pictureBoxBarber.Image = Properties.Resources.rukia04;
             pictureBoxBarber.Location = new Point(7, 22);
-            pictureBoxBarber.Margin = new Padding(4, 4, 4, 4);
+            pictureBoxBarber.Margin = new Padding(4);
             pictureBoxBarber.Name = "pictureBoxBarber";
             pictureBoxBarber.Size = new Size(140, 134);
             pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -578,7 +591,7 @@
             cbOutlet.Font = new Font("Microsoft Sans Serif", 12F);
             cbOutlet.FormattingEnabled = true;
             cbOutlet.Location = new Point(120, 253);
-            cbOutlet.Margin = new Padding(4, 4, 4, 4);
+            cbOutlet.Margin = new Padding(4);
             cbOutlet.Name = "cbOutlet";
             cbOutlet.Size = new Size(243, 33);
             cbOutlet.TabIndex = 73;
@@ -587,7 +600,7 @@
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F);
             tbPassword.Location = new Point(120, 173);
-            tbPassword.Margin = new Padding(2, 2, 2, 2);
+            tbPassword.Margin = new Padding(2);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(243, 30);
             tbPassword.TabIndex = 24;
@@ -597,7 +610,7 @@
             // 
             tbId.Font = new Font("Microsoft Sans Serif", 12F);
             tbId.Location = new Point(120, 52);
-            tbId.Margin = new Padding(2, 2, 2, 2);
+            tbId.Margin = new Padding(2);
             tbId.Name = "tbId";
             tbId.ReadOnly = true;
             tbId.Size = new Size(243, 30);
@@ -685,7 +698,7 @@
             // btnLogout
             // 
             btnLogout.Location = new Point(353, 319);
-            btnLogout.Margin = new Padding(2, 2, 2, 2);
+            btnLogout.Margin = new Padding(2);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(133, 24);
             btnLogout.TabIndex = 15;
@@ -697,7 +710,7 @@
             // 
             btnSave.BackColor = Color.FromArgb(192, 255, 192);
             btnSave.Location = new Point(79, 319);
-            btnSave.Margin = new Padding(2, 2, 2, 2);
+            btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(133, 24);
             btnSave.TabIndex = 12;
@@ -708,7 +721,7 @@
             // btnUpload
             // 
             btnUpload.Location = new Point(389, 223);
-            btnUpload.Margin = new Padding(1, 1, 1, 1);
+            btnUpload.Margin = new Padding(1);
             btnUpload.Name = "btnUpload";
             btnUpload.Size = new Size(154, 24);
             btnUpload.TabIndex = 83;
@@ -720,7 +733,7 @@
             // 
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F);
             tbEmail.Location = new Point(120, 132);
-            tbEmail.Margin = new Padding(2, 2, 2, 2);
+            tbEmail.Margin = new Padding(2);
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(243, 30);
             tbEmail.TabIndex = 14;
@@ -730,7 +743,7 @@
             // 
             tbName.Font = new Font("Microsoft Sans Serif", 12F);
             tbName.Location = new Point(120, 91);
-            tbName.Margin = new Padding(2, 2, 2, 2);
+            tbName.Margin = new Padding(2);
             tbName.Name = "tbName";
             tbName.Size = new Size(243, 30);
             tbName.TabIndex = 13;
@@ -766,7 +779,7 @@
             tabPage3.Controls.Add(dgvBarber);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3, 3, 3, 3);
+            tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(910, 639);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Barber";
@@ -969,13 +982,84 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(pieChart1);
+            tabPage4.Controls.Add(btnGenerate);
+            tabPage4.Controls.Add(chart1);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
-            tabPage4.Padding = new Padding(3, 3, 3, 3);
+            tabPage4.Padding = new Padding(3);
             tabPage4.Size = new Size(910, 639);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Analysis";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pieChart1
+            // 
+            pieChart1.AutoUpdateEnabled = true;
+            pieChart1.ChartTheme = null;
+            skDefaultLegend2.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultLegend2.Content = null;
+            skDefaultLegend2.IsValid = false;
+            skDefaultLegend2.Opacity = 1F;
+            padding3.Bottom = 0F;
+            padding3.Left = 0F;
+            padding3.Right = 0F;
+            padding3.Top = 0F;
+            skDefaultLegend2.Padding = padding3;
+            skDefaultLegend2.RemoveOnCompleted = false;
+            skDefaultLegend2.RotateTransform = 0F;
+            skDefaultLegend2.X = 0F;
+            skDefaultLegend2.Y = 0F;
+            pieChart1.Legend = skDefaultLegend2;
+            pieChart1.Location = new Point(515, 41);
+            pieChart1.Name = "pieChart1";
+            pieChart1.Size = new Size(300, 300);
+            pieChart1.TabIndex = 3;
+            skDefaultTooltip2.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultTooltip2.Content = null;
+            skDefaultTooltip2.IsValid = false;
+            skDefaultTooltip2.Opacity = 1F;
+            padding4.Bottom = 0F;
+            padding4.Left = 0F;
+            padding4.Right = 0F;
+            padding4.Top = 0F;
+            skDefaultTooltip2.Padding = padding4;
+            skDefaultTooltip2.RemoveOnCompleted = false;
+            skDefaultTooltip2.RotateTransform = 0F;
+            skDefaultTooltip2.Wedge = 10;
+            skDefaultTooltip2.X = 0F;
+            skDefaultTooltip2.Y = 0F;
+            pieChart1.Tooltip = skDefaultTooltip2;
+            pieChart1.UpdaterThrottler = TimeSpan.Parse("00:00:00.0500000");
+            pieChart1.Load += pieChart1_Load_2;
+            // 
+            // btnGenerate
+            // 
+            btnGenerate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGenerate.Location = new Point(571, 415);
+            btnGenerate.Name = "btnGenerate";
+            btnGenerate.Size = new Size(171, 56);
+            btnGenerate.TabIndex = 2;
+            btnGenerate.Text = "GENERATE";
+            btnGenerate.UseVisualStyleBackColor = true;
+            btnGenerate.Click += btnGenerate_Click;
+            // 
+            // chart1
+            // 
+            chartArea2.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chart1.Legends.Add(legend2);
+            chart1.Location = new Point(26, 41);
+            chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chart1.Series.Add(series2);
+            chart1.Size = new Size(500, 375);
+            chart1.TabIndex = 1;
+            chart1.Text = "chart1";
+            chart1.Click += chart1_Click;
             // 
             // label50
             // 
@@ -1020,6 +1104,8 @@
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBarber).EndInit();
+            tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1107,5 +1193,8 @@
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Status;
         private Label lIdTab1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Button btnGenerate;
+        private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChart1;
     }
 }

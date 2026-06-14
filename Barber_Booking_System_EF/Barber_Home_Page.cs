@@ -1,5 +1,7 @@
 ﻿using Barber_Booking_System_EF.models;
 using Barber_Booking_System_EF.models;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -76,15 +78,28 @@ namespace Barber_Booking_System_EF
                 if (index != -1) checkedListServices.SetItemChecked(index, true);
             }
 
-            //try
-            //{
-            var ms = new MemoryStream(barber.Pfp);
-            //}
-            //catch
-            //{
-            //}
-            pictureBoxBarber.Image = new Bitmap(ms);
-            ms.Dispose();
+            // get barber's pfp
+            //   check if 0
+            bool isZero = true;
+            for (int x = 0; x < barber.Pfp.Length; x++)
+            {
+                if (barber.Pfp[x] != 0)
+                {
+                    isZero = false;
+                    break; // Stop immediately upon finding a non-zero byte
+                }
+            }
+            //   read pfp
+            if (!isZero)
+            {
+                var ms = new MemoryStream(barber.Pfp);
+                pictureBoxBarber.Image = new Bitmap(ms);
+                ms.Dispose();
+            }
+            else
+            {
+                pictureBoxBarber.Image = Properties.Resources.rukia04;
+            }
 
 
             dgvBookings.AutoGenerateColumns = false;
@@ -259,6 +274,85 @@ namespace Barber_Booking_System_EF
             }
 
             openFileDialog.Dispose();
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbFemale_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pieChart1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            pieChart1.LegendPosition = LiveChartsCore.Measure.LegendPosition.Bottom;
+            var series = new List<ISeries>();
+            // select customer name and number of bookings made
+            var source = _db.Customers.Select(c => new { c.Name, Count = c.Bookings.Count });
+            foreach (var obj in source)
+            {
+                series.Add(new PieSeries<double>
+                {
+                    Values = new double[] { obj.Count },
+                    Name = obj.Name,
+                    ShowDataLabels = true
+
+                    //DataLabels = true,
+                    //LabelPoint = labelPoint
+                });
+            }
+            pieChart1.Series = series;
+            // ===========================================================
+            // CHART1: GROUP BY NAMA SERVIS (KUNCI PENYELESAIAN)
+            // ===========================================================
+            chart1.Series.Clear();
+            chart1.Titles.Clear();
+
+            chart1.Titles.Add("Perbandingan Jenis Potongan (Kesemua Barber)");
+
+            var seriesChart1 = chart1.Series.Add("Jumlah Tempahan");
+            seriesChart1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            seriesChart1.IsXValueIndexed = true;
+            seriesChart1.IsValueShownAsLabel = true;
+
+            var chartData = _db.Bookings
+                .Where(b => b.Service != null)
+                .GroupBy(b => b.Service.Name)
+                .Select(g => new
+                {
+                    ServiceName = g.Key,
+                    TotalCount = g.Count()
+                })
+                .OrderByDescending(x => x.TotalCount)
+                .ToList();
+
+            foreach (var item in chartData)
+            {
+                seriesChart1.Points.AddXY(item.ServiceName, item.TotalCount);
+            }
+        }
+
+        private void pieChart1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pieChart1_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
