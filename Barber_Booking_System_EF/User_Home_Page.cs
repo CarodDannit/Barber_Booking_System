@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using Barber_Booking_System_EF.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,14 +13,50 @@ namespace Barber_Booking_System_EF
 {
     public partial class User_Home_Page : Form
     {
-        public User_Home_Page()
+        BekasIceCreamDbContext _db = Helper._db;
+        Customer customer;
+        //List<Booking> bookings;
+        public User_Home_Page(Customer c)
         {
             InitializeComponent();
+            customer = c;
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        // load data when form loads
+        private void User_Home_Page_Load(object sender, EventArgs e)
         {
             Console.WriteLine("load hometyrtyrtyrtyrt page");
+            tbName.Text = customer.Name;
+            tbEmail.Text = customer.Email;
+
+            //bookings = _db.Bookings
+            //    .Where(b => b.CustId == customer.Id)
+            //    .ToList();
+
+            dgvBookings.AutoGenerateColumns = false;
+            dgvBookings.DataSource = _db.Bookings
+                .Where(b => b.CustId == customer.Id)
+                .Select(b => new
+                {
+                    b.Id,
+                    b.Date,
+                    b.Description,
+                    b.OutletId,
+                    oLocation = b.Outlet.Location,
+                    b.BarberId,
+                    bName = b.Barber.Name,
+                    b.ServiceId,
+                    sName = b.Service.Name,
+                    b.TimeslotId,
+                    b.Timeslot.Time,
+                    b.Status
+                })
+                .ToList();
+        }
+
+        private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
         }
 
         private void button1_Click(object sender, EventArgs e)

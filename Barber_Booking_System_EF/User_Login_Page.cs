@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Barber_Booking_System_EF.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +13,20 @@ namespace Barber_Booking_System_EF
 {
     public partial class User_Login_Page : Form
     {
+        BekasIceCreamDbContext _db = Helper._db;
+
         public User_Login_Page()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Barber_Login_Page bloginPage = new Barber_Login_Page();
-            this.Hide();
-            bloginPage.ShowDialog();
-            this.Close();
-        }
+        //private void btnBarbersignup_Click(object sender, EventArgs e)
+        //{
+        //    Barber_Signup_Page bsignupPage = new Barber_Signup_Page();
+        //    this.Hide();
+        //    bsignupPage.ShowDialog();
+        //    this.Close();
+        //}
 
         private void lnkUserRegisterAcc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -32,15 +35,6 @@ namespace Barber_Booking_System_EF
             signupPage.ShowDialog();
             this.Close();
         }
-
-        private void btnUserLogin_Click(object sender, EventArgs e)
-        {
-            User_Home_Page homePage = new User_Home_Page();
-            this.Hide();
-            homePage.ShowDialog();
-            this.Close();
-        }
-
         private void btnBarberLoginPage_Click(object sender, EventArgs e)
         {
             Barber_Login_Page bloginPage = new Barber_Login_Page();
@@ -48,5 +42,47 @@ namespace Barber_Booking_System_EF
             bloginPage.ShowDialog();
             this.Close();
         }
+
+        // login
+        private void btnUserLogin_Click(object sender, EventArgs e)
+        {
+            // ! validate textboxes are not empty first !
+
+            if (String.IsNullOrWhiteSpace(tbEmail.Text))
+            {
+                MessageBox.Show("Email cannot be empty!");
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Password cannot be empty!");
+                return;
+            }
+
+            var customerFromDB = _db.Customers.FirstOrDefault(c => c.Email == tbEmail.Text);
+            if (customerFromDB == null)
+            {
+                MessageBox.Show("Email not found!");
+                return;
+            }
+            if (customerFromDB.Password != tbPassword.Text)
+            {
+                MessageBox.Show("Incorrect password!");
+                return;
+            }
+
+            User_Home_Page homePage = new User_Home_Page(customerFromDB);
+            this.Hide();
+            homePage.ShowDialog();
+            this.Close();
+        }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    var bhomepage = new Barber_Home_Page(_db.Barbers.Find(5));
+        //    this.Hide();
+        //    bhomepage.ShowDialog();
+        //    this.Close();
+        //}
     }
 }
