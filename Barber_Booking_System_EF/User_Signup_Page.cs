@@ -13,7 +13,7 @@ namespace Barber_Booking_System_EF
 {
     public partial class User_Signup_Page : Form
     {
-//asdefrdg
+        //asdefrdg
         public User_Signup_Page()
         {
             InitializeComponent();
@@ -51,6 +51,11 @@ namespace Barber_Booking_System_EF
             //this.Hide();
             //homePage.ShowDialog();
             //this.Close();
+        }
+
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
