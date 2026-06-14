@@ -58,5 +58,12 @@ namespace Barber_Booking_System_EF
         {
             if (e.RowIndex < 0) return;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            User_Edit_Profile editProf = new User_Edit_Profile();
+            editProf.Show();
+            this.Hide();
+        }
     }
 }
