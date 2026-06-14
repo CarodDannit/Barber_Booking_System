@@ -23,8 +23,17 @@ namespace Barber_Booking_System_EF
             customer = c;
         }
 
-        private void loadBookings()
+        // load data when form loads
+        private void User_Home_Page_Load(object sender, EventArgs e)
         {
+            Console.WriteLine("load hometyrtyrtyrtyrt page");
+            tbName.Text = customer.Name;
+            tbEmail.Text = customer.Email;
+
+            //bookings = _db.Bookings
+            //    .Where(b => b.CustId == customer.Id)
+            //    .ToList();
+
             dgvBookings.AutoGenerateColumns = false;
             dgvBookings.DataSource = _db.Bookings
                 .Where(b => b.CustId == customer.Id)
@@ -44,21 +53,7 @@ namespace Barber_Booking_System_EF
                     b.Status
                 })
                 .ToList();
-        }
 
-        // load data when form loads
-        private void User_Home_Page_Load(object sender, EventArgs e)
-        {
-            Console.WriteLine("load hometyrtyrtyrtyrt page");
-            tbName.Text = customer.Name;
-            tbEmail.Text = customer.Email;
-
-            //bookings = _db.Bookings
-            //    .Where(b => b.CustId == customer.Id)
-            //    .ToList();
-
-
-            loadBookings();
 
         }
 
@@ -106,46 +101,6 @@ namespace Barber_Booking_System_EF
         {
             Book_Appointment_Page newbookingpage = new Book_Appointment_Page(customer);
             newbookingpage.ShowDialog();
-        }
-
-        private void btnDeleteBooking_Click(object sender, EventArgs e)
-        {
-            if(lblBookingId.Text == null || lblBookingId.Text == "")
-            {
-                MessageBox.Show("Pls select a booking"); return;
-            }
-
-            int bookingId = Convert.ToInt32(lblBookingId.Text);
-
-            var booking = _db.Bookings.FirstOrDefault(b => b.CustId == customer.Id);
-
-            if(booking == null)
-            {
-                MessageBox.Show("Booking not found");
-                return;
-            }
-
-            DialogResult result = MessageBox.Show(
-                "Are you confirm to delete this booking?",
-                "Confirm Delete",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
-            if(result == DialogResult.Yes)
-            {
-                _db.Bookings.Remove(booking);
-                _db.SaveChanges();
-
-                MessageBox.Show("Booking deleted successfully");
-
-                lblBookingId.Text = "";
-                lblService.Text = "";
-                lblBarber.Text = "";
-                lblOutlet.Text = "";
-                lblDate.Text = "";
-                lblTimeSlot.Text = "";
-                lblStatus.Text = "";
-            }
         }
     }
 }
