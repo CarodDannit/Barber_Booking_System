@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Barber_Booking_System_EF.models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,6 +95,18 @@ namespace Barber_Booking_System_EF
                     bk.Status
                 })
                 .ToList();
+
+            dgvBarber.AutoGenerateColumns = false;
+            dgvBarber.DataSource = _db.Barbers
+                .Select(br => new
+                {
+                    br.Id,
+                    br.Name,
+                    br.Email,
+                    br.Gender,
+                    oLocation = br.Outlet.Location
+                })
+                .ToList();
         }
 
         private void btnAddBarber_Click(object sender, EventArgs e)
@@ -108,6 +122,55 @@ namespace Barber_Booking_System_EF
             else this.Close();
         }
 
+        private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+        }
+
+        private void dgvBookings_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgvBookings.Rows[e.RowIndex];
+
+            lblBookingId.Text = row.Cells["Id"].Value?.ToString();
+            lblService.Text = row.Cells["ServiceName"].Value?.ToString();
+            lblCustomer.Text = row.Cells["cName"].Value?.ToString();
+            lblOutlet.Text = row.Cells["OutletLocation"].Value?.ToString();
+            lblDate.Text = row.Cells["Date"].Value.ToString();
+            lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
+            lblStatus.Text = row.Cells["Status"].Value?.ToString();
+        }
+
+        private void btnCheckBooking_Click(object sender, EventArgs e)
+        {
+
+
+            var bookingId = _db.Bookings
+                            .Include(b => b.Service)
+                            .Include(b => b.Cust)
+                            .Include(b => b.Outlet)
+                            .Include(b => b.Timeslot)
+                            .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
+
+            Check_Barber_Booking_Page checkBooking = new Check_Barber_Booking_Page(bookingId);
+            checkBooking.Show();
+        }
+
+        private void dgvBarber_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgvBarber.Rows[e.RowIndex];
+
+            tbBarberId.Text = row.Cells["BarberId02"].Value?.ToString();
+            tbBarberName.Text = row.Cells["BarberName"].Value?.ToString();
+            tbBarberEmail.Text = row.Cells["BarberEmail"].Value?.ToString();
+            tbBarberGender.Text = row.Cells["BarberGender"].Value?.ToString();
+            tbBarberOutlet.Text = row.Cells["BarberOutlet"].Value?.ToString();
+        }
+
+       
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbName.Text))
