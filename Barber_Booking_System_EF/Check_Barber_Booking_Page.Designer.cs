@@ -1,6 +1,6 @@
 ﻿namespace Barber_Booking_System_EF
 {
-    partial class Check_User_Booking_Page
+    partial class Check_Barber_Booking_Page
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
             panel1 = new Panel();
             lblStatus = new Label();
             label10 = new Label();
             lblService = new Label();
-            lblBarber = new Label();
+            lblCustomer = new Label();
             lblOutlet = new Label();
             lblDate = new Label();
             lblTimeSlot = new Label();
@@ -43,9 +44,18 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(166, 46);
+            label1.TabIndex = 3;
+            label1.Text = "Booking";
             // 
             // panel1
             // 
@@ -53,7 +63,7 @@
             panel1.Controls.Add(lblStatus);
             panel1.Controls.Add(label10);
             panel1.Controls.Add(lblService);
-            panel1.Controls.Add(lblBarber);
+            panel1.Controls.Add(lblCustomer);
             panel1.Controls.Add(lblOutlet);
             panel1.Controls.Add(lblDate);
             panel1.Controls.Add(lblTimeSlot);
@@ -64,10 +74,10 @@
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
-            panel1.Location = new Point(12, 58);
+            panel1.Location = new Point(12, 69);
             panel1.Name = "panel1";
             panel1.Size = new Size(776, 525);
-            panel1.TabIndex = 0;
+            panel1.TabIndex = 2;
             // 
             // lblStatus
             // 
@@ -97,14 +107,14 @@
             lblService.Size = new Size(0, 28);
             lblService.TabIndex = 38;
             // 
-            // lblBarber
+            // lblCustomer
             // 
-            lblBarber.AutoSize = true;
-            lblBarber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBarber.Location = new Point(162, 129);
-            lblBarber.Name = "lblBarber";
-            lblBarber.Size = new Size(0, 28);
-            lblBarber.TabIndex = 37;
+            lblCustomer.AutoSize = true;
+            lblCustomer.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCustomer.Location = new Point(162, 129);
+            lblCustomer.Name = "lblCustomer";
+            lblCustomer.Size = new Size(0, 28);
+            lblCustomer.TabIndex = 37;
             // 
             // lblOutlet
             // 
@@ -178,9 +188,9 @@
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(34, 129);
             label5.Name = "label5";
-            label5.Size = new Size(69, 28);
+            label5.Size = new Size(96, 28);
             label5.TabIndex = 29;
-            label5.Text = "Barber";
+            label5.Text = "Customer";
             // 
             // label4
             // 
@@ -202,27 +212,17 @@
             label3.TabIndex = 27;
             label3.Text = "Id";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(166, 46);
-            label1.TabIndex = 1;
-            label1.Text = "Booking";
-            // 
-            // Check_User_Booking_Page
+            // Check_Barber_Booking_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lime;
-            ClientSize = new Size(800, 595);
+            ClientSize = new Size(800, 615);
             Controls.Add(label1);
             Controls.Add(panel1);
-            Name = "Check_User_Booking_Page";
-            Text = "Check_User_Booking_Page";
-            Load += Check_User_Booking_Page_Load;
+            Name = "Check_Barber_Booking_Page";
+            Text = "Check_Barber_Booking_Page";
+            Load += Check_Barber_Booking_Page_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -231,12 +231,12 @@
 
         #endregion
 
-        private Panel panel1;
         private Label label1;
+        private Panel panel1;
         private Label lblStatus;
         private Label label10;
         private Label lblService;
-        private Label lblBarber;
+        private Label lblCustomer;
         private Label lblOutlet;
         private Label lblDate;
         private Label lblTimeSlot;

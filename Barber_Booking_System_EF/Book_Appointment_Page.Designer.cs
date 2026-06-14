@@ -107,7 +107,6 @@
             // 
             // pictureBoxBarber
             // 
-            pictureBoxBarber.Image = Properties.Resources.rukia04;
             pictureBoxBarber.Location = new Point(12, 43);
             pictureBoxBarber.Margin = new Padding(6, 8, 6, 8);
             pictureBoxBarber.Name = "pictureBoxBarber";
