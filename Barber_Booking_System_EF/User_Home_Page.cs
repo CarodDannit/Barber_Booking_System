@@ -1,4 +1,5 @@
 ﻿using Barber_Booking_System_EF.models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,36 @@ namespace Barber_Booking_System_EF
         private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
+
+
+        }
+
+        private void dgvBookings_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dgvBookings.Rows[e.RowIndex];
+
+            lblBookingId.Text = row.Cells["Id"].Value?.ToString();
+            lblService.Text = row.Cells["ServiceName"].Value?.ToString();
+            lblBarber.Text = row.Cells["BarberName"].Value?.ToString();
+            lblOutlet.Text = row.Cells["OutletLocation"].Value?.ToString();
+            lblDate.Text = row.Cells["Date"].Value.ToString();
+            lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
+            lblStatus.Text = row.Cells["Status"].Value?.ToString();
+        }
+
+        private void btnCheckBooking_Click(object sender, EventArgs e)
+        {
+            var bookingId = _db.Bookings
+                            .Include(b => b.Service)
+                            .Include(b => b.Barber)
+                            .Include(b => b.Outlet)
+                            .Include(b => b.Timeslot)
+                            .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
+
+            Check_User_Booking_Page checkBooking = new Check_User_Booking_Page(bookingId);
+            checkBooking.Show();
         }
     }
 }
