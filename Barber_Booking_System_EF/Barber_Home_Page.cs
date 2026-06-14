@@ -19,6 +19,8 @@ namespace Barber_Booking_System_EF
         List<Outlet> outlets;
         List<Timeslot> timeslots;
         List<Timeslot> timeslotsActive;
+        List<Service> services;
+        List<Service> servicesActive;
 
         public Barber_Home_Page(Barber b)
         {
@@ -57,6 +59,20 @@ namespace Barber_Booking_System_EF
                 var index = timeslots.FindIndex(ts => ts.Id == tA.Id);
                 if (index != -1) checkedListTimeSlot.SetItemChecked(index, true);
             }
+
+            services = await _db.Services.Include(s => s.Barbers).ToListAsync();
+            foreach (var s in services)
+            {
+                checkedListServices.Items.Add(s.Name);
+            }
+
+            servicesActive = services.Where(s => s.Barbers.Any(b => b.Id == barber.Id)).ToList();
+            foreach (var sA in servicesActive)
+            {
+                var index = services.FindIndex(ts => ts.Id == sA.Id);
+                if (index != -1) checkedListServices.SetItemChecked(index, true);
+            }
+
 
             dgvBookings.AutoGenerateColumns = false;
             dgvBookings.DataSource = _db.Bookings
@@ -118,7 +134,7 @@ namespace Barber_Booking_System_EF
             barber.OutletId = outlets[cbOutlet.SelectedIndex].Id;
             // pfp save
             barber.Timeslots = timeslots.Where((t, index) => checkedListTimeSlot.GetItemChecked(index)).ToList();
-
+            barber.Services = services.Where((s, index) => checkedListServices.GetItemChecked(index)).ToList();
             _db.SaveChanges();
 
             MessageBox.Show("Profile Updated!");

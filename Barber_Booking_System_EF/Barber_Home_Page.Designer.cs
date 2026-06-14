@@ -46,6 +46,8 @@
             Status = new DataGridViewTextBoxColumn();
             label1 = new Label();
             tabPage2 = new TabPage();
+            checkedListServices = new CheckedListBox();
+            label11 = new Label();
             button1 = new Button();
             groupBox1 = new GroupBox();
             pictureBoxBarber = new PictureBox();
@@ -81,7 +83,7 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(-1, 5);
+            tabControl1.Location = new Point(20, 23);
             tabControl1.Margin = new Padding(2, 3, 2, 3);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -244,6 +246,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(checkedListServices);
+            tabPage2.Controls.Add(label11);
             tabPage2.Controls.Add(button1);
             tabPage2.Controls.Add(groupBox1);
             tabPage2.Controls.Add(label9);
@@ -273,6 +277,25 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // checkedListServices
+            // 
+            checkedListServices.FormattingEnabled = true;
+            checkedListServices.Location = new Point(562, 199);
+            checkedListServices.Name = "checkedListServices";
+            checkedListServices.Size = new Size(222, 166);
+            checkedListServices.TabIndex = 87;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(557, 172);
+            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(72, 24);
+            label11.TabIndex = 86;
+            label11.Text = "Servies";
             // 
             // button1
             // 
@@ -311,7 +334,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(563, 41);
+            label9.Location = new Point(562, 3);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(89, 24);
@@ -321,9 +344,9 @@
             // checkedListTimeSlot
             // 
             checkedListTimeSlot.FormattingEnabled = true;
-            checkedListTimeSlot.Location = new Point(563, 81);
+            checkedListTimeSlot.Location = new Point(562, 30);
             checkedListTimeSlot.Name = "checkedListTimeSlot";
-            checkedListTimeSlot.Size = new Size(222, 202);
+            checkedListTimeSlot.Size = new Size(222, 130);
             checkedListTimeSlot.TabIndex = 74;
             // 
             // rbMale
@@ -446,7 +469,7 @@
             // 
             // btnAddBarber
             // 
-            btnAddBarber.Location = new Point(651, 355);
+            btnAddBarber.Location = new Point(216, 319);
             btnAddBarber.Margin = new Padding(2);
             btnAddBarber.Name = "btnAddBarber";
             btnAddBarber.Size = new Size(133, 24);
@@ -457,7 +480,7 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(650, 383);
+            btnLogout.Location = new Point(353, 319);
             btnLogout.Margin = new Padding(2);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(134, 24);
@@ -469,10 +492,10 @@
             // btnSave
             // 
             btnSave.BackColor = Color.FromArgb(192, 255, 192);
-            btnSave.Location = new Point(13, 308);
+            btnSave.Location = new Point(79, 319);
             btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(771, 24);
+            btnSave.Size = new Size(133, 24);
             btnSave.TabIndex = 12;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -513,7 +536,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(944, 501);
             Controls.Add(tabControl1);
             Name = "Barber_Home_Page";
             Text = "Barber_Home_Page";
@@ -572,5 +595,7 @@
         private GroupBox groupBox1;
         private PictureBox pictureBoxBarber;
         private Button button1;
+        private CheckedListBox checkedListServices;
+        private Label label11;
     }
 }
