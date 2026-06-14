@@ -157,15 +157,15 @@ namespace Barber_Booking_System_EF
         {
 
 
-            var bookingId = _db.Bookings
-                            .Include(b => b.Service)
-                            .Include(b => b.Cust)
-                            .Include(b => b.Outlet)
-                            .Include(b => b.Timeslot)
-                            .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
+            //var bookingId = _db.Bookings
+            //                .Include(b => b.Service)
+            //                .Include(b => b.Cust)
+            //                .Include(b => b.Outlet)
+            //                .Include(b => b.Timeslot)
+            //                .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
 
-            Check_Barber_Booking_Page checkBooking = new Check_Barber_Booking_Page(bookingId);
-            checkBooking.Show();
+            //Check_Barber_Booking_Page checkBooking = new Check_Barber_Booking_Page(bookingId);
+            //checkBooking.Show();
         }
 
         private void dgvBarber_CellClick(object sender, DataGridViewCellEventArgs e)
