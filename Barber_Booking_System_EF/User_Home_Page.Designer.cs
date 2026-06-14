@@ -57,6 +57,9 @@
             btnLogout = new Button();
             label2 = new Label();
             btnEditProfile = new Button();
+            label5 = new Label();
+            label7 = new Label();
+            label8 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -67,6 +70,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(6, 4);
             label1.Name = "label1";
             label1.Size = new Size(186, 46);
@@ -93,6 +97,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.DarkGreen;
+            tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(dgvBookings);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(btnNewBooking);
@@ -103,7 +109,7 @@
             tabPage1.Size = new Size(910, 607);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Bookings";
-            tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
             // 
             // dgvBookings
             // 
@@ -230,18 +236,23 @@
             // 
             // btnNewBooking
             // 
+            btnNewBooking.BackColor = Color.LightGreen;
             btnNewBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNewBooking.ForeColor = Color.Black;
             btnNewBooking.Location = new Point(717, 543);
             btnNewBooking.Margin = new Padding(3, 4, 3, 4);
             btnNewBooking.Name = "btnNewBooking";
             btnNewBooking.Size = new Size(187, 51);
             btnNewBooking.TabIndex = 10;
             btnNewBooking.Text = "new booking";
-            btnNewBooking.UseVisualStyleBackColor = true;
+            btnNewBooking.UseVisualStyleBackColor = false;
             btnNewBooking.Click += btnNewBooking_Click;
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.DarkGreen;
+            tabPage2.Controls.Add(label8);
+            tabPage2.Controls.Add(label7);
             tabPage2.Controls.Add(btnSave);
             tabPage2.Controls.Add(tbName);
             tabPage2.Controls.Add(tbEmail);
@@ -259,19 +270,19 @@
             tabPage2.Size = new Size(910, 607);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
-            tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
             // 
             // btnSave
             // 
-            btnSave.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSave.Location = new Point(478, 265);
+            btnSave.BackColor = Color.Gold;
+            btnSave.Font = new Font("Showcard Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSave.Location = new Point(268, 414);
             btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(125, 43);
+            btnSave.Size = new Size(269, 100);
             btnSave.TabIndex = 21;
             btnSave.Text = "SAVE";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Visible = false;
             btnSave.Click += btnSave_Click;
             // 
@@ -309,6 +320,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(149, 221);
             label6.Name = "label6";
             label6.Size = new Size(98, 25);
@@ -320,16 +332,19 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(149, 139);
             label4.Name = "label4";
             label4.Size = new Size(60, 25);
             label4.TabIndex = 16;
             label4.Text = "Email";
+            label4.Click += label4_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(149, 94);
             label3.Name = "label3";
             label3.Size = new Size(102, 25);
@@ -339,42 +354,84 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(575, 40);
+            btnLogout.BackColor = Color.LightGreen;
+            btnLogout.Font = new Font("Stencil", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = Color.Black;
+            btnLogout.Location = new Point(736, 6);
             btnLogout.Margin = new Padding(1);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(91, 34);
+            btnLogout.Size = new Size(156, 46);
             btnLogout.TabIndex = 12;
             btnLogout.Text = "Log out";
-            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(6, 6);
             label2.Name = "label2";
             label2.Size = new Size(134, 46);
             label2.TabIndex = 11;
             label2.Text = "Profile";
+            label2.Click += label2_Click;
             // 
             // btnEditProfile
             // 
-            btnEditProfile.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEditProfile.Location = new Point(478, 329);
+            btnEditProfile.BackColor = Color.LightGreen;
+            btnEditProfile.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditProfile.Location = new Point(725, 534);
             btnEditProfile.Margin = new Padding(2, 3, 2, 3);
             btnEditProfile.Name = "btnEditProfile";
-            btnEditProfile.Size = new Size(125, 34);
+            btnEditProfile.Size = new Size(167, 54);
             btnEditProfile.TabIndex = 12;
             btnEditProfile.Text = "edit profile";
-            btnEditProfile.UseVisualStyleBackColor = true;
+            btnEditProfile.UseVisualStyleBackColor = false;
             btnEditProfile.Click += btnEditProfile_Click;
+            // 
+            // label5
+            // 
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Gold;
+            label5.Location = new Point(33, 315);
+            label5.Name = "label5";
+            label5.Size = new Size(631, 98);
+            label5.TabIndex = 12;
+            label5.Text = "PICK YOUR STYLE, OWN YOUR lOOK";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            label5.Click += label5_Click;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 15F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(57, 319);
+            label7.Name = "label7";
+            label7.Size = new Size(787, 35);
+            label7.TabIndex = 22;
+            label7.Text = "\"Gaya rambut bukan sekadar rupa, ia adalah lambang reputasi.\"";
+            label7.Click += label7_Click;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(65, 367);
+            label8.Name = "label8";
+            label8.Size = new Size(95, 20);
+            label8.TabIndex = 23;
+            label8.Text = "~By Imran~";
             // 
             // User_Home_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Lime;
+            BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(942, 672);
             Controls.Add(tabControl1);
             Margin = new Padding(3, 4, 3, 4);
@@ -422,5 +479,8 @@
         private TextBox tbPassword;
         private Button btnSave;
         private Button btnEditProfile;
+        private Label label5;
+        private Label label7;
+        private Label label8;
     }
 }

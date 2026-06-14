@@ -293,6 +293,7 @@ namespace Barber_Booking_System_EF
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+
             pieChart1.LegendPosition = LiveChartsCore.Measure.LegendPosition.Bottom;
             var series = new List<ISeries>();
             // select customer name and number of bookings made
@@ -351,6 +352,26 @@ namespace Barber_Booking_System_EF
         }
 
         private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbBarberId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbBarberEmail_TextChanged(object sender, EventArgs e)
         {
 
         }
