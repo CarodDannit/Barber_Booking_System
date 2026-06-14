@@ -43,5 +43,18 @@ namespace Barber_Booking_System_EF
                 })
                 .ToList();
         }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            var bbS = new Barber_Signup_Page();
+            this.Hide();
+            var resultSignUp = bbS.ShowDialog();
+            if (resultSignUp == DialogResult.Cancel)
+            {
+                this.Show();
+                bbS.Close();
+            }
+            else this.Close();
+        }
     }
 }

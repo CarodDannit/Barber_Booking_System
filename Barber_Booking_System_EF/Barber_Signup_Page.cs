@@ -40,7 +40,7 @@ namespace Barber_Booking_System_EF
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-
+            this.DialogResult = DialogResult.Cancel;
         }
 
 

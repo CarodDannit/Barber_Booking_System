@@ -309,6 +309,7 @@
             btn.TabIndex = 16;
             btn.Text = "Add Barber";
             btn.UseVisualStyleBackColor = true;
+            btn.Click += btn_Click;
             // 
             // Barber_Home_Page
             // 
