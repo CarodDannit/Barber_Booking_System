@@ -74,8 +74,6 @@ namespace Barber_Booking_System_EF
             lblDate.Text = row.Cells["Date"].Value.ToString();
             lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
-
-       
         }
 
 
@@ -181,6 +179,25 @@ namespace Barber_Booking_System_EF
             }
         }
 
-       
+        private void btnViewDetails_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(lblBookingId.Text)) return;
+
+            int bookingId = int.Parse(lblBookingId.Text);
+            var booking = _db.Bookings
+                .Include(b => b.Barber)
+                .Include(b => b.Outlet)
+                .Include(b => b.Service)
+                .Include(b => b.Timeslot)
+                .Where(b => b.Id == bookingId)
+                .FirstOrDefault();
+
+            var viewdetailspage = new ViewBookingDetails_Page(booking);
+            var result = viewdetailspage.ShowDialog();
+            if(result == DialogResult.OK)
+                LoadBooking();
+
+            viewdetailspage.Dispose();
+        }
     }
 }
