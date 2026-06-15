@@ -73,6 +73,7 @@
             btnLogout = new Button();
             label2 = new Label();
             btnEditProfile = new Button();
+            btnCancelProfile = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -301,7 +302,7 @@
             dgvBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBookings.Columns.AddRange(new DataGridViewColumn[] { Id, Date, Description, OutletId, OutletLocation, BarberId, BarberName, ServiceId, ServiceName, TimeslotId, Time, Status });
             dgvBookings.Location = new Point(33, 72);
-            dgvBookings.Margin = new Padding(2, 2, 2, 2);
+            dgvBookings.Margin = new Padding(2);
             dgvBookings.Name = "dgvBookings";
             dgvBookings.ReadOnly = true;
             dgvBookings.RowHeadersWidth = 72;
@@ -432,6 +433,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnCancelProfile);
             tabPage2.Controls.Add(btnSave);
             tabPage2.Controls.Add(tbName);
             tabPage2.Controls.Add(tbEmail);
@@ -456,7 +458,7 @@
             // 
             btnSave.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.Location = new Point(385, 245);
-            btnSave.Margin = new Padding(2, 2, 2, 2);
+            btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(125, 43);
             btnSave.TabIndex = 21;
@@ -468,7 +470,7 @@
             // tbName
             // 
             tbName.Location = new Point(294, 95);
-            tbName.Margin = new Padding(1, 1, 1, 1);
+            tbName.Margin = new Padding(1);
             tbName.Name = "tbName";
             tbName.ReadOnly = true;
             tbName.Size = new Size(216, 27);
@@ -477,7 +479,7 @@
             // tbEmail
             // 
             tbEmail.Location = new Point(294, 136);
-            tbEmail.Margin = new Padding(1, 1, 1, 1);
+            tbEmail.Margin = new Padding(1);
             tbEmail.Name = "tbEmail";
             tbEmail.ReadOnly = true;
             tbEmail.Size = new Size(216, 27);
@@ -487,7 +489,7 @@
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbPassword.Location = new Point(294, 185);
-            tbPassword.Margin = new Padding(1, 1, 1, 1);
+            tbPassword.Margin = new Padding(1);
             tbPassword.Name = "tbPassword";
             tbPassword.PasswordChar = '*';
             tbPassword.ReadOnly = true;
@@ -530,7 +532,7 @@
             // btnLogout
             // 
             btnLogout.Location = new Point(773, 533);
-            btnLogout.Margin = new Padding(1, 1, 1, 1);
+            btnLogout.Margin = new Padding(1);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(91, 34);
             btnLogout.TabIndex = 12;
@@ -559,6 +561,19 @@
             btnEditProfile.Text = "edit profile";
             btnEditProfile.UseVisualStyleBackColor = true;
             btnEditProfile.Click += button1_Click_1;
+            // 
+            // btnCancelProfile
+            // 
+            btnCancelProfile.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelProfile.Location = new Point(247, 245);
+            btnCancelProfile.Margin = new Padding(2);
+            btnCancelProfile.Name = "btnCancelProfile";
+            btnCancelProfile.Size = new Size(125, 43);
+            btnCancelProfile.TabIndex = 22;
+            btnCancelProfile.Text = "CANCEL";
+            btnCancelProfile.UseVisualStyleBackColor = true;
+            btnCancelProfile.Visible = false;
+            btnCancelProfile.Click += btnCancelProfile_Click;
             // 
             // User_Home_Page
             // 
@@ -628,5 +643,6 @@
         private Label label12;
         private Label label13;
         private Button btnViewDetails;
+        private Button btnCancelProfile;
     }
 }
