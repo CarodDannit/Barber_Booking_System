@@ -36,9 +36,7 @@ namespace Barber_Booking_System_EF
 
         private void loadBooking()
         {
-
-            dgvBookings.AutoGenerateColumns = false;
-            dgvBookings.DataSource = _db.Bookings
+            var bookings = _db.Bookings
                 .Where(bk => bk.BarberId == barber.Id)
                 .Select(bk => new
                 {
@@ -56,6 +54,13 @@ namespace Barber_Booking_System_EF
                     bk.Status
                 })
                 .ToList();
+
+            dgvBookings.AutoGenerateColumns = false;
+            dgvBookings.Rows.Clear();
+            foreach(var b in bookings)
+            {
+                dgvBookings.Rows.Add(b);
+            }
         }
 
         private void loadBarber()
@@ -177,21 +182,6 @@ namespace Barber_Booking_System_EF
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
         }
 
-        private void btnCheckBooking_Click(object sender, EventArgs e)
-        {
-
-
-            //var bookingId = _db.Bookings
-            //                .Include(b => b.Service)
-            //                .Include(b => b.Cust)
-            //                .Include(b => b.Outlet)
-            //                .Include(b => b.Timeslot)
-            //                .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
-
-            //Check_Barber_Booking_Page checkBooking = new Check_Barber_Booking_Page(bookingId);
-            //checkBooking.Show();
-        }
-
         private void dgvBarber_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -205,6 +195,24 @@ namespace Barber_Booking_System_EF
             tbBarberOutlet.Text = row.Cells["BarberOutlet"].Value?.ToString();
         }
 
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
+
+            var result = openFileDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                pictureBoxBarber.ImageLocation = openFileDialog.FileName;
+
+                // Read file bytes and convert to Base64 string
+                var imageBytes = File.ReadAllBytes(openFileDialog.FileName);
+
+                barber.Pfp = imageBytes;
+            }
+
+            openFileDialog.Dispose();
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -267,40 +275,6 @@ namespace Barber_Booking_System_EF
         }
 
         private void label90_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUpload_Click(object sender, EventArgs e)
-        {
-            var openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "image sikit2 je WIP (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
-
-            var result = openFileDialog.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                pictureBoxBarber.ImageLocation = openFileDialog.FileName;
-
-                // Read file bytes and convert to Base64 string
-                var imageBytes = File.ReadAllBytes(openFileDialog.FileName);
-
-                barber.Pfp = imageBytes;
-            }
-
-            openFileDialog.Dispose();
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbFemale_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pieChart1_Load(object sender, EventArgs e)
         {
 
         }
@@ -429,6 +403,11 @@ namespace Barber_Booking_System_EF
         }
 
         private void checkedListTimeSlot_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewDetails_Click(object sender, EventArgs e)
         {
 
         }

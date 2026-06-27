@@ -9,8 +9,6 @@ public partial class Service
 
     public string Name { get; set; } = null!;
 
-    public byte[] Image { get; set; } = null!;
-
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 
     public virtual ICollection<Barber> Barbers { get; set; } = new List<Barber>();
