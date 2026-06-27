@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend skDefaultLegend2 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend();
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend skDefaultLegend3 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Barber_Home_Page));
-            LiveChartsCore.Drawing.Padding padding3 = new LiveChartsCore.Drawing.Padding();
-            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip skDefaultTooltip2 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip();
-            LiveChartsCore.Drawing.Padding padding4 = new LiveChartsCore.Drawing.Padding();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            LiveChartsCore.Drawing.Padding padding5 = new LiveChartsCore.Drawing.Padding();
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip skDefaultTooltip3 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip();
+            LiveChartsCore.Drawing.Padding padding6 = new LiveChartsCore.Drawing.Padding();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             lIdTab1 = new Label();
@@ -121,6 +121,9 @@
             label50 = new Label();
             label40 = new Label();
             label30 = new Label();
+            tabPage5 = new TabPage();
+            labelToDoRevenue = new Label();
+            labelToDoBookings = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -131,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvBarber).BeginInit();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            tabPage5.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -139,6 +143,7 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
             tabControl1.Location = new Point(11, 13);
             tabControl1.Margin = new Padding(2, 4, 2, 4);
             tabControl1.Name = "tabControl1";
@@ -148,6 +153,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(labelToDoBookings);
             tabPage1.Controls.Add(lIdTab1);
             tabPage1.Controls.Add(lServiceTab1);
             tabPage1.Controls.Add(lCustomerTab1);
@@ -350,7 +356,7 @@
             // Id
             // 
             Id.DataPropertyName = "Id";
-            Id.HeaderText = "Iiiiid";
+            Id.HeaderText = "ID";
             Id.MinimumWidth = 9;
             Id.Name = "Id";
             Id.ReadOnly = true;
@@ -1014,39 +1020,39 @@
             // 
             pieChart1.AutoUpdateEnabled = true;
             pieChart1.ChartTheme = null;
-            skDefaultLegend2.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
-            skDefaultLegend2.Content = null;
-            skDefaultLegend2.IsValid = false;
-            skDefaultLegend2.Opacity = 1F;
-            padding3.Bottom = 0F;
-            padding3.Left = 0F;
-            padding3.Right = 0F;
-            padding3.Top = 0F;
-            skDefaultLegend2.Padding = padding3;
-            skDefaultLegend2.RemoveOnCompleted = false;
-            skDefaultLegend2.RotateTransform = 0F;
-            skDefaultLegend2.X = 0F;
-            skDefaultLegend2.Y = 0F;
-            pieChart1.Legend = skDefaultLegend2;
+            skDefaultLegend3.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultLegend3.Content = null;
+            skDefaultLegend3.IsValid = false;
+            skDefaultLegend3.Opacity = 1F;
+            padding5.Bottom = 0F;
+            padding5.Left = 0F;
+            padding5.Right = 0F;
+            padding5.Top = 0F;
+            skDefaultLegend3.Padding = padding5;
+            skDefaultLegend3.RemoveOnCompleted = false;
+            skDefaultLegend3.RotateTransform = 0F;
+            skDefaultLegend3.X = 0F;
+            skDefaultLegend3.Y = 0F;
+            pieChart1.Legend = skDefaultLegend3;
             pieChart1.Location = new Point(566, 116);
             pieChart1.Name = "pieChart1";
             pieChart1.Size = new Size(300, 300);
             pieChart1.TabIndex = 3;
-            skDefaultTooltip2.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
-            skDefaultTooltip2.Content = null;
-            skDefaultTooltip2.IsValid = false;
-            skDefaultTooltip2.Opacity = 1F;
-            padding4.Bottom = 0F;
-            padding4.Left = 0F;
-            padding4.Right = 0F;
-            padding4.Top = 0F;
-            skDefaultTooltip2.Padding = padding4;
-            skDefaultTooltip2.RemoveOnCompleted = false;
-            skDefaultTooltip2.RotateTransform = 0F;
-            skDefaultTooltip2.Wedge = 10;
-            skDefaultTooltip2.X = 0F;
-            skDefaultTooltip2.Y = 0F;
-            pieChart1.Tooltip = skDefaultTooltip2;
+            skDefaultTooltip3.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultTooltip3.Content = null;
+            skDefaultTooltip3.IsValid = false;
+            skDefaultTooltip3.Opacity = 1F;
+            padding6.Bottom = 0F;
+            padding6.Left = 0F;
+            padding6.Right = 0F;
+            padding6.Top = 0F;
+            skDefaultTooltip3.Padding = padding6;
+            skDefaultTooltip3.RemoveOnCompleted = false;
+            skDefaultTooltip3.RotateTransform = 0F;
+            skDefaultTooltip3.Wedge = 10;
+            skDefaultTooltip3.X = 0F;
+            skDefaultTooltip3.Y = 0F;
+            pieChart1.Tooltip = skDefaultTooltip3;
             pieChart1.UpdaterThrottler = TimeSpan.Parse("00:00:00.0500000");
             pieChart1.Load += pieChart1_Load_2;
             // 
@@ -1065,16 +1071,16 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart1.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            chart1.Legends.Add(legend3);
             chart1.Location = new Point(26, 41);
             chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chart1.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            chart1.Series.Add(series3);
             chart1.Size = new Size(500, 375);
             chart1.TabIndex = 1;
             chart1.Text = "chart1";
@@ -1101,6 +1107,35 @@
             label30.Size = new Size(100, 23);
             label30.TabIndex = 0;
             // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(labelToDoRevenue);
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(910, 639);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Revenue";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // labelToDoRevenue
+            // 
+            labelToDoRevenue.AutoSize = true;
+            labelToDoRevenue.Location = new Point(233, 197);
+            labelToDoRevenue.Name = "labelToDoRevenue";
+            labelToDoRevenue.Size = new Size(446, 20);
+            labelToDoRevenue.TabIndex = 0;
+            labelToDoRevenue.Text = "almost cam analysis. Services mana buat berapa banyak profit, etc";
+            // 
+            // labelToDoBookings
+            // 
+            labelToDoBookings.AutoSize = true;
+            labelToDoBookings.Location = new Point(244, 544);
+            labelToDoBookings.Name = "labelToDoBookings";
+            labelToDoBookings.Size = new Size(445, 20);
+            labelToDoBookings.TabIndex = 47;
+            labelToDoBookings.Text = "status update: accept, reject; Hide irrelevant details; Sort bookings";
+            // 
             // Barber_Home_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1126,6 +1161,8 @@
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1198,6 +1235,11 @@
         private Label lDateTab1;
         private Label lServiceTab1;
         private Label lCustomerTab1;
+        private Label lIdTab1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Button btnGenerate;
+        private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChart1;
+        private Label label7;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Description;
@@ -1211,10 +1253,8 @@
         private DataGridViewTextBoxColumn TimeslotId;
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Status;
-        private Label lIdTab1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private Button btnGenerate;
-        private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChart1;
-        private Label label7;
+        private TabPage tabPage5;
+        private Label labelToDoRevenue;
+        private Label labelToDoBookings;
     }
 }

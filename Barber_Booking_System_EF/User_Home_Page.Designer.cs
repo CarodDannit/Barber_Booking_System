@@ -28,27 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
             button2 = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             btnViewDetails = new Button();
             btnDeleteBooking = new Button();
             lblService = new Label();
-            lblBarber = new Label();
-            lblOutlet = new Label();
             lblDate = new Label();
-            lblTimeSlot = new Label();
             lblStatus = new Label();
             lblBookingId = new Label();
-            label9 = new Label();
-            label8 = new Label();
             label7 = new Label();
             label10 = new Label();
-            label11 = new Label();
             label12 = new Label();
             label13 = new Label();
             dgvBookings = new DataGridView();
+            label1 = new Label();
+            btnNewBooking = new Button();
+            tabPage2 = new TabPage();
+            btnCancelProfile = new Button();
+            btnSave = new Button();
+            tbName = new TextBox();
+            tbEmail = new TextBox();
+            tbPassword = new TextBox();
+            label6 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            btnLogout = new Button();
+            label2 = new Label();
+            btnEditProfile = new Button();
+            labelToDoBookings = new Label();
             Id = new DataGridViewTextBoxColumn();
             Date = new DataGridViewTextBoxColumn();
             Description = new DataGridViewTextBoxColumn();
@@ -61,34 +69,11 @@
             TimeslotId = new DataGridViewTextBoxColumn();
             Time = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
-            btnNewBooking = new Button();
-            tabPage2 = new TabPage();
-            btnSave = new Button();
-            tbName = new TextBox();
-            tbEmail = new TextBox();
-            tbPassword = new TextBox();
-            label6 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            btnLogout = new Button();
-            label2 = new Label();
-            btnEditProfile = new Button();
-            btnCancelProfile = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
             tabPage2.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(6, 4);
-            label1.Name = "label1";
-            label1.Size = new Size(186, 46);
-            label1.TabIndex = 0;
-            label1.Text = "Bookings";
             // 
             // button2
             // 
@@ -110,20 +95,15 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(labelToDoBookings);
             tabPage1.Controls.Add(btnViewDetails);
             tabPage1.Controls.Add(btnDeleteBooking);
             tabPage1.Controls.Add(lblService);
-            tabPage1.Controls.Add(lblBarber);
-            tabPage1.Controls.Add(lblOutlet);
             tabPage1.Controls.Add(lblDate);
-            tabPage1.Controls.Add(lblTimeSlot);
             tabPage1.Controls.Add(lblStatus);
             tabPage1.Controls.Add(lblBookingId);
-            tabPage1.Controls.Add(label9);
-            tabPage1.Controls.Add(label8);
             tabPage1.Controls.Add(label7);
             tabPage1.Controls.Add(label10);
-            tabPage1.Controls.Add(label11);
             tabPage1.Controls.Add(label12);
             tabPage1.Controls.Add(label13);
             tabPage1.Controls.Add(dgvBookings);
@@ -171,47 +151,20 @@
             lblService.Size = new Size(0, 28);
             lblService.TabIndex = 42;
             // 
-            // lblBarber
-            // 
-            lblBarber.AutoSize = true;
-            lblBarber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBarber.Location = new Point(154, 371);
-            lblBarber.Name = "lblBarber";
-            lblBarber.Size = new Size(0, 28);
-            lblBarber.TabIndex = 41;
-            // 
-            // lblOutlet
-            // 
-            lblOutlet.AutoSize = true;
-            lblOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOutlet.Location = new Point(154, 399);
-            lblOutlet.Name = "lblOutlet";
-            lblOutlet.Size = new Size(0, 28);
-            lblOutlet.TabIndex = 40;
-            // 
             // lblDate
             // 
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDate.Location = new Point(154, 427);
+            lblDate.Location = new Point(154, 371);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(0, 28);
             lblDate.TabIndex = 39;
-            // 
-            // lblTimeSlot
-            // 
-            lblTimeSlot.AutoSize = true;
-            lblTimeSlot.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTimeSlot.Location = new Point(154, 455);
-            lblTimeSlot.Name = "lblTimeSlot";
-            lblTimeSlot.Size = new Size(0, 28);
-            lblTimeSlot.TabIndex = 38;
             // 
             // lblStatus
             // 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(154, 483);
+            lblStatus.Location = new Point(154, 399);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(0, 28);
             lblStatus.TabIndex = 37;
@@ -225,31 +178,11 @@
             lblBookingId.Size = new Size(0, 28);
             lblBookingId.TabIndex = 36;
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(33, 399);
-            label9.Name = "label9";
-            label9.Size = new Size(67, 28);
-            label9.TabIndex = 34;
-            label9.Text = "Outlet";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(33, 455);
-            label8.Name = "label8";
-            label8.Size = new Size(89, 28);
-            label8.TabIndex = 33;
-            label8.Text = "TimeSlot";
-            // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(33, 483);
+            label7.Location = new Point(33, 399);
             label7.Name = "label7";
             label7.Size = new Size(65, 28);
             label7.TabIndex = 32;
@@ -259,21 +192,11 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(33, 427);
+            label10.Location = new Point(33, 371);
             label10.Name = "label10";
             label10.Size = new Size(53, 28);
             label10.TabIndex = 31;
             label10.Text = "Date";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(33, 371);
-            label11.Name = "label11";
-            label11.Size = new Size(69, 28);
-            label11.TabIndex = 30;
-            label11.Text = "Barber";
             // 
             // label12
             // 
@@ -311,113 +234,15 @@
             dgvBookings.CellClick += dgvBookings_CellClick;
             dgvBookings.CellContentClick += dgvBookings_CellContentClick;
             // 
-            // Id
+            // label1
             // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Id";
-            Id.MinimumWidth = 9;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Width = 80;
-            // 
-            // Date
-            // 
-            Date.DataPropertyName = "Date";
-            Date.HeaderText = "Date";
-            Date.MinimumWidth = 9;
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            Date.Width = 150;
-            // 
-            // Description
-            // 
-            Description.DataPropertyName = "Description";
-            Description.HeaderText = "Description";
-            Description.MinimumWidth = 9;
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            Description.Width = 175;
-            // 
-            // OutletId
-            // 
-            OutletId.DataPropertyName = "OutletId";
-            OutletId.HeaderText = "OutletId";
-            OutletId.MinimumWidth = 9;
-            OutletId.Name = "OutletId";
-            OutletId.ReadOnly = true;
-            OutletId.Width = 90;
-            // 
-            // OutletLocation
-            // 
-            OutletLocation.DataPropertyName = "oLocation";
-            OutletLocation.HeaderText = "Location";
-            OutletLocation.MinimumWidth = 9;
-            OutletLocation.Name = "OutletLocation";
-            OutletLocation.ReadOnly = true;
-            OutletLocation.Width = 175;
-            // 
-            // BarberId
-            // 
-            BarberId.DataPropertyName = "BarberId";
-            BarberId.HeaderText = "BarberId";
-            BarberId.MinimumWidth = 9;
-            BarberId.Name = "BarberId";
-            BarberId.ReadOnly = true;
-            BarberId.Width = 90;
-            // 
-            // BarberName
-            // 
-            BarberName.DataPropertyName = "bName";
-            BarberName.HeaderText = "Barber Name";
-            BarberName.MinimumWidth = 9;
-            BarberName.Name = "BarberName";
-            BarberName.ReadOnly = true;
-            BarberName.Width = 175;
-            // 
-            // ServiceId
-            // 
-            ServiceId.DataPropertyName = "ServiceId";
-            ServiceId.HeaderText = "ServiceId";
-            ServiceId.MinimumWidth = 9;
-            ServiceId.Name = "ServiceId";
-            ServiceId.ReadOnly = true;
-            ServiceId.Width = 90;
-            // 
-            // ServiceName
-            // 
-            ServiceName.DataPropertyName = "sName";
-            ServiceName.HeaderText = "Service Name";
-            ServiceName.MinimumWidth = 9;
-            ServiceName.Name = "ServiceName";
-            ServiceName.ReadOnly = true;
-            ServiceName.Width = 175;
-            // 
-            // TimeslotId
-            // 
-            TimeslotId.DataPropertyName = "TimeslotId";
-            TimeslotId.HeaderText = "TimeslotId";
-            TimeslotId.MinimumWidth = 9;
-            TimeslotId.Name = "TimeslotId";
-            TimeslotId.ReadOnly = true;
-            TimeslotId.Width = 90;
-            // 
-            // Time
-            // 
-            Time.DataPropertyName = "Time";
-            Time.HeaderText = "Time";
-            Time.MinimumWidth = 9;
-            Time.Name = "Time";
-            Time.ReadOnly = true;
-            Time.Width = 175;
-            // 
-            // Status
-            // 
-            Status.DataPropertyName = "Status";
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 9;
-            Status.Name = "Status";
-            Status.ReadOnly = true;
-            Status.Width = 175;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(6, 4);
+            label1.Name = "label1";
+            label1.Size = new Size(186, 46);
+            label1.TabIndex = 0;
+            label1.Text = "Bookings";
             // 
             // btnNewBooking
             // 
@@ -453,6 +278,19 @@
             tabPage2.Text = "Profile";
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
+            // 
+            // btnCancelProfile
+            // 
+            btnCancelProfile.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelProfile.Location = new Point(247, 245);
+            btnCancelProfile.Margin = new Padding(2);
+            btnCancelProfile.Name = "btnCancelProfile";
+            btnCancelProfile.Size = new Size(125, 43);
+            btnCancelProfile.TabIndex = 22;
+            btnCancelProfile.Text = "CANCEL";
+            btnCancelProfile.UseVisualStyleBackColor = true;
+            btnCancelProfile.Visible = false;
+            btnCancelProfile.Click += btnCancelProfile_Click;
             // 
             // btnSave
             // 
@@ -562,18 +400,125 @@
             btnEditProfile.UseVisualStyleBackColor = true;
             btnEditProfile.Click += button1_Click_1;
             // 
-            // btnCancelProfile
+            // labelToDoBookings
             // 
-            btnCancelProfile.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancelProfile.Location = new Point(247, 245);
-            btnCancelProfile.Margin = new Padding(2);
-            btnCancelProfile.Name = "btnCancelProfile";
-            btnCancelProfile.Size = new Size(125, 43);
-            btnCancelProfile.TabIndex = 22;
-            btnCancelProfile.Text = "CANCEL";
-            btnCancelProfile.UseVisualStyleBackColor = true;
-            btnCancelProfile.Visible = false;
-            btnCancelProfile.Click += btnCancelProfile_Click;
+            labelToDoBookings.AutoSize = true;
+            labelToDoBookings.Location = new Point(220, 435);
+            labelToDoBookings.Name = "labelToDoBookings";
+            labelToDoBookings.Size = new Size(254, 20);
+            labelToDoBookings.TabIndex = 48;
+            labelToDoBookings.Text = "Hide irrelevant details; Sort bookings";
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "ID";
+            Id.MinimumWidth = 9;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 80;
+            // 
+            // Date
+            // 
+            Date.DataPropertyName = "Date";
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 9;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.Width = 150;
+            // 
+            // Description
+            // 
+            Description.DataPropertyName = "Description";
+            Description.HeaderText = "Description";
+            Description.MinimumWidth = 9;
+            Description.Name = "Description";
+            Description.ReadOnly = true;
+            Description.Width = 175;
+            // 
+            // OutletId
+            // 
+            OutletId.DataPropertyName = "OutletId";
+            OutletId.HeaderText = "OutletId";
+            OutletId.MinimumWidth = 9;
+            OutletId.Name = "OutletId";
+            OutletId.ReadOnly = true;
+            OutletId.Visible = false;
+            OutletId.Width = 90;
+            // 
+            // OutletLocation
+            // 
+            OutletLocation.DataPropertyName = "oLocation";
+            OutletLocation.HeaderText = "Outlet";
+            OutletLocation.MinimumWidth = 9;
+            OutletLocation.Name = "OutletLocation";
+            OutletLocation.ReadOnly = true;
+            OutletLocation.Width = 175;
+            // 
+            // BarberId
+            // 
+            BarberId.DataPropertyName = "BarberId";
+            BarberId.HeaderText = "BarberId";
+            BarberId.MinimumWidth = 9;
+            BarberId.Name = "BarberId";
+            BarberId.ReadOnly = true;
+            BarberId.Visible = false;
+            BarberId.Width = 90;
+            // 
+            // BarberName
+            // 
+            BarberName.DataPropertyName = "bName";
+            BarberName.HeaderText = "Barber Name";
+            BarberName.MinimumWidth = 9;
+            BarberName.Name = "BarberName";
+            BarberName.ReadOnly = true;
+            BarberName.Width = 175;
+            // 
+            // ServiceId
+            // 
+            ServiceId.DataPropertyName = "ServiceId";
+            ServiceId.HeaderText = "ServiceId";
+            ServiceId.MinimumWidth = 9;
+            ServiceId.Name = "ServiceId";
+            ServiceId.ReadOnly = true;
+            ServiceId.Visible = false;
+            ServiceId.Width = 90;
+            // 
+            // ServiceName
+            // 
+            ServiceName.DataPropertyName = "sName";
+            ServiceName.HeaderText = "Service Name";
+            ServiceName.MinimumWidth = 9;
+            ServiceName.Name = "ServiceName";
+            ServiceName.ReadOnly = true;
+            ServiceName.Width = 175;
+            // 
+            // TimeslotId
+            // 
+            TimeslotId.DataPropertyName = "TimeslotId";
+            TimeslotId.HeaderText = "TimeslotId";
+            TimeslotId.MinimumWidth = 9;
+            TimeslotId.Name = "TimeslotId";
+            TimeslotId.ReadOnly = true;
+            TimeslotId.Width = 90;
+            // 
+            // Time
+            // 
+            Time.DataPropertyName = "Time";
+            Time.HeaderText = "Time";
+            Time.MinimumWidth = 9;
+            Time.Name = "Time";
+            Time.ReadOnly = true;
+            Time.Width = 175;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 9;
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            Status.Width = 175;
             // 
             // User_Home_Page
             // 
@@ -597,17 +542,35 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEditProfile;
-        private Button btnNewBooking;
         private Button btnLogout;
+        private Label label6;
+        private TextBox tbName;
+        private TextBox tbEmail;
+        private Label label3;
+        private Label label4;
+        private TextBox tbPassword;
+        private Button btnSave;
+        private Button btnCancelProfile;
+        private TabPage tabPage1;
+        private Button btnViewDetails;
+        private Button btnDeleteBooking;
+        private Label lblService;
+        private Label lblDate;
+        private Label lblStatus;
+        private Label lblBookingId;
+        private Label label7;
+        private Label label10;
+        private Label label12;
+        private Label label13;
         private DataGridView dgvBookings;
+        private Label label1;
+        private Button btnNewBooking;
+        private Label labelToDoBookings;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Description;
@@ -620,29 +583,5 @@
         private DataGridViewTextBoxColumn TimeslotId;
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Status;
-        private Label label6;
-        private TextBox tbName;
-        private TextBox tbEmail;
-        private Label label3;
-        private Label label4;
-        private TextBox tbPassword;
-        private Button btnSave;
-        private Button btnDeleteBooking;
-        private Label lblService;
-        private Label lblBarber;
-        private Label lblOutlet;
-        private Label lblDate;
-        private Label lblTimeSlot;
-        private Label lblStatus;
-        private Label lblBookingId;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label10;
-        private Label label11;
-        private Label label12;
-        private Label label13;
-        private Button btnViewDetails;
-        private Button btnCancelProfile;
     }
 }

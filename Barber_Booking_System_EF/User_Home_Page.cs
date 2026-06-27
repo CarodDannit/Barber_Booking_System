@@ -69,10 +69,7 @@ namespace Barber_Booking_System_EF
 
             lblBookingId.Text = row.Cells["Id"].Value?.ToString();
             lblService.Text = row.Cells["ServiceName"].Value?.ToString();
-            lblBarber.Text = row.Cells["BarberName"].Value?.ToString();
-            lblOutlet.Text = row.Cells["OutletLocation"].Value?.ToString();
             lblDate.Text = row.Cells["Date"].Value.ToString();
-            lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
         }
 
@@ -214,10 +211,7 @@ namespace Barber_Booking_System_EF
                 LoadBooking();
                 lblBookingId.Text = "";
                 lblService.Text = "";
-                lblBarber.Text = "";
-                lblOutlet.Text = "";
                 lblDate.Text = "";
-                lblTimeSlot.Text = "";
                 lblStatus.Text = "";
             }
         }
