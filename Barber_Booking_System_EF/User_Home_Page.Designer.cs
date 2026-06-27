@@ -405,57 +405,62 @@
             // 
             // btnCancelProfile
             // 
-            btnCancelProfile.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancelProfile.Location = new Point(247, 245);
+            btnCancelProfile.Font = new Font("Microsoft Sans Serif", 12F);
+            btnCancelProfile.Location = new Point(237, 281);
             btnCancelProfile.Margin = new Padding(2);
             btnCancelProfile.Name = "btnCancelProfile";
             btnCancelProfile.Size = new Size(125, 43);
             btnCancelProfile.TabIndex = 22;
-            btnCancelProfile.Text = "CANCEL";
+            btnCancelProfile.Text = "Cancel";
             btnCancelProfile.UseVisualStyleBackColor = true;
             btnCancelProfile.Visible = false;
             btnCancelProfile.Click += btnCancelProfile_Click;
             // 
             // btnSave
             // 
-            btnSave.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSave.Location = new Point(385, 245);
+            btnSave.Font = new Font("Microsoft Sans Serif", 12F);
+            btnSave.Location = new Point(382, 281);
             btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(125, 43);
             btnSave.TabIndex = 21;
-            btnSave.Text = "SAVE";
+            btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Visible = false;
             btnSave.Click += btnSave_Click;
             // 
             // tbName
             // 
-            tbName.Location = new Point(294, 95);
+            tbName.Font = new Font("Microsoft Sans Serif", 12F);
+            tbName.ForeColor = SystemColors.WindowText;
+            tbName.Location = new Point(382, 109);
             tbName.Margin = new Padding(1);
             tbName.Name = "tbName";
             tbName.ReadOnly = true;
-            tbName.Size = new Size(216, 27);
+            tbName.Size = new Size(290, 30);
             tbName.TabIndex = 13;
             // 
             // tbEmail
             // 
-            tbEmail.Location = new Point(294, 136);
+            tbEmail.Font = new Font("Microsoft Sans Serif", 12F);
+            tbEmail.ForeColor = SystemColors.WindowText;
+            tbEmail.Location = new Point(382, 161);
             tbEmail.Margin = new Padding(1);
             tbEmail.Name = "tbEmail";
             tbEmail.ReadOnly = true;
-            tbEmail.Size = new Size(216, 27);
+            tbEmail.Size = new Size(290, 30);
             tbEmail.TabIndex = 14;
             // 
             // tbPassword
             // 
-            tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPassword.Location = new Point(294, 185);
+            tbPassword.Font = new Font("Microsoft Sans Serif", 12F);
+            tbPassword.ForeColor = SystemColors.WindowText;
+            tbPassword.Location = new Point(382, 218);
             tbPassword.Margin = new Padding(1);
             tbPassword.Name = "tbPassword";
             tbPassword.PasswordChar = '*';
             tbPassword.ReadOnly = true;
-            tbPassword.Size = new Size(216, 30);
+            tbPassword.Size = new Size(290, 30);
             tbPassword.TabIndex = 20;
             tbPassword.Visible = false;
             // 
@@ -463,7 +468,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(149, 185);
+            label6.Location = new Point(237, 221);
             label6.Name = "label6";
             label6.Size = new Size(98, 25);
             label6.TabIndex = 18;
@@ -474,7 +479,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(149, 139);
+            label4.Location = new Point(237, 166);
             label4.Name = "label4";
             label4.Size = new Size(60, 25);
             label4.TabIndex = 16;
@@ -484,7 +489,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(149, 94);
+            label3.Location = new Point(237, 112);
             label3.Name = "label3";
             label3.Size = new Size(102, 25);
             label3.TabIndex = 15;
@@ -493,10 +498,11 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(773, 533);
+            btnLogout.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogout.Location = new Point(738, 530);
             btnLogout.Margin = new Padding(1);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(91, 34);
+            btnLogout.Size = new Size(138, 43);
             btnLogout.TabIndex = 12;
             btnLogout.Text = "Log out";
             btnLogout.UseVisualStyleBackColor = true;
@@ -515,12 +521,12 @@
             // btnEditProfile
             // 
             btnEditProfile.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEditProfile.Location = new Point(521, 249);
+            btnEditProfile.Location = new Point(534, 281);
             btnEditProfile.Margin = new Padding(2, 3, 2, 3);
             btnEditProfile.Name = "btnEditProfile";
-            btnEditProfile.Size = new Size(125, 34);
+            btnEditProfile.Size = new Size(138, 43);
             btnEditProfile.TabIndex = 12;
-            btnEditProfile.Text = "edit profile";
+            btnEditProfile.Text = "Edit Profile";
             btnEditProfile.UseVisualStyleBackColor = true;
             btnEditProfile.Click += button1_Click_1;
             // 
