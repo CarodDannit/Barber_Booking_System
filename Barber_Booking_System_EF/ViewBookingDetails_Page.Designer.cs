@@ -46,6 +46,7 @@
             lTimeslot = new Label();
             lStatus = new Label();
             labelBookingDetails = new Label();
+            labelToDo = new Label();
             panel1.SuspendLayout();
             groupBoxPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).BeginInit();
@@ -54,6 +55,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.Control;
+            panel1.Controls.Add(labelToDo);
             panel1.Controls.Add(groupBoxPhoto);
             panel1.Controls.Add(lId);
             panel1.Controls.Add(lDate);
@@ -67,9 +69,10 @@
             panel1.Controls.Add(lOutlet);
             panel1.Controls.Add(lTimeslot);
             panel1.Controls.Add(lStatus);
-            panel1.Location = new Point(40, 88);
+            panel1.Location = new Point(27, 59);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(854, 792);
+            panel1.Size = new Size(569, 528);
             panel1.TabIndex = 0;
             // 
             // groupBoxPhoto
@@ -77,11 +80,11 @@
             groupBoxPhoto.Controls.Add(labelEmail);
             groupBoxPhoto.Controls.Add(pictureBoxBarber);
             groupBoxPhoto.Controls.Add(labelBarber);
-            groupBoxPhoto.Location = new Point(524, 198);
-            groupBoxPhoto.Margin = new Padding(6, 8, 6, 8);
+            groupBoxPhoto.Location = new Point(349, 132);
+            groupBoxPhoto.Margin = new Padding(4, 5, 4, 5);
             groupBoxPhoto.Name = "groupBoxPhoto";
-            groupBoxPhoto.Padding = new Padding(6, 8, 6, 8);
-            groupBoxPhoto.Size = new Size(291, 441);
+            groupBoxPhoto.Padding = new Padding(4, 5, 4, 5);
+            groupBoxPhoto.Size = new Size(194, 294);
             groupBoxPhoto.TabIndex = 66;
             groupBoxPhoto.TabStop = false;
             groupBoxPhoto.Text = "Barber details";
@@ -90,20 +93,19 @@
             // 
             labelEmail.AutoSize = true;
             labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelEmail.Location = new Point(12, 381);
-            labelEmail.Margin = new Padding(4, 0, 4, 0);
+            labelEmail.Location = new Point(8, 254);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(68, 30);
+            labelEmail.Size = new Size(49, 20);
             labelEmail.TabIndex = 54;
             labelEmail.Text = "Email:";
             labelEmail.TextAlign = ContentAlignment.TopCenter;
             // 
             // pictureBoxBarber
             // 
-            pictureBoxBarber.Location = new Point(12, 43);
-            pictureBoxBarber.Margin = new Padding(6, 8, 6, 8);
+            pictureBoxBarber.Location = new Point(8, 29);
+            pictureBoxBarber.Margin = new Padding(4, 5, 4, 5);
             pictureBoxBarber.Name = "pictureBoxBarber";
-            pictureBoxBarber.Size = new Size(267, 268);
+            pictureBoxBarber.Size = new Size(178, 179);
             pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxBarber.TabIndex = 25;
             pictureBoxBarber.TabStop = false;
@@ -112,10 +114,9 @@
             // 
             labelBarber.AutoSize = true;
             labelBarber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelBarber.Location = new Point(118, 328);
-            labelBarber.Margin = new Padding(4, 0, 4, 0);
+            labelBarber.Location = new Point(79, 219);
             labelBarber.Name = "labelBarber";
-            labelBarber.Size = new Size(31, 38);
+            labelBarber.Size = new Size(22, 28);
             labelBarber.TabIndex = 53;
             labelBarber.Text = "a";
             labelBarber.TextAlign = ContentAlignment.TopCenter;
@@ -124,10 +125,9 @@
             // 
             lId.AutoSize = true;
             lId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lId.Location = new Point(46, 51);
-            lId.Margin = new Padding(4, 0, 4, 0);
+            lId.Location = new Point(31, 34);
             lId.Name = "lId";
-            lId.Size = new Size(44, 38);
+            lId.Size = new Size(31, 28);
             lId.TabIndex = 60;
             lId.Text = "ID";
             // 
@@ -135,10 +135,9 @@
             // 
             lDate.AutoSize = true;
             lDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lDate.Location = new Point(46, 106);
-            lDate.Margin = new Padding(4, 0, 4, 0);
+            lDate.Location = new Point(31, 71);
             lDate.Name = "lDate";
-            lDate.Size = new Size(75, 38);
+            lDate.Size = new Size(53, 28);
             lDate.TabIndex = 59;
             lDate.Text = "Date";
             // 
@@ -146,10 +145,9 @@
             // 
             lDesc.AutoSize = true;
             lDesc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lDesc.Location = new Point(46, 344);
-            lDesc.Margin = new Padding(4, 0, 4, 0);
+            lDesc.Location = new Point(31, 229);
             lDesc.Name = "lDesc";
-            lDesc.Size = new Size(158, 38);
+            lDesc.Size = new Size(112, 28);
             lDesc.TabIndex = 58;
             lDesc.Text = "Description";
             // 
@@ -157,10 +155,9 @@
             // 
             labelDate.AutoSize = true;
             labelDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelDate.Location = new Point(227, 106);
-            labelDate.Margin = new Padding(4, 0, 4, 0);
+            labelDate.Location = new Point(151, 71);
             labelDate.Name = "labelDate";
-            labelDate.Size = new Size(31, 38);
+            labelDate.Size = new Size(22, 28);
             labelDate.TabIndex = 56;
             labelDate.Text = "a";
             // 
@@ -168,10 +165,9 @@
             // 
             labelDesc.AutoSize = true;
             labelDesc.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelDesc.Location = new Point(227, 344);
-            labelDesc.Margin = new Padding(4, 0, 4, 0);
+            labelDesc.Location = new Point(151, 229);
             labelDesc.Name = "labelDesc";
-            labelDesc.Size = new Size(31, 38);
+            labelDesc.Size = new Size(22, 28);
             labelDesc.TabIndex = 55;
             labelDesc.Text = "a";
             // 
@@ -179,10 +175,9 @@
             // 
             labelOutlet.AutoSize = true;
             labelOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelOutlet.Location = new Point(227, 156);
-            labelOutlet.Margin = new Padding(4, 0, 4, 0);
+            labelOutlet.Location = new Point(151, 104);
             labelOutlet.Name = "labelOutlet";
-            labelOutlet.Size = new Size(31, 38);
+            labelOutlet.Size = new Size(22, 28);
             labelOutlet.TabIndex = 54;
             labelOutlet.Text = "a";
             // 
@@ -190,10 +185,9 @@
             // 
             labelTimeslot.AutoSize = true;
             labelTimeslot.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelTimeslot.Location = new Point(227, 209);
-            labelTimeslot.Margin = new Padding(4, 0, 4, 0);
+            labelTimeslot.Location = new Point(151, 139);
             labelTimeslot.Name = "labelTimeslot";
-            labelTimeslot.Size = new Size(31, 38);
+            labelTimeslot.Size = new Size(22, 28);
             labelTimeslot.TabIndex = 52;
             labelTimeslot.Text = "a";
             // 
@@ -201,10 +195,9 @@
             // 
             labelStatus.AutoSize = true;
             labelStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelStatus.Location = new Point(227, 408);
-            labelStatus.Margin = new Padding(4, 0, 4, 0);
+            labelStatus.Location = new Point(151, 272);
             labelStatus.Name = "labelStatus";
-            labelStatus.Size = new Size(31, 38);
+            labelStatus.Size = new Size(22, 28);
             labelStatus.TabIndex = 51;
             labelStatus.Text = "a";
             // 
@@ -212,10 +205,9 @@
             // 
             labelId.AutoSize = true;
             labelId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelId.Location = new Point(227, 51);
-            labelId.Margin = new Padding(4, 0, 4, 0);
+            labelId.Location = new Point(151, 34);
             labelId.Name = "labelId";
-            labelId.Size = new Size(31, 38);
+            labelId.Size = new Size(22, 28);
             labelId.TabIndex = 50;
             labelId.Text = "a";
             // 
@@ -223,10 +215,9 @@
             // 
             lOutlet.AutoSize = true;
             lOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lOutlet.Location = new Point(46, 156);
-            lOutlet.Margin = new Padding(4, 0, 4, 0);
+            lOutlet.Location = new Point(31, 104);
             lOutlet.Name = "lOutlet";
-            lOutlet.Size = new Size(94, 38);
+            lOutlet.Size = new Size(67, 28);
             lOutlet.TabIndex = 49;
             lOutlet.Text = "Outlet";
             // 
@@ -234,10 +225,9 @@
             // 
             lTimeslot.AutoSize = true;
             lTimeslot.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lTimeslot.Location = new Point(46, 209);
-            lTimeslot.Margin = new Padding(4, 0, 4, 0);
+            lTimeslot.Location = new Point(31, 139);
             lTimeslot.Name = "lTimeslot";
-            lTimeslot.Size = new Size(122, 38);
+            lTimeslot.Size = new Size(86, 28);
             lTimeslot.TabIndex = 48;
             lTimeslot.Text = "Timeslot";
             // 
@@ -245,10 +235,9 @@
             // 
             lStatus.AutoSize = true;
             lStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lStatus.Location = new Point(46, 408);
-            lStatus.Margin = new Padding(4, 0, 4, 0);
+            lStatus.Location = new Point(31, 272);
             lStatus.Name = "lStatus";
-            lStatus.Size = new Size(91, 38);
+            lStatus.Size = new Size(65, 28);
             lStatus.TabIndex = 47;
             lStatus.Text = "Status";
             // 
@@ -256,21 +245,30 @@
             // 
             labelBookingDetails.AutoSize = true;
             labelBookingDetails.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelBookingDetails.Location = new Point(246, 9);
-            labelBookingDetails.Margin = new Padding(4, 0, 4, 0);
+            labelBookingDetails.Location = new Point(164, 6);
             labelBookingDetails.Name = "labelBookingDetails";
-            labelBookingDetails.Size = new Size(416, 64);
+            labelBookingDetails.Size = new Size(299, 46);
             labelBookingDetails.TabIndex = 42;
             labelBookingDetails.Text = "Booking Details";
             // 
+            // labelToDo
+            // 
+            labelToDo.AutoSize = true;
+            labelToDo.Location = new Point(57, 383);
+            labelToDo.Name = "labelToDo";
+            labelToDo.Size = new Size(94, 20);
+            labelToDo.TabIndex = 67;
+            labelToDo.Text = "service, price";
+            // 
             // ViewBookingDetails_Page
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Lime;
-            ClientSize = new Size(936, 913);
+            ClientSize = new Size(624, 609);
             Controls.Add(labelBookingDetails);
             Controls.Add(panel1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "ViewBookingDetails_Page";
             Text = "ViewBookingDetails_Page";
             Load += ViewBookingDetails_Page_Load;
@@ -303,5 +301,6 @@
         private GroupBox groupBoxPhoto;
         private PictureBox pictureBoxBarber;
         private Label labelEmail;
+        private Label labelToDo;
     }
 }
