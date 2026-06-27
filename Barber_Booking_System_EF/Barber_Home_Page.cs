@@ -1,8 +1,6 @@
 ﻿using Barber_Booking_System_EF.models;
-using Barber_Booking_System_EF.models;
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -31,42 +29,41 @@ namespace Barber_Booking_System_EF
         {
             InitializeComponent();
             barber = b;
-
+            // tab 1, Bookings
+            dgvBookings.AutoGenerateColumns = false;
+            dgvBarber.AutoGenerateColumns = false;
         }
 
-        private void loadBooking()
+        private async Task loadBooking()
         {
-            var bookings = _db.Bookings
-                .Where(bk => bk.BarberId == barber.Id)
-                .Select(bk => new
-                {
-                    bk.Id,
-                    bk.Date,
-                    bk.Description,
-                    bk.OutletId,
-                    oLocation = bk.Outlet.Location,
-                    bk.CustId,
-                    cName = bk.Cust.Name,
-                    bk.ServiceId,
-                    sName = bk.Service.Name,
-                    bk.TimeslotId,
-                    bk.Timeslot.Time,
-                    bk.Status
-                })
-                .ToList();
-
-            dgvBookings.AutoGenerateColumns = false;
-            dgvBookings.Rows.Clear();
-            foreach(var b in bookings)
+            var result = _db.Bookings
+            .Where(bk => bk.BarberId == barber.Id)
+            .Select(bk => new
             {
-                dgvBookings.Rows.Add(b);
+                bk.Id,
+                bk.Date,
+                bk.Description,
+                bk.OutletId,
+                oLocation = bk.Outlet.Location,
+                bk.CustId,
+                cName = bk.Cust.Name,
+                bk.ServiceId,
+                sName = bk.Service.Name,
+                bk.TimeslotId,
+                bk.Timeslot.Time,
+                bk.Status
+            })
+            .ToList();
+            foreach (var bk in result)
+            {
+                dgvBookings.Rows.Add(
+                    bk.Id,bk.Date,bk.Description,bk.OutletId,bk.oLocation,bk.CustId,bk.cName,bk.ServiceId,bk.sName,bk.TimeslotId,bk.Time,bk.Status
+                );
             }
         }
 
         private void loadBarber()
         {
-
-            dgvBarber.AutoGenerateColumns = false;
             dgvBarber.DataSource = _db.Barbers
                 .Select(br => new
                 {
@@ -81,11 +78,15 @@ namespace Barber_Booking_System_EF
 
         private async void Barber_Home_Page_Load(object sender, EventArgs e)
         {
+            // Bookings tab
             tbId.Text = barber.Id.ToString();
             tbName.Text = barber.Name.ToString();
             tbEmail.Text = barber.Email.ToString();
             tbPassword.Text = barber.Password.ToString();
 
+            await loadBooking();
+
+            // Profile tab
             if (barber.Gender == "M") rbMale.Checked = true;
             else rbFemale.Checked = true;
 
@@ -146,8 +147,8 @@ namespace Barber_Booking_System_EF
                 pictureBoxBarber.Image = Properties.Resources.rukia04;
             }
 
+            // tab Barber
             loadBarber();
-            loadBooking();
         }
 
         private void btnAddBarber_Click(object sender, EventArgs e)
@@ -204,11 +205,6 @@ namespace Barber_Booking_System_EF
             if (result == DialogResult.OK)
             {
                 pictureBoxBarber.ImageLocation = openFileDialog.FileName;
-
-                // Read file bytes and convert to Base64 string
-                var imageBytes = File.ReadAllBytes(openFileDialog.FileName);
-
-                barber.Pfp = imageBytes;
             }
 
             openFileDialog.Dispose();
@@ -237,8 +233,12 @@ namespace Barber_Booking_System_EF
             barber.Email = tbEmail.Text;
             barber.Password = tbPassword.Text;
             barber.Gender = rbMale.Checked ? "M" : "F";
+
+            // Read file bytes and convert to Base64 string
+            var imageBytes = File.ReadAllBytes(pictureBoxBarber.ImageLocation);
+            barber.Pfp = imageBytes;
+
             barber.OutletId = outlets[cbOutlet.SelectedIndex].Id;
-            // pfp save
             barber.Timeslots = timeslots.Where((t, index) => checkedListTimeSlot.GetItemChecked(index)).ToList();
             barber.Services = services.Where((s, index) => checkedListServices.GetItemChecked(index)).ToList();
             _db.SaveChanges();
@@ -345,16 +345,6 @@ namespace Barber_Booking_System_EF
         }
 
         private void tbBarberId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click_2(object sender, EventArgs e)
         {
 
         }

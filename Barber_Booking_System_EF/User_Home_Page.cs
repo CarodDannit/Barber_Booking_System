@@ -21,12 +21,12 @@ namespace Barber_Booking_System_EF
         {
             InitializeComponent();
             customer = c;
+            dgvBookings.AutoGenerateColumns = false;
         }
 
         private void LoadBooking()
         {
-            dgvBookings.AutoGenerateColumns = false;
-            dgvBookings.DataSource = _db.Bookings
+            var bookings = _db.Bookings
                 .Where(b => b.CustId == customer.Id)
                 .Select(b => new
                 {
@@ -44,6 +44,12 @@ namespace Barber_Booking_System_EF
                     b.Status
                 })
                 .ToList();
+            foreach(var b in bookings)
+            {
+                dgvBookings.Rows.Add(
+                    b.Id,b.Date,b.Description,b.OutletId,b.oLocation,b.BarberId,b.bName,b.ServiceId,b.sName,b.TimeslotId,b.Time,b.Status
+                );
+            }
         }
 
         // load data when form loads
@@ -170,12 +176,10 @@ namespace Barber_Booking_System_EF
         private void btnNewBooking_Click(object sender, EventArgs e)
         {
             Book_Appointment_Page newbookingpage = new Book_Appointment_Page(customer);
-            //this.Hide();
             var result = newbookingpage.ShowDialog();
             if (result == DialogResult.OK)
                 LoadBooking();
             newbookingpage.Close();
-            //this.Show();
         }
 
         private void btnDeleteBooking_Click(object sender, EventArgs e)
@@ -232,7 +236,10 @@ namespace Barber_Booking_System_EF
             var viewdetailspage = new ViewBookingDetails_Page(booking);
             var result = viewdetailspage.ShowDialog();
             if (result == DialogResult.OK)
+            {
+                _db.SaveChanges();
                 LoadBooking();
+            }
 
             viewdetailspage.Dispose();
         }
