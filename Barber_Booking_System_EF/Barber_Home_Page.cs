@@ -43,15 +43,12 @@ namespace Barber_Booking_System_EF
                 .Select(bk => new
                 {
                     bk.Id,
-                    bk.Date,
                     bk.Description,
-                    bk.OutletId,
-                    oLocation = bk.Outlet.Location,
-                    bk.CustId,
                     cName = bk.Cust.Name,
-                    bk.ServiceId,
+                    bName = bk.Barber.Name,
                     sName = bk.Service.Name,
-                    bk.TimeslotId,
+                    oLocation = bk.Outlet.Location,
+                    bk.Date,
                     bk.Timeslot.Time,
                     bk.Status
                 })
@@ -171,9 +168,7 @@ namespace Barber_Booking_System_EF
             lblBookingId.Text = row.Cells["Id"].Value?.ToString();
             lblService.Text = row.Cells["ServiceName"].Value?.ToString();
             lblCustomer.Text = row.Cells["cName"].Value?.ToString();
-            lblOutlet.Text = row.Cells["OutletLocation"].Value?.ToString();
             lblDate.Text = row.Cells["Date"].Value.ToString();
-            lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
         }
 
@@ -429,6 +424,11 @@ namespace Barber_Booking_System_EF
         }
 
         private void checkedListTimeSlot_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAcceptBooking_Click(object sender, EventArgs e)
         {
 
         }

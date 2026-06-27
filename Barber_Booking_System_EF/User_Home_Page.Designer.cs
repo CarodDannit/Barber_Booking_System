@@ -31,6 +31,7 @@
             button2 = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            labelToDoBookings = new Label();
             btnViewDetails = new Button();
             btnDeleteBooking = new Button();
             lblService = new Label();
@@ -42,6 +43,18 @@
             label12 = new Label();
             label13 = new Label();
             dgvBookings = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
+            OutletId = new DataGridViewTextBoxColumn();
+            OutletLocation = new DataGridViewTextBoxColumn();
+            BarberId = new DataGridViewTextBoxColumn();
+            BarberName = new DataGridViewTextBoxColumn();
+            ServiceId = new DataGridViewTextBoxColumn();
+            ServiceName = new DataGridViewTextBoxColumn();
+            TimeslotId = new DataGridViewTextBoxColumn();
+            Time = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             label1 = new Label();
             btnNewBooking = new Button();
             tabPage2 = new TabPage();
@@ -56,19 +69,6 @@
             btnLogout = new Button();
             label2 = new Label();
             btnEditProfile = new Button();
-            labelToDoBookings = new Label();
-            Id = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
-            OutletId = new DataGridViewTextBoxColumn();
-            OutletLocation = new DataGridViewTextBoxColumn();
-            BarberId = new DataGridViewTextBoxColumn();
-            BarberName = new DataGridViewTextBoxColumn();
-            ServiceId = new DataGridViewTextBoxColumn();
-            ServiceName = new DataGridViewTextBoxColumn();
-            TimeslotId = new DataGridViewTextBoxColumn();
-            Time = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -118,6 +118,15 @@
             tabPage1.Text = "Bookings";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // labelToDoBookings
+            // 
+            labelToDoBookings.AutoSize = true;
+            labelToDoBookings.Location = new Point(220, 435);
+            labelToDoBookings.Name = "labelToDoBookings";
+            labelToDoBookings.Size = new Size(254, 20);
+            labelToDoBookings.TabIndex = 48;
+            labelToDoBookings.Text = "Hide irrelevant details; Sort bookings";
+            // 
             // btnViewDetails
             // 
             btnViewDetails.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -148,8 +157,9 @@
             lblService.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblService.Location = new Point(154, 343);
             lblService.Name = "lblService";
-            lblService.Size = new Size(0, 28);
+            lblService.Size = new Size(22, 28);
             lblService.TabIndex = 42;
+            lblService.Text = "a";
             // 
             // lblDate
             // 
@@ -157,8 +167,9 @@
             lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblDate.Location = new Point(154, 371);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(0, 28);
+            lblDate.Size = new Size(22, 28);
             lblDate.TabIndex = 39;
+            lblDate.Text = "a";
             // 
             // lblStatus
             // 
@@ -166,8 +177,9 @@
             lblStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblStatus.Location = new Point(154, 399);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(0, 28);
+            lblStatus.Size = new Size(22, 28);
             lblStatus.TabIndex = 37;
+            lblStatus.Text = "a";
             // 
             // lblBookingId
             // 
@@ -175,8 +187,9 @@
             lblBookingId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblBookingId.Location = new Point(154, 315);
             lblBookingId.Name = "lblBookingId";
-            lblBookingId.Size = new Size(0, 28);
+            lblBookingId.Size = new Size(22, 28);
             lblBookingId.TabIndex = 36;
+            lblBookingId.Text = "a";
             // 
             // label7
             // 
@@ -233,6 +246,117 @@
             dgvBookings.TabIndex = 11;
             dgvBookings.CellClick += dgvBookings_CellClick;
             dgvBookings.CellContentClick += dgvBookings_CellContentClick;
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "ID";
+            Id.MinimumWidth = 9;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 80;
+            // 
+            // Date
+            // 
+            Date.DataPropertyName = "Date";
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 9;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.Width = 150;
+            // 
+            // Description
+            // 
+            Description.DataPropertyName = "Description";
+            Description.HeaderText = "Description";
+            Description.MinimumWidth = 9;
+            Description.Name = "Description";
+            Description.ReadOnly = true;
+            Description.Width = 175;
+            // 
+            // OutletId
+            // 
+            OutletId.DataPropertyName = "OutletId";
+            OutletId.HeaderText = "OutletId";
+            OutletId.MinimumWidth = 9;
+            OutletId.Name = "OutletId";
+            OutletId.ReadOnly = true;
+            OutletId.Visible = false;
+            OutletId.Width = 90;
+            // 
+            // OutletLocation
+            // 
+            OutletLocation.DataPropertyName = "oLocation";
+            OutletLocation.HeaderText = "Outlet";
+            OutletLocation.MinimumWidth = 9;
+            OutletLocation.Name = "OutletLocation";
+            OutletLocation.ReadOnly = true;
+            OutletLocation.Width = 175;
+            // 
+            // BarberId
+            // 
+            BarberId.DataPropertyName = "BarberId";
+            BarberId.HeaderText = "BarberId";
+            BarberId.MinimumWidth = 9;
+            BarberId.Name = "BarberId";
+            BarberId.ReadOnly = true;
+            BarberId.Visible = false;
+            BarberId.Width = 90;
+            // 
+            // BarberName
+            // 
+            BarberName.DataPropertyName = "bName";
+            BarberName.HeaderText = "Barber Name";
+            BarberName.MinimumWidth = 9;
+            BarberName.Name = "BarberName";
+            BarberName.ReadOnly = true;
+            BarberName.Width = 175;
+            // 
+            // ServiceId
+            // 
+            ServiceId.DataPropertyName = "ServiceId";
+            ServiceId.HeaderText = "ServiceId";
+            ServiceId.MinimumWidth = 9;
+            ServiceId.Name = "ServiceId";
+            ServiceId.ReadOnly = true;
+            ServiceId.Visible = false;
+            ServiceId.Width = 90;
+            // 
+            // ServiceName
+            // 
+            ServiceName.DataPropertyName = "sName";
+            ServiceName.HeaderText = "Service Name";
+            ServiceName.MinimumWidth = 9;
+            ServiceName.Name = "ServiceName";
+            ServiceName.ReadOnly = true;
+            ServiceName.Width = 175;
+            // 
+            // TimeslotId
+            // 
+            TimeslotId.DataPropertyName = "TimeslotId";
+            TimeslotId.HeaderText = "TimeslotId";
+            TimeslotId.MinimumWidth = 9;
+            TimeslotId.Name = "TimeslotId";
+            TimeslotId.ReadOnly = true;
+            TimeslotId.Width = 90;
+            // 
+            // Time
+            // 
+            Time.DataPropertyName = "Time";
+            Time.HeaderText = "Time";
+            Time.MinimumWidth = 9;
+            Time.Name = "Time";
+            Time.ReadOnly = true;
+            Time.Width = 175;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 9;
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            Status.Width = 175;
             // 
             // label1
             // 
@@ -399,126 +523,6 @@
             btnEditProfile.Text = "edit profile";
             btnEditProfile.UseVisualStyleBackColor = true;
             btnEditProfile.Click += button1_Click_1;
-            // 
-            // labelToDoBookings
-            // 
-            labelToDoBookings.AutoSize = true;
-            labelToDoBookings.Location = new Point(220, 435);
-            labelToDoBookings.Name = "labelToDoBookings";
-            labelToDoBookings.Size = new Size(254, 20);
-            labelToDoBookings.TabIndex = 48;
-            labelToDoBookings.Text = "Hide irrelevant details; Sort bookings";
-            // 
-            // Id
-            // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "ID";
-            Id.MinimumWidth = 9;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Width = 80;
-            // 
-            // Date
-            // 
-            Date.DataPropertyName = "Date";
-            Date.HeaderText = "Date";
-            Date.MinimumWidth = 9;
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            Date.Width = 150;
-            // 
-            // Description
-            // 
-            Description.DataPropertyName = "Description";
-            Description.HeaderText = "Description";
-            Description.MinimumWidth = 9;
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            Description.Width = 175;
-            // 
-            // OutletId
-            // 
-            OutletId.DataPropertyName = "OutletId";
-            OutletId.HeaderText = "OutletId";
-            OutletId.MinimumWidth = 9;
-            OutletId.Name = "OutletId";
-            OutletId.ReadOnly = true;
-            OutletId.Visible = false;
-            OutletId.Width = 90;
-            // 
-            // OutletLocation
-            // 
-            OutletLocation.DataPropertyName = "oLocation";
-            OutletLocation.HeaderText = "Outlet";
-            OutletLocation.MinimumWidth = 9;
-            OutletLocation.Name = "OutletLocation";
-            OutletLocation.ReadOnly = true;
-            OutletLocation.Width = 175;
-            // 
-            // BarberId
-            // 
-            BarberId.DataPropertyName = "BarberId";
-            BarberId.HeaderText = "BarberId";
-            BarberId.MinimumWidth = 9;
-            BarberId.Name = "BarberId";
-            BarberId.ReadOnly = true;
-            BarberId.Visible = false;
-            BarberId.Width = 90;
-            // 
-            // BarberName
-            // 
-            BarberName.DataPropertyName = "bName";
-            BarberName.HeaderText = "Barber Name";
-            BarberName.MinimumWidth = 9;
-            BarberName.Name = "BarberName";
-            BarberName.ReadOnly = true;
-            BarberName.Width = 175;
-            // 
-            // ServiceId
-            // 
-            ServiceId.DataPropertyName = "ServiceId";
-            ServiceId.HeaderText = "ServiceId";
-            ServiceId.MinimumWidth = 9;
-            ServiceId.Name = "ServiceId";
-            ServiceId.ReadOnly = true;
-            ServiceId.Visible = false;
-            ServiceId.Width = 90;
-            // 
-            // ServiceName
-            // 
-            ServiceName.DataPropertyName = "sName";
-            ServiceName.HeaderText = "Service Name";
-            ServiceName.MinimumWidth = 9;
-            ServiceName.Name = "ServiceName";
-            ServiceName.ReadOnly = true;
-            ServiceName.Width = 175;
-            // 
-            // TimeslotId
-            // 
-            TimeslotId.DataPropertyName = "TimeslotId";
-            TimeslotId.HeaderText = "TimeslotId";
-            TimeslotId.MinimumWidth = 9;
-            TimeslotId.Name = "TimeslotId";
-            TimeslotId.ReadOnly = true;
-            TimeslotId.Width = 90;
-            // 
-            // Time
-            // 
-            Time.DataPropertyName = "Time";
-            Time.HeaderText = "Time";
-            Time.MinimumWidth = 9;
-            Time.Name = "Time";
-            Time.ReadOnly = true;
-            Time.Width = 175;
-            // 
-            // Status
-            // 
-            Status.DataPropertyName = "Status";
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 9;
-            Status.Name = "Status";
-            Status.ReadOnly = true;
-            Status.Width = 175;
             // 
             // User_Home_Page
             // 
