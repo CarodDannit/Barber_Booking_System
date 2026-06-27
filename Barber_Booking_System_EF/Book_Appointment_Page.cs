@@ -58,6 +58,11 @@ namespace Barber_Booking_System_EF
                 .ToListAsync();
 
             //   if no barbers found
+            if (barbers == null)
+            {
+                MessageBox.Show("Outlet has no barbers!");
+                return;
+            }
 
             cbBarber.Items.Clear();
             cbBarber.Text = null;
@@ -132,20 +137,23 @@ namespace Barber_Booking_System_EF
             cbService.Enabled = true;
 
             // get barber's timeslots (hard-coded temporarily)
-            //timeslots = _db.Barbers
-            //    .Where(b => b.Id == selectedBarber.Id)
-            //    .Select(b => b.Timeslots)
-            //    .FirstOrDefault()?
-            //    .ToList();
+            timeslots = _db.Barbers
+                .Where(b => b.Id == selectedBarber.Id)
+                .Select(b => b.Timeslots)
+                .FirstOrDefault()?
+                .ToList();
             if (timeslots == null)
-                timeslots = _db.Timeslots.ToList();
-
-            //   if no timeslots found
-            if (timeslots == null || timeslots.Count == 0)
             {
-                MessageBox.Show("Barber has no schedule!");
-                return;
+                MessageBox.Show("Barber has no schedule. Displaying all possible timeslots.");
+                timeslots = _db.Timeslots.ToList();
             }
+
+            ////   if no timeslots found
+            //if (timeslots == null || timeslots.Count == 0)
+            //{
+            //    MessageBox.Show("Barber has no schedule!");
+            //    return;
+            //}
 
             //   populate cbTimeslots
             cbTimeslot.Items.Clear();

@@ -1,5 +1,7 @@
 ﻿using Barber_Booking_System_EF.models;
 using Barber_Booking_System_EF.models;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -116,16 +118,6 @@ namespace Barber_Booking_System_EF
                 if (index != -1) checkedListServices.SetItemChecked(index, true);
             }
 
-            //try
-            //{
-
-            //}
-            //catch
-            //{
-            //}
-
-
-
             // get barber's pfp
             //   check if 0
             bool isZero = true;
@@ -189,15 +181,15 @@ namespace Barber_Booking_System_EF
         {
 
 
-            var bookingId = _db.Bookings
-                            .Include(b => b.Service)
-                            .Include(b => b.Cust)
-                            .Include(b => b.Outlet)
-                            .Include(b => b.Timeslot)
-                            .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
+            //var bookingId = _db.Bookings
+            //                .Include(b => b.Service)
+            //                .Include(b => b.Cust)
+            //                .Include(b => b.Outlet)
+            //                .Include(b => b.Timeslot)
+            //                .FirstOrDefault(b => b.Id == Convert.ToInt32(lblBookingId.Text));
 
-            Check_Barber_Booking_Page checkBooking = new Check_Barber_Booking_Page(bookingId);
-            checkBooking.Show();
+            //Check_Barber_Booking_Page checkBooking = new Check_Barber_Booking_Page(bookingId);
+            //checkBooking.Show();
         }
 
         private void dgvBarber_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -274,6 +266,11 @@ namespace Barber_Booking_System_EF
 
         }
 
+        private void label90_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnUpload_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog();
@@ -293,6 +290,105 @@ namespace Barber_Booking_System_EF
             openFileDialog.Dispose();
         }
 
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbFemale_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pieChart1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+
+            pieChart1.LegendPosition = LiveChartsCore.Measure.LegendPosition.Bottom;
+            var series = new List<ISeries>();
+            // select customer name and number of bookings made
+            var source = _db.Customers.Select(c => new { c.Name, Count = c.Bookings.Count });
+            foreach (var obj in source)
+            {
+                series.Add(new PieSeries<double>
+                {
+                    Values = new double[] { obj.Count },
+                    Name = obj.Name,
+                    ShowDataLabels = true
+
+                    //DataLabels = true,
+                    //LabelPoint = labelPoint
+                });
+            }
+            pieChart1.Series = series;
+            // ===========================================================
+            // CHART1: GROUP BY NAMA SERVIS (KUNCI PENYELESAIAN)
+            // ===========================================================
+            chart1.Series.Clear();
+            chart1.Titles.Clear();
+
+            chart1.Titles.Add("Perbandingan Jenis Potongan (Kesemua Barber)");
+
+            var seriesChart1 = chart1.Series.Add("Jumlah Tempahan");
+            seriesChart1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            seriesChart1.IsXValueIndexed = true;
+            seriesChart1.IsValueShownAsLabel = true;
+
+            var chartData = _db.Bookings
+                .Where(b => b.Service != null)
+                .GroupBy(b => b.Service.Name)
+                .Select(g => new
+                {
+                    ServiceName = g.Key,
+                    TotalCount = g.Count()
+                })
+                .OrderByDescending(x => x.TotalCount)
+                .ToList();
+
+            foreach (var item in chartData)
+            {
+                seriesChart1.Points.AddXY(item.ServiceName, item.TotalCount);
+            }
+        }
+
+        private void pieChart1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pieChart1_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbBarberId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbBarberEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void btnDeleteBarber_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbBarberId.Text)) return;
@@ -332,7 +428,7 @@ namespace Barber_Booking_System_EF
             }
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
+        private void checkedListTimeSlot_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

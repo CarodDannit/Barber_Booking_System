@@ -69,13 +69,8 @@ namespace Barber_Booking_System_EF
 
             lblBookingId.Text = row.Cells["Id"].Value?.ToString();
             lblService.Text = row.Cells["ServiceName"].Value?.ToString();
-            lblBarber.Text = row.Cells["BarberName"].Value?.ToString();
-            lblOutlet.Text = row.Cells["OutletLocation"].Value?.ToString();
             lblDate.Text = row.Cells["Date"].Value.ToString();
-            lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
-
-       
         }
 
 
@@ -102,23 +97,66 @@ namespace Barber_Booking_System_EF
             tbEmail.ReadOnly = false;
             tbName.ReadOnly = false;
 
+            tbName.Text = customer.Name;
+            tbEmail.Text = customer.Email;
+            tbPassword.Text = customer.Password;
 
             label6.Visible = true;
             tbPassword.Visible = true;
             tbPassword.ReadOnly = false;
             btnSave.Visible = true;
+            btnCancelProfile.Visible = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // validate input
+            if (string.IsNullOrWhiteSpace(tbName.Text))
+            {
+                MessageBox.Show("Name cannot be empty.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbEmail.Text))
+            {
+                MessageBox.Show("Email cannot be empty.");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Password cannot be empty.");
+                return;
+            }
+
             tbEmail.ReadOnly = true;
             tbName.ReadOnly = true;
 
+            customer.Name = tbName.Text;
+            customer.Email = tbEmail.Text;
+            customer.Password = tbPassword.Text;
+            _db.SaveChanges();
 
             label6.Visible = false;
             tbPassword.Visible = false;
             tbPassword.ReadOnly = true;
             btnSave.Visible = false;
+            btnCancelProfile.Visible = false;
+        }
+
+        private void btnCancelProfile_Click(object sender, EventArgs e)
+        {
+            tbEmail.ReadOnly = true;
+            tbName.ReadOnly = true;
+
+            // reset changes to textboxes
+            tbName.Text = customer.Name;
+            tbEmail.Text = customer.Email;
+            tbPassword.Text = customer.Password;
+
+            label6.Visible = false;
+            tbPassword.Visible = false;
+            tbPassword.ReadOnly = true;
+            btnSave.Visible = false;
+            btnCancelProfile.Visible = false;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -132,12 +170,12 @@ namespace Barber_Booking_System_EF
         private void btnNewBooking_Click(object sender, EventArgs e)
         {
             Book_Appointment_Page newbookingpage = new Book_Appointment_Page(customer);
-            this.Hide();
+            //this.Hide();
             var result = newbookingpage.ShowDialog();
             if (result == DialogResult.OK)
                 LoadBooking();
             newbookingpage.Close();
-            this.Show();
+            //this.Show();
         }
 
         private void btnDeleteBooking_Click(object sender, EventArgs e)
@@ -173,14 +211,30 @@ namespace Barber_Booking_System_EF
                 LoadBooking();
                 lblBookingId.Text = "";
                 lblService.Text = "";
-                lblBarber.Text = "";
-                lblOutlet.Text = "";
                 lblDate.Text = "";
-                lblTimeSlot.Text = "";
                 lblStatus.Text = "";
             }
         }
 
-       
+        private void btnViewDetails_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(lblBookingId.Text)) return;
+
+            int bookingId = int.Parse(lblBookingId.Text);
+            var booking = _db.Bookings
+                .Include(b => b.Barber)
+                .Include(b => b.Outlet)
+                .Include(b => b.Service)
+                .Include(b => b.Timeslot)
+                .Where(b => b.Id == bookingId)
+                .FirstOrDefault();
+
+            var viewdetailspage = new ViewBookingDetails_Page(booking);
+            var result = viewdetailspage.ShowDialog();
+            if (result == DialogResult.OK)
+                LoadBooking();
+
+            viewdetailspage.Dispose();
+        }
     }
 }

@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend skDefaultLegend3 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Barber_Home_Page));
+            LiveChartsCore.Drawing.Padding padding5 = new LiveChartsCore.Drawing.Padding();
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip skDefaultTooltip3 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip();
+            LiveChartsCore.Drawing.Padding padding6 = new LiveChartsCore.Drawing.Padding();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             lIdTab1 = new Label();
@@ -106,9 +114,16 @@
             BarberGender = new DataGridViewTextBoxColumn();
             BarberOutlet = new DataGridViewTextBoxColumn();
             tabPage4 = new TabPage();
+            label7 = new Label();
+            pieChart1 = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
+            btnGenerate = new Button();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label50 = new Label();
             label40 = new Label();
             label30 = new Label();
+            tabPage5 = new TabPage();
+            labelToDoRevenue = new Label();
+            labelToDoBookings = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -117,6 +132,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).BeginInit();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBarber).BeginInit();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            tabPage5.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -125,6 +143,7 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
             tabControl1.Location = new Point(11, 13);
             tabControl1.Margin = new Padding(2, 4, 2, 4);
             tabControl1.Name = "tabControl1";
@@ -134,6 +153,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(labelToDoBookings);
             tabPage1.Controls.Add(lIdTab1);
             tabPage1.Controls.Add(lServiceTab1);
             tabPage1.Controls.Add(lCustomerTab1);
@@ -336,7 +356,7 @@
             // Id
             // 
             Id.DataPropertyName = "Id";
-            Id.HeaderText = "Iiiiid";
+            Id.HeaderText = "ID";
             Id.MinimumWidth = 9;
             Id.Name = "Id";
             Id.ReadOnly = true;
@@ -495,22 +515,22 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
             tabPage2.UseVisualStyleBackColor = true;
-            tabPage2.Click += tabPage2_Click;
             // 
             // checkedListServices
             // 
             checkedListServices.FormattingEnabled = true;
-            checkedListServices.Location = new Point(73, 367);
+            checkedListServices.Location = new Point(49, 416);
+            checkedListServices.Margin = new Padding(2);
             checkedListServices.Name = "checkedListServices";
-            checkedListServices.Size = new Size(222, 136);
+            checkedListServices.Size = new Size(222, 114);
             checkedListServices.TabIndex = 87;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(68, 340);
-            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Location = new Point(49, 386);
+            label11.Margin = new Padding(1, 0, 1, 0);
             label11.Name = "label11";
             label11.Size = new Size(78, 25);
             label11.TabIndex = 86;
@@ -520,11 +540,9 @@
             // 
             groupBox1.Controls.Add(pictureBoxBarber);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(597, 81);
-            groupBox1.Margin = new Padding(4);
+            groupBox1.Location = new Point(610, 54);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(216, 225);
+            groupBox1.Size = new Size(229, 221);
             groupBox1.TabIndex = 82;
             groupBox1.TabStop = false;
             groupBox1.Text = "Barber Photo Profile";
@@ -532,10 +550,9 @@
             // pictureBoxBarber
             // 
             pictureBoxBarber.Image = Properties.Resources.rukia04;
-            pictureBoxBarber.Location = new Point(8, 35);
-            pictureBoxBarber.Margin = new Padding(4);
+            pictureBoxBarber.Location = new Point(6, 26);
             pictureBoxBarber.Name = "pictureBoxBarber";
-            pictureBoxBarber.Size = new Size(183, 182);
+            pictureBoxBarber.Size = new Size(217, 183);
             pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxBarber.TabIndex = 25;
             pictureBoxBarber.TabStop = false;
@@ -543,10 +560,12 @@
             // checkedListTimeSlot
             // 
             checkedListTimeSlot.FormattingEnabled = true;
-            checkedListTimeSlot.Location = new Point(317, 367);
+            checkedListTimeSlot.Location = new Point(301, 416);
+            checkedListTimeSlot.Margin = new Padding(2);
             checkedListTimeSlot.Name = "checkedListTimeSlot";
-            checkedListTimeSlot.Size = new Size(223, 136);
+            checkedListTimeSlot.Size = new Size(236, 114);
             checkedListTimeSlot.TabIndex = 74;
+            checkedListTimeSlot.SelectedIndexChanged += checkedListTimeSlot_SelectedIndexChanged;
             // 
             // rbMale
             // 
@@ -554,7 +573,8 @@
             rbMale.Checked = true;
             rbMale.Font = new Font("Segoe UI", 12F);
             rbMale.ForeColor = Color.FromArgb(128, 128, 255);
-            rbMale.Location = new Point(182, 238);
+            rbMale.Location = new Point(162, 262);
+            rbMale.Margin = new Padding(2);
             rbMale.Name = "rbMale";
             rbMale.Size = new Size(75, 32);
             rbMale.TabIndex = 0;
@@ -567,7 +587,8 @@
             rbFemale.AutoSize = true;
             rbFemale.Font = new Font("Segoe UI", 12F);
             rbFemale.ForeColor = Color.FromArgb(255, 128, 128);
-            rbFemale.Location = new Point(263, 238);
+            rbFemale.Location = new Point(257, 262);
+            rbFemale.Margin = new Padding(2);
             rbFemale.Name = "rbFemale";
             rbFemale.Size = new Size(91, 32);
             rbFemale.TabIndex = 1;
@@ -578,8 +599,7 @@
             // 
             cbOutlet.Font = new Font("Microsoft Sans Serif", 12F);
             cbOutlet.FormattingEnabled = true;
-            cbOutlet.Location = new Point(182, 282);
-            cbOutlet.Margin = new Padding(4);
+            cbOutlet.Location = new Point(162, 323);
             cbOutlet.Name = "cbOutlet";
             cbOutlet.Size = new Size(243, 33);
             cbOutlet.TabIndex = 73;
@@ -587,8 +607,8 @@
             // tbPassword
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F);
-            tbPassword.Location = new Point(182, 202);
-            tbPassword.Margin = new Padding(2);
+            tbPassword.Location = new Point(162, 209);
+            tbPassword.Margin = new Padding(1);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(243, 30);
             tbPassword.TabIndex = 24;
@@ -597,8 +617,8 @@
             // tbId
             // 
             tbId.Font = new Font("Microsoft Sans Serif", 12F);
-            tbId.Location = new Point(182, 81);
-            tbId.Margin = new Padding(2);
+            tbId.Location = new Point(162, 64);
+            tbId.Margin = new Padding(1);
             tbId.Name = "tbId";
             tbId.ReadOnly = true;
             tbId.Size = new Size(243, 30);
@@ -610,19 +630,20 @@
             // 
             label90.AutoSize = true;
             label90.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label90.Location = new Point(317, 339);
-            label90.Margin = new Padding(2, 0, 2, 0);
+            label90.Location = new Point(301, 386);
+            label90.Margin = new Padding(1, 0, 1, 0);
             label90.Name = "label90";
             label90.Size = new Size(95, 25);
             label90.TabIndex = 75;
             label90.Text = "Time Slot";
+            label90.Click += label90_Click;
             // 
             // label80
             // 
             label80.AutoSize = true;
             label80.Font = new Font("Microsoft Sans Serif", 12F);
-            label80.Location = new Point(73, 282);
-            label80.Margin = new Padding(2, 0, 2, 0);
+            label80.Location = new Point(49, 326);
+            label80.Margin = new Padding(1, 0, 1, 0);
             label80.Name = "label80";
             label80.Size = new Size(64, 25);
             label80.TabIndex = 23;
@@ -632,8 +653,8 @@
             // 
             label70.AutoSize = true;
             label70.Font = new Font("Microsoft Sans Serif", 12F);
-            label70.Location = new Point(70, 242);
-            label70.Margin = new Padding(2, 0, 2, 0);
+            label70.Location = new Point(49, 267);
+            label70.Margin = new Padding(1, 0, 1, 0);
             label70.Name = "label70";
             label70.Size = new Size(77, 25);
             label70.TabIndex = 22;
@@ -643,8 +664,8 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F);
-            label6.Location = new Point(73, 163);
-            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Location = new Point(49, 161);
+            label6.Margin = new Padding(1, 0, 1, 0);
             label6.Name = "label6";
             label6.Size = new Size(60, 25);
             label6.TabIndex = 21;
@@ -654,8 +675,8 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 12F);
-            label5.Location = new Point(73, 201);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Location = new Point(49, 209);
+            label5.Margin = new Padding(1, 0, 1, 0);
             label5.Name = "label5";
             label5.Size = new Size(98, 25);
             label5.TabIndex = 19;
@@ -665,8 +686,8 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F);
-            label4.Location = new Point(73, 122);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(49, 112);
+            label4.Margin = new Padding(1, 0, 1, 0);
             label4.Name = "label4";
             label4.Size = new Size(64, 25);
             label4.TabIndex = 18;
@@ -676,8 +697,8 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(73, 84);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(49, 67);
+            label3.Margin = new Padding(1, 0, 1, 0);
             label3.Name = "label3";
             label3.Size = new Size(94, 25);
             label3.TabIndex = 17;
@@ -686,10 +707,10 @@
             // btnLogout
             // 
             btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLogout.Location = new Point(735, 575);
-            btnLogout.Margin = new Padding(2);
+            btnLogout.Location = new Point(761, 582);
+            btnLogout.Margin = new Padding(1);
             btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(151, 44);
+            btnLogout.Size = new Size(123, 42);
             btnLogout.TabIndex = 15;
             btnLogout.Text = "Log out";
             btnLogout.UseVisualStyleBackColor = true;
@@ -699,10 +720,10 @@
             // 
             btnSave.BackColor = Color.FromArgb(192, 255, 192);
             btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSave.Location = new Point(568, 575);
-            btnSave.Margin = new Padding(2);
+            btnSave.Location = new Point(616, 582);
+            btnSave.Margin = new Padding(1);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(151, 44);
+            btnSave.Size = new Size(123, 42);
             btnSave.TabIndex = 12;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
@@ -711,10 +732,10 @@
             // btnUpload
             // 
             btnUpload.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpload.Location = new Point(622, 311);
+            btnUpload.Location = new Point(664, 279);
             btnUpload.Margin = new Padding(1);
             btnUpload.Name = "btnUpload";
-            btnUpload.Size = new Size(154, 44);
+            btnUpload.Size = new Size(123, 42);
             btnUpload.TabIndex = 83;
             btnUpload.Text = "Upload";
             btnUpload.UseVisualStyleBackColor = true;
@@ -723,8 +744,8 @@
             // tbEmail
             // 
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F);
-            tbEmail.Location = new Point(182, 161);
-            tbEmail.Margin = new Padding(2);
+            tbEmail.Location = new Point(162, 158);
+            tbEmail.Margin = new Padding(1);
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(243, 30);
             tbEmail.TabIndex = 14;
@@ -733,8 +754,8 @@
             // tbName
             // 
             tbName.Font = new Font("Microsoft Sans Serif", 12F);
-            tbName.Location = new Point(182, 120);
-            tbName.Margin = new Padding(2);
+            tbName.Location = new Point(162, 110);
+            tbName.Margin = new Padding(1);
             tbName.Name = "tbName";
             tbName.Size = new Size(243, 30);
             tbName.TabIndex = 13;
@@ -777,26 +798,30 @@
             // 
             // btnAddBarber
             // 
+            btnAddBarber.BackColor = SystemColors.Control;
             btnAddBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddBarber.Location = new Point(223, 577);
+            btnAddBarber.Location = new Point(223, 553);
             btnAddBarber.Margin = new Padding(2, 3, 2, 3);
             btnAddBarber.Name = "btnAddBarber";
             btnAddBarber.Size = new Size(157, 44);
             btnAddBarber.TabIndex = 59;
             btnAddBarber.Text = "create barber";
-            btnAddBarber.UseVisualStyleBackColor = true;
+            btnAddBarber.UseVisualStyleBackColor = false;
             btnAddBarber.Click += btnAddBarber_Click;
             // 
             // tbBarberEmail
             // 
+            tbBarberEmail.BackColor = SystemColors.Control;
             tbBarberEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberEmail.Location = new Point(128, 401);
             tbBarberEmail.Name = "tbBarberEmail";
             tbBarberEmail.Size = new Size(252, 34);
             tbBarberEmail.TabIndex = 64;
+            tbBarberEmail.TextChanged += tbBarberEmail_TextChanged;
             // 
             // tbBarberGender
             // 
+            tbBarberGender.BackColor = SystemColors.Control;
             tbBarberGender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberGender.Location = new Point(128, 443);
             tbBarberGender.Name = "tbBarberGender";
@@ -805,6 +830,7 @@
             // 
             // tbBarberOutlet
             // 
+            tbBarberOutlet.BackColor = SystemColors.Control;
             tbBarberOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberOutlet.Location = new Point(128, 488);
             tbBarberOutlet.Name = "tbBarberOutlet";
@@ -813,6 +839,7 @@
             // 
             // tbBarberName
             // 
+            tbBarberName.BackColor = SystemColors.Control;
             tbBarberName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberName.Location = new Point(128, 356);
             tbBarberName.Name = "tbBarberName";
@@ -821,23 +848,27 @@
             // 
             // tbBarberId
             // 
+            tbBarberId.BackColor = SystemColors.Control;
             tbBarberId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberId.Location = new Point(128, 314);
             tbBarberId.Name = "tbBarberId";
             tbBarberId.ReadOnly = true;
             tbBarberId.Size = new Size(252, 34);
             tbBarberId.TabIndex = 60;
+            tbBarberId.TextChanged += tbBarberId_TextChanged;
             // 
             // btnDeleteBarber
             // 
+            btnDeleteBarber.BackColor = SystemColors.Control;
             btnDeleteBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDeleteBarber.Location = new Point(30, 577);
+            btnDeleteBarber.ForeColor = SystemColors.ControlText;
+            btnDeleteBarber.Location = new Point(30, 553);
             btnDeleteBarber.Margin = new Padding(3, 4, 3, 4);
             btnDeleteBarber.Name = "btnDeleteBarber";
             btnDeleteBarber.Size = new Size(157, 44);
             btnDeleteBarber.TabIndex = 57;
             btnDeleteBarber.Text = "delete barber";
-            btnDeleteBarber.UseVisualStyleBackColor = true;
+            btnDeleteBarber.UseVisualStyleBackColor = false;
             btnDeleteBarber.Click += btnDeleteBarber_Click;
             // 
             // label18
@@ -963,6 +994,10 @@
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(label7);
+            tabPage4.Controls.Add(pieChart1);
+            tabPage4.Controls.Add(btnGenerate);
+            tabPage4.Controls.Add(chart1);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
@@ -970,6 +1005,86 @@
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Analysis";
             tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(592, 71);
+            label7.Name = "label7";
+            label7.Size = new Size(260, 25);
+            label7.TabIndex = 4;
+            label7.Text = "Total Booking By Customers";
+            // 
+            // pieChart1
+            // 
+            pieChart1.AutoUpdateEnabled = true;
+            pieChart1.ChartTheme = null;
+            skDefaultLegend3.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultLegend3.Content = null;
+            skDefaultLegend3.IsValid = false;
+            skDefaultLegend3.Opacity = 1F;
+            padding5.Bottom = 0F;
+            padding5.Left = 0F;
+            padding5.Right = 0F;
+            padding5.Top = 0F;
+            skDefaultLegend3.Padding = padding5;
+            skDefaultLegend3.RemoveOnCompleted = false;
+            skDefaultLegend3.RotateTransform = 0F;
+            skDefaultLegend3.X = 0F;
+            skDefaultLegend3.Y = 0F;
+            pieChart1.Legend = skDefaultLegend3;
+            pieChart1.Location = new Point(566, 116);
+            pieChart1.Name = "pieChart1";
+            pieChart1.Size = new Size(300, 300);
+            pieChart1.TabIndex = 3;
+            skDefaultTooltip3.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultTooltip3.Content = null;
+            skDefaultTooltip3.IsValid = false;
+            skDefaultTooltip3.Opacity = 1F;
+            padding6.Bottom = 0F;
+            padding6.Left = 0F;
+            padding6.Right = 0F;
+            padding6.Top = 0F;
+            skDefaultTooltip3.Padding = padding6;
+            skDefaultTooltip3.RemoveOnCompleted = false;
+            skDefaultTooltip3.RotateTransform = 0F;
+            skDefaultTooltip3.Wedge = 10;
+            skDefaultTooltip3.X = 0F;
+            skDefaultTooltip3.Y = 0F;
+            pieChart1.Tooltip = skDefaultTooltip3;
+            pieChart1.UpdaterThrottler = TimeSpan.Parse("00:00:00.0500000");
+            pieChart1.Load += pieChart1_Load_2;
+            // 
+            // btnGenerate
+            // 
+            btnGenerate.BackColor = Color.DeepSkyBlue;
+            btnGenerate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGenerate.ForeColor = Color.White;
+            btnGenerate.Location = new Point(325, 500);
+            btnGenerate.Name = "btnGenerate";
+            btnGenerate.Size = new Size(264, 91);
+            btnGenerate.TabIndex = 2;
+            btnGenerate.Text = "GENERATE";
+            btnGenerate.UseVisualStyleBackColor = false;
+            btnGenerate.Click += btnGenerate_Click;
+            // 
+            // chart1
+            // 
+            chartArea3.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            chart1.Legends.Add(legend3);
+            chart1.Location = new Point(26, 41);
+            chart1.Name = "chart1";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            chart1.Series.Add(series3);
+            chart1.Size = new Size(500, 375);
+            chart1.TabIndex = 1;
+            chart1.Text = "chart1";
+            chart1.Click += chart1_Click;
             // 
             // label50
             // 
@@ -991,6 +1106,35 @@
             label30.Name = "label30";
             label30.Size = new Size(100, 23);
             label30.TabIndex = 0;
+            // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(labelToDoRevenue);
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(910, 639);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Revenue";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // labelToDoRevenue
+            // 
+            labelToDoRevenue.AutoSize = true;
+            labelToDoRevenue.Location = new Point(233, 197);
+            labelToDoRevenue.Name = "labelToDoRevenue";
+            labelToDoRevenue.Size = new Size(446, 20);
+            labelToDoRevenue.TabIndex = 0;
+            labelToDoRevenue.Text = "almost cam analysis. Services mana buat berapa banyak profit, etc";
+            // 
+            // labelToDoBookings
+            // 
+            labelToDoBookings.AutoSize = true;
+            labelToDoBookings.Location = new Point(244, 544);
+            labelToDoBookings.Name = "labelToDoBookings";
+            labelToDoBookings.Size = new Size(445, 20);
+            labelToDoBookings.TabIndex = 47;
+            labelToDoBookings.Text = "status update: accept, reject; Hide irrelevant details; Sort bookings";
             // 
             // Barber_Home_Page
             // 
@@ -1014,6 +1158,11 @@
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBarber).EndInit();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1086,6 +1235,11 @@
         private Label lDateTab1;
         private Label lServiceTab1;
         private Label lCustomerTab1;
+        private Label lIdTab1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private Button btnGenerate;
+        private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChart1;
+        private Label label7;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Description;
@@ -1099,6 +1253,8 @@
         private DataGridViewTextBoxColumn TimeslotId;
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Status;
-        private Label lIdTab1;
+        private TabPage tabPage5;
+        private Label labelToDoRevenue;
+        private Label labelToDoBookings;
     }
 }

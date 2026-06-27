@@ -27,7 +27,7 @@ namespace Barber_Booking_System_EF
         private void btnUpload_Click(object sender, EventArgs e)
         {
             // openFileDialog W.I.P.
-            openFileDialog1.Filter = "image sikit2 je WIP (*.jpg; *.jpeg)|*.jpg; *.jpeg";
+            openFileDialog1.Filter = "image sikit2 je WIP (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
             //openFileDialog1.ShowDialog();
 
 
