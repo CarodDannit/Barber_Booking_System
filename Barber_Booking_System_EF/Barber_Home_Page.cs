@@ -166,7 +166,7 @@ namespace Barber_Booking_System_EF
             DataGridViewRow row = dgvBookings.Rows[e.RowIndex];
 
             lblBookingId.Text = row.Cells["Id"].Value?.ToString();
-            lblService.Text = row.Cells["ServiceName"].Value?.ToString();
+            lblService.Text = row.Cells["sName"].Value?.ToString();
             lblCustomer.Text = row.Cells["cName"].Value?.ToString();
             lblDate.Text = row.Cells["Date"].Value.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
@@ -430,7 +430,101 @@ namespace Barber_Booking_System_EF
 
         private void btnAcceptBooking_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(lblBookingId.Text))
+            {
+                MessageBox.Show("Please select a booking.");
+                return;
+            }
 
+            int bookingId = Convert.ToInt32(lblBookingId.Text);
+
+            var booking = _db.Bookings.FirstOrDefault(b => b.Id == bookingId);
+
+            if (booking == null)
+            {
+                MessageBox.Show("Booking not found.");
+                return;
+            }
+
+            if (booking.Status != "Pending")
+            {
+                MessageBox.Show("This booking has already been processed. Cannot be accepted anymore.");
+                return;
+            }
+
+            booking.Status = "Accepted";
+
+            _db.SaveChanges();
+
+            MessageBox.Show("Booking accepted successfully!");
+
+            loadBooking();
+
+            lblStatus.Text = booking.Status;
+            btnCompleteBooking.Visible = true;
+        }
+
+        private void btnRejectButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(lblBookingId.Text))
+            {
+                MessageBox.Show("Please select a booking.");
+                return;
+            }
+
+            int bookingId = Convert.ToInt32(lblBookingId.Text);
+
+            var booking = _db.Bookings.FirstOrDefault(b => b.Id == bookingId);
+
+            if (booking == null)
+            {
+                MessageBox.Show("Booking not found.");
+                return;
+            }
+
+            if (booking.Status != "Pending")
+            {
+                MessageBox.Show("This booking has already been processed. Cannot be rejected anymore.");
+                return;
+            }
+
+            booking.Status = "Rejected";
+
+            _db.SaveChanges();
+
+            MessageBox.Show("Booking rejected!");
+
+            loadBooking();
+            lblStatus.Text = booking.Status;
+        }
+
+        private void btnCompleteBooking_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(lblBookingId.Text))
+            {
+                MessageBox.Show("Please select a booking.");
+                return;
+            }
+
+            int bookingId = Convert.ToInt32(lblBookingId.Text);
+
+            var booking = _db.Bookings.FirstOrDefault(b => b.Id == bookingId);
+
+            if (booking == null)
+            {
+                MessageBox.Show("Booking not found.");
+                return;
+            }
+
+            booking.Status = "Completed";
+
+            _db.SaveChanges();
+
+            MessageBox.Show("Booking completed successfully!");
+
+            loadBooking();
+
+            lblStatus.Text = booking.Status;
         }
     }
 }
