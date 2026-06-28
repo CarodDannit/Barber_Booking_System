@@ -36,6 +36,9 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             btnCompleteBooking = new Button();
@@ -114,7 +117,15 @@
             btnGenerate = new Button();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             tabPage5 = new TabPage();
-            labelToDoRevenue = new Label();
+            lblHighMonRev = new Label();
+            lblAvgMonRev = new Label();
+            lblTotalRev = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label9 = new Label();
+            btnGenerateRevenue = new Button();
+            chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            label8 = new Label();
             label50 = new Label();
             label40 = new Label();
             label30 = new Label();
@@ -129,6 +140,7 @@
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartRevenue).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -1012,7 +1024,7 @@
             btnGenerate.BackColor = Color.DeepSkyBlue;
             btnGenerate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGenerate.ForeColor = Color.White;
-            btnGenerate.Location = new Point(325, 500);
+            btnGenerate.Location = new Point(640, 542);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(264, 91);
             btnGenerate.TabIndex = 2;
@@ -1039,7 +1051,15 @@
             // 
             // tabPage5
             // 
-            tabPage5.Controls.Add(labelToDoRevenue);
+            tabPage5.Controls.Add(lblHighMonRev);
+            tabPage5.Controls.Add(lblAvgMonRev);
+            tabPage5.Controls.Add(lblTotalRev);
+            tabPage5.Controls.Add(label13);
+            tabPage5.Controls.Add(label12);
+            tabPage5.Controls.Add(label9);
+            tabPage5.Controls.Add(btnGenerateRevenue);
+            tabPage5.Controls.Add(chartRevenue);
+            tabPage5.Controls.Add(label8);
             tabPage5.Location = new Point(4, 29);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
@@ -1048,14 +1068,106 @@
             tabPage5.Text = "Revenue";
             tabPage5.UseVisualStyleBackColor = true;
             // 
-            // labelToDoRevenue
+            // lblHighMonRev
             // 
-            labelToDoRevenue.AutoSize = true;
-            labelToDoRevenue.Location = new Point(233, 197);
-            labelToDoRevenue.Name = "labelToDoRevenue";
-            labelToDoRevenue.Size = new Size(446, 20);
-            labelToDoRevenue.TabIndex = 0;
-            labelToDoRevenue.Text = "almost cam analysis. Services mana buat berapa banyak profit, etc";
+            lblHighMonRev.AutoSize = true;
+            lblHighMonRev.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblHighMonRev.Location = new Point(721, 430);
+            lblHighMonRev.Name = "lblHighMonRev";
+            lblHighMonRev.Size = new Size(22, 28);
+            lblHighMonRev.TabIndex = 50;
+            lblHighMonRev.Text = "a";
+            // 
+            // lblAvgMonRev
+            // 
+            lblAvgMonRev.AutoSize = true;
+            lblAvgMonRev.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAvgMonRev.Location = new Point(745, 375);
+            lblAvgMonRev.Name = "lblAvgMonRev";
+            lblAvgMonRev.Size = new Size(22, 28);
+            lblAvgMonRev.TabIndex = 49;
+            lblAvgMonRev.Text = "a";
+            // 
+            // lblTotalRev
+            // 
+            lblTotalRev.AutoSize = true;
+            lblTotalRev.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalRev.Location = new Point(695, 325);
+            lblTotalRev.Name = "lblTotalRev";
+            lblTotalRev.Size = new Size(22, 28);
+            lblTotalRev.TabIndex = 48;
+            lblTotalRev.Text = "a";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Location = new Point(553, 430);
+            label13.Name = "label13";
+            label13.Size = new Size(162, 28);
+            label13.TabIndex = 47;
+            label13.Text = "Highest Monthly:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(553, 375);
+            label12.Name = "label12";
+            label12.Size = new Size(186, 28);
+            label12.TabIndex = 46;
+            label12.Text = "Average per Month:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(553, 325);
+            label9.Name = "label9";
+            label9.Size = new Size(136, 28);
+            label9.TabIndex = 45;
+            label9.Text = "Total Revenue:";
+            // 
+            // btnGenerateRevenue
+            // 
+            btnGenerateRevenue.BackColor = Color.DeepSkyBlue;
+            btnGenerateRevenue.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGenerateRevenue.ForeColor = Color.White;
+            btnGenerateRevenue.Location = new Point(640, 541);
+            btnGenerateRevenue.Name = "btnGenerateRevenue";
+            btnGenerateRevenue.Size = new Size(264, 91);
+            btnGenerateRevenue.TabIndex = 16;
+            btnGenerateRevenue.Text = "GENERATE";
+            btnGenerateRevenue.UseVisualStyleBackColor = false;
+            btnGenerateRevenue.Click += btnGenerateRevenue_Click;
+            // 
+            // chartRevenue
+            // 
+            chartArea2.Name = "ChartArea1";
+            chartRevenue.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chartRevenue.Legends.Add(legend2);
+            chartRevenue.Location = new Point(36, 83);
+            chartRevenue.Name = "chartRevenue";
+            chartRevenue.RightToLeft = RightToLeft.No;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chartRevenue.Series.Add(series2);
+            chartRevenue.Size = new Size(495, 375);
+            chartRevenue.TabIndex = 15;
+            chartRevenue.Text = "chart2";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(5, 3);
+            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(178, 46);
+            label8.TabIndex = 14;
+            label8.Text = "Revenue";
             // 
             // label50
             // 
@@ -1105,6 +1217,7 @@
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chartRevenue).EndInit();
             ResumeLayout(false);
         }
 
@@ -1164,7 +1277,6 @@
         private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChart1;
         private Label label7;
         private TabPage tabPage5;
-        private Label labelToDoRevenue;
         private TabPage tabPage1;
         private Label labelToDoBookings;
         private Label lIdTab1;
@@ -1192,5 +1304,14 @@
         private Button btnAcceptBooking;
         private Button btnRejectButton;
         private Button btnCompleteBooking;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
+        private Label label8;
+        private Button btnGenerateRevenue;
+        private Label label9;
+        private Label label13;
+        private Label label12;
+        private Label lblHighMonRev;
+        private Label lblAvgMonRev;
+        private Label lblTotalRev;
     }
 }

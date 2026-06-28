@@ -9,10 +9,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Barber_Booking_System_EF
@@ -31,6 +33,8 @@ namespace Barber_Booking_System_EF
         {
             InitializeComponent();
             barber = b;
+
+
 
         }
 
@@ -140,6 +144,7 @@ namespace Barber_Booking_System_EF
 
             loadBarber();
             loadBooking();
+
         }
 
         private void btnAddBarber_Click(object sender, EventArgs e)
@@ -170,6 +175,17 @@ namespace Barber_Booking_System_EF
             lblCustomer.Text = row.Cells["cName"].Value?.ToString();
             lblDate.Text = row.Cells["Date"].Value.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
+
+            if(lblStatus.Text == "Accepted") {
+                btnCompleteBooking.Visible = true;
+                btnRejectButton.Visible = false;
+                btnAcceptBooking.Visible = false;
+            }
+            if(lblStatus.Text == "Rejected")
+            {
+
+            }
+
         }
 
         private void btnCheckBooking_Click(object sender, EventArgs e)
@@ -461,7 +477,7 @@ namespace Barber_Booking_System_EF
             loadBooking();
 
             lblStatus.Text = booking.Status;
-            btnCompleteBooking.Visible = true;
+            
         }
 
         private void btnRejectButton_Click(object sender, EventArgs e)
@@ -525,6 +541,73 @@ namespace Barber_Booking_System_EF
             loadBooking();
 
             lblStatus.Text = booking.Status;
+        }
+
+        //REVENUE TAB
+        private void loadMonthlyRevenue()
+        {
+            chartRevenue.Series.Clear();
+            chartRevenue.Titles.Clear();
+
+            chartRevenue.Titles.Add("Monthly Revenue");
+
+            var series = chartRevenue.Series.Add("Revenue");
+            series.ChartType = SeriesChartType.Column;
+            series.Points.Clear();
+            series.XValueType = ChartValueType.String;
+            series.IsValueShownAsLabel = true;
+            series.IsXValueIndexed = true;
+
+            var revenue = _db.Bookings
+                .Where(b => b.BarberId == barber.Id &&
+                            b.Status == "Completed")
+                .GroupBy(b => b.Date.Month)
+                .Select(g => new
+                {
+                    Month = g.Key,
+                    Revenue = g.Sum(x => x.Service.Price)
+                })
+                .OrderBy(x => x.Month)
+                .ToList();
+
+            decimal totalRevenue = revenue.Sum(x => x.Revenue);
+            lblTotalRev.Text = $"RM {totalRevenue:N2}";
+
+            decimal avgMonthlyRevenue = 0;
+
+            if (revenue.Count > 0)
+            {
+                avgMonthlyRevenue = revenue.Average(x => x.Revenue);
+            }
+
+            lblAvgMonRev.Text = $"RM {avgMonthlyRevenue:N2}";
+
+            if (revenue.Any())
+            {
+                var highest = revenue.OrderByDescending(x => x.Revenue).First();
+
+                string monthName = new DateTime(2026, highest.Month, 1).ToString("MMMM");
+
+                lblHighMonRev.Text = $"{monthName} (RM {highest.Revenue:N2})";
+            }
+            else
+            {
+                lblHighMonRev.Text = "No revenue";
+            }
+
+            foreach (var item in revenue)
+            {
+                series.Points.AddXY(
+                    CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(item.Month),
+                    item.Revenue);
+            }
+
+        }
+
+        private void btnGenerateRevenue_Click(object sender, EventArgs e)
+        {
+            loadMonthlyRevenue();
+
         }
     }
 }
