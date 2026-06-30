@@ -160,6 +160,8 @@ public partial class BekasIceCreamDbContext : DbContext
             entity.ToTable("SERVICE");
 
             entity.Property(e => e.Name).HasMaxLength(50);
+
+            entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
         });
 
         modelBuilder.Entity<Timeslot>(entity =>
