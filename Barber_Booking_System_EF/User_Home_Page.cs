@@ -25,10 +25,6 @@ namespace Barber_Booking_System_EF
 
         private void LoadBooking()
         {
-            tbName.Text = customer.Name;
-            tbEmail.Text = customer.Email;
-
-
             dgvBookings.AutoGenerateColumns = false;
             dgvBookings.DataSource = _db.Bookings
                 .Where(b => b.CustId == customer.Id)
@@ -73,10 +69,7 @@ namespace Barber_Booking_System_EF
 
             lblBookingId.Text = row.Cells["Id"].Value?.ToString();
             lblService.Text = row.Cells["ServiceName"].Value?.ToString();
-            lblBarber.Text = row.Cells["BarberName"].Value?.ToString();
-            lblOutlet.Text = row.Cells["OutletLocation"].Value?.ToString();
             lblDate.Text = row.Cells["Date"].Value.ToString();
-            lblTimeSlot.Text = row.Cells["Time"].Value?.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
         }
 
@@ -99,12 +92,11 @@ namespace Barber_Booking_System_EF
 
         }
 
-        private void btnEditProfile_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             tbEmail.ReadOnly = false;
             tbName.ReadOnly = false;
 
-            // ahmad bolz EF core style
             tbName.Text = customer.Name;
             tbEmail.Text = customer.Email;
             tbPassword.Text = customer.Password;
@@ -113,6 +105,7 @@ namespace Barber_Booking_System_EF
             tbPassword.Visible = true;
             tbPassword.ReadOnly = false;
             btnSave.Visible = true;
+            btnCancelProfile.Visible = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -140,15 +133,31 @@ namespace Barber_Booking_System_EF
             customer.Name = tbName.Text;
             customer.Email = tbEmail.Text;
             customer.Password = tbPassword.Text;
+            _db.SaveChanges();
 
             label6.Visible = false;
             tbPassword.Visible = false;
             tbPassword.ReadOnly = true;
             btnSave.Visible = false;
-
-            _db.SaveChanges();
+            btnCancelProfile.Visible = false;
         }
 
+        private void btnCancelProfile_Click(object sender, EventArgs e)
+        {
+            tbEmail.ReadOnly = true;
+            tbName.ReadOnly = true;
+
+            // reset changes to textboxes
+            tbName.Text = customer.Name;
+            tbEmail.Text = customer.Email;
+            tbPassword.Text = customer.Password;
+
+            label6.Visible = false;
+            tbPassword.Visible = false;
+            tbPassword.ReadOnly = true;
+            btnSave.Visible = false;
+            btnCancelProfile.Visible = false;
+        }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -161,12 +170,12 @@ namespace Barber_Booking_System_EF
         private void btnNewBooking_Click(object sender, EventArgs e)
         {
             Book_Appointment_Page newbookingpage = new Book_Appointment_Page(customer);
-            this.Hide();
+            //this.Hide();
             var result = newbookingpage.ShowDialog();
             if (result == DialogResult.OK)
                 LoadBooking();
             newbookingpage.Close();
-            this.Show();
+            //this.Show();
         }
 
         private void btnDeleteBooking_Click(object sender, EventArgs e)
@@ -202,10 +211,7 @@ namespace Barber_Booking_System_EF
                 LoadBooking();
                 lblBookingId.Text = "";
                 lblService.Text = "";
-                lblBarber.Text = "";
-                lblOutlet.Text = "";
                 lblDate.Text = "";
-                lblTimeSlot.Text = "";
                 lblStatus.Text = "";
             }
         }
@@ -225,40 +231,10 @@ namespace Barber_Booking_System_EF
 
             var viewdetailspage = new ViewBookingDetails_Page(booking);
             var result = viewdetailspage.ShowDialog();
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
                 LoadBooking();
 
             viewdetailspage.Dispose();
-        }
-
-        private void rbFemale_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

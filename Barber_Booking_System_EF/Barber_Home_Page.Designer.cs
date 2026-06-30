@@ -28,44 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend skDefaultLegend12 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend();
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend skDefaultLegend1 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultLegend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Barber_Home_Page));
-            LiveChartsCore.Drawing.Padding padding23 = new LiveChartsCore.Drawing.Padding();
-            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip skDefaultTooltip12 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip();
-            LiveChartsCore.Drawing.Padding padding24 = new LiveChartsCore.Drawing.Padding();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            LiveChartsCore.Drawing.Padding padding1 = new LiveChartsCore.Drawing.Padding();
+            LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip skDefaultTooltip1 = new LiveChartsCore.SkiaSharpView.SKCharts.SKDefaultTooltip();
+            LiveChartsCore.Drawing.Padding padding2 = new LiveChartsCore.Drawing.Padding();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            btnCompleteBooking = new Button();
+            btnAcceptBooking = new Button();
+            btnRejectButton = new Button();
+            labelToDoBookings = new Label();
             lIdTab1 = new Label();
             lServiceTab1 = new Label();
             lCustomerTab1 = new Label();
             lDateTab1 = new Label();
             lblService = new Label();
             lblCustomer = new Label();
-            lblOutlet = new Label();
             lblDate = new Label();
-            lblTimeSlot = new Label();
             lblStatus = new Label();
             lblBookingId = new Label();
             btnCheckBooking = new Button();
-            lOutletTab1 = new Label();
-            lTimeslotTab1 = new Label();
             lStatusTab1 = new Label();
-            btnNewBooking = new Button();
             dgvBookings = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
             Description = new DataGridViewTextBoxColumn();
-            OutletId = new DataGridViewTextBoxColumn();
-            OutletLocation = new DataGridViewTextBoxColumn();
-            BarberId = new DataGridViewTextBoxColumn();
-            CustId = new DataGridViewTextBoxColumn();
             cName = new DataGridViewTextBoxColumn();
-            ServiceId = new DataGridViewTextBoxColumn();
-            ServiceName = new DataGridViewTextBoxColumn();
-            TimeslotId = new DataGridViewTextBoxColumn();
+            bName = new DataGridViewTextBoxColumn();
+            sName = new DataGridViewTextBoxColumn();
+            OutletLocation = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
             Time = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
             label1 = new Label();
@@ -114,13 +112,23 @@
             BarberGender = new DataGridViewTextBoxColumn();
             BarberOutlet = new DataGridViewTextBoxColumn();
             tabPage4 = new TabPage();
+            label7 = new Label();
             pieChart1 = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
             btnGenerate = new Button();
             chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            tabPage5 = new TabPage();
+            lblHighMonRev = new Label();
+            lblAvgMonRev = new Label();
+            lblTotalRev = new Label();
+            label13 = new Label();
+            label12 = new Label();
+            label9 = new Label();
+            btnGenerateRevenue = new Button();
+            chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            label8 = new Label();
             label50 = new Label();
             label40 = new Label();
             label30 = new Label();
-            label7 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -131,6 +139,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvBarber).BeginInit();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartRevenue).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -139,6 +149,7 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
             tabControl1.Location = new Point(11, 13);
             tabControl1.Margin = new Padding(2, 4, 2, 4);
             tabControl1.Name = "tabControl1";
@@ -148,22 +159,21 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btnCompleteBooking);
+            tabPage1.Controls.Add(btnAcceptBooking);
+            tabPage1.Controls.Add(btnRejectButton);
+            tabPage1.Controls.Add(labelToDoBookings);
             tabPage1.Controls.Add(lIdTab1);
             tabPage1.Controls.Add(lServiceTab1);
             tabPage1.Controls.Add(lCustomerTab1);
             tabPage1.Controls.Add(lDateTab1);
             tabPage1.Controls.Add(lblService);
             tabPage1.Controls.Add(lblCustomer);
-            tabPage1.Controls.Add(lblOutlet);
             tabPage1.Controls.Add(lblDate);
-            tabPage1.Controls.Add(lblTimeSlot);
             tabPage1.Controls.Add(lblStatus);
             tabPage1.Controls.Add(lblBookingId);
             tabPage1.Controls.Add(btnCheckBooking);
-            tabPage1.Controls.Add(lOutletTab1);
-            tabPage1.Controls.Add(lTimeslotTab1);
             tabPage1.Controls.Add(lStatusTab1);
-            tabPage1.Controls.Add(btnNewBooking);
             tabPage1.Controls.Add(dgvBookings);
             tabPage1.Controls.Add(label1);
             tabPage1.Location = new Point(4, 29);
@@ -174,6 +184,52 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Bookings";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnCompleteBooking
+            // 
+            btnCompleteBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCompleteBooking.Location = new Point(588, 544);
+            btnCompleteBooking.Margin = new Padding(3, 4, 3, 4);
+            btnCompleteBooking.Name = "btnCompleteBooking";
+            btnCompleteBooking.Size = new Size(159, 51);
+            btnCompleteBooking.TabIndex = 50;
+            btnCompleteBooking.Text = "Complete";
+            btnCompleteBooking.UseVisualStyleBackColor = true;
+            btnCompleteBooking.Visible = false;
+            btnCompleteBooking.Click += btnCompleteBooking_Click;
+            // 
+            // btnAcceptBooking
+            // 
+            btnAcceptBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAcceptBooking.Location = new Point(400, 544);
+            btnAcceptBooking.Margin = new Padding(3, 4, 3, 4);
+            btnAcceptBooking.Name = "btnAcceptBooking";
+            btnAcceptBooking.Size = new Size(159, 51);
+            btnAcceptBooking.TabIndex = 49;
+            btnAcceptBooking.Text = "Accept";
+            btnAcceptBooking.UseVisualStyleBackColor = true;
+            btnAcceptBooking.Click += btnAcceptBooking_Click;
+            // 
+            // btnRejectButton
+            // 
+            btnRejectButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRejectButton.Location = new Point(215, 544);
+            btnRejectButton.Margin = new Padding(3, 4, 3, 4);
+            btnRejectButton.Name = "btnRejectButton";
+            btnRejectButton.Size = new Size(159, 51);
+            btnRejectButton.TabIndex = 48;
+            btnRejectButton.Text = "Reject";
+            btnRejectButton.UseVisualStyleBackColor = true;
+            btnRejectButton.Click += btnRejectButton_Click;
+            // 
+            // labelToDoBookings
+            // 
+            labelToDoBookings.AutoSize = true;
+            labelToDoBookings.Location = new Point(34, 504);
+            labelToDoBookings.Name = "labelToDoBookings";
+            labelToDoBookings.Size = new Size(445, 20);
+            labelToDoBookings.TabIndex = 47;
+            labelToDoBookings.Text = "status update: accept, reject; Hide irrelevant details; Sort bookings";
             // 
             // lIdTab1
             // 
@@ -209,7 +265,7 @@
             // 
             lDateTab1.AutoSize = true;
             lDateTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lDateTab1.Location = new Point(34, 430);
+            lDateTab1.Location = new Point(34, 402);
             lDateTab1.Name = "lDateTab1";
             lDateTab1.Size = new Size(53, 28);
             lDateTab1.TabIndex = 43;
@@ -233,38 +289,20 @@
             lblCustomer.Size = new Size(0, 28);
             lblCustomer.TabIndex = 41;
             // 
-            // lblOutlet
-            // 
-            lblOutlet.AutoSize = true;
-            lblOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOutlet.Location = new Point(155, 402);
-            lblOutlet.Name = "lblOutlet";
-            lblOutlet.Size = new Size(0, 28);
-            lblOutlet.TabIndex = 40;
-            // 
             // lblDate
             // 
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDate.Location = new Point(155, 430);
+            lblDate.Location = new Point(155, 402);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(0, 28);
             lblDate.TabIndex = 39;
-            // 
-            // lblTimeSlot
-            // 
-            lblTimeSlot.AutoSize = true;
-            lblTimeSlot.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTimeSlot.Location = new Point(155, 458);
-            lblTimeSlot.Name = "lblTimeSlot";
-            lblTimeSlot.Size = new Size(0, 28);
-            lblTimeSlot.TabIndex = 38;
             // 
             // lblStatus
             // 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(155, 486);
+            lblStatus.Location = new Point(155, 430);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(0, 28);
             lblStatus.TabIndex = 37;
@@ -290,53 +328,22 @@
             btnCheckBooking.UseVisualStyleBackColor = true;
             btnCheckBooking.Click += btnCheckBooking_Click;
             // 
-            // lOutletTab1
-            // 
-            lOutletTab1.AutoSize = true;
-            lOutletTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lOutletTab1.Location = new Point(34, 402);
-            lOutletTab1.Name = "lOutletTab1";
-            lOutletTab1.Size = new Size(67, 28);
-            lOutletTab1.TabIndex = 34;
-            lOutletTab1.Text = "Outlet";
-            // 
-            // lTimeslotTab1
-            // 
-            lTimeslotTab1.AutoSize = true;
-            lTimeslotTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lTimeslotTab1.Location = new Point(34, 458);
-            lTimeslotTab1.Name = "lTimeslotTab1";
-            lTimeslotTab1.Size = new Size(89, 28);
-            lTimeslotTab1.TabIndex = 33;
-            lTimeslotTab1.Text = "TimeSlot";
-            // 
             // lStatusTab1
             // 
             lStatusTab1.AutoSize = true;
             lStatusTab1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lStatusTab1.Location = new Point(34, 486);
+            lStatusTab1.Location = new Point(34, 430);
             lStatusTab1.Name = "lStatusTab1";
             lStatusTab1.Size = new Size(65, 28);
             lStatusTab1.TabIndex = 32;
             lStatusTab1.Text = "Status";
-            // 
-            // btnNewBooking
-            // 
-            btnNewBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNewBooking.Location = new Point(718, 544);
-            btnNewBooking.Margin = new Padding(3, 4, 3, 4);
-            btnNewBooking.Name = "btnNewBooking";
-            btnNewBooking.Size = new Size(187, 51);
-            btnNewBooking.TabIndex = 27;
-            btnNewBooking.Text = "new booking";
-            btnNewBooking.UseVisualStyleBackColor = true;
             // 
             // dgvBookings
             // 
             dgvBookings.AllowUserToAddRows = false;
             dgvBookings.AllowUserToDeleteRows = false;
             dgvBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBookings.Columns.AddRange(new DataGridViewColumn[] { Id, Date, Description, OutletId, OutletLocation, BarberId, CustId, cName, ServiceId, ServiceName, TimeslotId, Time, Status });
+            dgvBookings.Columns.AddRange(new DataGridViewColumn[] { Id, Description, cName, bName, sName, OutletLocation, Date, Time, Status });
             dgvBookings.Location = new Point(33, 72);
             dgvBookings.Margin = new Padding(2, 3, 2, 3);
             dgvBookings.Name = "dgvBookings";
@@ -350,20 +357,11 @@
             // Id
             // 
             Id.DataPropertyName = "Id";
-            Id.HeaderText = "Iiiiid";
+            Id.HeaderText = "ID";
             Id.MinimumWidth = 9;
             Id.Name = "Id";
             Id.ReadOnly = true;
             Id.Width = 80;
-            // 
-            // Date
-            // 
-            Date.DataPropertyName = "Date";
-            Date.HeaderText = "Date";
-            Date.MinimumWidth = 9;
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            Date.Width = 150;
             // 
             // Description
             // 
@@ -374,79 +372,50 @@
             Description.ReadOnly = true;
             Description.Width = 175;
             // 
-            // OutletId
-            // 
-            OutletId.DataPropertyName = "OutletId";
-            OutletId.HeaderText = "OutletId";
-            OutletId.MinimumWidth = 9;
-            OutletId.Name = "OutletId";
-            OutletId.ReadOnly = true;
-            OutletId.Width = 90;
-            // 
-            // OutletLocation
-            // 
-            OutletLocation.DataPropertyName = "oLocation";
-            OutletLocation.HeaderText = "Location";
-            OutletLocation.MinimumWidth = 9;
-            OutletLocation.Name = "OutletLocation";
-            OutletLocation.ReadOnly = true;
-            OutletLocation.Width = 175;
-            // 
-            // BarberId
-            // 
-            BarberId.DataPropertyName = "BarberId";
-            BarberId.HeaderText = "BarberId";
-            BarberId.MinimumWidth = 9;
-            BarberId.Name = "BarberId";
-            BarberId.ReadOnly = true;
-            BarberId.Visible = false;
-            BarberId.Width = 90;
-            // 
-            // CustId
-            // 
-            CustId.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            CustId.DataPropertyName = "CustId";
-            CustId.HeaderText = "CustId";
-            CustId.MinimumWidth = 6;
-            CustId.Name = "CustId";
-            CustId.ReadOnly = true;
-            CustId.Width = 79;
-            // 
             // cName
             // 
             cName.DataPropertyName = "cName";
-            cName.HeaderText = "Cust. Name";
+            cName.HeaderText = "Customer";
             cName.MinimumWidth = 6;
             cName.Name = "cName";
             cName.ReadOnly = true;
             cName.Width = 125;
             // 
-            // ServiceId
+            // bName
             // 
-            ServiceId.DataPropertyName = "ServiceId";
-            ServiceId.HeaderText = "ServiceId";
-            ServiceId.MinimumWidth = 9;
-            ServiceId.Name = "ServiceId";
-            ServiceId.ReadOnly = true;
-            ServiceId.Width = 90;
+            bName.DataPropertyName = "bName";
+            bName.HeaderText = "Barber";
+            bName.MinimumWidth = 6;
+            bName.Name = "bName";
+            bName.ReadOnly = true;
+            bName.Width = 125;
             // 
-            // ServiceName
+            // sName
             // 
-            ServiceName.DataPropertyName = "sName";
-            ServiceName.HeaderText = "Service Name";
-            ServiceName.MinimumWidth = 9;
-            ServiceName.Name = "ServiceName";
-            ServiceName.ReadOnly = true;
-            ServiceName.Width = 175;
+            sName.DataPropertyName = "sName";
+            sName.HeaderText = "Service";
+            sName.MinimumWidth = 6;
+            sName.Name = "sName";
+            sName.ReadOnly = true;
+            sName.Width = 125;
             // 
-            // TimeslotId
+            // OutletLocation
             // 
-            TimeslotId.DataPropertyName = "TimeslotId";
-            TimeslotId.HeaderText = "TimeslotId";
-            TimeslotId.MinimumWidth = 9;
-            TimeslotId.Name = "TimeslotId";
-            TimeslotId.ReadOnly = true;
-            TimeslotId.Width = 90;
+            OutletLocation.DataPropertyName = "oLocation";
+            OutletLocation.HeaderText = "Outlet";
+            OutletLocation.MinimumWidth = 9;
+            OutletLocation.Name = "OutletLocation";
+            OutletLocation.ReadOnly = true;
+            OutletLocation.Width = 175;
+            // 
+            // Date
+            // 
+            Date.DataPropertyName = "Date";
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 9;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.Width = 150;
             // 
             // Time
             // 
@@ -514,7 +483,7 @@
             // 
             checkedListServices.FormattingEnabled = true;
             checkedListServices.Location = new Point(49, 416);
-            checkedListServices.Margin = new Padding(2, 2, 2, 2);
+            checkedListServices.Margin = new Padding(2);
             checkedListServices.Name = "checkedListServices";
             checkedListServices.Size = new Size(222, 114);
             checkedListServices.TabIndex = 87;
@@ -555,7 +524,7 @@
             // 
             checkedListTimeSlot.FormattingEnabled = true;
             checkedListTimeSlot.Location = new Point(301, 416);
-            checkedListTimeSlot.Margin = new Padding(2, 2, 2, 2);
+            checkedListTimeSlot.Margin = new Padding(2);
             checkedListTimeSlot.Name = "checkedListTimeSlot";
             checkedListTimeSlot.Size = new Size(236, 114);
             checkedListTimeSlot.TabIndex = 74;
@@ -568,7 +537,7 @@
             rbMale.Font = new Font("Segoe UI", 12F);
             rbMale.ForeColor = Color.FromArgb(128, 128, 255);
             rbMale.Location = new Point(162, 262);
-            rbMale.Margin = new Padding(2, 2, 2, 2);
+            rbMale.Margin = new Padding(2);
             rbMale.Name = "rbMale";
             rbMale.Size = new Size(75, 32);
             rbMale.TabIndex = 0;
@@ -582,7 +551,7 @@
             rbFemale.Font = new Font("Segoe UI", 12F);
             rbFemale.ForeColor = Color.FromArgb(255, 128, 128);
             rbFemale.Location = new Point(257, 262);
-            rbFemale.Margin = new Padding(2, 2, 2, 2);
+            rbFemale.Margin = new Padding(2);
             rbFemale.Name = "rbFemale";
             rbFemale.Size = new Size(91, 32);
             rbFemale.TabIndex = 1;
@@ -602,7 +571,7 @@
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F);
             tbPassword.Location = new Point(162, 209);
-            tbPassword.Margin = new Padding(1, 1, 1, 1);
+            tbPassword.Margin = new Padding(1);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(243, 30);
             tbPassword.TabIndex = 24;
@@ -612,7 +581,7 @@
             // 
             tbId.Font = new Font("Microsoft Sans Serif", 12F);
             tbId.Location = new Point(162, 64);
-            tbId.Margin = new Padding(1, 1, 1, 1);
+            tbId.Margin = new Padding(1);
             tbId.Name = "tbId";
             tbId.ReadOnly = true;
             tbId.Size = new Size(243, 30);
@@ -630,7 +599,7 @@
             label90.Size = new Size(95, 25);
             label90.TabIndex = 75;
             label90.Text = "Time Slot";
-            label90.Click += this.label90_Click;
+            label90.Click += label90_Click;
             // 
             // label80
             // 
@@ -702,7 +671,7 @@
             // 
             btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogout.Location = new Point(761, 582);
-            btnLogout.Margin = new Padding(1, 1, 1, 1);
+            btnLogout.Margin = new Padding(1);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(123, 42);
             btnLogout.TabIndex = 15;
@@ -715,7 +684,7 @@
             btnSave.BackColor = Color.FromArgb(192, 255, 192);
             btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSave.Location = new Point(616, 582);
-            btnSave.Margin = new Padding(1, 1, 1, 1);
+            btnSave.Margin = new Padding(1);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(123, 42);
             btnSave.TabIndex = 12;
@@ -739,7 +708,7 @@
             // 
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F);
             tbEmail.Location = new Point(162, 158);
-            tbEmail.Margin = new Padding(1, 1, 1, 1);
+            tbEmail.Margin = new Padding(1);
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(243, 30);
             tbEmail.TabIndex = 14;
@@ -749,7 +718,7 @@
             // 
             tbName.Font = new Font("Microsoft Sans Serif", 12F);
             tbName.Location = new Point(162, 110);
-            tbName.Margin = new Padding(1, 1, 1, 1);
+            tbName.Margin = new Padding(1);
             tbName.Name = "tbName";
             tbName.Size = new Size(243, 30);
             tbName.TabIndex = 13;
@@ -789,13 +758,12 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Barber";
             tabPage3.UseVisualStyleBackColor = true;
-            //tabPage3.Click += this.tabPage3_Click;
             // 
             // btnAddBarber
             // 
-            btnAddBarber.BackColor = Color.DeepSkyBlue;
+            btnAddBarber.BackColor = SystemColors.Control;
             btnAddBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAddBarber.Location = new Point(223, 577);
+            btnAddBarber.Location = new Point(223, 553);
             btnAddBarber.Margin = new Padding(2, 3, 2, 3);
             btnAddBarber.Name = "btnAddBarber";
             btnAddBarber.Size = new Size(157, 44);
@@ -806,7 +774,7 @@
             // 
             // tbBarberEmail
             // 
-            tbBarberEmail.BackColor = Color.PaleTurquoise;
+            tbBarberEmail.BackColor = SystemColors.Control;
             tbBarberEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberEmail.Location = new Point(128, 401);
             tbBarberEmail.Name = "tbBarberEmail";
@@ -816,17 +784,16 @@
             // 
             // tbBarberGender
             // 
-            tbBarberGender.BackColor = Color.PaleTurquoise;
+            tbBarberGender.BackColor = SystemColors.Control;
             tbBarberGender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberGender.Location = new Point(128, 443);
             tbBarberGender.Name = "tbBarberGender";
             tbBarberGender.Size = new Size(252, 34);
             tbBarberGender.TabIndex = 63;
-            //tbBarberGender.TextChanged += this.tbBarberGender_TextChanged;
             // 
             // tbBarberOutlet
             // 
-            tbBarberOutlet.BackColor = Color.PaleTurquoise;
+            tbBarberOutlet.BackColor = SystemColors.Control;
             tbBarberOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberOutlet.Location = new Point(128, 488);
             tbBarberOutlet.Name = "tbBarberOutlet";
@@ -835,17 +802,16 @@
             // 
             // tbBarberName
             // 
-            tbBarberName.BackColor = Color.PaleTurquoise;
+            tbBarberName.BackColor = SystemColors.Control;
             tbBarberName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberName.Location = new Point(128, 356);
             tbBarberName.Name = "tbBarberName";
             tbBarberName.Size = new Size(252, 34);
             tbBarberName.TabIndex = 61;
-            //tbBarberName.TextChanged += this.tbBarberName_TextChanged;
             // 
             // tbBarberId
             // 
-            tbBarberId.BackColor = Color.PaleTurquoise;
+            tbBarberId.BackColor = SystemColors.Control;
             tbBarberId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberId.Location = new Point(128, 314);
             tbBarberId.Name = "tbBarberId";
@@ -856,9 +822,9 @@
             // 
             // btnDeleteBarber
             // 
-            btnDeleteBarber.BackColor = Color.DeepSkyBlue;
+            btnDeleteBarber.BackColor = SystemColors.Control;
             btnDeleteBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDeleteBarber.ForeColor = Color.White;
+            btnDeleteBarber.ForeColor = SystemColors.ControlText;
             btnDeleteBarber.Location = new Point(30, 553);
             btnDeleteBarber.Margin = new Padding(3, 4, 3, 4);
             btnDeleteBarber.Name = "btnDeleteBarber";
@@ -1003,43 +969,53 @@
             tabPage4.Text = "Analysis";
             tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(592, 71);
+            label7.Name = "label7";
+            label7.Size = new Size(260, 25);
+            label7.TabIndex = 4;
+            label7.Text = "Total Booking By Customers";
+            // 
             // pieChart1
             // 
             pieChart1.AutoUpdateEnabled = true;
             pieChart1.ChartTheme = null;
-            skDefaultLegend12.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
-            skDefaultLegend12.Content = null;
-            skDefaultLegend12.IsValid = false;
-            skDefaultLegend12.Opacity = 1F;
-            padding23.Bottom = 0F;
-            padding23.Left = 0F;
-            padding23.Right = 0F;
-            padding23.Top = 0F;
-            skDefaultLegend12.Padding = padding23;
-            skDefaultLegend12.RemoveOnCompleted = false;
-            skDefaultLegend12.RotateTransform = 0F;
-            skDefaultLegend12.X = 0F;
-            skDefaultLegend12.Y = 0F;
-            pieChart1.Legend = skDefaultLegend12;
+            skDefaultLegend1.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultLegend1.Content = null;
+            skDefaultLegend1.IsValid = false;
+            skDefaultLegend1.Opacity = 1F;
+            padding1.Bottom = 0F;
+            padding1.Left = 0F;
+            padding1.Right = 0F;
+            padding1.Top = 0F;
+            skDefaultLegend1.Padding = padding1;
+            skDefaultLegend1.RemoveOnCompleted = false;
+            skDefaultLegend1.RotateTransform = 0F;
+            skDefaultLegend1.X = 0F;
+            skDefaultLegend1.Y = 0F;
+            pieChart1.Legend = skDefaultLegend1;
             pieChart1.Location = new Point(566, 116);
             pieChart1.Name = "pieChart1";
             pieChart1.Size = new Size(300, 300);
             pieChart1.TabIndex = 3;
-            skDefaultTooltip12.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
-            skDefaultTooltip12.Content = null;
-            skDefaultTooltip12.IsValid = false;
-            skDefaultTooltip12.Opacity = 1F;
-            padding24.Bottom = 0F;
-            padding24.Left = 0F;
-            padding24.Right = 0F;
-            padding24.Top = 0F;
-            skDefaultTooltip12.Padding = padding24;
-            skDefaultTooltip12.RemoveOnCompleted = false;
-            skDefaultTooltip12.RotateTransform = 0F;
-            skDefaultTooltip12.Wedge = 10;
-            skDefaultTooltip12.X = 0F;
-            skDefaultTooltip12.Y = 0F;
-            pieChart1.Tooltip = skDefaultTooltip12;
+            skDefaultTooltip1.AnimationsSpeed = TimeSpan.Parse("00:00:00.1500000");
+            skDefaultTooltip1.Content = null;
+            skDefaultTooltip1.IsValid = false;
+            skDefaultTooltip1.Opacity = 1F;
+            padding2.Bottom = 0F;
+            padding2.Left = 0F;
+            padding2.Right = 0F;
+            padding2.Top = 0F;
+            skDefaultTooltip1.Padding = padding2;
+            skDefaultTooltip1.RemoveOnCompleted = false;
+            skDefaultTooltip1.RotateTransform = 0F;
+            skDefaultTooltip1.Wedge = 10;
+            skDefaultTooltip1.X = 0F;
+            skDefaultTooltip1.Y = 0F;
+            pieChart1.Tooltip = skDefaultTooltip1;
             pieChart1.UpdaterThrottler = TimeSpan.Parse("00:00:00.0500000");
             pieChart1.Load += pieChart1_Load_2;
             // 
@@ -1048,7 +1024,7 @@
             btnGenerate.BackColor = Color.DeepSkyBlue;
             btnGenerate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGenerate.ForeColor = Color.White;
-            btnGenerate.Location = new Point(325, 500);
+            btnGenerate.Location = new Point(640, 542);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(264, 91);
             btnGenerate.TabIndex = 2;
@@ -1058,20 +1034,140 @@
             // 
             // chart1
             // 
-            chartArea12.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            chart1.Legends.Add(legend12);
+            chartArea1.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart1.Legends.Add(legend1);
             chart1.Location = new Point(26, 41);
             chart1.Name = "chart1";
-            series12.ChartArea = "ChartArea1";
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            chart1.Series.Add(series12);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart1.Series.Add(series1);
             chart1.Size = new Size(500, 375);
             chart1.TabIndex = 1;
             chart1.Text = "chart1";
             chart1.Click += chart1_Click;
+            // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(lblHighMonRev);
+            tabPage5.Controls.Add(lblAvgMonRev);
+            tabPage5.Controls.Add(lblTotalRev);
+            tabPage5.Controls.Add(label13);
+            tabPage5.Controls.Add(label12);
+            tabPage5.Controls.Add(label9);
+            tabPage5.Controls.Add(btnGenerateRevenue);
+            tabPage5.Controls.Add(chartRevenue);
+            tabPage5.Controls.Add(label8);
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(910, 639);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Revenue";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // lblHighMonRev
+            // 
+            lblHighMonRev.AutoSize = true;
+            lblHighMonRev.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblHighMonRev.Location = new Point(721, 430);
+            lblHighMonRev.Name = "lblHighMonRev";
+            lblHighMonRev.Size = new Size(22, 28);
+            lblHighMonRev.TabIndex = 50;
+            lblHighMonRev.Text = "a";
+            // 
+            // lblAvgMonRev
+            // 
+            lblAvgMonRev.AutoSize = true;
+            lblAvgMonRev.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAvgMonRev.Location = new Point(745, 375);
+            lblAvgMonRev.Name = "lblAvgMonRev";
+            lblAvgMonRev.Size = new Size(22, 28);
+            lblAvgMonRev.TabIndex = 49;
+            lblAvgMonRev.Text = "a";
+            // 
+            // lblTotalRev
+            // 
+            lblTotalRev.AutoSize = true;
+            lblTotalRev.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTotalRev.Location = new Point(695, 325);
+            lblTotalRev.Name = "lblTotalRev";
+            lblTotalRev.Size = new Size(22, 28);
+            lblTotalRev.TabIndex = 48;
+            lblTotalRev.Text = "a";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Location = new Point(553, 430);
+            label13.Name = "label13";
+            label13.Size = new Size(162, 28);
+            label13.TabIndex = 47;
+            label13.Text = "Highest Monthly:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(553, 375);
+            label12.Name = "label12";
+            label12.Size = new Size(186, 28);
+            label12.TabIndex = 46;
+            label12.Text = "Average per Month:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(553, 325);
+            label9.Name = "label9";
+            label9.Size = new Size(136, 28);
+            label9.TabIndex = 45;
+            label9.Text = "Total Revenue:";
+            // 
+            // btnGenerateRevenue
+            // 
+            btnGenerateRevenue.BackColor = Color.DeepSkyBlue;
+            btnGenerateRevenue.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGenerateRevenue.ForeColor = Color.White;
+            btnGenerateRevenue.Location = new Point(640, 541);
+            btnGenerateRevenue.Name = "btnGenerateRevenue";
+            btnGenerateRevenue.Size = new Size(264, 91);
+            btnGenerateRevenue.TabIndex = 16;
+            btnGenerateRevenue.Text = "GENERATE";
+            btnGenerateRevenue.UseVisualStyleBackColor = false;
+            btnGenerateRevenue.Click += btnGenerateRevenue_Click;
+            // 
+            // chartRevenue
+            // 
+            chartArea2.Name = "ChartArea1";
+            chartRevenue.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chartRevenue.Legends.Add(legend2);
+            chartRevenue.Location = new Point(36, 83);
+            chartRevenue.Name = "chartRevenue";
+            chartRevenue.RightToLeft = RightToLeft.No;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            chartRevenue.Series.Add(series2);
+            chartRevenue.Size = new Size(495, 375);
+            chartRevenue.TabIndex = 15;
+            chartRevenue.Text = "chart2";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(5, 3);
+            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(178, 46);
+            label8.TabIndex = 14;
+            label8.Text = "Revenue";
             // 
             // label50
             // 
@@ -1093,16 +1189,6 @@
             label30.Name = "label30";
             label30.Size = new Size(100, 23);
             label30.TabIndex = 0;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(592, 71);
-            label7.Name = "label7";
-            label7.Size = new Size(260, 25);
-            label7.TabIndex = 4;
-            label7.Text = "Total Booking By Customers";
             // 
             // Barber_Home_Page
             // 
@@ -1129,15 +1215,15 @@
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chartRevenue).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private TabControl tabControl1;
-        private TabPage tabPage1;
-        private DataGridView dgvBookings;
-        private Label label1;
         private TabPage tabPage2;
         private Button btnSave;
         private Button btnUpload;
@@ -1151,30 +1237,18 @@
         private Label label6;
         private TextBox tbId;
         private TextBox tbPassword;
-        private Label lTimeslotTab1;
-        private Label lStatusTab1;
         private ComboBox cbOutlet;
-        private Label lOutletTab1;
         private CheckedListBox checkedListTimeSlot;
         private RadioButton rbMale;
         private RadioButton rbFemale;
         private GroupBox groupBox1;
         private PictureBox pictureBoxBarber;
-        private Label lblService;
-        private Label lblCustomer;
-        private Label lblOutlet;
-        private Label lblDate;
-        private Label lblTimeSlot;
-        private Label lblStatus;
-        private Label lblBookingId;
-        private Button btnCheckBooking;
         private Label label90;
         private Label label80;
         private Label label70;
         private Label label50;
         private Label label40;
         private Label label30;
-        private Button btnNewBooking;
         private TabPage tabPage3;
         private TabPage tabPage4;
         private Label label10;
@@ -1198,26 +1272,46 @@
         private CheckedListBox checkedListServices;
         private Label label11;
         private Button btnAddBarber;
-        private Label lDateTab1;
-        private Label lServiceTab1;
-        private Label lCustomerTab1;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn Description;
-        private DataGridViewTextBoxColumn OutletId;
-        private DataGridViewTextBoxColumn OutletLocation;
-        private DataGridViewTextBoxColumn BarberId;
-        private DataGridViewTextBoxColumn CustId;
-        private DataGridViewTextBoxColumn cName;
-        private DataGridViewTextBoxColumn ServiceId;
-        private DataGridViewTextBoxColumn ServiceName;
-        private DataGridViewTextBoxColumn TimeslotId;
-        private DataGridViewTextBoxColumn Time;
-        private DataGridViewTextBoxColumn Status;
-        private Label lIdTab1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private Button btnGenerate;
         private LiveChartsCore.SkiaSharpView.WinForms.PieChart pieChart1;
         private Label label7;
+        private TabPage tabPage5;
+        private TabPage tabPage1;
+        private Label labelToDoBookings;
+        private Label lIdTab1;
+        private Label lServiceTab1;
+        private Label lCustomerTab1;
+        private Label lDateTab1;
+        private Label lblService;
+        private Label lblCustomer;
+        private Label lblDate;
+        private Label lblStatus;
+        private Label lblBookingId;
+        private Button btnCheckBooking;
+        private Label lStatusTab1;
+        private DataGridView dgvBookings;
+        private Label label1;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn cName;
+        private DataGridViewTextBoxColumn bName;
+        private DataGridViewTextBoxColumn sName;
+        private DataGridViewTextBoxColumn OutletLocation;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn Time;
+        private DataGridViewTextBoxColumn Status;
+        private Button btnAcceptBooking;
+        private Button btnRejectButton;
+        private Button btnCompleteBooking;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
+        private Label label8;
+        private Button btnGenerateRevenue;
+        private Label label9;
+        private Label label13;
+        private Label label12;
+        private Label lblHighMonRev;
+        private Label lblAvgMonRev;
+        private Label lblTotalRev;
     }
 }
