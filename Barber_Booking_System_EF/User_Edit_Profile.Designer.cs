@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnUpdate = new Button();
             tbPassword = new TextBox();
             label6 = new Label();
             tbPhone = new TextBox();
@@ -37,14 +38,13 @@
             label2 = new Label();
             label3 = new Label();
             tbEmail = new TextBox();
-            btnUpdate = new Button();
             label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.Control;
+            panel1.BackColor = Color.BlanchedAlmond;
             panel1.Controls.Add(btnUpdate);
             panel1.Controls.Add(tbPassword);
             panel1.Controls.Add(label6);
@@ -60,8 +60,19 @@
             panel1.Size = new Size(440, 626);
             panel1.TabIndex = 18;
             // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.Gold;
+            btnUpdate.Location = new Point(150, 528);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(112, 43);
+            btnUpdate.TabIndex = 13;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            // 
             // tbPassword
             // 
+            tbPassword.BackColor = SystemColors.InactiveCaption;
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbPassword.Location = new Point(54, 389);
             tbPassword.Margin = new Padding(3, 4, 3, 4);
@@ -82,6 +93,7 @@
             // 
             // tbPhone
             // 
+            tbPhone.BackColor = SystemColors.InactiveCaption;
             tbPhone.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbPhone.Location = new Point(50, 286);
             tbPhone.Margin = new Padding(3, 4, 3, 4);
@@ -102,6 +114,7 @@
             // 
             // tbUsername
             // 
+            tbUsername.BackColor = SystemColors.InactiveCaption;
             tbUsername.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbUsername.Location = new Point(51, 184);
             tbUsername.Margin = new Padding(3, 4, 3, 4);
@@ -132,6 +145,7 @@
             // 
             // tbEmail
             // 
+            tbEmail.BackColor = SystemColors.InactiveCaption;
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbEmail.Location = new Point(50, 81);
             tbEmail.Margin = new Padding(3, 4, 3, 4);
@@ -139,22 +153,14 @@
             tbEmail.Size = new Size(340, 30);
             tbEmail.TabIndex = 3;
             // 
-            // btnUpdate
-            // 
-            btnUpdate.Location = new Point(150, 528);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(112, 43);
-            btnUpdate.TabIndex = 13;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(315, 24);
+            label1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(240, 20);
             label1.Name = "label1";
-            label1.Size = new Size(317, 41);
+            label1.Size = new Size(462, 43);
             label1.TabIndex = 19;
             label1.Text = "Edit Your Profile here";
             // 
@@ -163,7 +169,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            BackColor = Color.Lime;
+            BackColor = Color.FromArgb(0, 64, 0);
             ClientSize = new Size(942, 541);
             Controls.Add(label1);
             Controls.Add(panel1);

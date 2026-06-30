@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            labelToDo = new Label();
             groupBoxPhoto = new GroupBox();
             labelEmail = new Label();
             pictureBoxBarber = new PictureBox();
@@ -46,7 +47,6 @@
             lTimeslot = new Label();
             lStatus = new Label();
             labelBookingDetails = new Label();
-            labelToDo = new Label();
             panel1.SuspendLayout();
             groupBoxPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).BeginInit();
@@ -54,7 +54,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.Control;
+            panel1.BackColor = Color.BlanchedAlmond;
             panel1.Controls.Add(labelToDo);
             panel1.Controls.Add(groupBoxPhoto);
             panel1.Controls.Add(lId);
@@ -70,13 +70,23 @@
             panel1.Controls.Add(lTimeslot);
             panel1.Controls.Add(lStatus);
             panel1.Location = new Point(27, 59);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(569, 528);
             panel1.TabIndex = 0;
             // 
+            // labelToDo
+            // 
+            labelToDo.AutoSize = true;
+            labelToDo.Location = new Point(57, 383);
+            labelToDo.Name = "labelToDo";
+            labelToDo.Size = new Size(94, 20);
+            labelToDo.TabIndex = 67;
+            labelToDo.Text = "service, price";
+            // 
             // groupBoxPhoto
             // 
+            groupBoxPhoto.BackColor = SystemColors.InactiveCaption;
             groupBoxPhoto.Controls.Add(labelEmail);
             groupBoxPhoto.Controls.Add(pictureBoxBarber);
             groupBoxPhoto.Controls.Add(labelBarber);
@@ -92,6 +102,7 @@
             // labelEmail
             // 
             labelEmail.AutoSize = true;
+            labelEmail.BackColor = SystemColors.ButtonHighlight;
             labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelEmail.Location = new Point(8, 254);
             labelEmail.Name = "labelEmail";
@@ -113,6 +124,7 @@
             // labelBarber
             // 
             labelBarber.AutoSize = true;
+            labelBarber.BackColor = SystemColors.ButtonHighlight;
             labelBarber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelBarber.Location = new Point(79, 219);
             labelBarber.Name = "labelBarber";
@@ -244,31 +256,23 @@
             // labelBookingDetails
             // 
             labelBookingDetails.AutoSize = true;
-            labelBookingDetails.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelBookingDetails.Location = new Point(164, 6);
+            labelBookingDetails.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelBookingDetails.ForeColor = Color.White;
+            labelBookingDetails.Location = new Point(147, 9);
             labelBookingDetails.Name = "labelBookingDetails";
-            labelBookingDetails.Size = new Size(299, 46);
+            labelBookingDetails.Size = new Size(330, 43);
             labelBookingDetails.TabIndex = 42;
             labelBookingDetails.Text = "Booking Details";
-            // 
-            // labelToDo
-            // 
-            labelToDo.AutoSize = true;
-            labelToDo.Location = new Point(57, 383);
-            labelToDo.Name = "labelToDo";
-            labelToDo.Size = new Size(94, 20);
-            labelToDo.TabIndex = 67;
-            labelToDo.Text = "service, price";
             // 
             // ViewBookingDetails_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Lime;
+            BackColor = Color.FromArgb(0, 64, 0);
             ClientSize = new Size(624, 609);
             Controls.Add(labelBookingDetails);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "ViewBookingDetails_Page";
             Text = "ViewBookingDetails_Page";
             Load += ViewBookingDetails_Page_Load;

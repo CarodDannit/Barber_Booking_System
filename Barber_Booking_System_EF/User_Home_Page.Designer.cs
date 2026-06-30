@@ -95,6 +95,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.BlanchedAlmond;
             tabPage1.Controls.Add(labelToDoBookings);
             tabPage1.Controls.Add(btnViewDetails);
             tabPage1.Controls.Add(btnDeleteBooking);
@@ -116,7 +117,6 @@
             tabPage1.Size = new Size(910, 607);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Bookings";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // labelToDoBookings
             // 
@@ -129,6 +129,7 @@
             // 
             // btnViewDetails
             // 
+            btnViewDetails.BackColor = Color.Gold;
             btnViewDetails.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnViewDetails.Location = new Point(33, 543);
             btnViewDetails.Margin = new Padding(3, 4, 3, 4);
@@ -136,11 +137,12 @@
             btnViewDetails.Size = new Size(157, 51);
             btnViewDetails.TabIndex = 44;
             btnViewDetails.Text = "View Details";
-            btnViewDetails.UseVisualStyleBackColor = true;
+            btnViewDetails.UseVisualStyleBackColor = false;
             btnViewDetails.Click += btnViewDetails_Click;
             // 
             // btnDeleteBooking
             // 
+            btnDeleteBooking.BackColor = Color.Gold;
             btnDeleteBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDeleteBooking.Location = new Point(220, 543);
             btnDeleteBooking.Margin = new Padding(3, 4, 3, 4);
@@ -148,7 +150,7 @@
             btnDeleteBooking.Size = new Size(104, 51);
             btnDeleteBooking.TabIndex = 43;
             btnDeleteBooking.Text = "Delete";
-            btnDeleteBooking.UseVisualStyleBackColor = true;
+            btnDeleteBooking.UseVisualStyleBackColor = false;
             btnDeleteBooking.Click += btnDeleteBooking_Click;
             // 
             // lblService
@@ -361,15 +363,16 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(6, 4);
             label1.Name = "label1";
-            label1.Size = new Size(186, 46);
+            label1.Size = new Size(191, 43);
             label1.TabIndex = 0;
             label1.Text = "Bookings";
             // 
             // btnNewBooking
             // 
+            btnNewBooking.BackColor = Color.Gold;
             btnNewBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNewBooking.Location = new Point(717, 543);
             btnNewBooking.Margin = new Padding(3, 4, 3, 4);
@@ -377,11 +380,12 @@
             btnNewBooking.Size = new Size(187, 51);
             btnNewBooking.TabIndex = 10;
             btnNewBooking.Text = "new booking";
-            btnNewBooking.UseVisualStyleBackColor = true;
+            btnNewBooking.UseVisualStyleBackColor = false;
             btnNewBooking.Click += btnNewBooking_Click;
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.BlanchedAlmond;
             tabPage2.Controls.Add(btnCancelProfile);
             tabPage2.Controls.Add(btnSave);
             tabPage2.Controls.Add(tbName);
@@ -400,11 +404,11 @@
             tabPage2.Size = new Size(910, 607);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
-            tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
             // 
             // btnCancelProfile
             // 
+            btnCancelProfile.BackColor = Color.Gold;
             btnCancelProfile.Font = new Font("Microsoft Sans Serif", 12F);
             btnCancelProfile.Location = new Point(237, 281);
             btnCancelProfile.Margin = new Padding(2);
@@ -412,12 +416,13 @@
             btnCancelProfile.Size = new Size(125, 43);
             btnCancelProfile.TabIndex = 22;
             btnCancelProfile.Text = "Cancel";
-            btnCancelProfile.UseVisualStyleBackColor = true;
+            btnCancelProfile.UseVisualStyleBackColor = false;
             btnCancelProfile.Visible = false;
             btnCancelProfile.Click += btnCancelProfile_Click;
             // 
             // btnSave
             // 
+            btnSave.BackColor = Color.Gold;
             btnSave.Font = new Font("Microsoft Sans Serif", 12F);
             btnSave.Location = new Point(382, 281);
             btnSave.Margin = new Padding(2);
@@ -425,12 +430,13 @@
             btnSave.Size = new Size(125, 43);
             btnSave.TabIndex = 21;
             btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Visible = false;
             btnSave.Click += btnSave_Click;
             // 
             // tbName
             // 
+            tbName.BackColor = SystemColors.InactiveCaption;
             tbName.Font = new Font("Microsoft Sans Serif", 12F);
             tbName.ForeColor = SystemColors.WindowText;
             tbName.Location = new Point(382, 109);
@@ -442,6 +448,7 @@
             // 
             // tbEmail
             // 
+            tbEmail.BackColor = SystemColors.InactiveCaption;
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F);
             tbEmail.ForeColor = SystemColors.WindowText;
             tbEmail.Location = new Point(382, 161);
@@ -453,6 +460,7 @@
             // 
             // tbPassword
             // 
+            tbPassword.BackColor = SystemColors.InactiveCaption;
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F);
             tbPassword.ForeColor = SystemColors.WindowText;
             tbPassword.Location = new Point(382, 218);
@@ -498,6 +506,7 @@
             // 
             // btnLogout
             // 
+            btnLogout.BackColor = Color.Gold;
             btnLogout.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogout.Location = new Point(738, 530);
             btnLogout.Margin = new Padding(1);
@@ -505,21 +514,22 @@
             btnLogout.Size = new Size(138, 43);
             btnLogout.TabIndex = 12;
             btnLogout.Text = "Log out";
-            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(6, 6);
             label2.Name = "label2";
-            label2.Size = new Size(134, 46);
+            label2.Size = new Size(165, 43);
             label2.TabIndex = 11;
             label2.Text = "Profile";
             // 
             // btnEditProfile
             // 
+            btnEditProfile.BackColor = Color.Gold;
             btnEditProfile.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEditProfile.Location = new Point(534, 281);
             btnEditProfile.Margin = new Padding(2, 3, 2, 3);
@@ -527,14 +537,14 @@
             btnEditProfile.Size = new Size(138, 43);
             btnEditProfile.TabIndex = 12;
             btnEditProfile.Text = "Edit Profile";
-            btnEditProfile.UseVisualStyleBackColor = true;
+            btnEditProfile.UseVisualStyleBackColor = false;
             btnEditProfile.Click += button1_Click_1;
             // 
             // User_Home_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Lime;
+            BackColor = Color.FromArgb(0, 64, 0);
             ClientSize = new Size(942, 672);
             Controls.Add(tabControl1);
             Margin = new Padding(3, 4, 3, 4);

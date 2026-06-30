@@ -176,12 +176,13 @@ namespace Barber_Booking_System_EF
             lblDate.Text = row.Cells["Date"].Value.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
 
-            if(lblStatus.Text == "Accepted") {
+            if (lblStatus.Text == "Accepted")
+            {
                 btnCompleteBooking.Visible = true;
                 btnRejectButton.Visible = false;
                 btnAcceptBooking.Visible = false;
             }
-            if(lblStatus.Text == "Rejected")
+            if (lblStatus.Text == "Rejected")
             {
 
             }
@@ -477,7 +478,7 @@ namespace Barber_Booking_System_EF
             loadBooking();
 
             lblStatus.Text = booking.Status;
-            
+
         }
 
         private void btnRejectButton_Click(object sender, EventArgs e)
@@ -607,6 +608,11 @@ namespace Barber_Booking_System_EF
         private void btnGenerateRevenue_Click(object sender, EventArgs e)
         {
             loadMonthlyRevenue();
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
 
         }
     }

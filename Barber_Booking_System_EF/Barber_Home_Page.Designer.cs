@@ -112,6 +112,8 @@
             BarberGender = new DataGridViewTextBoxColumn();
             BarberOutlet = new DataGridViewTextBoxColumn();
             tabPage4 = new TabPage();
+            label15 = new Label();
+            label14 = new Label();
             label7 = new Label();
             pieChart1 = new LiveChartsCore.SkiaSharpView.WinForms.PieChart();
             btnGenerate = new Button();
@@ -159,6 +161,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.BlanchedAlmond;
             tabPage1.Controls.Add(btnCompleteBooking);
             tabPage1.Controls.Add(btnAcceptBooking);
             tabPage1.Controls.Add(btnRejectButton);
@@ -183,10 +186,10 @@
             tabPage1.Size = new Size(910, 639);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Bookings";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnCompleteBooking
             // 
+            btnCompleteBooking.BackColor = Color.Gold;
             btnCompleteBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCompleteBooking.Location = new Point(588, 544);
             btnCompleteBooking.Margin = new Padding(3, 4, 3, 4);
@@ -194,12 +197,13 @@
             btnCompleteBooking.Size = new Size(159, 51);
             btnCompleteBooking.TabIndex = 50;
             btnCompleteBooking.Text = "Complete";
-            btnCompleteBooking.UseVisualStyleBackColor = true;
+            btnCompleteBooking.UseVisualStyleBackColor = false;
             btnCompleteBooking.Visible = false;
             btnCompleteBooking.Click += btnCompleteBooking_Click;
             // 
             // btnAcceptBooking
             // 
+            btnAcceptBooking.BackColor = Color.Gold;
             btnAcceptBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAcceptBooking.Location = new Point(400, 544);
             btnAcceptBooking.Margin = new Padding(3, 4, 3, 4);
@@ -207,11 +211,12 @@
             btnAcceptBooking.Size = new Size(159, 51);
             btnAcceptBooking.TabIndex = 49;
             btnAcceptBooking.Text = "Accept";
-            btnAcceptBooking.UseVisualStyleBackColor = true;
+            btnAcceptBooking.UseVisualStyleBackColor = false;
             btnAcceptBooking.Click += btnAcceptBooking_Click;
             // 
             // btnRejectButton
             // 
+            btnRejectButton.BackColor = Color.Gold;
             btnRejectButton.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRejectButton.Location = new Point(215, 544);
             btnRejectButton.Margin = new Padding(3, 4, 3, 4);
@@ -219,7 +224,7 @@
             btnRejectButton.Size = new Size(159, 51);
             btnRejectButton.TabIndex = 48;
             btnRejectButton.Text = "Reject";
-            btnRejectButton.UseVisualStyleBackColor = true;
+            btnRejectButton.UseVisualStyleBackColor = false;
             btnRejectButton.Click += btnRejectButton_Click;
             // 
             // labelToDoBookings
@@ -318,6 +323,7 @@
             // 
             // btnCheckBooking
             // 
+            btnCheckBooking.BackColor = Color.Gold;
             btnCheckBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCheckBooking.Location = new Point(34, 544);
             btnCheckBooking.Margin = new Padding(3, 4, 3, 4);
@@ -325,7 +331,7 @@
             btnCheckBooking.Size = new Size(159, 51);
             btnCheckBooking.TabIndex = 35;
             btnCheckBooking.Text = "Check";
-            btnCheckBooking.UseVisualStyleBackColor = true;
+            btnCheckBooking.UseVisualStyleBackColor = false;
             btnCheckBooking.Click += btnCheckBooking_Click;
             // 
             // lStatusTab1
@@ -438,16 +444,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(7, 4);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(186, 46);
+            label1.Size = new Size(199, 43);
             label1.TabIndex = 0;
             label1.Text = "Bookings";
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.BlanchedAlmond;
             tabPage2.Controls.Add(checkedListServices);
             tabPage2.Controls.Add(label11);
             tabPage2.Controls.Add(groupBox1);
@@ -477,10 +484,10 @@
             tabPage2.Size = new Size(910, 639);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
-            tabPage2.UseVisualStyleBackColor = true;
             // 
             // checkedListServices
             // 
+            checkedListServices.BackColor = SystemColors.InactiveCaption;
             checkedListServices.FormattingEnabled = true;
             checkedListServices.Location = new Point(49, 416);
             checkedListServices.Margin = new Padding(2);
@@ -501,6 +508,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = SystemColors.InactiveCaption;
             groupBox1.Controls.Add(pictureBoxBarber);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(610, 54);
@@ -522,6 +530,7 @@
             // 
             // checkedListTimeSlot
             // 
+            checkedListTimeSlot.BackColor = SystemColors.InactiveCaption;
             checkedListTimeSlot.FormattingEnabled = true;
             checkedListTimeSlot.Location = new Point(301, 416);
             checkedListTimeSlot.Margin = new Padding(2);
@@ -560,6 +569,7 @@
             // 
             // cbOutlet
             // 
+            cbOutlet.BackColor = SystemColors.InactiveCaption;
             cbOutlet.Font = new Font("Microsoft Sans Serif", 12F);
             cbOutlet.FormattingEnabled = true;
             cbOutlet.Location = new Point(162, 323);
@@ -569,6 +579,7 @@
             // 
             // tbPassword
             // 
+            tbPassword.BackColor = SystemColors.InactiveCaption;
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F);
             tbPassword.Location = new Point(162, 209);
             tbPassword.Margin = new Padding(1);
@@ -579,6 +590,7 @@
             // 
             // tbId
             // 
+            tbId.BackColor = SystemColors.InactiveCaption;
             tbId.Font = new Font("Microsoft Sans Serif", 12F);
             tbId.Location = new Point(162, 64);
             tbId.Margin = new Padding(1);
@@ -669,6 +681,7 @@
             // 
             // btnLogout
             // 
+            btnLogout.BackColor = Color.Gold;
             btnLogout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogout.Location = new Point(761, 582);
             btnLogout.Margin = new Padding(1);
@@ -676,12 +689,12 @@
             btnLogout.Size = new Size(123, 42);
             btnLogout.TabIndex = 15;
             btnLogout.Text = "Log out";
-            btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
             // btnSave
             // 
-            btnSave.BackColor = Color.FromArgb(192, 255, 192);
+            btnSave.BackColor = Color.Gold;
             btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSave.Location = new Point(616, 582);
             btnSave.Margin = new Padding(1);
@@ -694,6 +707,7 @@
             // 
             // btnUpload
             // 
+            btnUpload.BackColor = Color.Gold;
             btnUpload.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnUpload.Location = new Point(664, 279);
             btnUpload.Margin = new Padding(1);
@@ -701,11 +715,12 @@
             btnUpload.Size = new Size(123, 42);
             btnUpload.TabIndex = 83;
             btnUpload.Text = "Upload";
-            btnUpload.UseVisualStyleBackColor = true;
+            btnUpload.UseVisualStyleBackColor = false;
             btnUpload.Click += btnUpload_Click;
             // 
             // tbEmail
             // 
+            tbEmail.BackColor = SystemColors.InactiveCaption;
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F);
             tbEmail.Location = new Point(162, 158);
             tbEmail.Margin = new Padding(1);
@@ -716,6 +731,7 @@
             // 
             // tbName
             // 
+            tbName.BackColor = SystemColors.InactiveCaption;
             tbName.Font = new Font("Microsoft Sans Serif", 12F);
             tbName.Location = new Point(162, 110);
             tbName.Margin = new Padding(1);
@@ -727,16 +743,17 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(8, 9);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(134, 46);
+            label2.Size = new Size(165, 43);
             label2.TabIndex = 11;
             label2.Text = "Profile";
             // 
             // tabPage3
             // 
+            tabPage3.BackColor = Color.BlanchedAlmond;
             tabPage3.Controls.Add(btnAddBarber);
             tabPage3.Controls.Add(tbBarberEmail);
             tabPage3.Controls.Add(tbBarberGender);
@@ -757,11 +774,10 @@
             tabPage3.Size = new Size(910, 639);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Barber";
-            tabPage3.UseVisualStyleBackColor = true;
             // 
             // btnAddBarber
             // 
-            btnAddBarber.BackColor = SystemColors.Control;
+            btnAddBarber.BackColor = Color.Gold;
             btnAddBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAddBarber.Location = new Point(223, 553);
             btnAddBarber.Margin = new Padding(2, 3, 2, 3);
@@ -774,7 +790,7 @@
             // 
             // tbBarberEmail
             // 
-            tbBarberEmail.BackColor = SystemColors.Control;
+            tbBarberEmail.BackColor = SystemColors.InactiveCaption;
             tbBarberEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberEmail.Location = new Point(128, 401);
             tbBarberEmail.Name = "tbBarberEmail";
@@ -784,7 +800,7 @@
             // 
             // tbBarberGender
             // 
-            tbBarberGender.BackColor = SystemColors.Control;
+            tbBarberGender.BackColor = SystemColors.InactiveCaption;
             tbBarberGender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberGender.Location = new Point(128, 443);
             tbBarberGender.Name = "tbBarberGender";
@@ -793,7 +809,7 @@
             // 
             // tbBarberOutlet
             // 
-            tbBarberOutlet.BackColor = SystemColors.Control;
+            tbBarberOutlet.BackColor = SystemColors.InactiveCaption;
             tbBarberOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberOutlet.Location = new Point(128, 488);
             tbBarberOutlet.Name = "tbBarberOutlet";
@@ -802,7 +818,7 @@
             // 
             // tbBarberName
             // 
-            tbBarberName.BackColor = SystemColors.Control;
+            tbBarberName.BackColor = SystemColors.InactiveCaption;
             tbBarberName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberName.Location = new Point(128, 356);
             tbBarberName.Name = "tbBarberName";
@@ -811,7 +827,7 @@
             // 
             // tbBarberId
             // 
-            tbBarberId.BackColor = SystemColors.Control;
+            tbBarberId.BackColor = SystemColors.InactiveCaption;
             tbBarberId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberId.Location = new Point(128, 314);
             tbBarberId.Name = "tbBarberId";
@@ -822,7 +838,7 @@
             // 
             // btnDeleteBarber
             // 
-            btnDeleteBarber.BackColor = SystemColors.Control;
+            btnDeleteBarber.BackColor = Color.Gold;
             btnDeleteBarber.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDeleteBarber.ForeColor = SystemColors.ControlText;
             btnDeleteBarber.Location = new Point(30, 553);
@@ -887,11 +903,11 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.Location = new Point(5, 3);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(139, 46);
+            label10.Size = new Size(157, 43);
             label10.TabIndex = 13;
             label10.Text = "Barber";
             // 
@@ -957,6 +973,9 @@
             // 
             // tabPage4
             // 
+            tabPage4.BackColor = Color.BlanchedAlmond;
+            tabPage4.Controls.Add(label15);
+            tabPage4.Controls.Add(label14);
             tabPage4.Controls.Add(label7);
             tabPage4.Controls.Add(pieChart1);
             tabPage4.Controls.Add(btnGenerate);
@@ -967,17 +986,37 @@
             tabPage4.Size = new Size(910, 639);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Analysis";
-            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(23, 22);
+            label15.Name = "label15";
+            label15.Size = new Size(183, 43);
+            label15.TabIndex = 6;
+            label15.Text = "Analysis";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.Location = new Point(23, 136);
+            label14.Name = "label14";
+            label14.Size = new Size(218, 20);
+            label14.TabIndex = 5;
+            label14.Text = "Total Haircut By Customers";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(592, 71);
+            label7.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(572, 136);
             label7.Name = "label7";
-            label7.Size = new Size(260, 25);
+            label7.Size = new Size(223, 20);
             label7.TabIndex = 4;
             label7.Text = "Total Booking By Customers";
+            label7.Click += label7_Click;
             // 
             // pieChart1
             // 
@@ -997,7 +1036,7 @@
             skDefaultLegend1.X = 0F;
             skDefaultLegend1.Y = 0F;
             pieChart1.Legend = skDefaultLegend1;
-            pieChart1.Location = new Point(566, 116);
+            pieChart1.Location = new Point(572, 170);
             pieChart1.Name = "pieChart1";
             pieChart1.Size = new Size(300, 300);
             pieChart1.TabIndex = 3;
@@ -1021,9 +1060,9 @@
             // 
             // btnGenerate
             // 
-            btnGenerate.BackColor = Color.DeepSkyBlue;
+            btnGenerate.BackColor = Color.Gold;
             btnGenerate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGenerate.ForeColor = Color.White;
+            btnGenerate.ForeColor = Color.Black;
             btnGenerate.Location = new Point(640, 542);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(264, 91);
@@ -1034,11 +1073,12 @@
             // 
             // chart1
             // 
+            chart1.BackColor = SystemColors.InactiveCaption;
             chartArea1.Name = "ChartArea1";
             chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chart1.Legends.Add(legend1);
-            chart1.Location = new Point(26, 41);
+            chart1.Location = new Point(23, 170);
             chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -1051,6 +1091,7 @@
             // 
             // tabPage5
             // 
+            tabPage5.BackColor = Color.BlanchedAlmond;
             tabPage5.Controls.Add(lblHighMonRev);
             tabPage5.Controls.Add(lblAvgMonRev);
             tabPage5.Controls.Add(lblTotalRev);
@@ -1066,7 +1107,6 @@
             tabPage5.Size = new Size(910, 639);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Revenue";
-            tabPage5.UseVisualStyleBackColor = true;
             // 
             // lblHighMonRev
             // 
@@ -1130,9 +1170,9 @@
             // 
             // btnGenerateRevenue
             // 
-            btnGenerateRevenue.BackColor = Color.DeepSkyBlue;
+            btnGenerateRevenue.BackColor = Color.Gold;
             btnGenerateRevenue.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGenerateRevenue.ForeColor = Color.White;
+            btnGenerateRevenue.ForeColor = Color.Black;
             btnGenerateRevenue.Location = new Point(640, 541);
             btnGenerateRevenue.Name = "btnGenerateRevenue";
             btnGenerateRevenue.Size = new Size(264, 91);
@@ -1143,6 +1183,7 @@
             // 
             // chartRevenue
             // 
+            chartRevenue.BackColor = SystemColors.InactiveCaption;
             chartArea2.Name = "ChartArea1";
             chartRevenue.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -1161,11 +1202,11 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(5, 3);
+            label8.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(27, 19);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(178, 46);
+            label8.Size = new Size(174, 43);
             label8.TabIndex = 14;
             label8.Text = "Revenue";
             // 
@@ -1194,7 +1235,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Lime;
+            BackColor = Color.FromArgb(0, 64, 0);
             ClientSize = new Size(942, 698);
             Controls.Add(tabControl1);
             Margin = new Padding(3, 4, 3, 4);
@@ -1313,5 +1354,7 @@
         private Label lblHighMonRev;
         private Label lblAvgMonRev;
         private Label lblTotalRev;
+        private Label label15;
+        private Label label14;
     }
 }
