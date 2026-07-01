@@ -991,7 +991,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(23, 22);
+            label15.Location = new Point(6, 3);
             label15.Name = "label15";
             label15.Size = new Size(183, 43);
             label15.TabIndex = 6;
@@ -1203,7 +1203,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(27, 19);
+            label8.Location = new Point(2, 3);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(174, 43);

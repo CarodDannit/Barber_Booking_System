@@ -363,7 +363,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(6, 4);
             label1.Name = "label1";
             label1.Size = new Size(191, 43);
