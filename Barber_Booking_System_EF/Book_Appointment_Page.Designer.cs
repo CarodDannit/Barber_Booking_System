@@ -52,11 +52,11 @@
             // labelRegister
             // 
             labelRegister.AutoSize = true;
-            labelRegister.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRegister.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelRegister.ForeColor = Color.White;
-            labelRegister.Location = new Point(284, 11);
+            labelRegister.Location = new Point(304, 11);
             labelRegister.Name = "labelRegister";
-            labelRegister.Size = new Size(378, 43);
+            labelRegister.Size = new Size(326, 46);
             labelRegister.TabIndex = 41;
             labelRegister.Text = "Book Appointment";
             // 
