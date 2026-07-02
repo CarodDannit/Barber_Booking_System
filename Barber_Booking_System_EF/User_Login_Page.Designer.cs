@@ -38,19 +38,18 @@
             tbPassword = new TextBox();
             tbEmail = new TextBox();
             btnBarberLoginPage = new Button();
-            label5 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(415, 11);
+            label1.Location = new Point(425, 9);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(132, 43);
+            label1.Size = new Size(120, 46);
             label1.TabIndex = 0;
             label1.Text = "Log In";
             // 
@@ -163,24 +162,12 @@
             btnBarberLoginPage.UseVisualStyleBackColor = false;
             btnBarberLoginPage.Click += btnBarberLoginPage_Click;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.ForeColor = Color.Gold;
-            label5.Location = new Point(737, 199);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(75, 20);
-            label5.TabIndex = 12;
-            label5.Text = "EF version";
-            // 
             // User_Login_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 64, 0);
             ClientSize = new Size(942, 616);
-            Controls.Add(label5);
             Controls.Add(btnBarberLoginPage);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -206,7 +193,6 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Button btnBarberLoginPage;
-        private Label label5;
     }
 }
 

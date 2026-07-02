@@ -59,11 +59,11 @@
             // labelRegister
             // 
             labelRegister.AutoSize = true;
-            labelRegister.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRegister.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelRegister.ForeColor = Color.White;
             labelRegister.Location = new Point(325, 11);
             labelRegister.Name = "labelRegister";
-            labelRegister.Size = new Size(333, 43);
+            labelRegister.Size = new Size(266, 46);
             labelRegister.TabIndex = 1;
             labelRegister.Text = "Register Barber";
             // 

@@ -184,9 +184,16 @@ namespace Barber_Booking_System_EF
             }
             if (lblStatus.Text == "Rejected")
             {
-
+                btnCompleteBooking.Visible = false;
+                btnRejectButton.Visible = false;
+                btnAcceptBooking.Visible = false;
             }
-
+            if (lblStatus.Text == "Completed")
+            {
+                btnCompleteBooking.Visible = false;
+                btnRejectButton.Visible = false;
+                btnAcceptBooking.Visible = false;
+            }
         }
 
         private void btnCheckBooking_Click(object sender, EventArgs e)

@@ -131,6 +131,7 @@
             label50 = new Label();
             label40 = new Label();
             label30 = new Label();
+            label16 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -444,17 +445,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(7, 4);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(199, 43);
+            label1.Size = new Size(170, 46);
             label1.TabIndex = 0;
             label1.Text = "Bookings";
             // 
             // tabPage2
             // 
             tabPage2.BackColor = Color.BlanchedAlmond;
+            tabPage2.Controls.Add(label16);
             tabPage2.Controls.Add(checkedListServices);
             tabPage2.Controls.Add(label11);
             tabPage2.Controls.Add(groupBox1);
@@ -511,19 +513,19 @@
             groupBox1.BackColor = SystemColors.InactiveCaption;
             groupBox1.Controls.Add(pictureBoxBarber);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(610, 54);
+            groupBox1.Location = new Point(637, 54);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(229, 221);
+            groupBox1.Size = new Size(175, 221);
             groupBox1.TabIndex = 82;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Barber Photo Profile";
+            groupBox1.Text = "Photo Profile";
             // 
             // pictureBoxBarber
             // 
             pictureBoxBarber.Image = Properties.Resources.rukia04;
-            pictureBoxBarber.Location = new Point(6, 26);
+            pictureBoxBarber.Location = new Point(6, 32);
             pictureBoxBarber.Name = "pictureBoxBarber";
-            pictureBoxBarber.Size = new Size(217, 183);
+            pictureBoxBarber.Size = new Size(160, 180);
             pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxBarber.TabIndex = 25;
             pictureBoxBarber.TabStop = false;
@@ -743,11 +745,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(8, 9);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(165, 43);
+            label2.Size = new Size(126, 46);
             label2.TabIndex = 11;
             label2.Text = "Profile";
             // 
@@ -903,11 +905,11 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.Location = new Point(5, 3);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(157, 43);
+            label10.Size = new Size(127, 46);
             label10.TabIndex = 13;
             label10.Text = "Barber";
             // 
@@ -990,10 +992,10 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label15.Location = new Point(6, 3);
             label15.Name = "label15";
-            label15.Size = new Size(183, 43);
+            label15.Size = new Size(151, 46);
             label15.TabIndex = 6;
             label15.Text = "Analysis";
             // 
@@ -1063,9 +1065,9 @@
             btnGenerate.BackColor = Color.Gold;
             btnGenerate.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGenerate.ForeColor = Color.Black;
-            btnGenerate.Location = new Point(640, 542);
+            btnGenerate.Location = new Point(704, 573);
             btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(264, 91);
+            btnGenerate.Size = new Size(200, 60);
             btnGenerate.TabIndex = 2;
             btnGenerate.Text = "GENERATE";
             btnGenerate.UseVisualStyleBackColor = false;
@@ -1173,9 +1175,9 @@
             btnGenerateRevenue.BackColor = Color.Gold;
             btnGenerateRevenue.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGenerateRevenue.ForeColor = Color.Black;
-            btnGenerateRevenue.Location = new Point(640, 541);
+            btnGenerateRevenue.Location = new Point(704, 573);
             btnGenerateRevenue.Name = "btnGenerateRevenue";
-            btnGenerateRevenue.Size = new Size(264, 91);
+            btnGenerateRevenue.Size = new Size(200, 60);
             btnGenerateRevenue.TabIndex = 16;
             btnGenerateRevenue.Text = "GENERATE";
             btnGenerateRevenue.UseVisualStyleBackColor = false;
@@ -1202,11 +1204,11 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.Location = new Point(2, 3);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(174, 43);
+            label8.Size = new Size(155, 46);
             label8.TabIndex = 14;
             label8.Text = "Revenue";
             // 
@@ -1230,6 +1232,17 @@
             label30.Name = "label30";
             label30.Size = new Size(100, 23);
             label30.TabIndex = 0;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Location = new Point(571, 341);
+            label16.Margin = new Padding(1, 0, 1, 0);
+            label16.Name = "label16";
+            label16.Size = new Size(313, 25);
+            label16.TabIndex = 88;
+            label16.Text = "Masa create barber tak save photo";
             // 
             // Barber_Home_Page
             // 
@@ -1356,5 +1369,6 @@
         private Label lblTotalRev;
         private Label label15;
         private Label label14;
+        private Label label16;
     }
 }

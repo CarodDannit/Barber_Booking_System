@@ -133,21 +133,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(415, 10);
+            label1.Location = new Point(416, 9);
             label1.Name = "label1";
-            label1.Size = new Size(132, 43);
+            label1.Size = new Size(120, 46);
             label1.TabIndex = 10;
             label1.Text = "Log In";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Gold;
-            label5.Location = new Point(545, 40);
+            label5.Location = new Point(542, 22);
             label5.Name = "label5";
-            label5.Size = new Size(76, 20);
+            label5.Size = new Size(100, 28);
             label5.TabIndex = 9;
             label5.Text = "for barber";
             // 

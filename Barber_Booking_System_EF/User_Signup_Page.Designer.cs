@@ -102,7 +102,6 @@
             tbUsername.Location = new Point(51, 184);
             tbUsername.Margin = new Padding(3, 4, 3, 4);
             tbUsername.Name = "tbUsername";
-            tbUsername.PasswordChar = '*';
             tbUsername.Size = new Size(340, 30);
             tbUsername.TabIndex = 8;
             // 
@@ -173,11 +172,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(394, 11);
+            label1.Location = new Point(406, 9);
             label1.Name = "label1";
-            label1.Size = new Size(156, 43);
+            label1.Size = new Size(146, 46);
             label1.TabIndex = 16;
             label1.Text = "Sign Up";
             // 
