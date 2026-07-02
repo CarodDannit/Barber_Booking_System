@@ -17,14 +17,6 @@ namespace Barber_Booking_System_EF
             InitializeComponent();
         }
 
-        private void btnBarberLogInPage_Click(object sender, EventArgs e)
-        {
-            Barber_Login_Page bloginPage = new Barber_Login_Page();
-            this.Hide();
-            bloginPage.ShowDialog();
-            this.Show();
-        }
-
         private void btnUserLogInPage_Click(object sender, EventArgs e)
         {
             User_Login_Page uloginPage = new User_Login_Page();

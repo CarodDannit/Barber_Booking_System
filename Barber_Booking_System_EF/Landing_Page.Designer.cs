@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Landing_Page));
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            label2 = new Label();
             btnUserLogInPage = new Button();
-            btnBarberLogInPage = new Button();
             label3 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Screenshot_2026_07_02_080118;
-            pictureBox1.Location = new Point(12, 81);
+            pictureBox1.Location = new Point(12, 74);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(350, 350);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -58,64 +58,49 @@
             label1.TabIndex = 11;
             label1.Text = "BRO Barber Booking";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(523, 160);
-            label2.Name = "label2";
-            label2.Size = new Size(120, 46);
-            label2.TabIndex = 12;
-            label2.Text = "Log In";
-            // 
             // btnUserLogInPage
             // 
             btnUserLogInPage.BackColor = Color.Gold;
             btnUserLogInPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUserLogInPage.Location = new Point(422, 253);
+            btnUserLogInPage.Location = new Point(798, 13);
             btnUserLogInPage.Margin = new Padding(3, 4, 3, 4);
             btnUserLogInPage.Name = "btnUserLogInPage";
             btnUserLogInPage.Size = new Size(132, 51);
             btnUserLogInPage.TabIndex = 13;
-            btnUserLogInPage.Text = "USER";
+            btnUserLogInPage.Text = "Log In";
             btnUserLogInPage.UseVisualStyleBackColor = false;
             btnUserLogInPage.Click += btnUserLogInPage_Click;
-            // 
-            // btnBarberLogInPage
-            // 
-            btnBarberLogInPage.BackColor = Color.Gold;
-            btnBarberLogInPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBarberLogInPage.Location = new Point(614, 253);
-            btnBarberLogInPage.Margin = new Padding(3, 4, 3, 4);
-            btnBarberLogInPage.Name = "btnBarberLogInPage";
-            btnBarberLogInPage.Size = new Size(132, 51);
-            btnBarberLogInPage.TabIndex = 14;
-            btnBarberLogInPage.Text = "BARBER";
-            btnBarberLogInPage.UseVisualStyleBackColor = false;
-            btnBarberLogInPage.Click += btnBarberLogInPage_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Gold;
-            label3.Location = new Point(423, 438);
+            label3.Location = new Point(368, 258);
             label3.Name = "label3";
-            label3.Size = new Size(323, 28);
+            label3.Size = new Size(544, 46);
             label3.TabIndex = 15;
             label3.Text = "\"Book your perfect cut, anytime\"";
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(383, 320);
+            label2.Name = "label2";
+            label2.Size = new Size(547, 104);
+            label2.TabIndex = 16;
+            label2.Text = resources.GetString("label2.Text");
             // 
             // Landing_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 64, 0);
-            ClientSize = new Size(799, 493);
-            Controls.Add(label3);
-            Controls.Add(btnBarberLogInPage);
-            Controls.Add(btnUserLogInPage);
+            ClientSize = new Size(942, 493);
             Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(btnUserLogInPage);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "Landing_Page";
@@ -129,9 +114,8 @@
 
         private PictureBox pictureBox1;
         private Label label1;
-        private Label label2;
         private Button btnUserLogInPage;
-        private Button btnBarberLogInPage;
         private Label label3;
+        private Label label2;
     }
 }

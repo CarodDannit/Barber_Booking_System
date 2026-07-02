@@ -52,7 +52,7 @@
             btnBarberLoginPage.Name = "btnBarberLoginPage";
             btnBarberLoginPage.Size = new Size(187, 51);
             btnBarberLoginPage.TabIndex = 18;
-            btnBarberLoginPage.Text = "barber mode";
+            btnBarberLoginPage.Text = "barber";
             btnBarberLoginPage.UseVisualStyleBackColor = false;
             btnBarberLoginPage.Click += btnBarberLoginPage_Click;
             // 

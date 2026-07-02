@@ -51,7 +51,7 @@
             btnUserLoginPage.Name = "btnUserLoginPage";
             btnUserLoginPage.Size = new Size(187, 51);
             btnUserLoginPage.TabIndex = 12;
-            btnUserLoginPage.Text = "user mode";
+            btnUserLoginPage.Text = "user";
             btnUserLoginPage.UseVisualStyleBackColor = false;
             btnUserLoginPage.Click += btnUserLoginPage_Click;
             // 
