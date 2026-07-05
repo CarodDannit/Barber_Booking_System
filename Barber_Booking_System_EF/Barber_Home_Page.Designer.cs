@@ -54,10 +54,7 @@
             lblDate = new Label();
             lblStatus = new Label();
             lblBookingId = new Label();
-            btnCheckBooking = new Button();
             btnViewDetails = new Button();
-            lOutletTab1 = new Label();
-            lTimeslotTab1 = new Label();
             lStatusTab1 = new Label();
             dgvBookings = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
@@ -71,6 +68,7 @@
             Status = new DataGridViewTextBoxColumn();
             label1 = new Label();
             tabPage2 = new TabPage();
+            label16 = new Label();
             checkedListServices = new CheckedListBox();
             label11 = new Label();
             groupBox1 = new GroupBox();
@@ -131,7 +129,6 @@
             btnGenerateRevenue = new Button();
             chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label8 = new Label();
-            label16 = new Label();
             labelToDoRevenue = new Label();
             label50 = new Label();
             label40 = new Label();
@@ -180,10 +177,7 @@
             tabPage1.Controls.Add(lblDate);
             tabPage1.Controls.Add(lblStatus);
             tabPage1.Controls.Add(lblBookingId);
-            tabPage1.Controls.Add(btnCheckBooking);
             tabPage1.Controls.Add(btnViewDetails);
-            tabPage1.Controls.Add(lOutletTab1);
-            tabPage1.Controls.Add(lTimeslotTab1);
             tabPage1.Controls.Add(lStatusTab1);
             tabPage1.Controls.Add(dgvBookings);
             tabPage1.Controls.Add(label1);
@@ -238,16 +232,7 @@
             // labelToDoBookings
             // 
             labelToDoBookings.AutoSize = true;
-            labelToDoBookings.Location = new Point(34, 504);
-            labelToDoBookings.Name = "labelToDoBookings";
-            labelToDoBookings.Size = new Size(445, 20);
-            labelToDoBookings.TabIndex = 47;
-            labelToDoBookings.Text = "status update: accept, reject; Hide irrelevant details; Sort bookings";
-            // 
-            // labelToDoBookings
-            // 
-            labelToDoBookings.AutoSize = true;
-            labelToDoBookings.Location = new Point(244, 544);
+            labelToDoBookings.Location = new Point(189, 485);
             labelToDoBookings.Name = "labelToDoBookings";
             labelToDoBookings.Size = new Size(445, 20);
             labelToDoBookings.TabIndex = 47;
@@ -340,24 +325,15 @@
             // 
             // btnViewDetails
             // 
-            btnCheckBooking.BackColor = Color.Gold;
-            btnCheckBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCheckBooking.Location = new Point(34, 544);
-            btnCheckBooking.Margin = new Padding(3, 4, 3, 4);
-            btnCheckBooking.Name = "btnCheckBooking";
-            btnCheckBooking.Size = new Size(159, 51);
-            btnCheckBooking.TabIndex = 35;
-            btnCheckBooking.Text = "Check";
-            btnCheckBooking.UseVisualStyleBackColor = false;
-            btnCheckBooking.Click += btnCheckBooking_Click;
+            btnViewDetails.BackColor = Color.Gold;
             btnViewDetails.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnViewDetails.Location = new Point(34, 544);
             btnViewDetails.Margin = new Padding(3, 4, 3, 4);
             btnViewDetails.Name = "btnViewDetails";
-            btnViewDetails.Size = new Size(176, 51);
+            btnViewDetails.Size = new Size(159, 51);
             btnViewDetails.TabIndex = 35;
-            btnViewDetails.Text = "View Details";
-            btnViewDetails.UseVisualStyleBackColor = true;
+            btnViewDetails.Text = "Check";
+            btnViewDetails.UseVisualStyleBackColor = false;
             btnViewDetails.Click += btnViewDetails_Click;
             // 
             // lStatusTab1
@@ -512,6 +488,17 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
             // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Location = new Point(571, 386);
+            label16.Margin = new Padding(1, 0, 1, 0);
+            label16.Name = "label16";
+            label16.Size = new Size(313, 25);
+            label16.TabIndex = 88;
+            label16.Text = "Masa create barber tak save photo";
+            // 
             // checkedListServices
             // 
             checkedListServices.BackColor = SystemColors.InactiveCaption;
@@ -531,7 +518,7 @@
             label11.Name = "label11";
             label11.Size = new Size(78, 25);
             label11.TabIndex = 86;
-            label11.Text = "Servies";
+            label11.Text = "Service";
             // 
             // groupBox1
             // 
@@ -1242,6 +1229,15 @@
             label8.TabIndex = 14;
             label8.Text = "Revenue";
             // 
+            // labelToDoRevenue
+            // 
+            labelToDoRevenue.AutoSize = true;
+            labelToDoRevenue.Location = new Point(398, 29);
+            labelToDoRevenue.Name = "labelToDoRevenue";
+            labelToDoRevenue.Size = new Size(446, 20);
+            labelToDoRevenue.TabIndex = 0;
+            labelToDoRevenue.Text = "almost cam analysis. Services mana buat berapa banyak profit, etc";
+            // 
             // label50
             // 
             label50.Location = new Point(0, 0);
@@ -1262,26 +1258,6 @@
             label30.Name = "label30";
             label30.Size = new Size(100, 23);
             label30.TabIndex = 0;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.Location = new Point(571, 341);
-            label16.Margin = new Padding(1, 0, 1, 0);
-            label16.Name = "label16";
-            label16.Size = new Size(313, 25);
-            label16.TabIndex = 88;
-            label16.Text = "Masa create barber tak save photo";
-            // 
-            // labelToDoRevenue
-            // 
-            labelToDoRevenue.AutoSize = true;
-            labelToDoRevenue.Location = new Point(233, 197);
-            labelToDoRevenue.Name = "labelToDoRevenue";
-            labelToDoRevenue.Size = new Size(446, 20);
-            labelToDoRevenue.TabIndex = 0;
-            labelToDoRevenue.Text = "almost cam analysis. Services mana buat berapa banyak profit, etc";
             // 
             // Barber_Home_Page
             // 
@@ -1338,12 +1314,11 @@
         private PictureBox pictureBoxBarber;
         private Label lblService;
         private Label lblCustomer;
-        private Label lblOutlet;
         private Label lblDate;
         private Label lblTimeSlot;
         private Label lblStatus;
         private Label lblBookingId;
-        private Button btnViewDetails;
+        private Button btnCheckBooking;
         private Label label90;
         private Label label80;
         private Label label70;
@@ -1384,17 +1359,11 @@
         private Label lServiceTab1;
         private Label lCustomerTab1;
         private Label lDateTab1;
-        private Label lblService;
-        private Label lblCustomer;
-        private Label lblDate;
-        private Label lblStatus;
-        private Label lblBookingId;
-        private Button btnCheckBooking;
+        private Button btnViewDetails;
         private Label lStatusTab1;
         private DataGridView dgvBookings;
         private Label label1;
         private Label labelToDoRevenue;
-        private Label labelToDoBookings;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Description;
         private DataGridViewTextBoxColumn cName;

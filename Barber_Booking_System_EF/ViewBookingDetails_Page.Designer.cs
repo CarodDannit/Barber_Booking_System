@@ -380,6 +380,7 @@
         private Label lOutlet;
         private Label lTimeslot;
         private Label lStatus;
+        private Label labelToDo;
         private GroupBox groupBoxPhoto;
         private PictureBox pictureBoxBarber;
         private Label labelEmail;
