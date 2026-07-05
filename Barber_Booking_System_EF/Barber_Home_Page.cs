@@ -254,8 +254,11 @@ namespace Barber_Booking_System_EF
             barber.Gender = rbMale.Checked ? "M" : "F";
 
             // Read file bytes and convert to Base64 string
-            var imageBytes = File.ReadAllBytes(pictureBoxBarber.ImageLocation);
-            barber.Pfp = imageBytes;
+            if (pictureBoxBarber.ImageLocation != null)
+            {
+                var imageBytes = File.ReadAllBytes(pictureBoxBarber.ImageLocation);
+                barber.Pfp = imageBytes;
+            }
 
             barber.OutletId = outlets[cbOutlet.SelectedIndex].Id;
             barber.Timeslots = timeslots.Where((t, index) => checkedListTimeSlot.GetItemChecked(index)).ToList();
