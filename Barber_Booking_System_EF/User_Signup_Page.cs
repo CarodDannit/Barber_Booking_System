@@ -62,6 +62,9 @@ namespace Barber_Booking_System_EF
 
             Helper._db.Add(newCust);
             Helper._db.SaveChanges();
+
+            MessageBox.Show("User created successfully!");
+
             User_Home_Page homePage = new User_Home_Page(newCust);
             this.Hide();
             homePage.ShowDialog();
