@@ -22,13 +22,15 @@ namespace Barber_Booking_System_EF
 
         private void ViewBookingDetails_Page_Load(object sender, EventArgs e)
         {
-            labelId.Text = booking.Id.ToString();
-            labelDate.Text = booking.Date.ToLongDateString();
-            labelDesc.Text = booking.Description;
-            labelOutlet.Text = booking.Outlet.Location;
-            labelBarber.Text = booking.Barber.Name;
-            labelTimeslot.Text = booking.Timeslot.Time.ToShortTimeString();
+            tbId.Text = booking.Id.ToString();
+            tbDate.Text = booking.Date.ToLongDateString();
+            tbTimeslot.Text = booking.Timeslot.Time.ToShortTimeString();
+            tbOutlet.Text = booking.Outlet.Location;
+            tbService.Text = booking.Service.Name;
+            tbPrice.Text = $"RM {booking.Service.Price.ToString("F2")}";
+            tbDesc.Text = booking.Description;
             labelStatus.Text = booking.Status;
+            labelBarber.Text = booking.Barber.Name;
             labelEmail.Text = $"Email: {booking.Barber.Email}";
 
             // get barber's pfp
@@ -53,7 +55,17 @@ namespace Barber_Booking_System_EF
             {
                 pictureBoxBarber.Image = Properties.Resources.rukia04;
             }
-            //pictureBoxBarber.Image
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            booking.Description = tbDesc.Text;
+            DialogResult = DialogResult.OK;
         }
     }
 }

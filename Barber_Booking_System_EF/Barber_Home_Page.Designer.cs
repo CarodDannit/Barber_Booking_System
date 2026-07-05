@@ -55,6 +55,9 @@
             lblStatus = new Label();
             lblBookingId = new Label();
             btnCheckBooking = new Button();
+            btnViewDetails = new Button();
+            lOutletTab1 = new Label();
+            lTimeslotTab1 = new Label();
             lStatusTab1 = new Label();
             dgvBookings = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
@@ -128,10 +131,11 @@
             btnGenerateRevenue = new Button();
             chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label8 = new Label();
+            label16 = new Label();
+            labelToDoRevenue = new Label();
             label50 = new Label();
             label40 = new Label();
             label30 = new Label();
-            label16 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -177,6 +181,9 @@
             tabPage1.Controls.Add(lblStatus);
             tabPage1.Controls.Add(lblBookingId);
             tabPage1.Controls.Add(btnCheckBooking);
+            tabPage1.Controls.Add(btnViewDetails);
+            tabPage1.Controls.Add(lOutletTab1);
+            tabPage1.Controls.Add(lTimeslotTab1);
             tabPage1.Controls.Add(lStatusTab1);
             tabPage1.Controls.Add(dgvBookings);
             tabPage1.Controls.Add(label1);
@@ -232,6 +239,15 @@
             // 
             labelToDoBookings.AutoSize = true;
             labelToDoBookings.Location = new Point(34, 504);
+            labelToDoBookings.Name = "labelToDoBookings";
+            labelToDoBookings.Size = new Size(445, 20);
+            labelToDoBookings.TabIndex = 47;
+            labelToDoBookings.Text = "status update: accept, reject; Hide irrelevant details; Sort bookings";
+            // 
+            // labelToDoBookings
+            // 
+            labelToDoBookings.AutoSize = true;
+            labelToDoBookings.Location = new Point(244, 544);
             labelToDoBookings.Name = "labelToDoBookings";
             labelToDoBookings.Size = new Size(445, 20);
             labelToDoBookings.TabIndex = 47;
@@ -322,7 +338,7 @@
             lblBookingId.Size = new Size(0, 28);
             lblBookingId.TabIndex = 36;
             // 
-            // btnCheckBooking
+            // btnViewDetails
             // 
             btnCheckBooking.BackColor = Color.Gold;
             btnCheckBooking.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -334,6 +350,15 @@
             btnCheckBooking.Text = "Check";
             btnCheckBooking.UseVisualStyleBackColor = false;
             btnCheckBooking.Click += btnCheckBooking_Click;
+            btnViewDetails.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnViewDetails.Location = new Point(34, 544);
+            btnViewDetails.Margin = new Padding(3, 4, 3, 4);
+            btnViewDetails.Name = "btnViewDetails";
+            btnViewDetails.Size = new Size(176, 51);
+            btnViewDetails.TabIndex = 35;
+            btnViewDetails.Text = "View Details";
+            btnViewDetails.UseVisualStyleBackColor = true;
+            btnViewDetails.Click += btnViewDetails_Click;
             // 
             // lStatusTab1
             // 
@@ -796,6 +821,7 @@
             tbBarberEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberEmail.Location = new Point(128, 401);
             tbBarberEmail.Name = "tbBarberEmail";
+            tbBarberEmail.ReadOnly = true;
             tbBarberEmail.Size = new Size(252, 34);
             tbBarberEmail.TabIndex = 64;
             tbBarberEmail.TextChanged += tbBarberEmail_TextChanged;
@@ -806,6 +832,7 @@
             tbBarberGender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberGender.Location = new Point(128, 443);
             tbBarberGender.Name = "tbBarberGender";
+            tbBarberGender.ReadOnly = true;
             tbBarberGender.Size = new Size(252, 34);
             tbBarberGender.TabIndex = 63;
             // 
@@ -815,6 +842,7 @@
             tbBarberOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberOutlet.Location = new Point(128, 488);
             tbBarberOutlet.Name = "tbBarberOutlet";
+            tbBarberOutlet.ReadOnly = true;
             tbBarberOutlet.Size = new Size(252, 34);
             tbBarberOutlet.TabIndex = 62;
             // 
@@ -824,6 +852,7 @@
             tbBarberName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbBarberName.Location = new Point(128, 356);
             tbBarberName.Name = "tbBarberName";
+            tbBarberName.ReadOnly = true;
             tbBarberName.Size = new Size(252, 34);
             tbBarberName.TabIndex = 61;
             // 
@@ -1103,6 +1132,7 @@
             tabPage5.Controls.Add(btnGenerateRevenue);
             tabPage5.Controls.Add(chartRevenue);
             tabPage5.Controls.Add(label8);
+            tabPage5.Controls.Add(labelToDoRevenue);
             tabPage5.Location = new Point(4, 29);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
@@ -1244,6 +1274,15 @@
             label16.TabIndex = 88;
             label16.Text = "Masa create barber tak save photo";
             // 
+            // labelToDoRevenue
+            // 
+            labelToDoRevenue.AutoSize = true;
+            labelToDoRevenue.Location = new Point(233, 197);
+            labelToDoRevenue.Name = "labelToDoRevenue";
+            labelToDoRevenue.Size = new Size(446, 20);
+            labelToDoRevenue.TabIndex = 0;
+            labelToDoRevenue.Text = "almost cam analysis. Services mana buat berapa banyak profit, etc";
+            // 
             // Barber_Home_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1297,6 +1336,14 @@
         private RadioButton rbFemale;
         private GroupBox groupBox1;
         private PictureBox pictureBoxBarber;
+        private Label lblService;
+        private Label lblCustomer;
+        private Label lblOutlet;
+        private Label lblDate;
+        private Label lblTimeSlot;
+        private Label lblStatus;
+        private Label lblBookingId;
+        private Button btnViewDetails;
         private Label label90;
         private Label label80;
         private Label label70;
@@ -1346,6 +1393,8 @@
         private Label lStatusTab1;
         private DataGridView dgvBookings;
         private Label label1;
+        private Label labelToDoRevenue;
+        private Label labelToDoBookings;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Description;
         private DataGridViewTextBoxColumn cName;
