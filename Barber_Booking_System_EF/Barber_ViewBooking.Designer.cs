@@ -1,6 +1,6 @@
 ﻿namespace Barber_Booking_System_EF
 {
-    partial class ViewBookingDetails_Page
+    partial class Barber_ViewBooking
     {
         /// <summary>
         /// Required designer variable.
@@ -34,10 +34,9 @@
             lPrice = new Label();
             lService = new Label();
             btnOK = new Button();
-            groupBoxPhoto = new GroupBox();
+            groupBoxCust = new GroupBox();
             labelEmail = new Label();
-            pictureBoxBarber = new PictureBox();
-            labelBarber = new Label();
+            labelCust = new Label();
             lId = new Label();
             lDate = new Label();
             labelDate = new Label();
@@ -50,8 +49,7 @@
             lStatus = new Label();
             labelBookingDetails = new Label();
             panel1.SuspendLayout();
-            groupBoxPhoto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).BeginInit();
+            groupBoxCust.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -62,7 +60,7 @@
             panel1.Controls.Add(lPrice);
             panel1.Controls.Add(lService);
             panel1.Controls.Add(btnOK);
-            panel1.Controls.Add(groupBoxPhoto);
+            panel1.Controls.Add(groupBoxCust);
             panel1.Controls.Add(lId);
             panel1.Controls.Add(lDate);
             panel1.Controls.Add(labelDate);
@@ -76,7 +74,7 @@
             panel1.Location = new Point(27, 59);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(569, 528);
+            panel1.Size = new Size(569, 458);
             panel1.TabIndex = 0;
             // 
             // labelPrice
@@ -123,7 +121,7 @@
             // 
             btnOK.BackColor = Color.Gold;
             btnOK.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnOK.Location = new Point(406, 457);
+            btnOK.Location = new Point(406, 379);
             btnOK.Margin = new Padding(3, 4, 3, 4);
             btnOK.Name = "btnOK";
             btnOK.Size = new Size(137, 51);
@@ -132,54 +130,43 @@
             btnOK.UseVisualStyleBackColor = false;
             btnOK.Click += btnOK_Click;
             // 
-            // groupBoxPhoto
+            // groupBoxCust
             // 
-            groupBoxPhoto.BackColor = SystemColors.InactiveCaption;
-            groupBoxPhoto.Controls.Add(labelEmail);
-            groupBoxPhoto.Controls.Add(pictureBoxBarber);
-            groupBoxPhoto.Controls.Add(labelBarber);
-            groupBoxPhoto.Location = new Point(349, 132);
-            groupBoxPhoto.Margin = new Padding(4, 5, 4, 5);
-            groupBoxPhoto.Name = "groupBoxPhoto";
-            groupBoxPhoto.Padding = new Padding(4, 5, 4, 5);
-            groupBoxPhoto.Size = new Size(194, 294);
-            groupBoxPhoto.TabIndex = 66;
-            groupBoxPhoto.TabStop = false;
-            groupBoxPhoto.Text = "Barber details";
+            groupBoxCust.BackColor = SystemColors.InactiveCaption;
+            groupBoxCust.Controls.Add(labelEmail);
+            groupBoxCust.Controls.Add(labelCust);
+            groupBoxCust.Location = new Point(349, 132);
+            groupBoxCust.Margin = new Padding(4, 5, 4, 5);
+            groupBoxCust.Name = "groupBoxCust";
+            groupBoxCust.Padding = new Padding(4, 5, 4, 5);
+            groupBoxCust.Size = new Size(194, 123);
+            groupBoxCust.TabIndex = 66;
+            groupBoxCust.TabStop = false;
+            groupBoxCust.Text = "Customer details";
             // 
             // labelEmail
             // 
             labelEmail.AutoSize = true;
             labelEmail.BackColor = SystemColors.ButtonHighlight;
             labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelEmail.Location = new Point(8, 254);
+            labelEmail.Location = new Point(8, 89);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(49, 20);
             labelEmail.TabIndex = 54;
             labelEmail.Text = "Email:";
             labelEmail.TextAlign = ContentAlignment.TopCenter;
             // 
-            // pictureBoxBarber
+            // labelCust
             // 
-            pictureBoxBarber.Location = new Point(8, 29);
-            pictureBoxBarber.Margin = new Padding(4, 5, 4, 5);
-            pictureBoxBarber.Name = "pictureBoxBarber";
-            pictureBoxBarber.Size = new Size(178, 179);
-            pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxBarber.TabIndex = 25;
-            pictureBoxBarber.TabStop = false;
-            // 
-            // labelBarber
-            // 
-            labelBarber.AutoSize = true;
-            labelBarber.BackColor = SystemColors.ButtonHighlight;
-            labelBarber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelBarber.Location = new Point(79, 219);
-            labelBarber.Name = "labelBarber";
-            labelBarber.Size = new Size(22, 28);
-            labelBarber.TabIndex = 53;
-            labelBarber.Text = "a";
-            labelBarber.TextAlign = ContentAlignment.TopCenter;
+            labelCust.AutoSize = true;
+            labelCust.BackColor = SystemColors.ButtonHighlight;
+            labelCust.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelCust.Location = new Point(79, 44);
+            labelCust.Name = "labelCust";
+            labelCust.Size = new Size(22, 28);
+            labelCust.TabIndex = 53;
+            labelCust.Text = "a";
+            labelCust.TextAlign = ContentAlignment.TopCenter;
             // 
             // lId
             // 
@@ -292,23 +279,22 @@
             labelBookingDetails.TabIndex = 42;
             labelBookingDetails.Text = "Booking Details";
             // 
-            // ViewBookingDetails_Page
+            // Barber_ViewBooking
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 64, 0);
-            ClientSize = new Size(624, 609);
+            ClientSize = new Size(624, 549);
             Controls.Add(labelBookingDetails);
             Controls.Add(panel1);
             Margin = new Padding(2);
-            Name = "ViewBookingDetails_Page";
+            Name = "Barber_ViewBooking";
             Text = "Barber_ViewBooking";
             Load += ViewBookingDetails_Page_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            groupBoxPhoto.ResumeLayout(false);
-            groupBoxPhoto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxBarber).EndInit();
+            groupBoxCust.ResumeLayout(false);
+            groupBoxCust.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -321,15 +307,14 @@
         private Label lDate;
         private Label labelDate;
         private Label labelOutlet;
-        private Label labelBarber;
+        private Label labelCust;
         private Label labelTimeslot;
         private Label labelStatus;
         private Label labelId;
         private Label lOutlet;
         private Label lTimeslot;
         private Label lStatus;
-        private GroupBox groupBoxPhoto;
-        private PictureBox pictureBoxBarber;
+        private GroupBox groupBoxCust;
         private Label labelEmail;
         private Button btnOK;
         private Label lPrice;

@@ -44,7 +44,6 @@
             btnCompleteBooking = new Button();
             btnAcceptBooking = new Button();
             btnRejectButton = new Button();
-            labelToDoBookings = new Label();
             lIdTab1 = new Label();
             lServiceTab1 = new Label();
             lCustomerTab1 = new Label();
@@ -163,7 +162,6 @@
             tabPage1.Controls.Add(btnCompleteBooking);
             tabPage1.Controls.Add(btnAcceptBooking);
             tabPage1.Controls.Add(btnRejectButton);
-            tabPage1.Controls.Add(labelToDoBookings);
             tabPage1.Controls.Add(lIdTab1);
             tabPage1.Controls.Add(lServiceTab1);
             tabPage1.Controls.Add(lCustomerTab1);
@@ -224,15 +222,6 @@
             btnRejectButton.Text = "Reject";
             btnRejectButton.UseVisualStyleBackColor = false;
             btnRejectButton.Click += btnRejectButton_Click;
-            // 
-            // labelToDoBookings
-            // 
-            labelToDoBookings.AutoSize = true;
-            labelToDoBookings.Location = new Point(189, 485);
-            labelToDoBookings.Name = "labelToDoBookings";
-            labelToDoBookings.Size = new Size(445, 20);
-            labelToDoBookings.TabIndex = 47;
-            labelToDoBookings.Text = "status update: accept, reject; Hide irrelevant details; Sort bookings";
             // 
             // lIdTab1
             // 
@@ -1316,7 +1305,6 @@
         private Label label7;
         private TabPage tabPage5;
         private TabPage tabPage1;
-        private Label labelToDoBookings;
         private Label lIdTab1;
         private Label lServiceTab1;
         private Label lCustomerTab1;
