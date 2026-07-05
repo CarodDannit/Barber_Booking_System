@@ -139,7 +139,7 @@
             groupBoxCust.Margin = new Padding(4, 5, 4, 5);
             groupBoxCust.Name = "groupBoxCust";
             groupBoxCust.Padding = new Padding(4, 5, 4, 5);
-            groupBoxCust.Size = new Size(194, 123);
+            groupBoxCust.Size = new Size(194, 146);
             groupBoxCust.TabIndex = 66;
             groupBoxCust.TabStop = false;
             groupBoxCust.Text = "Customer details";
@@ -149,7 +149,7 @@
             labelEmail.AutoSize = true;
             labelEmail.BackColor = SystemColors.ButtonHighlight;
             labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelEmail.Location = new Point(8, 89);
+            labelEmail.Location = new Point(7, 108);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(49, 20);
             labelEmail.TabIndex = 54;
@@ -158,15 +158,14 @@
             // 
             // labelCust
             // 
-            labelCust.AutoSize = true;
             labelCust.BackColor = SystemColors.ButtonHighlight;
             labelCust.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelCust.Location = new Point(79, 44);
+            labelCust.Location = new Point(22, 38);
             labelCust.Name = "labelCust";
-            labelCust.Size = new Size(22, 28);
+            labelCust.Size = new Size(149, 28);
             labelCust.TabIndex = 53;
             labelCust.Text = "a";
-            labelCust.TextAlign = ContentAlignment.TopCenter;
+            labelCust.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lId
             // 
