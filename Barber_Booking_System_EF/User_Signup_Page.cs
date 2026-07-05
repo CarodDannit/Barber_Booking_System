@@ -37,20 +37,35 @@ namespace Barber_Booking_System_EF
 
         private void btnUserSignup_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tbEmail.Text))
+            {
+                MessageBox.Show("Email cannot be empty!");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbUsername.Text))
+            {
+                MessageBox.Show("Username cannot be empty!");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(tbPassword.Text))
+            {
+                MessageBox.Show("Password cannot be empty!");
+                return;
+            }
+
             var newCust = new Customer()
             {
                 Email = tbEmail.Text,
                 Name = tbUsername.Text,
                 Password = tbPassword.Text
             };
-            MessageBox.Show(newCust.Id.ToString());
 
             Helper._db.Add(newCust);
             Helper._db.SaveChanges();
-            //User_Home_Page homePage = new User_Home_Page();
-            //this.Hide();
-            //homePage.ShowDialog();
-            //this.Close();
+            User_Home_Page homePage = new User_Home_Page(newCust);
+            this.Hide();
+            homePage.ShowDialog();
+            this.Close();
         }
 
         private void tbEmail_TextChanged(object sender, EventArgs e)
