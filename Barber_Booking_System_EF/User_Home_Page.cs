@@ -47,9 +47,15 @@ namespace Barber_Booking_System_EF
             }
         }
 
-        // load data when form loads
         private void User_Home_Page_Load(object sender, EventArgs e)
         {
+            // Bookings tab
+            lblBookingId.Text = "";
+            lblDate.Text = "";
+            lblService.Text = "";
+            lblStatus.Text = "";
+
+            // Profile tab
             tbName.Text = customer.Name;
             tbEmail.Text = customer.Email;
 

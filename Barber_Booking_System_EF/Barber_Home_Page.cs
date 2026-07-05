@@ -267,7 +267,7 @@ namespace Barber_Booking_System_EF
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            var loginpage = new User_Login_Page();
+            var loginpage = new Barber_Login_Page();
             this.Hide();
             loginpage.ShowDialog();
             this.Close();

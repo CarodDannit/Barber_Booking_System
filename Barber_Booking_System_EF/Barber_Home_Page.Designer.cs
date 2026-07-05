@@ -65,7 +65,6 @@
             Status = new DataGridViewTextBoxColumn();
             label1 = new Label();
             tabPage2 = new TabPage();
-            label16 = new Label();
             checkedListServices = new CheckedListBox();
             label11 = new Label();
             groupBox1 = new GroupBox();
@@ -432,7 +431,6 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.BlanchedAlmond;
-            tabPage2.Controls.Add(label16);
             tabPage2.Controls.Add(checkedListServices);
             tabPage2.Controls.Add(label11);
             tabPage2.Controls.Add(groupBox1);
@@ -462,17 +460,6 @@
             tabPage2.Size = new Size(910, 639);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Profile";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label16.Location = new Point(571, 386);
-            label16.Margin = new Padding(1, 0, 1, 0);
-            label16.Name = "label16";
-            label16.Size = new Size(313, 25);
-            label16.TabIndex = 88;
-            label16.Text = "Masa create barber tak save photo";
             // 
             // checkedListServices
             // 
@@ -1353,7 +1340,6 @@
         private Label lblTotalRev;
         private Label label15;
         private Label label14;
-        private Label label16;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn sName;
         private DataGridViewTextBoxColumn cName;
