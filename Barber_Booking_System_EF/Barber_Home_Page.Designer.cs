@@ -284,8 +284,9 @@
             lblService.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblService.Location = new Point(155, 346);
             lblService.Name = "lblService";
-            lblService.Size = new Size(0, 28);
+            lblService.Size = new Size(22, 28);
             lblService.TabIndex = 42;
+            lblService.Text = "a";
             // 
             // lblCustomer
             // 
@@ -293,8 +294,9 @@
             lblCustomer.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblCustomer.Location = new Point(155, 374);
             lblCustomer.Name = "lblCustomer";
-            lblCustomer.Size = new Size(0, 28);
+            lblCustomer.Size = new Size(22, 28);
             lblCustomer.TabIndex = 41;
+            lblCustomer.Text = "a";
             // 
             // lblDate
             // 
@@ -302,8 +304,9 @@
             lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblDate.Location = new Point(155, 402);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(0, 28);
+            lblDate.Size = new Size(22, 28);
             lblDate.TabIndex = 39;
+            lblDate.Text = "a";
             // 
             // lblStatus
             // 
@@ -311,8 +314,9 @@
             lblStatus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblStatus.Location = new Point(155, 430);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(0, 28);
+            lblStatus.Size = new Size(22, 28);
             lblStatus.TabIndex = 37;
+            lblStatus.Text = "a";
             // 
             // lblBookingId
             // 
@@ -320,8 +324,9 @@
             lblBookingId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblBookingId.Location = new Point(155, 318);
             lblBookingId.Name = "lblBookingId";
-            lblBookingId.Size = new Size(0, 28);
+            lblBookingId.Size = new Size(22, 28);
             lblBookingId.TabIndex = 36;
+            lblBookingId.Text = "a";
             // 
             // btnViewDetails
             // 

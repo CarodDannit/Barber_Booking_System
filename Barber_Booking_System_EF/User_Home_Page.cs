@@ -222,7 +222,11 @@ namespace Barber_Booking_System_EF
 
         private void btnViewDetails_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(lblBookingId.Text)) return;
+            if (string.IsNullOrWhiteSpace(lblBookingId.Text))
+            {
+                MessageBox.Show("Please select a booking!");
+                return;
+            }
 
             int bookingId = int.Parse(lblBookingId.Text);
             var booking = _db.Bookings
@@ -234,14 +238,7 @@ namespace Barber_Booking_System_EF
                 .FirstOrDefault();
 
             var viewdetailspage = new ViewBookingDetails_Page(booking);
-            var result = viewdetailspage.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                _db.SaveChanges();
-                LoadBooking();
-            }
-
-            viewdetailspage.Dispose();
+            viewdetailspage.ShowDialog();
         }
     }
 }

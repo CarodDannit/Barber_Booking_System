@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Barber_Booking_System_EF.models;
+using Barber_Booking_System_EF.Properties;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
@@ -26,11 +27,7 @@ namespace Barber_Booking_System_EF
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
-            // openFileDialog W.I.P.
-            openFileDialog1.Filter = "image sikit2 je WIP (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
-            //openFileDialog1.ShowDialog();
-
-
+            openFileDialog1.Filter = "Image (*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
             var result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -78,6 +75,12 @@ namespace Barber_Booking_System_EF
                 return;
             }
 
+            byte[] imageBytes;
+            if (string.IsNullOrEmpty(pictureBoxBarber.ImageLocation)) // default pfp
+                imageBytes = new byte[0];
+            else  // read image file
+                imageBytes = File.ReadAllBytes(pictureBoxBarber.ImageLocation);
+
             var selectedOutlet = outlets[cbOutlet.SelectedIndex];
 
             var selectedServices = new List<Service>();
@@ -93,7 +96,7 @@ namespace Barber_Booking_System_EF
                 Name = tbName.Text,
                 Password = tbPassword.Text,
                 Gender = gender,
-                Pfp = new byte[0], // WIP
+                Pfp = imageBytes,
                 OutletId = selectedOutlet.Id,
                 Services = selectedServices
             };

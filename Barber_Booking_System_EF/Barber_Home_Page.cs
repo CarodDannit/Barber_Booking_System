@@ -59,7 +59,7 @@ namespace Barber_Booking_System_EF
             foreach (var bk in result)
             {
                 dgvBookings.Rows.Add(
-                    bk.Id,bk.Date,bk.Description,bk.OutletId,bk.oLocation,bk.CustId,bk.cName,bk.ServiceId,bk.sName,bk.TimeslotId,bk.Time,bk.Status
+                    bk.Id, bk.Date, bk.Description, bk.OutletId, bk.oLocation, bk.CustId, bk.cName, bk.ServiceId, bk.sName, bk.TimeslotId, bk.Time, bk.Status
                 );
             }
         }
@@ -81,14 +81,19 @@ namespace Barber_Booking_System_EF
         private async void Barber_Home_Page_Load(object sender, EventArgs e)
         {
             // Bookings tab
-            tbId.Text = barber.Id.ToString();
-            tbName.Text = barber.Name.ToString();
-            tbEmail.Text = barber.Email.ToString();
-            tbPassword.Text = barber.Password.ToString();
-
+            lblBookingId.Text = "";
+            lblService.Text = "";
+            lblCustomer.Text = "";
+            lblDate.Text = "";
+            lblStatus.Text = "";
             await loadBooking();
 
             // Profile tab
+            tbId.Text = barber.Id.ToString();
+            tbName.Text = barber.Name;
+            tbEmail.Text = barber.Email;
+            tbPassword.Text = barber.Password;
+
             if (barber.Gender == "M") rbMale.Checked = true;
             else rbFemale.Checked = true;
 
@@ -584,9 +589,9 @@ namespace Barber_Booking_System_EF
 
         private void label7_Click(object sender, EventArgs e)
         {
-        
+
         }
-        
+
         private void btnViewDetails_Click(object sender, EventArgs e)
         {
 

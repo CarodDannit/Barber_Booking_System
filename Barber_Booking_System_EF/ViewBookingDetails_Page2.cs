@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Barber_Booking_System_EF
 {
-    public partial class ViewBookingDetails_Page : Form
+    public partial class ViewBookingDetails_Page2 : Form
     {
         Booking booking;
-        public ViewBookingDetails_Page(Booking b)
+        public ViewBookingDetails_Page2(Booking b)
         {
             InitializeComponent();
             booking = b;
@@ -22,14 +22,15 @@ namespace Barber_Booking_System_EF
 
         private void ViewBookingDetails_Page_Load(object sender, EventArgs e)
         {
-            labelId.Text = booking.Id.ToString();
-            labelDate.Text = booking.Date.ToLongDateString();
-            labelOutlet.Text = booking.Outlet.Location;
-            labelBarber.Text = booking.Barber.Name;
-            labelTimeslot.Text = booking.Timeslot.Time.ToShortTimeString();
-            labelService.Text = booking.Service.Name;
-            labelPrice.Text = $"RM {booking.Service.Price.ToString("F2")}";
+            tbId.Text = booking.Id.ToString();
+            tbDate.Text = booking.Date.ToLongDateString();
+            tbTimeslot.Text = booking.Timeslot.Time.ToShortTimeString();
+            tbOutlet.Text = booking.Outlet.Location;
+            tbService.Text = booking.Service.Name;
+            tbPrice.Text = $"RM {booking.Service.Price.ToString("F2")}";
+            tbDesc.Text = booking.Description;
             labelStatus.Text = booking.Status;
+            labelBarber.Text = booking.Barber.Name;
             labelEmail.Text = $"Email: {booking.Barber.Email}";
 
             // get barber's pfp
@@ -40,7 +41,7 @@ namespace Barber_Booking_System_EF
                 if (booking.Barber.Pfp[i] != 0)
                 {
                     isZero = false;
-                    break;
+                    break; // Stop immediately upon finding a non-zero byte
                 }
             }
             //   read pfp
@@ -56,9 +57,15 @@ namespace Barber_Booking_System_EF
             }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = DialogResult.Cancel;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            booking.Description = tbDesc.Text;
+            DialogResult = DialogResult.OK;
         }
     }
 }
