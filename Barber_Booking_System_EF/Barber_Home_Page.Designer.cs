@@ -88,12 +88,12 @@
             tbName = new TextBox();
             label2 = new Label();
             tabPage3 = new TabPage();
+            lblName2 = new Label();
+            lblEmail2 = new Label();
+            lblGender2 = new Label();
+            lblOutlet2 = new Label();
+            lblBarberId2 = new Label();
             btnAddBarber = new Button();
-            tbBarberEmail = new TextBox();
-            tbBarberGender = new TextBox();
-            tbBarberOutlet = new TextBox();
-            tbBarberName = new TextBox();
-            tbBarberId = new TextBox();
             btnDeleteBarber = new Button();
             label18 = new Label();
             label21 = new Label();
@@ -719,12 +719,12 @@
             // tabPage3
             // 
             tabPage3.BackColor = Color.BlanchedAlmond;
+            tabPage3.Controls.Add(lblName2);
+            tabPage3.Controls.Add(lblEmail2);
+            tabPage3.Controls.Add(lblGender2);
+            tabPage3.Controls.Add(lblOutlet2);
+            tabPage3.Controls.Add(lblBarberId2);
             tabPage3.Controls.Add(btnAddBarber);
-            tabPage3.Controls.Add(tbBarberEmail);
-            tabPage3.Controls.Add(tbBarberGender);
-            tabPage3.Controls.Add(tbBarberOutlet);
-            tabPage3.Controls.Add(tbBarberName);
-            tabPage3.Controls.Add(tbBarberId);
             tabPage3.Controls.Add(btnDeleteBarber);
             tabPage3.Controls.Add(label18);
             tabPage3.Controls.Add(label21);
@@ -740,6 +740,56 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Barber";
             // 
+            // lblName2
+            // 
+            lblName2.AutoSize = true;
+            lblName2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblName2.Location = new Point(127, 359);
+            lblName2.Name = "lblName2";
+            lblName2.Size = new Size(22, 28);
+            lblName2.TabIndex = 69;
+            lblName2.Text = "a";
+            // 
+            // lblEmail2
+            // 
+            lblEmail2.AutoSize = true;
+            lblEmail2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEmail2.Location = new Point(127, 404);
+            lblEmail2.Name = "lblEmail2";
+            lblEmail2.Size = new Size(22, 28);
+            lblEmail2.TabIndex = 68;
+            lblEmail2.Text = "a";
+            // 
+            // lblGender2
+            // 
+            lblGender2.AutoSize = true;
+            lblGender2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGender2.Location = new Point(127, 446);
+            lblGender2.Name = "lblGender2";
+            lblGender2.Size = new Size(22, 28);
+            lblGender2.TabIndex = 67;
+            lblGender2.Text = "a";
+            // 
+            // lblOutlet2
+            // 
+            lblOutlet2.AutoSize = true;
+            lblOutlet2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOutlet2.Location = new Point(127, 491);
+            lblOutlet2.Name = "lblOutlet2";
+            lblOutlet2.Size = new Size(22, 28);
+            lblOutlet2.TabIndex = 66;
+            lblOutlet2.Text = "a";
+            // 
+            // lblBarberId2
+            // 
+            lblBarberId2.AutoSize = true;
+            lblBarberId2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBarberId2.Location = new Point(127, 317);
+            lblBarberId2.Name = "lblBarberId2";
+            lblBarberId2.Size = new Size(22, 28);
+            lblBarberId2.TabIndex = 65;
+            lblBarberId2.Text = "a";
+            // 
             // btnAddBarber
             // 
             btnAddBarber.BackColor = Color.Gold;
@@ -752,58 +802,6 @@
             btnAddBarber.Text = "create barber";
             btnAddBarber.UseVisualStyleBackColor = false;
             btnAddBarber.Click += btnAddBarber_Click;
-            // 
-            // tbBarberEmail
-            // 
-            tbBarberEmail.BackColor = SystemColors.InactiveCaption;
-            tbBarberEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbBarberEmail.Location = new Point(128, 401);
-            tbBarberEmail.Name = "tbBarberEmail";
-            tbBarberEmail.ReadOnly = true;
-            tbBarberEmail.Size = new Size(252, 34);
-            tbBarberEmail.TabIndex = 64;
-            tbBarberEmail.TextChanged += tbBarberEmail_TextChanged;
-            // 
-            // tbBarberGender
-            // 
-            tbBarberGender.BackColor = SystemColors.InactiveCaption;
-            tbBarberGender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbBarberGender.Location = new Point(128, 443);
-            tbBarberGender.Name = "tbBarberGender";
-            tbBarberGender.ReadOnly = true;
-            tbBarberGender.Size = new Size(252, 34);
-            tbBarberGender.TabIndex = 63;
-            // 
-            // tbBarberOutlet
-            // 
-            tbBarberOutlet.BackColor = SystemColors.InactiveCaption;
-            tbBarberOutlet.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbBarberOutlet.Location = new Point(128, 488);
-            tbBarberOutlet.Name = "tbBarberOutlet";
-            tbBarberOutlet.ReadOnly = true;
-            tbBarberOutlet.Size = new Size(252, 34);
-            tbBarberOutlet.TabIndex = 62;
-            // 
-            // tbBarberName
-            // 
-            tbBarberName.BackColor = SystemColors.InactiveCaption;
-            tbBarberName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbBarberName.Location = new Point(128, 356);
-            tbBarberName.Name = "tbBarberName";
-            tbBarberName.ReadOnly = true;
-            tbBarberName.Size = new Size(252, 34);
-            tbBarberName.TabIndex = 61;
-            // 
-            // tbBarberId
-            // 
-            tbBarberId.BackColor = SystemColors.InactiveCaption;
-            tbBarberId.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbBarberId.Location = new Point(128, 314);
-            tbBarberId.Name = "tbBarberId";
-            tbBarberId.ReadOnly = true;
-            tbBarberId.Size = new Size(252, 34);
-            tbBarberId.TabIndex = 60;
-            tbBarberId.TextChanged += tbBarberId_TextChanged;
             // 
             // btnDeleteBarber
             // 
@@ -972,9 +970,9 @@
             label14.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label14.Location = new Point(23, 136);
             label14.Name = "label14";
-            label14.Size = new Size(218, 20);
+            label14.Size = new Size(194, 20);
             label14.TabIndex = 5;
-            label14.Text = "Total Haircut By Customers";
+            label14.Text = "Total Booking by Service";
             // 
             // label7
             // 
@@ -982,9 +980,9 @@
             label7.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(572, 136);
             label7.Name = "label7";
-            label7.Size = new Size(223, 20);
+            label7.Size = new Size(214, 20);
             label7.TabIndex = 4;
-            label7.Text = "Total Booking By Customers";
+            label7.Text = "Total Booking By Customer";
             label7.Click += label7_Click;
             // 
             // pieChart1
@@ -1291,11 +1289,6 @@
         private Label label23;
         private Label label24;
         private Button btnDeleteBarber;
-        private TextBox tbBarberId;
-        private TextBox tbBarberEmail;
-        private TextBox tbBarberGender;
-        private TextBox tbBarberOutlet;
-        private TextBox tbBarberName;
         private CheckedListBox checkedListServices;
         private Label label11;
         private Button btnAddBarber;
@@ -1334,5 +1327,10 @@
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Status;
+        private Label lblName2;
+        private Label lblEmail2;
+        private Label lblGender2;
+        private Label lblOutlet2;
+        private Label lblBarberId2;
     }
 }

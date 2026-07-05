@@ -31,7 +31,6 @@
             button2 = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            labelToDoBookings = new Label();
             btnViewDetails = new Button();
             btnDeleteBooking = new Button();
             lblService = new Label();
@@ -43,6 +42,13 @@
             label12 = new Label();
             label13 = new Label();
             dgvBookings = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            sName = new DataGridViewTextBoxColumn();
+            Barber = new DataGridViewTextBoxColumn();
+            OutletLocation = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            Time = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             label1 = new Label();
             btnNewBooking = new Button();
             tabPage2 = new TabPage();
@@ -57,13 +63,6 @@
             btnLogout = new Button();
             label2 = new Label();
             btnEditProfile = new Button();
-            Id = new DataGridViewTextBoxColumn();
-            sName = new DataGridViewTextBoxColumn();
-            Barber = new DataGridViewTextBoxColumn();
-            OutletLocation = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            Time = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBookings).BeginInit();
@@ -91,7 +90,6 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.BlanchedAlmond;
-            tabPage1.Controls.Add(labelToDoBookings);
             tabPage1.Controls.Add(btnViewDetails);
             tabPage1.Controls.Add(btnDeleteBooking);
             tabPage1.Controls.Add(lblService);
@@ -112,15 +110,6 @@
             tabPage1.Size = new Size(910, 607);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Bookings";
-            // 
-            // labelToDoBookings
-            // 
-            labelToDoBookings.AutoSize = true;
-            labelToDoBookings.Location = new Point(220, 435);
-            labelToDoBookings.Name = "labelToDoBookings";
-            labelToDoBookings.Size = new Size(254, 20);
-            labelToDoBookings.TabIndex = 48;
-            labelToDoBookings.Text = "Hide irrelevant details; Sort bookings";
             // 
             // btnViewDetails
             // 
@@ -242,6 +231,69 @@
             dgvBookings.Size = new Size(849, 219);
             dgvBookings.TabIndex = 11;
             dgvBookings.CellClick += dgvBookings_CellClick;
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "ID";
+            Id.MinimumWidth = 9;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 80;
+            // 
+            // sName
+            // 
+            sName.DataPropertyName = "sName";
+            sName.HeaderText = "Service";
+            sName.MinimumWidth = 9;
+            sName.Name = "sName";
+            sName.ReadOnly = true;
+            sName.Width = 175;
+            // 
+            // Barber
+            // 
+            Barber.DataPropertyName = "bName";
+            Barber.HeaderText = "Barber";
+            Barber.MinimumWidth = 9;
+            Barber.Name = "Barber";
+            Barber.ReadOnly = true;
+            Barber.Width = 150;
+            // 
+            // OutletLocation
+            // 
+            OutletLocation.DataPropertyName = "oLocation";
+            OutletLocation.HeaderText = "Outlet";
+            OutletLocation.MinimumWidth = 9;
+            OutletLocation.Name = "OutletLocation";
+            OutletLocation.ReadOnly = true;
+            OutletLocation.Width = 175;
+            // 
+            // Date
+            // 
+            Date.DataPropertyName = "Date";
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 9;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.Width = 125;
+            // 
+            // Time
+            // 
+            Time.DataPropertyName = "Time";
+            Time.HeaderText = "Time";
+            Time.MinimumWidth = 9;
+            Time.Name = "Time";
+            Time.ReadOnly = true;
+            Time.Width = 125;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.MinimumWidth = 9;
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            Status.Width = 125;
             // 
             // label1
             // 
@@ -423,69 +475,6 @@
             btnEditProfile.UseVisualStyleBackColor = false;
             btnEditProfile.Click += button1_Click_1;
             // 
-            // Id
-            // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "ID";
-            Id.MinimumWidth = 9;
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.Width = 80;
-            // 
-            // sName
-            // 
-            sName.DataPropertyName = "sName";
-            sName.HeaderText = "Service";
-            sName.MinimumWidth = 9;
-            sName.Name = "sName";
-            sName.ReadOnly = true;
-            sName.Width = 175;
-            // 
-            // Barber
-            // 
-            Barber.DataPropertyName = "bName";
-            Barber.HeaderText = "Barber";
-            Barber.MinimumWidth = 9;
-            Barber.Name = "Barber";
-            Barber.ReadOnly = true;
-            Barber.Width = 150;
-            // 
-            // OutletLocation
-            // 
-            OutletLocation.DataPropertyName = "oLocation";
-            OutletLocation.HeaderText = "Outlet";
-            OutletLocation.MinimumWidth = 9;
-            OutletLocation.Name = "OutletLocation";
-            OutletLocation.ReadOnly = true;
-            OutletLocation.Width = 175;
-            // 
-            // Date
-            // 
-            Date.DataPropertyName = "Date";
-            Date.HeaderText = "Date";
-            Date.MinimumWidth = 9;
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            Date.Width = 125;
-            // 
-            // Time
-            // 
-            Time.DataPropertyName = "Time";
-            Time.HeaderText = "Time";
-            Time.MinimumWidth = 9;
-            Time.Name = "Time";
-            Time.ReadOnly = true;
-            Time.Width = 125;
-            // 
-            // Status
-            // 
-            Status.DataPropertyName = "Status";
-            Status.HeaderText = "Status";
-            Status.MinimumWidth = 9;
-            Status.Name = "Status";
-            Status.ReadOnly = true;
-            Status.Width = 125;
-            // 
             // User_Home_Page
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -536,7 +525,6 @@
         private DataGridView dgvBookings;
         private Label label1;
         private Button btnNewBooking;
-        private Label labelToDoBookings;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn sName;
         private DataGridViewTextBoxColumn Barber;

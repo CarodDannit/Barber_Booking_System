@@ -208,11 +208,19 @@ namespace Barber_Booking_System_EF
 
             DataGridViewRow row = dgvBarber.Rows[e.RowIndex];
 
-            tbBarberId.Text = row.Cells["BarberId02"].Value?.ToString();
-            tbBarberName.Text = row.Cells["BarberName"].Value?.ToString();
-            tbBarberEmail.Text = row.Cells["BarberEmail"].Value?.ToString();
-            tbBarberGender.Text = row.Cells["BarberGender"].Value?.ToString();
-            tbBarberOutlet.Text = row.Cells["BarberOutlet"].Value?.ToString();
+            lblBarberId2.Text = row.Cells["BarberId02"].Value?.ToString();
+            lblName2.Text = row.Cells["BarberName"].Value?.ToString();
+            lblEmail2.Text = row.Cells["BarberEmail"].Value?.ToString();
+            if (row.Cells["BarberGender"].Value?.ToString() == "M")
+            {
+                lblGender2.Text = "Male";
+            }
+            else
+            {
+                lblGender2.Text = "Female";
+            }
+            
+            lblOutlet2.Text = row.Cells["BarberOutlet"].Value?.ToString();
         }
 
         private void btnUpload_Click(object sender, EventArgs e)
@@ -327,9 +335,9 @@ namespace Barber_Booking_System_EF
             chart1.Series.Clear();
             chart1.Titles.Clear();
 
-            chart1.Titles.Add("Perbandingan Jenis Potongan (Kesemua Barber)");
+            chart1.Titles.Add("Comparison by Service (all barbers)");
 
-            var seriesChart1 = chart1.Series.Add("Jumlah Tempahan");
+            var seriesChart1 = chart1.Series.Add("Total Booking");
             seriesChart1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
             seriesChart1.IsXValueIndexed = true;
             seriesChart1.IsValueShownAsLabel = true;
@@ -366,20 +374,15 @@ namespace Barber_Booking_System_EF
 
         }
 
-        private void tbBarberId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbBarberEmail_TextChanged(object sender, EventArgs e)
         {
 
         }
         private void btnDeleteBarber_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbBarberId.Text)) return;
+            if (string.IsNullOrWhiteSpace(lblBarberId2.Text)) return;
 
-            int barberId = int.Parse(tbBarberId.Text);
+            int barberId = int.Parse(lblBarberId2.Text);
 
             var barber = _db.Barbers.Include(b => b.Services).FirstOrDefault(b => b.Id == barberId);
 
@@ -406,11 +409,11 @@ namespace Barber_Booking_System_EF
 
 
                 loadBarber();
-                tbBarberId.Text = "";
-                tbBarberName.Text = "";
-                tbBarberEmail.Text = "";
-                tbBarberGender.Text = "";
-                tbBarberOutlet.Text = "";
+                lblBarberId2.Text = "";
+                lblName2.Text = "";
+                lblEmail2.Text = "";
+                lblGender2.Text = "";
+                lblOutlet2.Text = "";
             }
         }
 
