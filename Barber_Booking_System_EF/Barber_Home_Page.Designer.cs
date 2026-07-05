@@ -58,11 +58,8 @@
             lStatusTab1 = new Label();
             dgvBookings = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
-            cName = new DataGridViewTextBoxColumn();
-            bName = new DataGridViewTextBoxColumn();
             sName = new DataGridViewTextBoxColumn();
-            OutletLocation = new DataGridViewTextBoxColumn();
+            cName = new DataGridViewTextBoxColumn();
             Date = new DataGridViewTextBoxColumn();
             Time = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
@@ -356,12 +353,12 @@
             dgvBookings.AllowUserToAddRows = false;
             dgvBookings.AllowUserToDeleteRows = false;
             dgvBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBookings.Columns.AddRange(new DataGridViewColumn[] { Id, Description, cName, bName, sName, OutletLocation, Date, Time, Status });
+            dgvBookings.Columns.AddRange(new DataGridViewColumn[] { Id, sName, cName, Date, Time, Status });
             dgvBookings.Location = new Point(33, 72);
             dgvBookings.Margin = new Padding(2, 3, 2, 3);
             dgvBookings.Name = "dgvBookings";
             dgvBookings.ReadOnly = true;
-            dgvBookings.RowHeadersWidth = 72;
+            dgvBookings.RowHeadersWidth = 20;
             dgvBookings.Size = new Size(849, 219);
             dgvBookings.TabIndex = 11;
             dgvBookings.CellClick += dgvBookings_CellClick;
@@ -376,14 +373,14 @@
             Id.ReadOnly = true;
             Id.Width = 80;
             // 
-            // Description
+            // sName
             // 
-            Description.DataPropertyName = "Description";
-            Description.HeaderText = "Description";
-            Description.MinimumWidth = 9;
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            Description.Width = 175;
+            sName.DataPropertyName = "sName";
+            sName.HeaderText = "Service";
+            sName.MinimumWidth = 6;
+            sName.Name = "sName";
+            sName.ReadOnly = true;
+            sName.Width = 125;
             // 
             // cName
             // 
@@ -394,33 +391,6 @@
             cName.ReadOnly = true;
             cName.Width = 125;
             // 
-            // bName
-            // 
-            bName.DataPropertyName = "bName";
-            bName.HeaderText = "Barber";
-            bName.MinimumWidth = 6;
-            bName.Name = "bName";
-            bName.ReadOnly = true;
-            bName.Width = 125;
-            // 
-            // sName
-            // 
-            sName.DataPropertyName = "sName";
-            sName.HeaderText = "Service";
-            sName.MinimumWidth = 6;
-            sName.Name = "sName";
-            sName.ReadOnly = true;
-            sName.Width = 125;
-            // 
-            // OutletLocation
-            // 
-            OutletLocation.DataPropertyName = "oLocation";
-            OutletLocation.HeaderText = "Outlet";
-            OutletLocation.MinimumWidth = 9;
-            OutletLocation.Name = "OutletLocation";
-            OutletLocation.ReadOnly = true;
-            OutletLocation.Width = 175;
-            // 
             // Date
             // 
             Date.DataPropertyName = "Date";
@@ -428,7 +398,7 @@
             Date.MinimumWidth = 9;
             Date.Name = "Date";
             Date.ReadOnly = true;
-            Date.Width = 150;
+            Date.Width = 125;
             // 
             // Time
             // 
@@ -437,7 +407,7 @@
             Time.MinimumWidth = 9;
             Time.Name = "Time";
             Time.ReadOnly = true;
-            Time.Width = 175;
+            Time.Width = 125;
             // 
             // Status
             // 
@@ -944,7 +914,7 @@
             dgvBarber.Margin = new Padding(2, 3, 2, 3);
             dgvBarber.Name = "dgvBarber";
             dgvBarber.ReadOnly = true;
-            dgvBarber.RowHeadersWidth = 72;
+            dgvBarber.RowHeadersWidth = 20;
             dgvBarber.Size = new Size(849, 219);
             dgvBarber.TabIndex = 12;
             dgvBarber.CellClick += dgvBarber_CellClick;
@@ -1369,15 +1339,6 @@
         private DataGridView dgvBookings;
         private Label label1;
         private Label labelToDoRevenue;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Description;
-        private DataGridViewTextBoxColumn cName;
-        private DataGridViewTextBoxColumn bName;
-        private DataGridViewTextBoxColumn sName;
-        private DataGridViewTextBoxColumn OutletLocation;
-        private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn Time;
-        private DataGridViewTextBoxColumn Status;
         private Button btnAcceptBooking;
         private Button btnRejectButton;
         private Button btnCompleteBooking;
@@ -1393,5 +1354,11 @@
         private Label label15;
         private Label label14;
         private Label label16;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn sName;
+        private DataGridViewTextBoxColumn cName;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn Time;
+        private DataGridViewTextBoxColumn Status;
     }
 }

@@ -31,15 +31,10 @@ namespace Barber_Booking_System_EF
                 .Select(b => new
                 {
                     b.Id,
-                    b.Date,
-                    b.Description,
-                    b.OutletId,
-                    oLocation = b.Outlet.Location,
-                    b.BarberId,
-                    bName = b.Barber.Name,
-                    b.ServiceId,
                     sName = b.Service.Name,
-                    b.TimeslotId,
+                    bName = b.Barber.Name,
+                    oLocation = b.Outlet.Location,
+                    b.Date,
                     b.Timeslot.Time,
                     b.Status
                 })
@@ -47,7 +42,7 @@ namespace Barber_Booking_System_EF
             foreach(var b in bookings)
             {
                 dgvBookings.Rows.Add(
-                    b.Id,b.Date,b.Description,b.OutletId,b.oLocation,b.BarberId,b.bName,b.ServiceId,b.sName,b.TimeslotId,b.Time,b.Status
+                    b.Id, b.sName, b.bName, b.oLocation, b.Date, b.Time, b.Status
                 );
             }
         }
@@ -62,11 +57,6 @@ namespace Barber_Booking_System_EF
 
         }
 
-        private void dgvBookings_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-        }
-
         private void dgvBookings_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -74,7 +64,7 @@ namespace Barber_Booking_System_EF
             DataGridViewRow row = dgvBookings.Rows[e.RowIndex];
 
             lblBookingId.Text = row.Cells["Id"].Value?.ToString();
-            lblService.Text = row.Cells["ServiceName"].Value?.ToString();
+            lblService.Text = row.Cells["sName"].Value?.ToString();
             lblDate.Text = row.Cells["Date"].Value.ToString();
             lblStatus.Text = row.Cells["Status"].Value?.ToString();
         }

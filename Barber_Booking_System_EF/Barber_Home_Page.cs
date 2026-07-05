@@ -43,15 +43,10 @@ namespace Barber_Booking_System_EF
             .Select(bk => new
             {
                 bk.Id,
-                bk.Date,
-                bk.Description,
-                bk.OutletId,
-                oLocation = bk.Outlet.Location,
-                bk.CustId,
                 cName = bk.Cust.Name,
-                bk.ServiceId,
                 sName = bk.Service.Name,
-                bk.TimeslotId,
+                oLocation = bk.Outlet.Location,
+                bk.Date,
                 bk.Timeslot.Time,
                 bk.Status
             })
@@ -59,7 +54,7 @@ namespace Barber_Booking_System_EF
             foreach (var bk in result)
             {
                 dgvBookings.Rows.Add(
-                    bk.Id, bk.Date, bk.Description, bk.OutletId, bk.oLocation, bk.CustId, bk.cName, bk.ServiceId, bk.sName, bk.TimeslotId, bk.Time, bk.Status
+                    bk.Id, bk.sName, bk.cName, bk.Date, bk.Time, bk.Status
                 );
             }
         }

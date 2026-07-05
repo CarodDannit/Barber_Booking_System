@@ -44,15 +44,10 @@
             label13 = new Label();
             dgvBookings = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
-            OutletId = new DataGridViewTextBoxColumn();
+            Service = new DataGridViewTextBoxColumn();
+            Barber = new DataGridViewTextBoxColumn();
             OutletLocation = new DataGridViewTextBoxColumn();
-            BarberId = new DataGridViewTextBoxColumn();
-            BarberName = new DataGridViewTextBoxColumn();
-            ServiceId = new DataGridViewTextBoxColumn();
-            ServiceName = new DataGridViewTextBoxColumn();
-            TimeslotId = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
             Time = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
             label1 = new Label();
@@ -238,16 +233,15 @@
             dgvBookings.AllowUserToAddRows = false;
             dgvBookings.AllowUserToDeleteRows = false;
             dgvBookings.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBookings.Columns.AddRange(new DataGridViewColumn[] { Id, Date, Description, OutletId, OutletLocation, BarberId, BarberName, ServiceId, ServiceName, TimeslotId, Time, Status });
+            dgvBookings.Columns.AddRange(new DataGridViewColumn[] { Id, Service, Barber, OutletLocation, Date, Time, Status });
             dgvBookings.Location = new Point(33, 72);
             dgvBookings.Margin = new Padding(2);
             dgvBookings.Name = "dgvBookings";
             dgvBookings.ReadOnly = true;
-            dgvBookings.RowHeadersWidth = 72;
+            dgvBookings.RowHeadersWidth = 20;
             dgvBookings.Size = new Size(849, 219);
             dgvBookings.TabIndex = 11;
             dgvBookings.CellClick += dgvBookings_CellClick;
-            dgvBookings.CellContentClick += dgvBookings_CellContentClick;
             // 
             // Id
             // 
@@ -258,33 +252,23 @@
             Id.ReadOnly = true;
             Id.Width = 80;
             // 
-            // Date
+            // Service
             // 
-            Date.DataPropertyName = "Date";
-            Date.HeaderText = "Date";
-            Date.MinimumWidth = 9;
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            Date.Width = 150;
+            Service.DataPropertyName = "sName";
+            Service.HeaderText = "Service";
+            Service.MinimumWidth = 9;
+            Service.Name = "Service";
+            Service.ReadOnly = true;
+            Service.Width = 175;
             // 
-            // Description
+            // Barber
             // 
-            Description.DataPropertyName = "Description";
-            Description.HeaderText = "Description";
-            Description.MinimumWidth = 9;
-            Description.Name = "Description";
-            Description.ReadOnly = true;
-            Description.Width = 175;
-            // 
-            // OutletId
-            // 
-            OutletId.DataPropertyName = "OutletId";
-            OutletId.HeaderText = "OutletId";
-            OutletId.MinimumWidth = 9;
-            OutletId.Name = "OutletId";
-            OutletId.ReadOnly = true;
-            OutletId.Visible = false;
-            OutletId.Width = 90;
+            Barber.DataPropertyName = "bName";
+            Barber.HeaderText = "Barber";
+            Barber.MinimumWidth = 9;
+            Barber.Name = "Barber";
+            Barber.ReadOnly = true;
+            Barber.Width = 150;
             // 
             // OutletLocation
             // 
@@ -295,52 +279,14 @@
             OutletLocation.ReadOnly = true;
             OutletLocation.Width = 175;
             // 
-            // BarberId
+            // Date
             // 
-            BarberId.DataPropertyName = "BarberId";
-            BarberId.HeaderText = "BarberId";
-            BarberId.MinimumWidth = 9;
-            BarberId.Name = "BarberId";
-            BarberId.ReadOnly = true;
-            BarberId.Visible = false;
-            BarberId.Width = 90;
-            // 
-            // BarberName
-            // 
-            BarberName.DataPropertyName = "bName";
-            BarberName.HeaderText = "Barber Name";
-            BarberName.MinimumWidth = 9;
-            BarberName.Name = "BarberName";
-            BarberName.ReadOnly = true;
-            BarberName.Width = 175;
-            // 
-            // ServiceId
-            // 
-            ServiceId.DataPropertyName = "ServiceId";
-            ServiceId.HeaderText = "ServiceId";
-            ServiceId.MinimumWidth = 9;
-            ServiceId.Name = "ServiceId";
-            ServiceId.ReadOnly = true;
-            ServiceId.Visible = false;
-            ServiceId.Width = 90;
-            // 
-            // ServiceName
-            // 
-            ServiceName.DataPropertyName = "sName";
-            ServiceName.HeaderText = "Service Name";
-            ServiceName.MinimumWidth = 9;
-            ServiceName.Name = "ServiceName";
-            ServiceName.ReadOnly = true;
-            ServiceName.Width = 175;
-            // 
-            // TimeslotId
-            // 
-            TimeslotId.DataPropertyName = "TimeslotId";
-            TimeslotId.HeaderText = "TimeslotId";
-            TimeslotId.MinimumWidth = 9;
-            TimeslotId.Name = "TimeslotId";
-            TimeslotId.ReadOnly = true;
-            TimeslotId.Width = 90;
+            Date.DataPropertyName = "Date";
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 9;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.Width = 125;
             // 
             // Time
             // 
@@ -349,7 +295,7 @@
             Time.MinimumWidth = 9;
             Time.Name = "Time";
             Time.ReadOnly = true;
-            Time.Width = 175;
+            Time.Width = 125;
             // 
             // Status
             // 
@@ -358,7 +304,7 @@
             Status.MinimumWidth = 9;
             Status.Name = "Status";
             Status.ReadOnly = true;
-            Status.Width = 175;
+            Status.Width = 125;
             // 
             // label1
             // 
@@ -592,15 +538,10 @@
         private Button btnNewBooking;
         private Label labelToDoBookings;
         private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Date;
-        private DataGridViewTextBoxColumn Description;
-        private DataGridViewTextBoxColumn OutletId;
+        private DataGridViewTextBoxColumn Service;
+        private DataGridViewTextBoxColumn Barber;
         private DataGridViewTextBoxColumn OutletLocation;
-        private DataGridViewTextBoxColumn BarberId;
-        private DataGridViewTextBoxColumn BarberName;
-        private DataGridViewTextBoxColumn ServiceId;
-        private DataGridViewTextBoxColumn ServiceName;
-        private DataGridViewTextBoxColumn TimeslotId;
+        private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Time;
         private DataGridViewTextBoxColumn Status;
     }
