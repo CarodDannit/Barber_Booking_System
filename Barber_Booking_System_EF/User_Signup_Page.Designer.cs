@@ -45,19 +45,20 @@
             // 
             // btnBarberLoginPage
             // 
+            btnBarberLoginPage.BackColor = Color.Gold;
             btnBarberLoginPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBarberLoginPage.Location = new Point(714, 634);
             btnBarberLoginPage.Margin = new Padding(3, 4, 3, 4);
             btnBarberLoginPage.Name = "btnBarberLoginPage";
             btnBarberLoginPage.Size = new Size(187, 51);
             btnBarberLoginPage.TabIndex = 18;
-            btnBarberLoginPage.Text = "barber mode";
-            btnBarberLoginPage.UseVisualStyleBackColor = true;
+            btnBarberLoginPage.Text = "barber";
+            btnBarberLoginPage.UseVisualStyleBackColor = false;
             btnBarberLoginPage.Click += btnBarberLoginPage_Click;
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.Control;
+            panel1.BackColor = Color.BlanchedAlmond;
             panel1.Controls.Add(tbPassword);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(tbUsername);
@@ -75,6 +76,7 @@
             // 
             // tbPassword
             // 
+            tbPassword.BackColor = SystemColors.InactiveCaption;
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbPassword.Location = new Point(46, 297);
             tbPassword.Margin = new Padding(3, 4, 3, 4);
@@ -95,16 +97,17 @@
             // 
             // tbUsername
             // 
+            tbUsername.BackColor = SystemColors.InactiveCaption;
             tbUsername.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbUsername.Location = new Point(51, 184);
             tbUsername.Margin = new Padding(3, 4, 3, 4);
             tbUsername.Name = "tbUsername";
-            tbUsername.PasswordChar = '*';
             tbUsername.Size = new Size(340, 30);
             tbUsername.TabIndex = 8;
             // 
             // btnUserSignup
             // 
+            btnUserSignup.BackColor = Color.Gold;
             btnUserSignup.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnUserSignup.Location = new Point(171, 560);
             btnUserSignup.Margin = new Padding(3, 4, 3, 4);
@@ -112,7 +115,7 @@
             btnUserSignup.Size = new Size(110, 51);
             btnUserSignup.TabIndex = 7;
             btnUserSignup.Text = "sign up";
-            btnUserSignup.UseVisualStyleBackColor = true;
+            btnUserSignup.UseVisualStyleBackColor = false;
             btnUserSignup.Click += btnUserSignup_Click;
             // 
             // label2
@@ -157,6 +160,7 @@
             // 
             // tbEmail
             // 
+            tbEmail.BackColor = SystemColors.InactiveCaption;
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbEmail.Location = new Point(50, 81);
             tbEmail.Margin = new Padding(3, 4, 3, 4);
@@ -168,10 +172,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(394, 11);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(406, 9);
             label1.Name = "label1";
-            label1.Size = new Size(162, 46);
+            label1.Size = new Size(146, 46);
             label1.TabIndex = 16;
             label1.Text = "Sign Up";
             // 
@@ -180,7 +185,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            BackColor = Color.Lime;
+            BackColor = Color.FromArgb(0, 64, 0);
             ClientSize = new Size(942, 616);
             Controls.Add(btnBarberLoginPage);
             Controls.Add(panel1);

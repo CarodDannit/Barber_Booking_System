@@ -42,19 +42,23 @@
             // 
             // btnUserLoginPage
             // 
+            btnUserLoginPage.BackColor = Color.Gold;
+            btnUserLoginPage.FlatStyle = FlatStyle.Flat;
             btnUserLoginPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUserLoginPage.ForeColor = Color.Black;
             btnUserLoginPage.Location = new Point(743, 550);
             btnUserLoginPage.Margin = new Padding(3, 4, 3, 4);
             btnUserLoginPage.Name = "btnUserLoginPage";
             btnUserLoginPage.Size = new Size(187, 51);
             btnUserLoginPage.TabIndex = 12;
-            btnUserLoginPage.Text = "user mode";
-            btnUserLoginPage.UseVisualStyleBackColor = true;
+            btnUserLoginPage.Text = "user";
+            btnUserLoginPage.UseVisualStyleBackColor = false;
             btnUserLoginPage.Click += btnUserLoginPage_Click;
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.Control;
+            panel1.BackColor = Color.BlanchedAlmond;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(tbPassword);
             panel1.Controls.Add(btnBarberLogin);
             panel1.Controls.Add(label2);
@@ -68,6 +72,7 @@
             // 
             // tbPassword
             // 
+            tbPassword.BackColor = SystemColors.InactiveCaption;
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbPassword.Location = new Point(51, 184);
             tbPassword.Margin = new Padding(3, 4, 3, 4);
@@ -79,20 +84,25 @@
             // 
             // btnBarberLogin
             // 
+            btnBarberLogin.BackColor = Color.Gold;
+            btnBarberLogin.FlatStyle = FlatStyle.Flat;
             btnBarberLogin.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBarberLogin.ForeColor = Color.Black;
             btnBarberLogin.Location = new Point(165, 444);
             btnBarberLogin.Margin = new Padding(3, 4, 3, 4);
             btnBarberLogin.Name = "btnBarberLogin";
             btnBarberLogin.Size = new Size(109, 51);
             btnBarberLogin.TabIndex = 7;
             btnBarberLogin.Text = "log in";
-            btnBarberLogin.UseVisualStyleBackColor = true;
+            btnBarberLogin.UseVisualStyleBackColor = false;
             btnBarberLogin.Click += btnBarberLogin_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(45, 46);
             label2.Name = "label2";
             label2.Size = new Size(58, 25);
@@ -111,6 +121,7 @@
             // 
             // tbEmail
             // 
+            tbEmail.BackColor = SystemColors.InactiveCaption;
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbEmail.Location = new Point(51, 81);
             tbEmail.Margin = new Padding(3, 4, 3, 4);
@@ -122,19 +133,22 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(415, 10);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(416, 9);
             label1.Name = "label1";
-            label1.Size = new Size(130, 46);
+            label1.Size = new Size(120, 46);
             label1.TabIndex = 10;
             label1.Text = "Log In";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(545, 40);
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Gold;
+            label5.Location = new Point(542, 22);
             label5.Name = "label5";
-            label5.Size = new Size(76, 20);
+            label5.Size = new Size(100, 28);
             label5.TabIndex = 9;
             label5.Text = "for barber";
             // 
@@ -142,7 +156,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Lime;
+            BackColor = Color.FromArgb(0, 64, 0);
             ClientSize = new Size(942, 616);
             Controls.Add(label5);
             Controls.Add(btnUserLoginPage);

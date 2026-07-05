@@ -38,17 +38,18 @@
             tbPassword = new TextBox();
             tbEmail = new TextBox();
             btnBarberLoginPage = new Button();
-            label5 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(622, 16);
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(425, 9);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(182, 64);
+            label1.Size = new Size(120, 46);
             label1.TabIndex = 0;
             label1.Text = "Log In";
             // 
@@ -56,9 +57,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(69, 68);
+            label2.Location = new Point(46, 45);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(83, 32);
+            label2.Size = new Size(58, 25);
             label2.TabIndex = 1;
             label2.Text = "email";
             // 
@@ -66,27 +68,30 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(69, 224);
+            label3.Location = new Point(46, 149);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(135, 32);
+            label3.Size = new Size(96, 25);
             label3.TabIndex = 2;
             label3.Text = "password";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(144, 592);
+            label4.Location = new Point(96, 395);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(232, 30);
+            label4.Size = new Size(163, 20);
             label4.TabIndex = 5;
             label4.Text = "Don't have an account?";
             // 
             // lnkUserRegisterAcc
             // 
             lnkUserRegisterAcc.AutoSize = true;
-            lnkUserRegisterAcc.Location = new Point(372, 592);
+            lnkUserRegisterAcc.Location = new Point(248, 395);
+            lnkUserRegisterAcc.Margin = new Padding(2, 0, 2, 0);
             lnkUserRegisterAcc.Name = "lnkUserRegisterAcc";
-            lnkUserRegisterAcc.Size = new Size(162, 30);
+            lnkUserRegisterAcc.Size = new Size(115, 20);
             lnkUserRegisterAcc.TabIndex = 6;
             lnkUserRegisterAcc.TabStop = true;
             lnkUserRegisterAcc.Text = "register account";
@@ -94,19 +99,20 @@
             // 
             // btnUserLogin
             // 
+            btnUserLogin.BackColor = Color.Gold;
             btnUserLogin.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUserLogin.Location = new Point(249, 666);
-            btnUserLogin.Margin = new Padding(3, 6, 3, 6);
+            btnUserLogin.Location = new Point(166, 444);
+            btnUserLogin.Margin = new Padding(2, 4, 2, 4);
             btnUserLogin.Name = "btnUserLogin";
-            btnUserLogin.Size = new Size(165, 76);
+            btnUserLogin.Size = new Size(110, 51);
             btnUserLogin.TabIndex = 7;
             btnUserLogin.Text = "log in";
-            btnUserLogin.UseVisualStyleBackColor = true;
+            btnUserLogin.UseVisualStyleBackColor = false;
             btnUserLogin.Click += btnUserLogin_Click;
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.Control;
+            panel1.BackColor = Color.BlanchedAlmond;
             panel1.Controls.Add(tbPassword);
             panel1.Controls.Add(btnUserLogin);
             panel1.Controls.Add(label2);
@@ -114,65 +120,58 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(tbEmail);
-            panel1.Location = new Point(389, 112);
-            panel1.Margin = new Padding(3, 6, 3, 6);
+            panel1.Location = new Point(259, 75);
+            panel1.Margin = new Padding(2, 4, 2, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(660, 792);
+            panel1.Size = new Size(440, 528);
             panel1.TabIndex = 8;
             // 
             // tbPassword
             // 
+            tbPassword.BackColor = SystemColors.InactiveCaption;
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbPassword.Location = new Point(75, 276);
-            tbPassword.Margin = new Padding(3, 6, 3, 6);
+            tbPassword.Location = new Point(50, 184);
+            tbPassword.Margin = new Padding(2, 4, 2, 4);
             tbPassword.Name = "tbPassword";
             tbPassword.PasswordChar = '*';
-            tbPassword.Size = new Size(508, 39);
+            tbPassword.Size = new Size(340, 30);
             tbPassword.TabIndex = 8;
             tbPassword.Text = "ahmad";
             // 
             // tbEmail
             // 
+            tbEmail.BackColor = SystemColors.InactiveCaption;
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbEmail.Location = new Point(75, 122);
-            tbEmail.Margin = new Padding(3, 6, 3, 6);
+            tbEmail.Location = new Point(50, 81);
+            tbEmail.Margin = new Padding(2, 4, 2, 4);
             tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(508, 39);
+            tbEmail.Size = new Size(340, 30);
             tbEmail.TabIndex = 3;
             tbEmail.Text = "ahmad@ahmad";
             // 
             // btnBarberLoginPage
             // 
+            btnBarberLoginPage.BackColor = Color.Gold;
             btnBarberLoginPage.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBarberLoginPage.Location = new Point(1113, 824);
-            btnBarberLoginPage.Margin = new Padding(3, 6, 3, 6);
+            btnBarberLoginPage.Location = new Point(742, 549);
+            btnBarberLoginPage.Margin = new Padding(2, 4, 2, 4);
             btnBarberLoginPage.Name = "btnBarberLoginPage";
-            btnBarberLoginPage.Size = new Size(279, 76);
+            btnBarberLoginPage.Size = new Size(186, 51);
             btnBarberLoginPage.TabIndex = 9;
-            btnBarberLoginPage.Text = "barber mode";
-            btnBarberLoginPage.UseVisualStyleBackColor = true;
+            btnBarberLoginPage.Text = "barber";
+            btnBarberLoginPage.UseVisualStyleBackColor = false;
             btnBarberLoginPage.Click += btnBarberLoginPage_Click;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(1106, 298);
-            label5.Name = "label5";
-            label5.Size = new Size(106, 30);
-            label5.TabIndex = 12;
-            label5.Text = "EF version";
             // 
             // User_Login_Page
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Lime;
-            ClientSize = new Size(1413, 924);
-            Controls.Add(label5);
+            BackColor = Color.FromArgb(0, 64, 0);
+            ClientSize = new Size(942, 616);
             Controls.Add(btnBarberLoginPage);
             Controls.Add(panel1);
             Controls.Add(label1);
-            Margin = new Padding(3, 6, 3, 6);
+            Margin = new Padding(2, 4, 2, 4);
             Name = "User_Login_Page";
             Text = "User Login";
             panel1.ResumeLayout(false);
@@ -194,7 +193,6 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Button btnBarberLoginPage;
-        private Label label5;
     }
 }
 

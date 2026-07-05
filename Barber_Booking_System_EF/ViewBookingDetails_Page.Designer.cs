@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            labelToDo = new Label();
             tbPrice = new TextBox();
             tbService = new TextBox();
             tbOutlet = new TextBox();
@@ -59,7 +60,8 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.Window;
+            panel1.BackColor = Color.BlanchedAlmond;
+            panel1.Controls.Add(labelToDo);
             panel1.Controls.Add(tbPrice);
             panel1.Controls.Add(tbService);
             panel1.Controls.Add(tbOutlet);
@@ -85,6 +87,15 @@
             panel1.Size = new Size(722, 528);
             panel1.TabIndex = 0;
             // 
+            // labelToDo
+            // 
+            labelToDo.AutoSize = true;
+            labelToDo.Location = new Point(57, 383);
+            labelToDo.Name = "labelToDo";
+            labelToDo.Size = new Size(94, 20);
+            labelToDo.TabIndex = 67;
+            labelToDo.Text = "service, price";
+            //
             // tbPrice
             // 
             tbPrice.Font = new Font("Microsoft Sans Serif", 12F);
@@ -208,6 +219,7 @@
             // 
             // groupBoxPhoto
             // 
+            groupBoxPhoto.BackColor = SystemColors.InactiveCaption;
             groupBoxPhoto.Controls.Add(labelEmail);
             groupBoxPhoto.Controls.Add(pictureBoxBarber);
             groupBoxPhoto.Controls.Add(labelBarber);
@@ -223,6 +235,7 @@
             // labelEmail
             // 
             labelEmail.AutoSize = true;
+            labelEmail.BackColor = SystemColors.ButtonHighlight;
             labelEmail.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelEmail.Location = new Point(8, 254);
             labelEmail.Name = "labelEmail";
@@ -244,6 +257,7 @@
             // labelBarber
             // 
             labelBarber.AutoSize = true;
+            labelBarber.BackColor = SystemColors.ButtonHighlight;
             labelBarber.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelBarber.Location = new Point(79, 219);
             labelBarber.Name = "labelBarber";
@@ -325,10 +339,11 @@
             // labelBookingDetails
             // 
             labelBookingDetails.AutoSize = true;
-            labelBookingDetails.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelBookingDetails.Location = new Point(164, 6);
+            labelBookingDetails.Font = new Font("Showcard Gothic", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelBookingDetails.ForeColor = Color.White;
+            labelBookingDetails.Location = new Point(147, 9);
             labelBookingDetails.Name = "labelBookingDetails";
-            labelBookingDetails.Size = new Size(299, 46);
+            labelBookingDetails.Size = new Size(330, 43);
             labelBookingDetails.TabIndex = 42;
             labelBookingDetails.Text = "Booking Details";
             // 
@@ -336,8 +351,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Lime;
-            ClientSize = new Size(776, 609);
+            BackColor = Color.FromArgb(0, 64, 0);
+            ClientSize = new Size(624, 609);
             Controls.Add(labelBookingDetails);
             Controls.Add(panel1);
             Margin = new Padding(2);

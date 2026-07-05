@@ -69,5 +69,15 @@ namespace Barber_Booking_System_EF.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2026_07_02_080118 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2026-07-02 080118", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

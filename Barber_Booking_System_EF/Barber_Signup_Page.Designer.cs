@@ -59,10 +59,11 @@
             // labelRegister
             // 
             labelRegister.AutoSize = true;
-            labelRegister.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelRegister.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelRegister.ForeColor = Color.White;
             labelRegister.Location = new Point(325, 11);
             labelRegister.Name = "labelRegister";
-            labelRegister.Size = new Size(298, 46);
+            labelRegister.Size = new Size(266, 46);
             labelRegister.TabIndex = 1;
             labelRegister.Text = "Register Barber";
             // 
@@ -72,7 +73,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.Control;
+            panel1.BackColor = Color.BlanchedAlmond;
             panel1.Controls.Add(btnBack);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(gbGender);
@@ -97,6 +98,7 @@
             // 
             // btnBack
             // 
+            btnBack.BackColor = Color.Gold;
             btnBack.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBack.Location = new Point(453, 660);
             btnBack.Margin = new Padding(3, 4, 3, 4);
@@ -104,16 +106,16 @@
             btnBack.Size = new Size(176, 51);
             btnBack.TabIndex = 82;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
             // 
             // groupBox1
             // 
             groupBox1.Controls.Add(pictureBoxBarber);
             groupBox1.Location = new Point(453, 268);
-            groupBox1.Margin = new Padding(5, 5, 5, 5);
+            groupBox1.Margin = new Padding(5);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(5, 5, 5, 5);
+            groupBox1.Padding = new Padding(5);
             groupBox1.Size = new Size(176, 217);
             groupBox1.TabIndex = 81;
             groupBox1.TabStop = false;
@@ -123,7 +125,7 @@
             // 
             pictureBoxBarber.Image = Properties.Resources.rukia04;
             pictureBoxBarber.Location = new Point(8, 29);
-            pictureBoxBarber.Margin = new Padding(5, 5, 5, 5);
+            pictureBoxBarber.Margin = new Padding(5);
             pictureBoxBarber.Name = "pictureBoxBarber";
             pictureBoxBarber.Size = new Size(160, 179);
             pictureBoxBarber.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -172,6 +174,7 @@
             // 
             // btnUpload
             // 
+            btnUpload.BackColor = Color.Gold;
             btnUpload.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnUpload.Location = new Point(485, 501);
             btnUpload.Margin = new Padding(2, 3, 2, 3);
@@ -179,11 +182,12 @@
             btnUpload.Size = new Size(106, 51);
             btnUpload.TabIndex = 79;
             btnUpload.Text = "Upload";
-            btnUpload.UseVisualStyleBackColor = true;
+            btnUpload.UseVisualStyleBackColor = false;
             btnUpload.Click += btnUpload_Click;
             // 
             // btnRegister
             // 
+            btnRegister.BackColor = Color.Gold;
             btnRegister.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegister.Location = new Point(453, 720);
             btnRegister.Margin = new Padding(3, 4, 3, 4);
@@ -191,11 +195,12 @@
             btnRegister.Size = new Size(176, 51);
             btnRegister.TabIndex = 78;
             btnRegister.Text = "Register";
-            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
             // 
             // tbPassword
             // 
+            tbPassword.BackColor = SystemColors.InactiveCaption;
             tbPassword.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbPassword.Location = new Point(22, 248);
             tbPassword.Margin = new Padding(3, 4, 3, 4);
@@ -226,10 +231,11 @@
             // 
             // checkListService
             // 
+            checkListService.BackColor = SystemColors.InactiveCaption;
             checkListService.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             checkListService.FormattingEnabled = true;
             checkListService.Location = new Point(25, 579);
-            checkListService.Margin = new Padding(5, 5, 5, 5);
+            checkListService.Margin = new Padding(5);
             checkListService.Name = "checkListService";
             checkListService.Size = new Size(357, 154);
             checkListService.TabIndex = 74;
@@ -246,10 +252,11 @@
             // 
             // cbOutlet
             // 
+            cbOutlet.BackColor = SystemColors.InactiveCaption;
             cbOutlet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cbOutlet.FormattingEnabled = true;
             cbOutlet.Location = new Point(25, 469);
-            cbOutlet.Margin = new Padding(5, 5, 5, 5);
+            cbOutlet.Margin = new Padding(5);
             cbOutlet.Name = "cbOutlet";
             cbOutlet.Size = new Size(370, 33);
             cbOutlet.TabIndex = 72;
@@ -266,6 +273,7 @@
             // 
             // tbName
             // 
+            tbName.BackColor = SystemColors.InactiveCaption;
             tbName.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbName.Location = new Point(22, 153);
             tbName.Margin = new Padding(3, 4, 3, 4);
@@ -295,6 +303,7 @@
             // 
             // tbEmail
             // 
+            tbEmail.BackColor = SystemColors.InactiveCaption;
             tbEmail.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tbEmail.Location = new Point(22, 67);
             tbEmail.Margin = new Padding(3, 4, 3, 4);
@@ -308,11 +317,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
-            BackColor = Color.Lime;
+            BackColor = Color.FromArgb(0, 64, 0);
             ClientSize = new Size(942, 616);
             Controls.Add(panel1);
             Controls.Add(labelRegister);
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             Name = "Barber_Signup_Page";
             Text = "Barber Signup Page";
             Load += Barber_Signup_Page_Load;

@@ -11,7 +11,7 @@ namespace Barber_Booking_System_EF
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new User_Login_Page());
+            Application.Run(new Landing_Page());
         }
     }
 }
