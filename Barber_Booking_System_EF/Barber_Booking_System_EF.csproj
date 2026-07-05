@@ -54,6 +54,9 @@
     <Compile Update="User_Signup_Page.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Barber_ViewBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

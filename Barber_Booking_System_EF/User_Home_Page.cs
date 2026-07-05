@@ -233,7 +233,7 @@ namespace Barber_Booking_System_EF
                 .Where(b => b.Id == bookingId)
                 .FirstOrDefault();
 
-            var viewdetailspage = new ViewBookingDetails_Page(booking);
+            var viewdetailspage = new User_ViewBooking(booking);
             viewdetailspage.ShowDialog();
         }
     }

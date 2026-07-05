@@ -589,7 +589,23 @@ namespace Barber_Booking_System_EF
 
         private void btnViewDetails_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(lblBookingId.Text))
+            {
+                MessageBox.Show("Please select a booking!");
+                return;
+            }
 
+            int bookingId = int.Parse(lblBookingId.Text);
+            var booking = _db.Bookings
+                .Include(b => b.Barber)
+                .Include(b => b.Outlet)
+                .Include(b => b.Service)
+                .Include(b => b.Timeslot)
+                .Where(b => b.Id == bookingId)
+                .FirstOrDefault();
+
+            var viewdetailspage = new User_ViewBooking(booking);
+            viewdetailspage.ShowDialog();
         }
     }
 }

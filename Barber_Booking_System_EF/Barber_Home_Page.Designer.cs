@@ -333,7 +333,7 @@
             btnViewDetails.Name = "btnViewDetails";
             btnViewDetails.Size = new Size(159, 51);
             btnViewDetails.TabIndex = 35;
-            btnViewDetails.Text = "Check";
+            btnViewDetails.Text = "View Details";
             btnViewDetails.UseVisualStyleBackColor = false;
             btnViewDetails.Click += btnViewDetails_Click;
             // 

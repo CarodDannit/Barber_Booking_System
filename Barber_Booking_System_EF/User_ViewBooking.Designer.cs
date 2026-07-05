@@ -1,6 +1,6 @@
 ﻿namespace Barber_Booking_System_EF
 {
-    partial class ViewBookingDetails_Page
+    partial class User_ViewBooking
     {
         /// <summary>
         /// Required designer variable.
@@ -292,7 +292,7 @@
             labelBookingDetails.TabIndex = 42;
             labelBookingDetails.Text = "Booking Details";
             // 
-            // ViewBookingDetails_Page
+            // User_ViewBooking
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -301,8 +301,8 @@
             Controls.Add(labelBookingDetails);
             Controls.Add(panel1);
             Margin = new Padding(2);
-            Name = "ViewBookingDetails_Page";
-            Text = "ViewBookingDetails_Page";
+            Name = "User_ViewBooking";
+            Text = "User_ViewBooking";
             Load += ViewBookingDetails_Page_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
